@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>New project</name>
-    <description></description>
-    <version>1.0.0.0</version>
-    <author></author>
+    <name>dungeon</name>
+    <description>dungeon gam</description>
+    <version>0.0.1</version>
+    <author>dumbluckarts</author>
     <author-email></author-email>
-    <author-website>http://</author-website>
-    <app-id>com.mycompany.myapp</app-id>
+    <author-website>https://dumbluckarts.com</author-website>
+    <app-id>com.dumbluckarts.dungeon</app-id>
     <unique-id>i1mqfqomzbzl</unique-id>
     <saved-with-version>27700</saved-with-version>
     <used-plugins>
@@ -23,8 +23,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1920</width>
-        <height>1080</height>
+        <width>2560</width>
+        <height>1440</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
