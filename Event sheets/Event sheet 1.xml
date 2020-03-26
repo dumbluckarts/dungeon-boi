@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="522058582510404">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="810931220270703" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="616021948666245" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="131540568760955" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="470113218082536" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="434059874071300">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="559914169605825" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="779198916924709" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="968536702707590" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="928957594568553" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="966281897557203">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="810990160715877" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="519556678819757" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="112077062576664">
+            <conditions>
+                <condition id="-22" name="Else" sid="345514868573993" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="504910155531218" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="862845253263730">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="677851697586875" type="Mouse">
+                    <param id="0" name="Object">Cards</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="862749355770815" type="Cards">
+                    <param id="0" name="Animation">&quot;mouseOver&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="122866256676169">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="739873610157197" type="Mouse">
+                    <param id="0" name="Object">Cards</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="918637055865799" type="Cards">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="958248314246944">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="145685672929930" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Cards</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="756818734899829" type="Cards">
+                    <param id="0" name="Instance variable">uses</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="911489628157066" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="121437719345150" type="player">
+                    <param id="0" name="Object">cursor</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="429892700850359" type="player">
+                    <param id="0" name="Instance variable">activeCard</param>
+                    <param id="1" name="Value">Cards.cardName</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="420375116251859">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="605785207075645" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Cards</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="671305988970670" type="Cards">
+                    <param id="0" name="Instance variable">uses</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="765731455899009">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="365431270256110" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="493099237747577" type="cursor" />
+            </actions>
+        </event-block>
+        <event-block sid="522501779911580">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="443346342745094" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="592704624829602" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="366334992312988" type="cursor">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="202812096060576">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="231664850711047" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="488586222231454" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="224709321027666" type="cursor">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="732734109220093">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="544944516031562" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="553253275168852" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="504370569616406" type="cursor">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="817441118083903">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="270611349395226" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="652913845661623" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="171443643754514" type="cursor">
+                    <param id="0" name="Object">player</param>
+                    <param id="1" name="Image point (optional)">4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="218348462138534">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="482359232860506" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="979998940295225" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="302536720729825" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="362390826086940" type="player">
+                    <param id="0" name="Instance variable">busy</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="605504827227523">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="951528124758611" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="171383455701539" type="player">
+                    <param id="0" name="Instance variable">attacking</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="843224426936161" type="Cards">
+                    <param id="0" name="Instance variable">uses</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="885425155230686">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="276891037676089" type="player">
+                            <param id="0" name="Instance variable">activeCard</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;fireball&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="712825794462063" type="cursor">
+                            <param id="0" name="Object">flame_spr</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="959850724883478" type="Cards">
+                            <param id="0" name="Instance variable">uses</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="920824305230785" title="Attacc" />
+        <event-group description="" sid="581433545202727" title="Interface">
+            <sub-events>
+                <variable constant="0" name="activeCard" sid="836469998831354" static="1" type="text">none</variable>
+                <comment>functions to get and set this variable outta the group</comment>
+                <event-block sid="842694754889548">
+                    <conditions>
+                        <condition id="0" name="On function" sid="484503543872910" type="Function">
+                            <param id="0" name="Name">&quot;getActiveCard&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="430215139934524" type="Function">
+                            <param id="0" name="Value">activeCard</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="593468331946935">
+                    <conditions>
+                        <condition id="0" name="On function" sid="991160705874673" type="Function">
+                            <param id="0" name="Name">&quot;setActiveCard&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="256895389056488" type="System">
+                            <param id="0" name="Variable">activeCard</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment></comment>
+                <event-block sid="896543920642775">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="530281498606617" title="Movement">
+            <sub-events>
+                <event-block sid="923812219897448">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="490912098116846" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="119089755138075" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="428712805886893" type="player">
+                            <param id="0" name="X">player.X+64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="773629961553574">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="274283365176876" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="609394140115979" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="382204710041748" type="player">
+                            <param id="0" name="X">player.X-64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="688028443609839">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="497982873268297" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="917205752787142" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="904215525193627" type="player">
+                            <param id="0" name="Y">player.Y-64</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="400330378666430">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="426140186591646" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="133496810298747" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="569928327906774" type="player">
+                            <param id="0" name="Y">player.Y+64</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
