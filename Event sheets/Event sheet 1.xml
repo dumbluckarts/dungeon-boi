@@ -164,34 +164,6 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="309565496393287">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="209270133717281" type="System">
-                                            <param id="0" name="First value">player.X</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">Function.Param(0)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="1" name="Set return value" sid="414255371908746" type="Function">
-                                            <param id="0" name="Value">&quot;left&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="105406242035541">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="627359028669960" type="System">
-                                            <param id="0" name="First value">player.X</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">Function.Param(0)</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="1" name="Set return value" sid="136927816808049" type="Function">
-                                            <param id="0" name="Value">&quot;right&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="237528199257912">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="352587769735691" type="System">
@@ -217,6 +189,34 @@
                                     <actions>
                                         <action id="1" name="Set return value" sid="873265589586068" type="Function">
                                             <param id="0" name="Value">&quot;down&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="309565496393287">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="209270133717281" type="System">
+                                            <param id="0" name="First value">player.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="414255371908746" type="Function">
+                                            <param id="0" name="Value">&quot;left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="105406242035541">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="627359028669960" type="System">
+                                            <param id="0" name="First value">player.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="136927816808049" type="Function">
+                                            <param id="0" name="Value">&quot;right&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
