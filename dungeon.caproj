@@ -10,12 +10,12 @@
     <unique-id>i1mqfqomzbzl</unique-id>
     <saved-with-version>27700</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Valera Popov" id="ValerypopoffJSPlugin" version="1">ValerypopoffJS</plugin>
     </used-plugins>
     <used-behaviors />
     <used-effects />
@@ -41,16 +41,15 @@
         <prop name="Physics engine">Box2D asm.js</prop>
         <prop name="Preload sounds">Yes</prop>
         <prop name="Preview browser">(default)</prop>
-        <prop name="Sampling">Point</prop>
+        <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
         <object-type name="player" sid="823416116986559">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="busy" sid="963749970105973" type="boolean" />
-                <instance-variable name="attacking" sid="118625492660923" type="boolean" />
-                <instance-variable name="activeCard" sid="931077123240726" type="string" />
+                <instance-variable name="state" sid="917530688411088" type="string" />
+                <instance-variable name="busy" sid="771561995443542" type="boolean" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
@@ -111,9 +110,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type global="1" name="dict_cards" sid="683791437432677">
-            <plugin id="Dictionary" />
-        </object-type>
         <object-type name="Function" sid="260276882801860">
             <plugin id="Function" />
         </object-type>
@@ -133,6 +129,43 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="spr_door" sid="108840350843622">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="371899294658183" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tb_grass" sid="734501820587990">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="spr_chest" sid="425105217154076">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807309655667024" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Hover" pingpong="0" repeatcount="1" repeatto="0" sid="939729664328991" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Open" pingpong="0" repeatcount="1" repeatto="0" sid="809139093668375" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JS" sid="979302446816338">
+            <plugin id="ValerypopoffJSPlugin" />
+        </object-type>
+        <object-type name="baddie" sid="505972719526172">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Cards" plugin-id="Sprite" sid="481501630122113">
@@ -143,6 +176,21 @@
                 <instance-variable name="cardName" sid="817947033355863" type="string" />
                 <instance-variable name="uses" sid="132415268061566" type="number" />
             </instance-variables>
+        </family>
+        <family name="Lootable" plugin-id="Sprite" sid="318584876416708">
+            <members>
+                <member>baddie</member>
+                <member>spr_chest</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="empty" sid="209340583401793" type="boolean" />
+                <instance-variable comment="items and amount of items separated by comma. Example being fireball=5,ice=2" name="loot" sid="474693945316581" type="string" />
+            </instance-variables>
+        </family>
+        <family name="PathFinding" plugin-id="Sprite" sid="897719465330088">
+            <members>
+                <member>baddie</member>
+            </members>
         </family>
     </families>
     <layout-folder>
@@ -156,6 +204,11 @@
         <global-instance type="Keyboard" uid="2" />
         <global-instance type="Mouse" uid="5" />
         <global-instance type="Function" uid="8" />
+        <global-instance type="JS" uid="9">
+            <properties>
+                <script-files>inv.js</script-files>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
@@ -168,5 +221,6 @@
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
         </file-folder>
+        <file name="inv.js" />
     </files-folder>
 </c2project>
