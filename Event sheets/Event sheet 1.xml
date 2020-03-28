@@ -448,6 +448,7 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <comment>ur turn HUD thing</comment>
                         <event-block sid="205731047981649">
                             <conditions>
                                 <condition id="-8" name="Is boolean instance variable set" sid="537799352920573" type="player">
@@ -455,8 +456,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="323407481041637" type="your_turn">
-                                    <param id="0" name="Visibility">0</param>
+                                <action id="4" name="Set animation" sid="150871813050968" type="your_turn">
+                                    <param id="0" name="Animation">&quot;Pop&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -465,8 +467,24 @@
                                 <condition id="-22" name="Else" sid="166999346212682" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-15" name="Set visible" sid="410296308015806" type="your_turn">
+                                <action id="-15" name="Set visible" sid="572872455330337" type="your_turn">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="178596204045368" type="your_turn">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="574583957103195">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="540742432472096" type="your_turn">
+                                    <param id="0" name="Animation">&quot;Pop&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="421649523644886" type="your_turn">
+                                    <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
                         </event-block>
