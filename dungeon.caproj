@@ -184,7 +184,7 @@
                 <member>card1</member>
             </members>
             <instance-variables>
-                <instance-variable name="cardName" sid="817947033355863" type="string" />
+                <instance-variable name="name" sid="817947033355863" type="string" />
                 <instance-variable name="uses" sid="132415268061566" type="number" />
             </instance-variables>
         </family>

@@ -83,20 +83,20 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <variable constant="0" name="direction" sid="875483385242945" static="0" type="text">none</variable>
+                                        <variable constant="0" name="action" sid="875483385242945" static="0" type="text">none</variable>
                                         <event-block sid="419948863326777">
                                             <conditions />
                                             <actions>
                                                 <action id="-9" name="Set value" sid="162838386480379" type="System">
-                                                    <param id="0" name="Variable">direction</param>
-                                                    <param id="1" name="Value">Function.Call(&quot;ai.direction&quot;, PathFinding.X, PathFinding.Y)</param>
+                                                    <param id="0" name="Variable">action</param>
+                                                    <param id="1" name="Value">Function.Call(&quot;ai.getAction&quot;, PathFinding.X, PathFinding.Y)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="623666684192612">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="982644748897544" type="System">
-                                                    <param id="0" name="Variable">direction</param>
+                                                    <param id="0" name="Variable">action</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;up&quot;</param>
                                                 </condition>
@@ -109,9 +109,8 @@
                                         </event-block>
                                         <event-block sid="360061843653933">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="108902800314258" type="System" />
                                                 <condition id="-14" name="Compare variable" sid="728203539059121" type="System">
-                                                    <param id="0" name="Variable">direction</param>
+                                                    <param id="0" name="Variable">action</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;down&quot;</param>
                                                 </condition>
@@ -124,9 +123,8 @@
                                         </event-block>
                                         <event-block sid="272999746006575">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="735389328205192" type="System" />
                                                 <condition id="-14" name="Compare variable" sid="344169893695631" type="System">
-                                                    <param id="0" name="Variable">direction</param>
+                                                    <param id="0" name="Variable">action</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;left&quot;</param>
                                                 </condition>
@@ -139,9 +137,8 @@
                                         </event-block>
                                         <event-block sid="698039018040906">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="261166355072235" type="System" />
                                                 <condition id="-14" name="Compare variable" sid="982980310027757" type="System">
-                                                    <param id="0" name="Variable">direction</param>
+                                                    <param id="0" name="Variable">action</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;right&quot;</param>
                                                 </condition>
@@ -152,29 +149,136 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <event-block sid="938726315233190">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="106510158349046" type="System">
+                                                    <param id="0" name="Variable">action</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;downright&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="659162058076926" type="PathFinding">
+                                                    <param id="0" name="X">Self.X + STEP</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="168305343359885" type="PathFinding">
+                                                    <param id="0" name="Y">Self.Y + STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="956185377084005">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="249264189657533" type="System">
+                                                    <param id="0" name="Variable">action</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;downleft&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="108696914288772" type="PathFinding">
+                                                    <param id="0" name="X">Self.X - STEP</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="522370326081437" type="PathFinding">
+                                                    <param id="0" name="Y">Self.Y + STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="954559454794418">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="679291147245202" type="System">
+                                                    <param id="0" name="Variable">action</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;upright&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="813716894900540" type="PathFinding">
+                                                    <param id="0" name="X">Self.X + STEP</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="803414331249995" type="PathFinding">
+                                                    <param id="0" name="Y">Self.Y - STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="128289499943919">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="309216484373437" type="System">
+                                                    <param id="0" name="Variable">action</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;upleft&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="224958468860131" type="PathFinding">
+                                                    <param id="0" name="X">Self.X - STEP</param>
+                                                </action>
+                                                <action id="-2" name="Set Y" sid="818438217934013" type="PathFinding">
+                                                    <param id="0" name="Y">Self.Y - STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <comment>this function basically controls how the AI acts. So we can adjust slowly as we go</comment>
                         <event-block sid="147438784825057">
                             <conditions>
                                 <condition id="0" name="On function" sid="101125578565758" type="Function">
-                                    <param id="0" name="Name">&quot;ai.direction&quot;</param>
+                                    <param id="0" name="Name">&quot;ai.getAction&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
+                                <variable constant="0" name="x" sid="301101018949799" static="1" type="number">0</variable>
+                                <variable constant="0" name="y" sid="370273658590710" static="1" type="number">0</variable>
+                                <variable constant="0" name="result" sid="337885797547226" static="1" type="text"></variable>
+                                <event-block sid="818515352536734">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="171368221539080" type="System">
+                                            <param id="0" name="Variable">x</param>
+                                            <param id="1" name="Value">Function.Param(0)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="678285642272378" type="System">
+                                            <param id="0" name="Variable">y</param>
+                                            <param id="1" name="Value">Function.Param(1)</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="468292485088409" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>action</comment>
+                                <event-block disabled="1" sid="793520137086056">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="682629293080317" type="System">
+                                            <param id="0" name="First value">distance(player.X, player.Y, x, y)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">1999</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="707147648874218" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">&quot;attack-&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>directional</comment>
                                 <event-block sid="237528199257912">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="352587769735691" type="System">
                                             <param id="0" name="First value">player.Y</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">Function.Param(1)</param>
+                                            <param id="2" name="Second value">y</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="1" name="Set return value" sid="158238050212828" type="Function">
-                                            <param id="0" name="Value">&quot;up&quot;</param>
+                                        <action id="-9" name="Set value" sid="461938649538804" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">result &amp; &quot;up&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -183,12 +287,13 @@
                                         <condition id="-8" name="Compare two values" sid="477984988660053" type="System">
                                             <param id="0" name="First value">player.Y</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">Function.Param(1)</param>
+                                            <param id="2" name="Second value">y</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="1" name="Set return value" sid="873265589586068" type="Function">
-                                            <param id="0" name="Value">&quot;down&quot;</param>
+                                        <action id="-9" name="Set value" sid="986003340537222" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">result &amp; &quot;down&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -197,12 +302,13 @@
                                         <condition id="-8" name="Compare two values" sid="209270133717281" type="System">
                                             <param id="0" name="First value">player.X</param>
                                             <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">Function.Param(0)</param>
+                                            <param id="2" name="Second value">x</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="1" name="Set return value" sid="414255371908746" type="Function">
-                                            <param id="0" name="Value">&quot;left&quot;</param>
+                                        <action id="-9" name="Set value" sid="396089058409566" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">result &amp; &quot;left&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -211,12 +317,22 @@
                                         <condition id="-8" name="Compare two values" sid="627359028669960" type="System">
                                             <param id="0" name="First value">player.X</param>
                                             <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">Function.Param(0)</param>
+                                            <param id="2" name="Second value">x</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="1" name="Set return value" sid="136927816808049" type="Function">
-                                            <param id="0" name="Value">&quot;right&quot;</param>
+                                        <action id="-9" name="Set value" sid="969296310280925" type="System">
+                                            <param id="0" name="Variable">result</param>
+                                            <param id="1" name="Value">result &amp; &quot;right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>return value of function</comment>
+                                <event-block sid="156456741880761">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set return value" sid="479603476369523" type="Function">
+                                            <param id="0" name="Value">result</param>
                                         </action>
                                     </actions>
                                 </event-block>

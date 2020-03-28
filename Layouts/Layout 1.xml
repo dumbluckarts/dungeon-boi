@@ -354,7 +354,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <cardName>fireball</cardName>
+                        <name>fireball</name>
                         <uses>1</uses>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -380,7 +380,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <cardName>freeze</cardName>
+                        <name>freeze</name>
                         <uses>2</uses>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
