@@ -93,6 +93,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>left right movement</comment>
                                         <event-block sid="623666684192612">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="982644748897544" type="System">
@@ -149,6 +150,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <comment>diagonal</comment>
                                         <event-block sid="938726315233190">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="106510158349046" type="System">
@@ -251,12 +253,12 @@
                                     </actions>
                                 </event-block>
                                 <comment>action</comment>
-                                <event-block disabled="1" sid="793520137086056">
+                                <event-block sid="793520137086056">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="682629293080317" type="System">
                                             <param id="0" name="First value">distance(player.X, player.Y, x, y)</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Second value">1999</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">512</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -446,6 +448,28 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
+                        <event-block sid="205731047981649">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="537799352920573" type="player">
+                                    <param id="0" name="Instance variable">busy</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="323407481041637" type="your_turn">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="352951812335560">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="166999346212682" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="410296308015806" type="your_turn">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="530281498606617" title="Movement">
@@ -469,10 +493,6 @@
                                         <action id="-2" name="Set Y" sid="904215525193627" type="player">
                                             <param id="0" name="Y">player.Y-STEP</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="449080378930756" type="Function">
-                                            <param id="0" name="Name">&quot;ai.move&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="773629961553574">
@@ -484,10 +504,6 @@
                                     <actions>
                                         <action id="-1" name="Set X" sid="382204710041748" type="player">
                                             <param id="0" name="X">player.X-STEP</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="368282632660455" type="Function">
-                                            <param id="0" name="Name">&quot;ai.move&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -501,10 +517,6 @@
                                         <action id="-2" name="Set Y" sid="569928327906774" type="player">
                                             <param id="0" name="Y">player.Y+STEP</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="879575538063889" type="Function">
-                                            <param id="0" name="Name">&quot;ai.move&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="923812219897448">
@@ -517,11 +529,47 @@
                                         <action id="-1" name="Set X" sid="428712805886893" type="player">
                                             <param id="0" name="X">player.X+STEP</param>
                                         </action>
-                                        <action id="0" name="Call function" sid="797632196327648" type="Function">
-                                            <param id="0" name="Name">&quot;ai.move&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
                                     </actions>
+                                </event-block>
+                                <comment>turn based wait thing for ai moving</comment>
+                                <event-block sid="403358942395950">
+                                    <conditions>
+                                        <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="624569238084121">
+                                            <conditions>
+                                                <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
+                                                    <param id="0" name="Key">87</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="836486615615804" type="Keyboard">
+                                                    <param id="0" name="Key">65</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="917815644208812" type="Keyboard">
+                                                    <param id="0" name="Key">83</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="816384765864115" type="Keyboard">
+                                                    <param id="0" name="Key">68</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Toggle boolean" sid="588675085656285" type="player">
+                                                    <param id="0" name="Instance variable">busy</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="207384912799674" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="797632196327648" type="Function">
+                                                    <param id="0" name="Name">&quot;ai.move&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-14" name="Toggle boolean" sid="928727293734400" type="player">
+                                                    <param id="0" name="Instance variable">busy</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
