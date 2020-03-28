@@ -232,9 +232,9 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <variable constant="0" name="x" sid="301101018949799" static="1" type="number">0</variable>
-                                <variable constant="0" name="y" sid="370273658590710" static="1" type="number">0</variable>
-                                <variable constant="0" name="result" sid="337885797547226" static="1" type="text"></variable>
+                                <variable constant="0" name="x" sid="301101018949799" static="0" type="number">0</variable>
+                                <variable constant="0" name="y" sid="370273658590710" static="0" type="number">0</variable>
+                                <variable constant="0" name="result" sid="337885797547226" static="0" type="text"></variable>
                                 <event-block sid="818515352536734">
                                     <conditions />
                                     <actions>
