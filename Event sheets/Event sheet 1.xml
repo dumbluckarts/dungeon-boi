@@ -344,57 +344,69 @@
                 </event-group>
                 <event-group description="" sid="920824305230785" title="Attacc">
                     <sub-events>
-                        <event-block sid="297827435146796">
+                        <event-block sid="581363462083263">
                             <conditions>
-                                <condition id="0" name="On key pressed" sid="348544235546004" type="Keyboard">
-                                    <param id="0" name="Key">87</param>
+                                <condition id="-7" name="Compare instance variable" sid="691679223398860" type="player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;attacking&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-4" name="Set position to another object" sid="175185771294010" type="cursor">
-                                    <param id="0" name="Object">player</param>
-                                    <param id="1" name="Image point (optional)">2</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="935830746058345">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="170439895093821" type="Keyboard">
-                                    <param id="0" name="Key">65</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-4" name="Set position to another object" sid="236886669208900" type="cursor">
-                                    <param id="0" name="Object">player</param>
-                                    <param id="1" name="Image point (optional)">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="546991021599886">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="968022125427387" type="Keyboard">
-                                    <param id="0" name="Key">83</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-4" name="Set position to another object" sid="408073022893702" type="cursor">
-                                    <param id="0" name="Object">player</param>
-                                    <param id="1" name="Image point (optional)">4</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="743450365197527">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="553536406482520" type="Keyboard">
-                                    <param id="0" name="Key">68</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-4" name="Set position to another object" sid="687066164851723" type="cursor">
-                                    <param id="0" name="Object">player</param>
-                                    <param id="1" name="Image point (optional)">3</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="297827435146796">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="348544235546004" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="175185771294010" type="cursor">
+                                            <param id="0" name="Object">player</param>
+                                            <param id="1" name="Image point (optional)">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="935830746058345">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="170439895093821" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="236886669208900" type="cursor">
+                                            <param id="0" name="Object">player</param>
+                                            <param id="1" name="Image point (optional)">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="546991021599886">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="968022125427387" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="408073022893702" type="cursor">
+                                            <param id="0" name="Object">player</param>
+                                            <param id="1" name="Image point (optional)">4</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="743450365197527">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="553536406482520" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set position to another object" sid="687066164851723" type="cursor">
+                                            <param id="0" name="Object">player</param>
+                                            <param id="1" name="Image point (optional)">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
