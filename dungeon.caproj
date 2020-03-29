@@ -166,6 +166,11 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
+                <animation framecount="3" loop="1" name="Attacking" pingpong="1" repeatcount="1" repeatto="0" sid="360295172473938" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="grass_stuff" sid="257323007827666">
@@ -184,6 +189,14 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="Pop" pingpong="0" repeatcount="1" repeatto="0" sid="489300002400618" speed="20">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="attackDirection" sid="258510196356127">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="277814718216074" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -213,6 +226,9 @@
             <members>
                 <member>baddie</member>
             </members>
+            <instance-variables>
+                <instance-variable name="state" sid="562013851272167" type="string" />
+            </instance-variables>
         </family>
     </families>
     <layout-folder>

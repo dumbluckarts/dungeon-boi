@@ -83,21 +83,214 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <variable constant="0" name="action" sid="875483385242945" static="0" type="text">none</variable>
-                                        <event-block sid="419948863326777">
-                                            <conditions />
+                                        <event-block sid="676981716189094">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="369609603403120" type="System">
+                                                    <param id="0" name="First value">find(PathFinding.state, &quot;attack&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
                                             <actions>
-                                                <action id="-9" name="Set value" sid="162838386480379" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <action id="-10" name="Set value" sid="654981738472602" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Value">Function.Call(&quot;ai.getAction&quot;, PathFinding.X, PathFinding.Y)</param>
                                                 </action>
+                                                <action id="4" name="Set animation" sid="330156114169589" type="PathFinding">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
                                             </actions>
+                                        </event-block>
+                                        <comment>enemy is attacking</comment>
+                                        <event-block sid="602534059041152">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="540084894737091" type="System">
+                                                    <param id="0" name="First value">find(PathFinding.state, &quot;attack&quot;)</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">-1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <comment>enemy preparing to attack</comment>
+                                                <event-block sid="393965179442691">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="186749818388839" type="System">
+                                                            <param id="0" name="First value">find(PathFinding.state, &quot;start&quot;)</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">-1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="837626192836861" type="PathFinding">
+                                                            <param id="0" name="Animation">&quot;Attacking&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="724645748000994" type="PathFinding">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Value">replace(PathFinding.state, &quot;start-&quot;, &quot;&quot;)</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="798631149625346" type="PathFinding">
+                                                            <param id="0" name="Object">attackDirection</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <comment>up down left right attack</comment>
+                                                        <event-block sid="701219502185235">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="636109131581273" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;up&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="366739522355937" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X</param>
+                                                                    <param id="1" name="Y">PathFinding.Y - STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="825255542995050">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="721924748087993" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;down&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="417814682666387" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X</param>
+                                                                    <param id="1" name="Y">PathFinding.Y + STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="270134035579865">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="614867871500254" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;left&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="355953734066066" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X - STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="438403385207967">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="239852997617992" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;right&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="905215759588508" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X + STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment>diagonal attack</comment>
+                                                        <event-block sid="794408129282466">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="370743232888601" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;upleft&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="493626209779337" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X - STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y - STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="629320281282546">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="275738920198159" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;upright&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="766604444100637" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X + STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y - STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="653160877270436">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="280326835493988" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;downleft&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="266839681221558" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X - STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y + STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="547712177337783">
+                                                            <conditions>
+                                                                <condition id="-8" name="Compare two values" sid="386509172465842" type="System">
+                                                                    <param id="0" name="First value">find(PathFinding.state, &quot;downright&quot;)</param>
+                                                                    <param id="1" name="Comparison">1</param>
+                                                                    <param id="2" name="Second value">-1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-3" name="Set position" sid="769995870579516" type="attackDirection">
+                                                                    <param id="0" name="X">PathFinding.X + STEP</param>
+                                                                    <param id="1" name="Y">PathFinding.Y + STEP</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>enemy attacking</comment>
+                                                <event-block sid="783061254893374">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="320625555092439" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Spawn another object" sid="778280754076757" type="attackDirection">
+                                                            <param id="0" name="Object">flame_spr</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="236188047372524" type="attackDirection" />
+                                                        <action id="-10" name="Set value" sid="666417461042856" type="PathFinding">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Value">&quot;rest&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="166897500561841" type="PathFinding">
+                                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                         <comment>left right movement</comment>
                                         <event-block sid="623666684192612">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="982644748897544" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="982644748897544" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;up&quot;</param>
                                                 </condition>
@@ -110,8 +303,8 @@
                                         </event-block>
                                         <event-block sid="360061843653933">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="728203539059121" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="630053511828638" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;down&quot;</param>
                                                 </condition>
@@ -124,8 +317,8 @@
                                         </event-block>
                                         <event-block sid="272999746006575">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="344169893695631" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="913415777965861" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;left&quot;</param>
                                                 </condition>
@@ -138,8 +331,8 @@
                                         </event-block>
                                         <event-block sid="698039018040906">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="982980310027757" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="887543751040074" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;right&quot;</param>
                                                 </condition>
@@ -153,8 +346,8 @@
                                         <comment>diagonal</comment>
                                         <event-block sid="938726315233190">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="106510158349046" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="770243779933359" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;downright&quot;</param>
                                                 </condition>
@@ -170,8 +363,8 @@
                                         </event-block>
                                         <event-block sid="956185377084005">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="249264189657533" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="664255496991527" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;downleft&quot;</param>
                                                 </condition>
@@ -187,8 +380,8 @@
                                         </event-block>
                                         <event-block sid="954559454794418">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="679291147245202" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="140778708152095" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;upright&quot;</param>
                                                 </condition>
@@ -204,8 +397,8 @@
                                         </event-block>
                                         <event-block sid="128289499943919">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="309216484373437" type="System">
-                                                    <param id="0" name="Variable">action</param>
+                                                <condition id="-7" name="Compare instance variable" sid="570644692513464" type="PathFinding">
+                                                    <param id="0" name="Instance variable">state</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">&quot;upleft&quot;</param>
                                                 </condition>
@@ -264,7 +457,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="707147648874218" type="System">
                                             <param id="0" name="Variable">result</param>
-                                            <param id="1" name="Value">&quot;attack-&quot;</param>
+                                            <param id="1" name="Value">&quot;start-attack-&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -513,6 +706,37 @@
                             </conditions>
                             <actions />
                             <sub-events>
+                                <comment>turn based wait thing for ai moving</comment>
+                                <event-block sid="403358942395950">
+                                    <conditions>
+                                        <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="624569238084121">
+                                            <conditions>
+                                                <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
+                                                    <param id="0" name="Key">87</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="836486615615804" type="Keyboard">
+                                                    <param id="0" name="Key">65</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="917815644208812" type="Keyboard">
+                                                    <param id="0" name="Key">83</param>
+                                                </condition>
+                                                <condition id="0" name="On key pressed" sid="816384765864115" type="Keyboard">
+                                                    <param id="0" name="Key">68</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="797632196327648" type="Function">
+                                                    <param id="0" name="Name">&quot;ai.move&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="688028443609839">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="497982873268297" type="Keyboard">
@@ -560,46 +784,6 @@
                                             <param id="0" name="X">player.X+STEP</param>
                                         </action>
                                     </actions>
-                                </event-block>
-                                <comment>turn based wait thing for ai moving</comment>
-                                <event-block sid="403358942395950">
-                                    <conditions>
-                                        <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block any="1" sid="624569238084121">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
-                                                    <param id="0" name="Key">87</param>
-                                                </condition>
-                                                <condition id="0" name="On key pressed" sid="836486615615804" type="Keyboard">
-                                                    <param id="0" name="Key">65</param>
-                                                </condition>
-                                                <condition id="0" name="On key pressed" sid="917815644208812" type="Keyboard">
-                                                    <param id="0" name="Key">83</param>
-                                                </condition>
-                                                <condition id="0" name="On key pressed" sid="816384765864115" type="Keyboard">
-                                                    <param id="0" name="Key">68</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-14" name="Toggle boolean" sid="588675085656285" type="player">
-                                                    <param id="0" name="Instance variable">busy</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="207384912799674" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
-                                                </action>
-                                                <action id="0" name="Call function" sid="797632196327648" type="Function">
-                                                    <param id="0" name="Name">&quot;ai.move&quot;</param>
-                                                    <param id="1" name="Parameter {n}"></param>
-                                                </action>
-                                                <action id="-14" name="Toggle boolean" sid="928727293734400" type="player">
-                                                    <param id="0" name="Instance variable">busy</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
