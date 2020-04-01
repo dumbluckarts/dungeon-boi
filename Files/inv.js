@@ -45,14 +45,10 @@ var inventory = (function() {
 	// remove item by amount
 	self.removeItem = function(item, amount) {
 		if (self.exists(item)) {
-			data[item] -= amount
-
-			// delete item if amount under 1
-			if (data[item] < 1) delete data[item]
+			data[item] -= amount			
 		}
-		else {
-			delete data[item]
-		}
+		// delete item if amount under 1
+		if (data[item] < 1) delete data[item]
 	}
 
 	// delete an item
