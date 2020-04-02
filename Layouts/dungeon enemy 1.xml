@@ -324,7 +324,7 @@
             <effects />
         </layer>
         <layer name="Colliders" sid="650185201157841">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
@@ -339,7 +339,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="collider_door" uid="44">
+                <instance type="dungeon_door_collider" uid="44">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -361,7 +361,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="collider_door" uid="45">
+                <instance type="dungeon_door_collider" uid="45">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

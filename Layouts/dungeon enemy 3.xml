@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>dungeon chest 2</name>
-    <sid>107179035519432</sid>
+    <name>dungeon enemy 3</name>
+    <sid>539720498560589</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
         <width>2560</width>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="904461219238640">
+        <layer name="Layer 0" sid="769204608775853">
             <initially-visible>1</initially-visible>
             <background-color>0,0,0</background-color>
             <transparent>0</transparent>
@@ -29,7 +29,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="stars" uid="31">
+                <instance type="stars" uid="161">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -51,7 +51,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ground" uid="32">
+                <instance type="ground" uid="162">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -71,7 +71,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spikey" uid="38">
+                <instance type="spikey" uid="163">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -91,7 +91,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spr_door" uid="43">
+                <instance type="spr_door" uid="164">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -113,33 +113,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spr_chest" uid="47">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <empty>false</empty>
-                        <loot>fireball=4,nelson=3</loot>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>2304</x>
-                        <y>1152</y>
-                        <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="grass_stuff" uid="48">
+                <instance type="grass_stuff" uid="165">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -161,7 +135,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="grass_stuff" uid="49">
+                <instance type="grass_stuff" uid="166">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -183,7 +157,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="grass_stuff" uid="50">
+                <instance type="grass_stuff" uid="167">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -205,7 +179,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="grass_stuff" uid="51">
+                <instance type="grass_stuff" uid="168">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -227,7 +201,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="grass_stuff" uid="52">
+                <instance type="grass_stuff" uid="169">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -249,7 +223,34 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spr_door2" uid="55">
+                <instance type="baddie" uid="170">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <empty>false</empty>
+                        <loot>fireball=4,nelson=3</loot>
+                        <state></state>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2304</x>
+                        <y>384</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door2" uid="171">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -259,10 +260,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
+                        <x>2432</x>
                         <y>640</y>
                         <z>0</z>
-                        <width>-256</width>
+                        <width>250</width>
                         <height>250</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -271,7 +272,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="arrow" uid="56">
+                <instance type="arrow" uid="172">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -293,7 +294,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="player" uid="57">
+                <instance type="player" uid="173">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -319,10 +320,37 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="baddie" uid="174">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <empty>false</empty>
+                        <loot>fireball=4,nelson=3</loot>
+                        <state></state>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>256</x>
+                        <y>1152</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
-        <layer name="Colliders" sid="981705998581671">
+        <layer name="Colliders" sid="930736648594209">
             <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -338,7 +366,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="dungeon_door_collider" uid="58">
+                <instance type="dungeon_door_collider" uid="175">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -360,7 +388,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="60">
+                <instance type="dungeon_door_collider" uid="176">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -370,7 +398,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
+                        <x>2432</x>
                         <y>768</y>
                         <z>0</z>
                         <width>250</width>
@@ -385,7 +413,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="HUD" sid="663215124844749">
+        <layer name="HUD" sid="965747419366607">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -401,7 +429,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="your_turn" uid="61">
+                <instance type="your_turn" uid="177">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -426,7 +454,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="UI" sid="276396352954801">
+        <layer name="UI" sid="980191185188605">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
