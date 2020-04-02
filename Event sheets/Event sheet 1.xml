@@ -9,6 +9,35 @@
             </conditions>
             <actions />
             <sub-events>
+                <comment>set generator settings</comment>
+                <event-block sid="365501367047691">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="915411674375379" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Call function" sid="331262826247130" type="JS">
+                            <param id="0" name="Expression">&quot;gen.createLevel&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;dungeon&quot;{###}&quot;default=5&quot;{###}&quot;enemy=2&quot;{###}&quot;chest=2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>test going to random layouts by tapping E on doors</comment>
+                <event-block sid="715458647355391">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="256807376235457" type="Keyboard">
+                            <param id="0" name="Key">69</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="506219011504200" type="player">
+                            <param id="0" name="Object">collider_door</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="624793972306122" type="System">
+                            <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>UI card stuff</comment>
                 <event-block sid="862845253263730">
                     <conditions>
                         <condition id="7" name="Cursor is over object" sid="677851697586875" type="Mouse">

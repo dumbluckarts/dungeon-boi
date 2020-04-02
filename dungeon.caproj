@@ -201,6 +201,30 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="spr_door2" sid="208357230807087">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="755784544405915" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="arrow" sid="585032441943931">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="307446900921521" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="collider_door" sid="479634786425615">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="319623972857644" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Cards" plugin-id="Sprite" sid="481501630122113">
@@ -232,7 +256,17 @@
         </family>
     </families>
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout-folder name="gen">
+            <layout>dungeon 1.xml</layout>
+            <layout>dungeon 2.xml</layout>
+            <layout>dungeon 3.xml</layout>
+            <layout>dungeon 4.xml</layout>
+            <layout>dungeon 5.xml</layout>
+            <layout>dungeon enemy 1.xml</layout>
+            <layout>dungeon enemy 2.xml</layout>
+            <layout>dungeon chest 1.xml</layout>
+            <layout>dungeon chest 2.xml</layout>
+        </layout-folder>
         <layout>Instance Layout.xml</layout>
     </layout-folder>
     <event-folder>
@@ -244,7 +278,7 @@
         <global-instance type="Function" uid="8" />
         <global-instance type="JS" uid="9">
             <properties>
-                <script-files>inv.js</script-files>
+                <script-files>inv.js;gen.js</script-files>
             </properties>
         </global-instance>
     </global-instances>
@@ -260,5 +294,6 @@
             <file name="loading-logo.png" />
         </file-folder>
         <file name="inv.js" />
+        <file name="gen.js" />
     </files-folder>
 </c2project>
