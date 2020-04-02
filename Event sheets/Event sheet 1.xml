@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="activeCard" sid="419470342453707" static="0" type="text"></variable>
         <event-block sid="224934108518189">
             <conditions>
                 <condition id="3" name="All scripts loaded" sid="754010713713899" type="JS" />
@@ -16,7 +17,7 @@
                     </conditions>
                     <actions>
                         <action id="6" name="Call function" sid="331262826247130" type="JS">
-                            <param id="0" name="Expression">&quot;gen.createLevel&quot;</param>
+                            <param id="0" name="Expression">&quot;gen.create&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;dungeon&quot;{###}&quot;default=5&quot;{###}&quot;enemy=2&quot;{###}&quot;chest=2&quot;</param>
                         </action>
                     </actions>
@@ -92,6 +93,27 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="317872780497150">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="682889022128252" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Cards</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="500002760650858" type="System">
+                            <param id="0" name="Variable">activeCard</param>
+                            <param id="1" name="Value">Cards.name</param>
+                        </action>
+                        <action id="0" name="Play" sid="496217079308576" type="Audio">
+                            <param id="0" name="Audio file">deckSound1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;deck&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-group description="" sid="678227844364010" title="AI">
                     <sub-events>
@@ -878,11 +900,79 @@
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="687204586971677">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Play" sid="186233546548042" type="Audio">
+                                                    <param id="0" name="Audio file">lootGet1</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;loot&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-block>
+        <event-block sid="356992881870320">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="289620325874406" type="flame_spr" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="271217295059194">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="179504091096227" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="873121195957527" type="Audio">
+                            <param id="0" name="Audio file">fire1</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;fire&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="116953690485964">
+            <conditions>
+                <condition id="-22" name="Else" sid="104264624084176" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="874681039355019" type="Audio">
+                    <param id="0" name="Tag">&quot;fire&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="992088422561711">
+            <conditions>
+                <condition id="-7" name="Compare time" sid="105986681377453" type="System">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Time (seconds)">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="131100242335884">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="396697986824407" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="631873138957737" type="Audio">
+                            <param id="0" name="Audio file">tempSong</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
     </events>

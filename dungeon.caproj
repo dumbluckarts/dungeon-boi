@@ -10,6 +10,7 @@
     <unique-id>i1mqfqomzbzl</unique-id>
     <saved-with-version>27700</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -225,6 +226,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="738725208575279">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Cards" plugin-id="Sprite" sid="481501630122113">
@@ -281,9 +285,45 @@
                 <script-files>inv.js;gen.js</script-files>
             </properties>
         </global-instance>
+        <global-instance type="Audio" uid="141">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
-    <music-folder />
+    <sounds-folder>
+        <sound-folder name="UI">
+            <file name="drank1.m4a" />
+            <file name="drank1.ogg" />
+            <file name="lootGet1.m4a" />
+            <file name="lootGet1.ogg" />
+            <file name="potionGet1.m4a" />
+            <file name="potionGet1.ogg" />
+            <file name="potionGet2.m4a" />
+            <file name="potionGet2.ogg" />
+            <file name="deckSound1.m4a" />
+            <file name="deckSound1.ogg" />
+        </sound-folder>
+        <sound-folder name="Player" />
+        <sound-folder name="Enemies" />
+        <sound-folder name="Environment">
+            <file name="fire1.m4a" />
+            <file name="fire1.ogg" />
+        </sound-folder>
+    </sounds-folder>
+    <music-folder>
+        <file name="tempSong.m4a" />
+        <file name="tempSong.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />
