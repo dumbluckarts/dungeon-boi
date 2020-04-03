@@ -24,6 +24,13 @@
                             <param id="0" name="Expression">&quot;gen.create&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;catacombs&quot;{###}&quot;default=3&quot;{###}&quot;enemy=2&quot;{###}&quot;chest=1&quot;</param>
                         </action>
+                        <action id="-24" name="Move to top" sid="769529029722682" type="player" />
+                        <action id="-3" name="Create object" sid="578852795739112" type="System">
+                            <param id="0" name="Object to create">player</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">arrow.X</param>
+                            <param id="3" name="Y">arrow.Y</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="131164295376343">
@@ -58,6 +65,16 @@
                         <action id="-25" name="Go to layout (by name)" sid="624793972306122" type="System">
                             <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
                         </action>
+                        <action id="0" name="Play" sid="134292370297072" type="Audio">
+                            <param id="0" name="Audio file">door</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;door&quot;</param>
+                        </action>
+                        <action id="5" name="Set playback rate" sid="293544809041579" type="Audio">
+                            <param id="0" name="Tag">&quot;door&quot;</param>
+                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="433985737645517">
@@ -72,6 +89,16 @@
                     <actions>
                         <action id="-25" name="Go to layout (by name)" sid="548939824210561" type="System">
                             <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;catacombs&apos;)&quot;)</param>
+                        </action>
+                        <action id="0" name="Play" sid="914136870981804" type="Audio">
+                            <param id="0" name="Audio file">door</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;door&quot;</param>
+                        </action>
+                        <action id="5" name="Set playback rate" sid="452360177474251" type="Audio">
+                            <param id="0" name="Tag">&quot;door&quot;</param>
+                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -152,9 +179,75 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>destroy slash when finished</comment>
+                <event-block sid="281700014652823">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="367445655079608" type="flame_spr2">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="192939967658131" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="882652672473377">
+                            <conditions>
+                                <condition id="-10" name="For" sid="867935383866260" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="712594908788489" type="System">
+                                    <param id="0" name="Seconds">loopindex/10</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="312823918334176" type="flame_spr2">
+                                    <param id="0" name="Opacity">flame_spr2.Opacity - 10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="990641577521697">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="610098767785705" type="flame_spr2">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="804567586248675" type="flame_spr2" />
+                    </actions>
+                </event-block>
+                <event-block sid="511828772950622">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="906131750189514" type="flame_spr2" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="315637256010219" type="Audio">
+                            <param id="0" name="Audio file">slash</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;slash&quot;</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="600544493652459" type="player">
+                            <param id="0" name="Magnitude">20</param>
+                            <param id="1" name="Duration">0.4</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                        <action id="5" name="Set playback rate" sid="311389101808802" type="Audio">
+                            <param id="0" name="Tag">&quot;slash&quot;</param>
+                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-group description="" sid="678227844364010" title="AI">
                     <sub-events>
                         <variable constant="1" name="STEP" sid="832061240075697" static="1" type="number">256</variable>
+                        <variable constant="1" name="MOVE_DELAY" sid="313784645611616" static="1" type="number">0.5</variable>
                         <event-block sid="738363846211525">
                             <conditions>
                                 <condition id="0" name="On function" sid="484225764240183" type="Function">
@@ -165,8 +258,10 @@
                             <sub-events>
                                 <event-block sid="961793140365363">
                                     <conditions>
-                                        <condition id="-11" name="For Each" sid="932228851972448" type="System">
+                                        <condition id="-24" name="For Each (ordered)" sid="932228851972448" type="System">
                                             <param id="0" name="Object">PathFinding</param>
+                                            <param id="1" name="Expression">PathFinding.X</param>
+                                            <param id="2" name="Order">0</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -357,7 +452,7 @@
                                                     </conditions>
                                                     <actions>
                                                         <action id="0" name="Spawn another object" sid="778280754076757" type="attackDirection">
-                                                            <param id="0" name="Object">flame_spr</param>
+                                                            <param id="0" name="Object">flame_spr2</param>
                                                             <param id="1" name="Layer">&quot;Layer 0&quot;</param>
                                                             <param id="2" name="Image point">0</param>
                                                         </action>
@@ -497,6 +592,21 @@
                                                 </action>
                                                 <action id="-2" name="Set Y" sid="818438217934013" type="PathFinding">
                                                     <param id="0" name="Y">Self.Y - STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="277346289791533">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Play" sid="654137380337312" type="Audio">
+                                                    <param id="0" name="Audio file">oh</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;oh&quot;</param>
+                                                </action>
+                                                <action id="5" name="Set playback rate" sid="447543086855428" type="Audio">
+                                                    <param id="0" name="Tag">&quot;oh&quot;</param>
+                                                    <param id="1" name="Playback rate">random(0.5, 0.9)</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -795,26 +905,88 @@
                             <actions />
                             <sub-events>
                                 <comment>turn based wait thing for ai moving</comment>
-                                <event-block sid="403358942395950">
+                                <variable constant="0" name="oldX" sid="398740723846517" static="1" type="number">0</variable>
+                                <variable constant="0" name="oldY" sid="859989881477309" static="1" type="number">0</variable>
+                                <event-block any="1" sid="624569238084121">
                                     <conditions>
-                                        <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
+                                        <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                        <condition id="0" name="On key pressed" sid="836486615615804" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                        <condition id="0" name="On key pressed" sid="917815644208812" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                        <condition id="0" name="On key pressed" sid="816384765864115" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="104014563332752" type="System">
+                                            <param id="0" name="Variable">oldX</param>
+                                            <param id="1" name="Value">player.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="736163911706957" type="System">
+                                            <param id="0" name="Variable">oldY</param>
+                                            <param id="1" name="Value">player.Y</param>
+                                        </action>
+                                    </actions>
                                     <sub-events>
-                                        <event-block any="1" sid="624569238084121">
+                                        <event-block sid="848448711323216">
                                             <conditions>
-                                                <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
+                                                <condition id="2" name="Key is down" sid="181077207620305" type="Keyboard">
                                                     <param id="0" name="Key">87</param>
                                                 </condition>
-                                                <condition id="0" name="On key pressed" sid="836486615615804" type="Keyboard">
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="904215525193627" type="player">
+                                                    <param id="0" name="Y">player.Y-STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="600102668326890">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="528841253937445" type="System" />
+                                                <condition id="2" name="Key is down" sid="990895890393406" type="Keyboard">
                                                     <param id="0" name="Key">65</param>
                                                 </condition>
-                                                <condition id="0" name="On key pressed" sid="917815644208812" type="Keyboard">
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="382204710041748" type="player">
+                                                    <param id="0" name="X">player.X-STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="189713627478688">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="295054298286830" type="System" />
+                                                <condition id="2" name="Key is down" sid="899077746355038" type="Keyboard">
                                                     <param id="0" name="Key">83</param>
                                                 </condition>
-                                                <condition id="0" name="On key pressed" sid="816384765864115" type="Keyboard">
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="569928327906774" type="player">
+                                                    <param id="0" name="Y">player.Y+STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="167897375867616">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="785613891680384" type="System" />
+                                                <condition id="2" name="Key is down" sid="257567556330642" type="Keyboard">
                                                     <param id="0" name="Key">68</param>
                                                 </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-1" name="Set X" sid="428712805886893" type="player">
+                                                    <param id="0" name="X">player.X+STEP</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="403358942395950">
+                                            <conditions>
+                                                <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Call function" sid="797632196327648" type="Function">
@@ -823,55 +995,20 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <event-block sid="564325251066063">
+                                            <conditions>
+                                                <condition id="1" name="Is overlapping another object" sid="723672303305178" type="player">
+                                                    <param id="0" name="Object">solid_collider</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Set position" sid="126115827655223" type="player">
+                                                    <param id="0" name="X">oldX</param>
+                                                    <param id="1" name="Y">oldY</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="688028443609839">
-                                    <conditions>
-                                        <condition id="0" name="On key pressed" sid="497982873268297" type="Keyboard">
-                                            <param id="0" name="Key">87</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-2" name="Set Y" sid="904215525193627" type="player">
-                                            <param id="0" name="Y">player.Y-STEP</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="773629961553574">
-                                    <conditions>
-                                        <condition id="0" name="On key pressed" sid="274283365176876" type="Keyboard">
-                                            <param id="0" name="Key">65</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="382204710041748" type="player">
-                                            <param id="0" name="X">player.X-STEP</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="400330378666430">
-                                    <conditions>
-                                        <condition id="0" name="On key pressed" sid="426140186591646" type="Keyboard">
-                                            <param id="0" name="Key">83</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-2" name="Set Y" sid="569928327906774" type="player">
-                                            <param id="0" name="Y">player.Y+STEP</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="923812219897448">
-                                    <conditions>
-                                        <condition id="0" name="On key pressed" sid="490912098116846" type="Keyboard">
-                                            <param id="0" name="Key">68</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-1" name="Set X" sid="428712805886893" type="player">
-                                            <param id="0" name="X">player.X+STEP</param>
-                                        </action>
-                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
