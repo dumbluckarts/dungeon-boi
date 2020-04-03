@@ -374,6 +374,7 @@
                 <layout>catacombs chest 1.xml</layout>
             </layout-folder>
         </layout-folder>
+        <layout>Interface.xml</layout>
         <layout>Instance Layout.xml</layout>
     </layout-folder>
     <event-folder>
