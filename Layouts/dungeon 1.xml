@@ -2,7 +2,7 @@
 <c2layout>
     <name>dungeon 1</name>
     <sid>534291694170880</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet># Common</event-sheet>
     <size>
         <width>2560</width>
         <height>1536</height>
@@ -667,13 +667,16 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="dungeon_door_collider" uid="25">
+                <instance type="door_collider" uid="25">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -689,13 +692,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="26">
+                <instance type="door_collider" uid="26">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -711,13 +717,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="27">
+                <instance type="door_collider" uid="27">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -813,13 +822,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="21">
+                <instance type="door_collider" uid="21">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -835,13 +847,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="61">
+                <instance type="door_collider" uid="61">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -857,13 +872,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="67">
+                <instance type="door_collider" uid="67">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -879,13 +897,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="69">
+                <instance type="door_collider" uid="69">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -901,13 +922,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dungeon_door_collider" uid="75">
+                <instance type="door_collider" uid="75">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <layout>dungeon</layout>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

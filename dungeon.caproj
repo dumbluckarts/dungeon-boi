@@ -223,19 +223,11 @@
             </object-type>
         </object-folder>
         <object-folder name="colliders">
-            <object-type name="catacombs_door_collider" sid="358855529567618">
+            <object-type name="door_collider" sid="479634786425615">
                 <plugin id="Sprite" />
                 <instance-variables>
-                    <instance-variable name="level" sid="432979590946110" type="string" />
+                    <instance-variable name="layout" sid="368525287758565" type="string" />
                 </instance-variables>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="554463245414374" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="dungeon_door_collider" sid="479634786425615">
-                <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="319623972857644" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -430,7 +422,11 @@
         <layout>Loading Screen.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet># Common.xml</event-sheet>
+        <event-sheet># Generation.xml</event-sheet>
+        <event-sheet># Player.xml</event-sheet>
+        <event-sheet># Real People.xml</event-sheet>
+        <event-sheet># Interface.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="2" />

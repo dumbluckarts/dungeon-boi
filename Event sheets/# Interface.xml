@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># Interface</name>
+    <events>
+        <event-group description="" sid="602552848419447" title="Interface">
+            <sub-events>
+                <event-block sid="520184064259715">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="878037272954667" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Cards</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="803374319011038" type="System">
+                            <param id="0" name="Variable">activeCard</param>
+                            <param id="1" name="Value">Cards.name</param>
+                        </action>
+                        <action id="0" name="Play" sid="810007523573860" type="Audio">
+                            <param id="0" name="Audio file">deckSound1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;deck&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>UI card stuff</comment>
+                <event-block sid="408268847980883">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="885912577687550" type="Mouse">
+                            <param id="0" name="Object">Cards</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="748923879537830" type="Cards">
+                            <param id="0" name="Animation">&quot;mouseOver&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="328849688274054">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="176269745691508" type="Mouse">
+                            <param id="0" name="Object">Cards</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="300809558472912" type="Cards">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Hide and show UI</comment>
+                <event-block sid="802730685005391">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="187993778536661" type="Keyboard">
+                            <param id="0" name="Key">81</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="443202201658036">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="109614132681239" type="System">
+                                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="921906746731362" type="System">
+                                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="258570509717613" type="player">
+                                    <param id="0" name="Instance variable">busy</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="975096787422731" type="cursor" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="136067359314057">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="999432128416261" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="816323681393008" type="System">
+                                    <param id="0" name="Layer">&quot;UI&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="800921562584681" type="player">
+                                    <param id="0" name="Instance variable">busy</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="887705814968778" type="player">
+                                    <param id="0" name="Object">cursor</param>
+                                    <param id="1" name="Layer">&quot;UI&quot;</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>ur turn HUD thing</comment>
+                <event-block sid="134572036648971">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="362898616150151" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="190062716275109">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="350114859906114" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

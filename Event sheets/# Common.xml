@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># Common</name>
+    <events>
+        <include># Player</include>
+        <include># Interface</include>
+        <include># Generation</include>
+        <include># Real People</include>
+        <event-block sid="546688573281992">
+            <conditions>
+                <condition id="3" name="All scripts loaded" sid="899972672442665" type="JS" />
+                <condition id="-4" name="Trigger once while true" sid="558339466051152" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Call function" sid="667982979599250" type="JS">
+                    <param id="0" name="Expression">&quot;gen&quot;</param>
+                    <param id="1" name="Parameter {n}">&quot;dungeon&quot;{###}2</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>play music</comment>
+        <event-block sid="131164295376343">
+            <conditions>
+                <condition id="5" inverted="1" name="Is tag playing" sid="876662543084831" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="736352665881412" type="Audio">
+                    <param id="0" name="Audio file">tempSong</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action disabled="1" id="-25" name="Go to layout (by name)" sid="705321196825858" type="System">
+                    <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="918296554296439" title="Camera">
+            <sub-events>
+                <event-block sid="858913440476167">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="488073330303599" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="855378695097128" type="System">
+                            <param id="0" name="Seconds">0.0001</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="710448210580920" type="System">
+                            <param id="0" name="Object to create">camera</param>
+                            <param id="1" name="Layer">&quot;Colliders&quot;</param>
+                            <param id="2" name="X">player.X</param>
+                            <param id="3" name="Y">player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="1" name="CAM_SPEED" sid="960753553062681" static="1" type="number">3</variable>
+                <event-block sid="735387870424819">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Set position" sid="619504477218794" type="camera">
+                            <param id="0" name="X">lerp(Self.X, player.X, CAM_SPEED*dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, player.Y, CAM_SPEED*dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="378854519229160" title="Chest">
+            <sub-events>
+                <event-block sid="342324836275207">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="582754747729678" type="spr_chest">
+                            <param id="0" name="Instance variable">empty</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="896543920642775">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="619089835847559" type="Mouse">
+                                    <param id="0" name="Object">spr_chest</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="278295513613728" type="spr_chest">
+                                    <param id="0" name="Animation">&quot;Hover&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="831820074011063">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="410272170784953" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="557935472589185" type="spr_chest">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="416928585001142">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="695005672913024" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">spr_chest</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="757501998884701" type="spr_chest">
+                                    <param id="0" name="Instance variable">empty</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="281182483749680" type="spr_chest">
+                                    <param id="0" name="Animation">&quot;Open&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="6" name="Call function" sid="278682696122550" type="JS">
+                                    <param id="0" name="Expression">&quot;inv.addItems&quot;</param>
+                                    <param id="1" name="Parameter {n}">spr_chest.loot</param>
+                                </action>
+                                <action id="6" name="Call function" sid="117343679550656" type="JS">
+                                    <param id="0" name="Expression">&quot;inv.print&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="687204586971677">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Play" sid="186233546548042" type="Audio">
+                                            <param id="0" name="Audio file">lootGet1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">10</param>
+                                            <param id="1" name="Tag (optional)">&quot;loot&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="818649156212513" title="Cool Stuff">
+            <sub-events>
+                <comment>flame sound</comment>
+                <event-block sid="356992881870320">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="289620325874406" type="flame_spr" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="271217295059194">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="179504091096227" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="873121195957527" type="Audio">
+                                    <param id="0" name="Audio file">fire1</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;fire&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="116953690485964">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="104264624084176" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="874681039355019" type="Audio">
+                            <param id="0" name="Tag">&quot;fire&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>destroy slash when finished</comment>
+                <event-block sid="281700014652823">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="367445655079608" type="flame_spr2">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="192939967658131" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="882652672473377">
+                            <conditions>
+                                <condition id="-10" name="For" sid="867935383866260" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="712594908788489" type="System">
+                                    <param id="0" name="Seconds">loopindex/10</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="312823918334176" type="flame_spr2">
+                                    <param id="0" name="Opacity">flame_spr2.Opacity - 10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="990641577521697">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="610098767785705" type="flame_spr2">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="804567586248675" type="flame_spr2" />
+                    </actions>
+                </event-block>
+                <event-block sid="511828772950622">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="906131750189514" type="flame_spr2" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="315637256010219" type="Audio">
+                            <param id="0" name="Audio file">slash</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;slash&quot;</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="600544493652459" type="camera">
+                            <param id="0" name="Magnitude">30</param>
+                            <param id="1" name="Duration">0.4</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                        <action id="5" name="Set playback rate" sid="311389101808802" type="Audio">
+                            <param id="0" name="Tag">&quot;slash&quot;</param>
+                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
