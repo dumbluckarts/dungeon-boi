@@ -71,10 +71,12 @@ var generate = (function() {
 		// layout genre will appear.
 		else {
 			level.rates[genre] = RATES[genre.toUpperCase()]
-			genre += " "
 		}
 
-		result += `${genre}${num}`
+		result += `${num}`
+
+		if (genre != "")
+			result += ` ${genre}`
 
 		self.last_level = level.name
 		self.last_num = num

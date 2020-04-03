@@ -5,7 +5,7 @@
     <event-sheet>Event sheet 1</event-sheet>
     <size>
         <width>2560</width>
-        <height>1440</height>
+        <height>1536</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -43,7 +43,7 @@
                         <y>0</y>
                         <z>0</z>
                         <width>2560</width>
-                        <height>1440</height>
+                        <height>1536</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -105,10 +105,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1152</x>
-                        <y>6</y>
+                        <y>0</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
+                        <width>256</width>
+                        <height>256</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -116,7 +116,36 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spr_door2" uid="21">
+                <instance type="Generator" uid="33">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <decal_density>4</decal_density>
+                        <door_density>2</door_density>
+                        <enemy_density>1</enemy_density>
+                        <chest_density>1</chest_density>
+                        <decal_layer>Layer 0</decal_layer>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-256</x>
+                        <y>-256</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="51">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -126,19 +155,19 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2432</x>
-                        <y>640</y>
+                        <x>1408</x>
+                        <y>1536</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
+                        <width>256</width>
+                        <height>256</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                        <angle>0</angle>
+                        <angle>3.141592741</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spr_door2" uid="23">
+                <instance type="spr_door" uid="23">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -148,14 +177,278 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>128</x>
-                        <y>640</y>
+                        <x>-128</x>
+                        <y>1024</y>
                         <z>0</z>
-                        <width>-256</width>
-                        <height>250</height>
+                        <width>256</width>
+                        <height>256</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>-1.57079649</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="52">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2688</x>
+                        <y>512</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>1.570796371</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="57">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>384</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="66">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1664</x>
+                        <y>0</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="68">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2176</x>
+                        <y>1536</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>3.141592741</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spr_door" uid="70">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>896</x>
+                        <y>1536</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>3.141592741</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_enemy" uid="93">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1280</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_enemy" uid="95">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>640</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_enemy" uid="96">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1920</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_chest" uid="97">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1664</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_chest" uid="98">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>896</x>
+                        <y>768</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_chest" uid="99">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>256</x>
+                        <y>384</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_chest" uid="103">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2304</x>
+                        <y>1152</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -179,7 +472,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="arrow" uid="24">
+                <instance type="spawn_player" uid="24">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -201,25 +494,161 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="spawn_player" uid="79">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>768</x>
+                        <y>1152</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="80">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2048</x>
+                        <y>1152</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="81">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1792</x>
+                        <y>384</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>3.141592741</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="82">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1280</x>
+                        <y>384</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>3.141592741</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="83">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>512</x>
+                        <y>384</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>3.141592741</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="84">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2304</x>
+                        <y>640</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>-1.57079649</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spawn_player" uid="89">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>256</x>
+                        <y>896</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>1.570796371</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
-            <effects />
-        </layer>
-        <layer name="Decals" sid="467004390824664">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>1</x>
-                <y>1</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>0</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances />
             <effects />
         </layer>
         <layer name="Colliders" sid="905137490724348">
@@ -271,7 +700,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>2432</x>
-                        <y>768</y>
+                        <y>640</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -293,7 +722,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>128</x>
-                        <y>768</y>
+                        <y>896</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -380,6 +809,116 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dungeon_door_collider" uid="21">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1280</x>
+                        <y>1280</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dungeon_door_collider" uid="61">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>512</x>
+                        <y>256</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dungeon_door_collider" uid="67">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1792</x>
+                        <y>256</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dungeon_door_collider" uid="69">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2048</x>
+                        <y>1280</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dungeon_door_collider" uid="75">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>768</x>
+                        <y>1280</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
