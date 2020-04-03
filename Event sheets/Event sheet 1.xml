@@ -4,6 +4,7 @@
     <name>Event sheet 1</name>
     <events>
         <variable constant="0" name="activeCard" sid="419470342453707" static="0" type="text"></variable>
+        <variable constant="0" name="decals_loaded" sid="383275633853620" static="0" type="number">0</variable>
         <event-block sid="224934108518189">
             <conditions>
                 <condition id="3" name="All scripts loaded" sid="754010713713899" type="JS" />
@@ -24,15 +25,313 @@
                             <param id="0" name="Expression">&quot;gen.create&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;catacombs&quot;{###}&quot;default=3&quot;{###}&quot;enemy=2&quot;{###}&quot;chest=1&quot;</param>
                         </action>
-                        <action id="-24" name="Move to top" sid="769529029722682" type="player" />
-                        <action id="-3" name="Create object" sid="578852795739112" type="System">
-                            <param id="0" name="Object to create">player</param>
-                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
-                            <param id="2" name="X">arrow.X</param>
-                            <param id="3" name="Y">arrow.Y</param>
-                        </action>
                     </actions>
                 </event-block>
+                <event-group description="" sid="648524446193666" title="Decals">
+                    <sub-events>
+                        <event-block sid="434538059095317">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="725703007758705" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>spawn ground decals</comment>
+                                <event-block sid="341118362365086">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="820792835643224" type="System">
+                                            <param id="0" name="Object">Decals</param>
+                                        </condition>
+                                        <condition id="-16" name="Is on layer" sid="943556812165846" type="Decals">
+                                            <param id="0" name="Layer">&quot;Decals&quot;</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="785962467306355" type="Decals">
+                                            <param id="0" name="Instance variable">acceptable_layout</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">tokenat(LayoutName, 0, &quot; &quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="799214294656504">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="586974435475407" type="System">
+                                                    <param id="0" name="Name">&quot;&quot;</param>
+                                                    <param id="1" name="Start index">0</param>
+                                                    <param id="2" name="End index">random(Decals.acceptable_amount_min+1, Decals.acceptable_amount_max+1)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="380185931200757" type="System">
+                                                    <param id="0" name="Object to create">Decals</param>
+                                                    <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                                                    <param id="2" name="X">0</param>
+                                                    <param id="3" name="Y">0</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="787021826612488" type="Decals">
+                                                    <param id="0" name="Instance variable">scattered</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>filter ground decals</comment>
+                        <event-block sid="546180328243088">
+                            <conditions>
+                                <condition id="-18" name="On created" sid="346578684045738" type="Decals" />
+                                <condition id="-16" name="Is on layer" sid="496261411894987" type="Decals">
+                                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="559331323575421" type="Decals">
+                                    <param id="0" name="Instance variable">acceptable_layout</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">tokenat(LayoutName, 0, &quot; &quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="430631617500110" type="Decals" />
+                            </actions>
+                        </event-block>
+                        <comment>scatter ground decals</comment>
+                        <event-block sid="216563751737050">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="990854894893895" type="Decals">
+                                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="743194214459631" type="Decals">
+                                    <param id="0" name="Instance variable">scattered</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="minX" sid="891893130045040" static="0" type="number">0</variable>
+                                <variable constant="0" name="minY" sid="845551116741097" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxX" sid="736334264754183" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxY" sid="657308010808991" static="0" type="number">0</variable>
+                                <event-block sid="987485433076492">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="305504363823816" type="System">
+                                            <param id="0" name="Object">Ground</param>
+                                            <param id="1" name="Expression">Ground.acceptable_layout</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tokenat(LayoutName, 0, &quot; &quot;)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="266100898793436" type="System">
+                                            <param id="0" name="Variable">minX</param>
+                                            <param id="1" name="Value">Ground.X + 128</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="513815338931521" type="System">
+                                            <param id="0" name="Variable">minY</param>
+                                            <param id="1" name="Value">Ground.Y + 128</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="762424481978555" type="System">
+                                            <param id="0" name="Variable">maxX</param>
+                                            <param id="1" name="Value">Ground.Width - 128</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="304881290290622" type="System">
+                                            <param id="0" name="Variable">maxY</param>
+                                            <param id="1" name="Value">Ground.Height - 128</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="261693348262810" type="Decals">
+                                            <param id="0" name="X">random(minX, maxX)</param>
+                                            <param id="1" name="Y">random(minY, maxY)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>check if decal needs scattering</comment>
+                        <event-block sid="306244845716589">
+                            <conditions>
+                                <condition id="-16" name="Is on layer" sid="615842503012207" type="Decals">
+                                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="654118191606775" type="Decals">
+                                    <param id="0" name="Instance variable">acceptable_layout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">tokenat(LayoutName, 0, &quot; &quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="499485181949532">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="637551727946055" type="Decals">
+                                            <param id="0" name="Object">Decals</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="674650841904421" type="Decals">
+                                            <param id="0" name="Instance variable">scattered</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="650820267997258">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="398095373362234" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="332412327257075" type="Decals">
+                                            <param id="0" name="Instance variable">scattered</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="429329301850234">
+                            <conditions>
+                                <condition id="-3" name="On end of layout" sid="229855323322325" type="System" />
+                                <condition id="-16" name="Is on layer" sid="372876296157020" type="Decals">
+                                    <param id="0" name="Layer">&quot;Layer 0&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="340060763989232" type="Decals" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="436473307593951">
+                            <conditions>
+                                <condition id="0" name="On function" sid="162137014343070" type="Function">
+                                    <param id="0" name="Name">&quot;decals.loaded&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="count" sid="917828079718431" static="0" type="number">0</variable>
+                                <event-block sid="799076044917232">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="629928214344459" type="System">
+                                            <param id="0" name="Object">Decals</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="322588840388461">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="858932735853700" type="Decals">
+                                                    <param id="0" name="Instance variable">scattered</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="893733070867008" type="System">
+                                                    <param id="0" name="Variable">count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="596206901020176">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="603035914920334" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="645208632136154" type="System">
+                                                    <param id="0" name="Variable">count</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="405122457035949">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="444615034885803" type="System">
+                                            <param id="0" name="Variable">count</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">Decals.Count</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="924715003978858" type="System">
+                                            <param id="0" name="Variable">decals_loaded</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="297553407130643">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="233458527924966" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="416590560019065" type="System">
+                                            <param id="0" name="Variable">decals_loaded</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="489659406106437" title="Player">
+                    <sub-events>
+                        <event-block sid="637314894790235">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="486204364252750" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="478571925440861" type="System">
+                                    <param id="0" name="Object to create">player</param>
+                                    <param id="1" name="Layer">&quot;Entities&quot;</param>
+                                    <param id="2" name="X">arrow.X</param>
+                                    <param id="3" name="Y">arrow.Y</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="595339539340114" type="arrow" />
+                                <action id="-24" name="Move to top" sid="765572991108223" type="player" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="148253899526234" title="Loading">
+                    <sub-events>
+                        <event-block sid="477028729441035">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="241472207765390" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="149010715694941" type="System">
+                                    <param id="0" name="Layer">&quot;Loading&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="297457969023989">
+                            <conditions>
+                                <condition id="-9" name="Layer is visible" sid="740364390718404" type="System">
+                                    <param id="0" name="Layer">&quot;Loading&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="706359411197925" type="Function">
+                                    <param id="0" name="Name">&quot;decals.loaded&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="983550200854929">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="860018938684490" type="System">
+                                            <param id="0" name="Variable">decals_loaded</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="324365433580248" type="System">
+                                            <param id="0" name="Layer">&quot;Loading&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-block sid="131164295376343">
                     <conditions>
                         <condition id="5" inverted="1" name="Is tag playing" sid="876662543084831" type="Audio">

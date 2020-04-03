@@ -116,3 +116,30 @@ var generate = (function() {
 	return self;
 })();
 var gen = generate;
+
+var room = (() => {
+	var rooms = []
+	var rates = []
+
+	function Room(name, variations) {
+		var self = {}
+
+		self.name = name
+		self.layouts = {}
+
+		// Populate layouts object
+		for (var layout of variations.split(",")) {
+			var arr = layout.split("=")
+			var key = arr[0]
+			var val = parseInt(arr[1])
+
+			layouts[key] = val
+		}
+
+		return self
+	}
+
+	return {
+
+	}
+})();

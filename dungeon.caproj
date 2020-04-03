@@ -125,7 +125,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="ground" sid="806196052226595">
+        <object-type name="ground_dungeon" sid="806196052226595">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
@@ -319,6 +319,17 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="loading" sid="897115681715546">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="233857023362809" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Cards" plugin-id="Sprite" sid="481501630122113">
@@ -346,6 +357,29 @@
             </members>
             <instance-variables>
                 <instance-variable name="state" sid="562013851272167" type="string" />
+            </instance-variables>
+        </family>
+        <family name="Decals" plugin-id="Sprite" sid="206000607277088">
+            <members>
+                <member>grass_stuff</member>
+                <member>grass_stuff2</member>
+                <member>grass_stuff3</member>
+                <member>grass_stuff4</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="acceptable_layout" sid="703249212717711" type="string" />
+                <instance-variable name="acceptable_amount_max" sid="837825043037438" type="number" />
+                <instance-variable name="acceptable_amount_min" sid="504418686589259" type="number" />
+                <instance-variable name="scattered" sid="525830872495292" type="boolean" />
+            </instance-variables>
+        </family>
+        <family name="Ground" plugin-id="TiledBg" sid="416175772478282">
+            <members>
+                <member>ground_catacombs</member>
+                <member>ground_dungeon</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="acceptable_layout" sid="922462922602519" type="string" />
             </instance-variables>
         </family>
     </families>
@@ -376,6 +410,7 @@
         </layout-folder>
         <layout>Interface.xml</layout>
         <layout>Instance Layout.xml</layout>
+        <layout>Loading Screen.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
