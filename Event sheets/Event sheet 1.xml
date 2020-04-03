@@ -28,6 +28,24 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="131164295376343">
+                    <conditions>
+                        <condition id="5" inverted="1" name="Is tag playing" sid="876662543084831" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="736352665881412" type="Audio">
+                            <param id="0" name="Audio file">tempSong</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                        </action>
+                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="705321196825858" type="System">
+                            <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-group description="" sid="148253899526234" title="Loading">
                     <sub-events>
                         <event-block sid="477028729441035">
@@ -687,75 +705,6 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="131164295376343">
-                    <conditions>
-                        <condition id="5" inverted="1" name="Is tag playing" sid="876662543084831" type="Audio">
-                            <param id="0" name="Tag">&quot;music&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="736352665881412" type="Audio">
-                            <param id="0" name="Audio file">tempSong</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-5</param>
-                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
-                        </action>
-                        <action disabled="1" id="-25" name="Go to layout (by name)" sid="705321196825858" type="System">
-                            <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>test going to random layouts by tapping E on doors</comment>
-                <event-block disabled="1" sid="715458647355391">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="256807376235457" type="Keyboard">
-                            <param id="0" name="Key">69</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="506219011504200" type="player">
-                            <param id="0" name="Object">dungeon_door_collider</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-25" name="Go to layout (by name)" sid="624793972306122" type="System">
-                            <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
-                        </action>
-                        <action id="0" name="Play" sid="134292370297072" type="Audio">
-                            <param id="0" name="Audio file">door</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;door&quot;</param>
-                        </action>
-                        <action id="5" name="Set playback rate" sid="293544809041579" type="Audio">
-                            <param id="0" name="Tag">&quot;door&quot;</param>
-                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block disabled="1" sid="433985737645517">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="129582313746601" type="Keyboard">
-                            <param id="0" name="Key">69</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="327736916561565" type="player">
-                            <param id="0" name="Object">catacombs_door_collider</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-25" name="Go to layout (by name)" sid="548939824210561" type="System">
-                            <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;catacombs&apos;)&quot;)</param>
-                        </action>
-                        <action id="0" name="Play" sid="914136870981804" type="Audio">
-                            <param id="0" name="Audio file">door</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;door&quot;</param>
-                        </action>
-                        <action id="5" name="Set playback rate" sid="452360177474251" type="Audio">
-                            <param id="0" name="Tag">&quot;door&quot;</param>
-                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <comment>UI card stuff</comment>
                 <event-block sid="862845253263730">
                     <conditions>
@@ -783,6 +732,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>cast fireball</comment>
                 <event-block sid="605504827227523">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="951528124758611" type="Keyboard">
@@ -895,6 +845,38 @@
                         <action id="5" name="Set playback rate" sid="311389101808802" type="Audio">
                             <param id="0" name="Tag">&quot;slash&quot;</param>
                             <param id="1" name="Playback rate">random(0.8, 1.2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>flame sound</comment>
+                <event-block sid="356992881870320">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="289620325874406" type="flame_spr" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="271217295059194">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="179504091096227" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="873121195957527" type="Audio">
+                                    <param id="0" name="Audio file">fire1</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;fire&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="116953690485964">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="104264624084176" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Stop" sid="874681039355019" type="Audio">
+                            <param id="0" name="Tag">&quot;fire&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1772,37 +1754,6 @@
                     </sub-events>
                 </event-group>
             </sub-events>
-        </event-block>
-        <event-block sid="356992881870320">
-            <conditions>
-                <condition id="-3" name="Is on-screen" sid="289620325874406" type="flame_spr" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="271217295059194">
-                    <conditions>
-                        <condition id="-4" name="Trigger once while true" sid="179504091096227" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="873121195957527" type="Audio">
-                            <param id="0" name="Audio file">fire1</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-5</param>
-                            <param id="1" name="Tag (optional)">&quot;fire&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="116953690485964">
-            <conditions>
-                <condition id="-22" name="Else" sid="104264624084176" type="System" />
-            </conditions>
-            <actions>
-                <action id="6" name="Stop" sid="874681039355019" type="Audio">
-                    <param id="0" name="Tag">&quot;fire&quot;</param>
-                </action>
-            </actions>
         </event-block>
     </events>
 </c2eventsheet>
