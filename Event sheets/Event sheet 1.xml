@@ -233,8 +233,8 @@
                             <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;slash&quot;</param>
                         </action>
-                        <action behavior="ScrollTo" id="0" name="Shake" sid="600544493652459" type="player">
-                            <param id="0" name="Magnitude">20</param>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="600544493652459" type="camera">
+                            <param id="0" name="Magnitude">30</param>
                             <param id="1" name="Duration">0.4</param>
                             <param id="2" name="Mode">0</param>
                         </action>
@@ -907,6 +907,54 @@
                                 <comment>turn based wait thing for ai moving</comment>
                                 <variable constant="0" name="oldX" sid="398740723846517" static="1" type="number">0</variable>
                                 <variable constant="0" name="oldY" sid="859989881477309" static="1" type="number">0</variable>
+                                <event-block sid="413557791908853">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="276430895967974" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="904215525193627" type="player">
+                                            <param id="0" name="Y">player.Y-STEP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="858700289757886">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="335416292979919" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="382204710041748" type="player">
+                                            <param id="0" name="X">player.X-STEP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="234705671845643">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="934674150062937" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="569928327906774" type="player">
+                                            <param id="0" name="Y">player.Y+STEP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="424545634171572">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="385804334014651" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="428712805886893" type="player">
+                                            <param id="0" name="X">player.X+STEP</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block any="1" sid="624569238084121">
                                     <conditions>
                                         <condition id="0" name="On key pressed" sid="827947782057009" type="Keyboard">
@@ -933,57 +981,6 @@
                                         </action>
                                     </actions>
                                     <sub-events>
-                                        <event-block sid="848448711323216">
-                                            <conditions>
-                                                <condition id="2" name="Key is down" sid="181077207620305" type="Keyboard">
-                                                    <param id="0" name="Key">87</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-2" name="Set Y" sid="904215525193627" type="player">
-                                                    <param id="0" name="Y">player.Y-STEP</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="600102668326890">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="528841253937445" type="System" />
-                                                <condition id="2" name="Key is down" sid="990895890393406" type="Keyboard">
-                                                    <param id="0" name="Key">65</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-1" name="Set X" sid="382204710041748" type="player">
-                                                    <param id="0" name="X">player.X-STEP</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="189713627478688">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="295054298286830" type="System" />
-                                                <condition id="2" name="Key is down" sid="899077746355038" type="Keyboard">
-                                                    <param id="0" name="Key">83</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-2" name="Set Y" sid="569928327906774" type="player">
-                                                    <param id="0" name="Y">player.Y+STEP</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="167897375867616">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="785613891680384" type="System" />
-                                                <condition id="2" name="Key is down" sid="257567556330642" type="Keyboard">
-                                                    <param id="0" name="Key">68</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-1" name="Set X" sid="428712805886893" type="player">
-                                                    <param id="0" name="X">player.X+STEP</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
                                         <event-block sid="403358942395950">
                                             <conditions>
                                                 <condition id="-3" name="Is on-screen" sid="595855860010369" type="PathFinding" />
@@ -1089,6 +1086,36 @@
                                     </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="918296554296439" title="Smooth Camera">
+                    <sub-events>
+                        <event-block sid="858913440476167">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="488073330303599" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="855378695097128" type="System">
+                                    <param id="0" name="Seconds">0.0001</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="710448210580920" type="System">
+                                    <param id="0" name="Object to create">camera</param>
+                                    <param id="1" name="Layer">&quot;Colliders&quot;</param>
+                                    <param id="2" name="X">player.X</param>
+                                    <param id="3" name="Y">player.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="1" name="CAM_SPEED" sid="960753553062681" static="1" type="number">3</variable>
+                        <event-block sid="735387870424819">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Set position" sid="619504477218794" type="camera">
+                                    <param id="0" name="X">lerp(Self.X, player.X, CAM_SPEED*dt)</param>
+                                    <param id="1" name="Y">lerp(Self.Y, player.Y, CAM_SPEED*dt)</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>

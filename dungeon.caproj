@@ -55,11 +55,6 @@
                 <instance-variable name="state" sid="917530688411088" type="string" />
                 <instance-variable name="busy" sid="771561995443542" type="boolean" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="ScrollTo" sid="309695145500289">
-                    <behavior id="scrollto" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -308,6 +303,19 @@
                             <point x="1" y="0" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="camera" sid="433805818968090">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="211937858756792">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="218157870038797" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
