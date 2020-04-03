@@ -914,6 +914,14 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Set value" sid="104014563332752" type="System">
+                                            <param id="0" name="Variable">oldX</param>
+                                            <param id="1" name="Value">player.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="736163911706957" type="System">
+                                            <param id="0" name="Variable">oldY</param>
+                                            <param id="1" name="Value">player.Y</param>
+                                        </action>
                                         <action id="-2" name="Set Y" sid="904215525193627" type="player">
                                             <param id="0" name="Y">player.Y-STEP</param>
                                         </action>
@@ -926,6 +934,14 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Set value" sid="607604221083099" type="System">
+                                            <param id="0" name="Variable">oldX</param>
+                                            <param id="1" name="Value">player.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="495279132257181" type="System">
+                                            <param id="0" name="Variable">oldY</param>
+                                            <param id="1" name="Value">player.Y</param>
+                                        </action>
                                         <action id="-1" name="Set X" sid="382204710041748" type="player">
                                             <param id="0" name="X">player.X-STEP</param>
                                         </action>
@@ -938,6 +954,14 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Set value" sid="334816883005613" type="System">
+                                            <param id="0" name="Variable">oldX</param>
+                                            <param id="1" name="Value">player.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="196437212382703" type="System">
+                                            <param id="0" name="Variable">oldY</param>
+                                            <param id="1" name="Value">player.Y</param>
+                                        </action>
                                         <action id="-2" name="Set Y" sid="569928327906774" type="player">
                                             <param id="0" name="Y">player.Y+STEP</param>
                                         </action>
@@ -950,6 +974,14 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Set value" sid="663968586542109" type="System">
+                                            <param id="0" name="Variable">oldX</param>
+                                            <param id="1" name="Value">player.X</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="347050635082747" type="System">
+                                            <param id="0" name="Variable">oldY</param>
+                                            <param id="1" name="Value">player.Y</param>
+                                        </action>
                                         <action id="-1" name="Set X" sid="428712805886893" type="player">
                                             <param id="0" name="X">player.X+STEP</param>
                                         </action>
@@ -970,16 +1002,7 @@
                                             <param id="0" name="Key">68</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="104014563332752" type="System">
-                                            <param id="0" name="Variable">oldX</param>
-                                            <param id="1" name="Value">player.X</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="736163911706957" type="System">
-                                            <param id="0" name="Variable">oldY</param>
-                                            <param id="1" name="Value">player.Y</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
                                     <sub-events>
                                         <event-block sid="403358942395950">
                                             <conditions>
