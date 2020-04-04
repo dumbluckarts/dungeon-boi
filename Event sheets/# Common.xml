@@ -38,6 +38,22 @@
                 </action>
             </actions>
         </event-block>
+        <comment>doors</comment>
+        <event-block sid="428402202390904">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="919548917111936" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="847023263757561" type="player">
+                    <param id="0" name="Object">door_collider</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="908221400841287" type="System">
+                    <param id="0" name="Layout">Function.Call(&quot;generate.layout&quot;, &quot;dungeon&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="918296554296439" title="Camera">
             <sub-events>
                 <event-block sid="858913440476167">

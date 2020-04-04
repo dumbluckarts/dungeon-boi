@@ -4,15 +4,12 @@
     <name># Generation</name>
     <events>
         <comment>boolean layout generation variables</comment>
-        <variable constant="0" name="decals_loaded" sid="383275633853620" static="0" type="number">0</variable>
-        <variable constant="0" name="enemies_loaded" sid="152610155836590" static="0" type="number">1</variable>
-        <variable constant="0" name="chests_loaded" sid="572299325019448" static="0" type="number">1</variable>
-        <variable constant="0" name="player_loaded" sid="565729229028034" static="0" type="number">0</variable>
+        <variable constant="0" name="loaded" sid="336460363135367" static="0" type="number">0</variable>
         <comment>boolean &quot;to spawn&quot; variables</comment>
-        <variable constant="0" name="spawn_chest" sid="509728028081185" static="0" type="number">0</variable>
-        <variable constant="0" name="spawn_enemy" sid="941617944943834" static="0" type="number">0</variable>
         <event-group description="" sid="955508924717136" title="Generation">
             <sub-events>
+                <variable constant="0" name="spawn_chest" sid="509728028081185" static="0" type="number">0</variable>
+                <variable constant="0" name="spawn_enemy" sid="941617944943834" static="0" type="number">0</variable>
                 <event-group description="" sid="197620314988922" title="Spawn Decals">
                     <sub-events>
                         <variable constant="0" name="layout" sid="988163195097516" static="0" type="text"></variable>
@@ -90,182 +87,92 @@
                             </sub-events>
                         </event-block>
                         <comment>check if decal needs scattering</comment>
-                        <event-group description="" sid="751132191437262" title="Decals Active">
-                            <sub-events>
-                                <event-block sid="380414045831782">
-                                    <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="336531447430582" type="Decals">
-                                            <param id="0" name="Object">Decals</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="867827683477596" type="Decals">
-                                            <param id="0" name="Instance variable">scattered</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="707030542791757">
-                                    <conditions>
-                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="341666848686760" type="Decals">
-                                            <param id="0" name="Object">Ground</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="365801497351292" type="Decals">
-                                            <param id="0" name="Instance variable">scattered</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="964622818628162">
-                                    <conditions>
-                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="637900009640232" type="Decals">
-                                            <param id="0" name="Object">Decals</param>
-                                        </condition>
-                                        <condition id="1" name="Is overlapping another object" sid="687082107462472" type="Decals">
-                                            <param id="0" name="Object">Ground</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="906901008423079" type="Decals">
-                                            <param id="0" name="Instance variable">scattered</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <comment>scatter ground decals</comment>
-                                <event-block sid="620360841223692">
-                                    <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="608706801413092" type="Decals">
-                                            <param id="0" name="Instance variable">scattered</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <variable constant="0" name="minX" sid="730947519906598" static="0" type="number">0</variable>
-                                        <variable constant="0" name="minY" sid="196253236795028" static="0" type="number">0</variable>
-                                        <variable constant="0" name="maxX" sid="197565268457504" static="0" type="number">0</variable>
-                                        <variable constant="0" name="maxY" sid="167194849120479" static="0" type="number">0</variable>
-                                        <event-block sid="851868748888169">
-                                            <conditions>
-                                                <condition id="-13" name="Pick nth instance" sid="153298433145697" type="System">
-                                                    <param id="0" name="Object">Ground</param>
-                                                    <param id="1" name="Instance">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="734867555403740" type="System">
-                                                    <param id="0" name="Variable">minX</param>
-                                                    <param id="1" name="Value">Ground.X + 128</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="807121720424879" type="System">
-                                                    <param id="0" name="Variable">minY</param>
-                                                    <param id="1" name="Value">Ground.Y + 128</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="924758344769454" type="System">
-                                                    <param id="0" name="Variable">maxX</param>
-                                                    <param id="1" name="Value">Ground.Width - 128</param>
-                                                </action>
-                                                <action id="-9" name="Set value" sid="903865678727338" type="System">
-                                                    <param id="0" name="Variable">maxY</param>
-                                                    <param id="1" name="Value">Ground.Height - 128</param>
-                                                </action>
-                                                <action id="-3" name="Set position" sid="326925593513665" type="Decals">
-                                                    <param id="0" name="X">random(minX, maxX)</param>
-                                                    <param id="1" name="Y">random(minY, maxY)</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-group>
-                        <event-block sid="429402971792829">
+                        <event-block sid="380414045831782">
                             <conditions>
-                                <condition id="0" name="On function" sid="258892334623621" type="Function">
-                                    <param id="0" name="Name">&quot;decals.loaded&quot;</param>
+                                <condition id="1" name="Is overlapping another object" sid="336531447430582" type="Decals">
+                                    <param id="0" name="Object">Decals</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="867827683477596" type="Decals">
+                                    <param id="0" name="Instance variable">scattered</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="707030542791757">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="341666848686760" type="Decals">
+                                    <param id="0" name="Object">Ground</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="365801497351292" type="Decals">
+                                    <param id="0" name="Instance variable">scattered</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="964622818628162">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="637900009640232" type="Decals">
+                                    <param id="0" name="Object">Decals</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="687082107462472" type="Decals">
+                                    <param id="0" name="Object">Ground</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="906901008423079" type="Decals">
+                                    <param id="0" name="Instance variable">scattered</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>scatter ground decals</comment>
+                        <event-block sid="620360841223692">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="608706801413092" type="Decals">
+                                    <param id="0" name="Instance variable">scattered</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <variable constant="0" name="count" sid="236338927933644" static="0" type="number">0</variable>
-                                <event-block sid="919984699709324">
+                                <variable constant="0" name="minX" sid="730947519906598" static="0" type="number">0</variable>
+                                <variable constant="0" name="minY" sid="196253236795028" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxX" sid="197565268457504" static="0" type="number">0</variable>
+                                <variable constant="0" name="maxY" sid="167194849120479" static="0" type="number">0</variable>
+                                <event-block sid="851868748888169">
                                     <conditions>
-                                        <condition id="-11" name="For Each" sid="219778814352579" type="System">
-                                            <param id="0" name="Object">Decals</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="894989682012126">
-                                            <conditions>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="514187993582854" type="Decals">
-                                                    <param id="0" name="Instance variable">scattered</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-10" name="Add to" sid="878090289719336" type="System">
-                                                    <param id="0" name="Variable">count</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="136144264199516">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="697116289569211" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="835528961794813" type="System">
-                                                    <param id="0" name="Variable">count</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="153677650376258">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="717440413203821" type="System">
-                                            <param id="0" name="Variable">count</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">Decals.Count</param>
+                                        <condition id="-13" name="Pick nth instance" sid="153298433145697" type="System">
+                                            <param id="0" name="Object">Ground</param>
+                                            <param id="1" name="Instance">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="550068749834987" type="System">
-                                            <param id="0" name="Variable">decals_loaded</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="-9" name="Set value" sid="734867555403740" type="System">
+                                            <param id="0" name="Variable">minX</param>
+                                            <param id="1" name="Value">Ground.X + 128</param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="534040025725817">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="956594838948074" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="950377108093375" type="System">
-                                            <param id="0" name="Variable">decals_loaded</param>
-                                            <param id="1" name="Value">0</param>
+                                        <action id="-9" name="Set value" sid="807121720424879" type="System">
+                                            <param id="0" name="Variable">minY</param>
+                                            <param id="1" name="Value">Ground.Y + 128</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="924758344769454" type="System">
+                                            <param id="0" name="Variable">maxX</param>
+                                            <param id="1" name="Value">Ground.Width - 128</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="903865678727338" type="System">
+                                            <param id="0" name="Variable">maxY</param>
+                                            <param id="1" name="Value">Ground.Height - 128</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="326925593513665" type="Decals">
+                                            <param id="0" name="X">random(minX, maxX)</param>
+                                            <param id="1" name="Y">random(minY, maxY)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                        <event-block sid="419160144912231">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="715646094157763" type="System">
-                                    <param id="0" name="Variable">decals_loaded</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-12" name="Set group active" sid="840243701916589" type="System">
-                                    <param id="0" name="Group name">&quot;Decals Active&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
@@ -370,28 +277,6 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="605048796851464">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="454281029602358" type="player" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="312963647649963" type="System">
-                                    <param id="0" name="Variable">player_loaded</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="760001271603338">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="441161803526408" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="428843306372377" type="System">
-                                    <param id="0" name="Variable">player_loaded</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" inactive="1" sid="542081357070188" title="Spawn Chests">
@@ -415,10 +300,6 @@
                                 <action id="-9" name="Set value" sid="266610425899570" type="System">
                                     <param id="0" name="Variable">spawn_chest</param>
                                     <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="632692894983854" type="System">
-                                    <param id="0" name="Variable">chests_loaded</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-12" name="Set group active" sid="361981539241303" type="System">
                                     <param id="0" name="Group name">&quot;Spawn Chests&quot;</param>
@@ -450,10 +331,6 @@
                                     <param id="0" name="Variable">spawn_enemy</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="694714021810744" type="System">
-                                    <param id="0" name="Variable">enemies_loaded</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
                                 <action id="-12" name="Set group active" sid="312213797758050" type="System">
                                     <param id="0" name="Group name">&quot;Spawn Enemies&quot;</param>
                                     <param id="1" name="State">0</param>
@@ -462,21 +339,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="824222392886774">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="537327841049944" type="System">
-                            <param id="0" name="Variable">decals_loaded</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-12" name="Set group active" sid="651871692480445" type="System">
-                            <param id="0" name="Group name">&quot;Decals Active&quot;</param>
-                            <param id="1" name="State">1</param>
-                        </action>
-                    </actions>
-                </event-block>
+                <comment>activate groups if needed</comment>
                 <event-block sid="315617990796570">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="270992212267435" type="System">
@@ -510,21 +373,7 @@
                 <comment>cleanup</comment>
                 <event-block sid="933288709960023">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="628299601613242" type="System">
-                            <param id="0" name="Variable">enemies_loaded</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="763204098744522" type="System">
-                            <param id="0" name="Variable">chests_loaded</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="530412575025459" type="System">
-                            <param id="0" name="Variable">player_loaded</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="981297474818915" type="System" />
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="422647248999977" type="spawn_chest" />
@@ -573,18 +422,6 @@
                                     <param id="0" name="Variable">spawn_chest</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="980075182790621" type="System">
-                                    <param id="0" name="Variable">player_loaded</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="182436815128864" type="System">
-                                    <param id="0" name="Variable">chests_loaded</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="855750843215452" type="System">
-                                    <param id="0" name="Variable">enemies_loaded</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
                             </actions>
                             <sub-events>
                                 <comment>prep level to spawn chest</comment>
@@ -600,10 +437,6 @@
                                         <action id="-9" name="Set value" sid="771369582583278" type="System">
                                             <param id="0" name="Variable">spawn_chest</param>
                                             <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="644224538603425" type="System">
-                                            <param id="0" name="Variable">chests_loaded</param>
-                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -622,10 +455,6 @@
                                             <param id="0" name="Variable">spawn_enemy</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="521015549503753" type="System">
-                                            <param id="0" name="Variable">enemies_loaded</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                     </actions>
                                 </event-block>
                                 <comment>finally return the layout to be sent to</comment>
@@ -640,21 +469,6 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="299955778266229">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="739944379891613" type="Keyboard">
-                            <param id="0" name="Key">69</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="856222786991596" type="player">
-                            <param id="0" name="Object">door_collider</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-25" name="Go to layout (by name)" sid="340029866567560" type="System">
-                            <param id="0" name="Layout">Function.Call(&quot;generate.layout&quot;, &quot;dungeon&quot;)</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -678,34 +492,253 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="903961631360112" type="Function">
-                            <param id="0" name="Name">&quot;decals.loaded&quot;</param>
+                        <action id="0" name="Call function" sid="580444034671108" type="Function">
+                            <param id="0" name="Name">&quot;loaded&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="306346202414670">
+                        <event-block sid="355540918044259">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="188561151287825" type="System">
-                                    <param id="0" name="Variable">decals_loaded</param>
+                                <condition id="-8" name="Compare two values" sid="953193492348270" type="System">
+                                    <param id="0" name="First value">loaded</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="394804184081384" type="System">
-                                    <param id="0" name="Variable">enemies_loaded</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="924118798054848" type="System">
-                                    <param id="0" name="Variable">chests_loaded</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
+                                    <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-4" name="Set layer visible" sid="158944483204788" type="System">
                                     <param id="0" name="Layer">&quot;Loading&quot;</param>
                                     <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>check if stuffs loaded</comment>
+                <event-block sid="685008593660367">
+                    <conditions>
+                        <condition id="0" name="On function" sid="543555582854445" type="Function">
+                            <param id="0" name="Name">&quot;decalsLoaded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="count" sid="949891148265665" static="0" type="number">0</variable>
+                        <event-block sid="259090122904320">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="105557828947077" type="System">
+                                    <param id="0" name="Object">Decals</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="999965335359400">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="918051224077623" type="Decals">
+                                            <param id="0" name="Instance variable">scattered</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="904812507241124" type="System">
+                                            <param id="0" name="Variable">count</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="596734935225743">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="910955086072451" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="676951085607004" type="System">
+                                            <param id="0" name="Variable">count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="452680360054867">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="481813146826188" type="System">
+                                    <param id="0" name="Variable">count</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">Decals.Count</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="733707611224388" type="Function">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="920616859212835">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="978470395422883" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="559851554996917" type="Function">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="856423896266169">
+                    <conditions>
+                        <condition id="0" name="On function" sid="150334127814823" type="Function">
+                            <param id="0" name="Name">&quot;playerLoaded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="694955029542148">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="212572411050778" type="System">
+                                    <param id="0" name="First value">player.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="871875102678504" type="Function">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="974270289933693">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="784141164911528" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="309752926950971" type="Function">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="291663426701004">
+                    <conditions>
+                        <condition id="0" name="On function" sid="874630109737552" type="Function">
+                            <param id="0" name="Name">&quot;chestsLoaded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="781277151211276">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="479475715705628" type="System">
+                                    <param id="0" name="First value">spawn_chest.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="866815721691883" type="Function">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="878016135140124">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="422507235677012" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="992682134599062" type="Function">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="452136932070638">
+                    <conditions>
+                        <condition id="0" name="On function" sid="995013917821913" type="Function">
+                            <param id="0" name="Name">&quot;enemiesLoaded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="974792157983823">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="740003609677517" type="System">
+                                    <param id="0" name="First value">spawn_enemy.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="803733627128202" type="Function">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="291853302002034">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="254678717837770" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="993936694002013" type="Function">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="485468509640622">
+                    <conditions>
+                        <condition id="0" name="On function" sid="693061595024900" type="Function">
+                            <param id="0" name="Name">&quot;loaded&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="216781790461988">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="373398948095280" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;decalsLoaded&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="203568505017757" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;enemiesLoaded&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="640105998983534" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;chestsLoaded&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="368470092707440" type="System">
+                                    <param id="0" name="First value">Function.Call(&quot;playerLoaded&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="116262672818741" type="System">
+                                    <param id="0" name="Variable">loaded</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="1" name="Set return value" sid="843157505967832" type="Function">
+                                    <param id="0" name="Value">loaded</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="161742740574792">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="695984079553715" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="502192579977002" type="System">
+                                    <param id="0" name="Variable">loaded</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set return value" sid="573580061439249" type="Function">
+                                    <param id="0" name="Value">loaded</param>
                                 </action>
                             </actions>
                         </event-block>
