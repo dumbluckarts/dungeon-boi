@@ -8,8 +8,8 @@
         <comment>boolean &quot;to spawn&quot; variables</comment>
         <event-group description="" sid="955508924717136" title="Generation">
             <sub-events>
-                <variable constant="0" name="spawn_chest" sid="509728028081185" static="0" type="number">0</variable>
-                <variable constant="0" name="spawn_enemy" sid="941617944943834" static="0" type="number">0</variable>
+                <variable constant="0" name="spawn_chest" sid="509728028081185" static="1" type="number">0</variable>
+                <variable constant="0" name="spawn_enemy" sid="941617944943834" static="1" type="number">0</variable>
                 <event-group description="" sid="197620314988922" title="Spawn Decals">
                     <sub-events>
                         <variable constant="0" name="layout" sid="988163195097516" static="0" type="text"></variable>

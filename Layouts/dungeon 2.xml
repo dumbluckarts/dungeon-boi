@@ -124,7 +124,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <decal_density>7</decal_density>
+                        <decal_density>6</decal_density>
                         <door_density>3</door_density>
                         <enemy_density>1</enemy_density>
                         <chest_density>2</chest_density>

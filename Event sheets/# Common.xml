@@ -33,9 +33,6 @@
                     <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                 </action>
-                <action disabled="1" id="-25" name="Go to layout (by name)" sid="705321196825858" type="System">
-                    <param id="0" name="Layout">JS.JSCodeValue(&quot;gen.level(&apos;dungeon&apos;)&quot;)</param>
-                </action>
             </actions>
         </event-block>
         <comment>doors</comment>
@@ -50,7 +47,7 @@
             </conditions>
             <actions>
                 <action id="-25" name="Go to layout (by name)" sid="908221400841287" type="System">
-                    <param id="0" name="Layout">Function.Call(&quot;generate.layout&quot;, &quot;dungeon&quot;)</param>
+                    <param id="0" name="Layout">Function.Call(&quot;generateLayout&quot;, &quot;dungeon&quot;)</param>
                 </action>
             </actions>
         </event-block>
