@@ -385,7 +385,7 @@
                 <event-block sid="280523500966420">
                     <conditions>
                         <condition id="0" name="On function" sid="300898500803934" type="Function">
-                            <param id="0" name="Name">&quot;generate.layout&quot;</param>
+                            <param id="0" name="Name">&quot;generateLayout&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
