@@ -105,6 +105,7 @@
                     <instance-variables>
                         <state>idle</state>
                         <busy>false</busy>
+                        <health>3</health>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

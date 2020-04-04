@@ -117,6 +117,30 @@
                     </conditions>
                     <actions />
                 </event-block>
+                <event-block sid="949152981500305">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="938522949702159" type="heart">
+                            <param id="0" name="Instance variable">id</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">player.health</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="817142252214533" type="heart">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="391831447555317">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="462047668853120" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="916601751322131" type="heart">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

@@ -7,6 +7,7 @@
         <include># Interface</include>
         <include># Generation</include>
         <include># Real People</include>
+        <comment>setup</comment>
         <event-block sid="546688573281992">
             <conditions>
                 <condition id="3" name="All scripts loaded" sid="899972672442665" type="JS" />
@@ -15,7 +16,10 @@
             <actions>
                 <action id="6" name="Call function" sid="667982979599250" type="JS">
                     <param id="0" name="Expression">&quot;gen&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;dungeon&quot;{###}2</param>
+                    <param id="1" name="Parameter {n}">&quot;dungeon&quot;{###}1</param>
+                </action>
+                <action id="-36" name="Save" sid="251293215025864" type="System">
+                    <param id="0" name="Slot">&quot;mysave&quot;</param>
                 </action>
             </actions>
         </event-block>

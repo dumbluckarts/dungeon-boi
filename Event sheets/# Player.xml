@@ -243,5 +243,106 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="862466919701399" title="Health">
+            <sub-events>
+                <event-block sid="362021747407704">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="269185460059402" type="player">
+                            <param id="0" name="Object">flame_spr2</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="702831742752999" type="flame_spr2">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="636861156326739">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="758881688611326" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="125437059030516" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="456582875622347" type="System">
+                                    <param id="0" name="Layer">&quot;Blood&quot;</param>
+                                    <param id="1" name="Opacity">80</param>
+                                </action>
+                                <action id="0" name="Play" sid="840646114810397" type="Audio">
+                                    <param id="0" name="Audio file">cronch</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;cronch&quot;</param>
+                                </action>
+                                <action id="5" name="Set playback rate" sid="444515572794774" type="Audio">
+                                    <param id="0" name="Tag">&quot;cronch&quot;</param>
+                                    <param id="1" name="Playback rate">random(0.8, 1.2)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="840485189532596">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="931382110485459" type="System">
+                                            <param id="0" name="Name">&quot;blood&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="122440331808109" type="System">
+                                            <param id="0" name="Seconds">0.1 * loopindex</param>
+                                        </action>
+                                        <action id="-18" name="Set layer opacity" sid="512170361819005" type="System">
+                                            <param id="0" name="Layer">&quot;Blood&quot;</param>
+                                            <param id="1" name="Opacity">LayerOpacity(&quot;Blood&quot;)-10</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="341522007685536" type="System">
+                                            <param id="0" name="Layer">&quot;Blood&quot;</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="984197922418115">
+                                            <conditions>
+                                                <condition id="-17" name="Compare opacity" sid="774338545105429" type="System">
+                                                    <param id="0" name="Layer">&quot;Blood&quot;</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Opacity">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set layer visible" sid="237494222921148" type="System">
+                                                    <param id="0" name="Layer">&quot;Blood&quot;</param>
+                                                    <param id="1" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-24" name="Stop loop" sid="274581121105736" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="917075086378965">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="269693987735256" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-21" name="Reset global variables" sid="355258993801842" type="System" />
+                                <action id="-26" name="Restart layout" sid="323382957667269" type="System" />
+                                <action id="-37" name="Load" sid="514538139278634" type="System">
+                                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
