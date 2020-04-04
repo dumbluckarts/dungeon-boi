@@ -16,6 +16,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Valera Popov" id="ValerypopoffJSPlugin" version="1">ValerypopoffJS</plugin>
     </used-plugins>
     <used-behaviors>
@@ -346,6 +347,7 @@
             <object-type name="card" sid="379972167296551">
                 <plugin id="Sprite" />
                 <instance-variables>
+                    <instance-variable name="oldX" sid="801395109786263" type="number" />
                     <instance-variable name="oldY" sid="636846504314415" type="number" />
                     <instance-variable name="oldZ" sid="492421960406169" type="number" />
                     <instance-variable name="active" sid="313353524301319" type="boolean" />
@@ -452,6 +454,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Touch" sid="975802774387042">
+            <plugin id="Touch" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Cards" plugin-id="Sprite" sid="481501630122113">
@@ -551,6 +556,11 @@
                 <roll-off-factor>1</roll-off-factor>
             </properties>
         </global-instance>
+        <global-instance type="Touch" uid="41">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <sound-folder name="UI">
@@ -564,10 +574,14 @@
             <file name="potionGet2.ogg" />
             <file name="deckSound1.m4a" />
             <file name="deckSound1.ogg" />
+            <file name="rip.m4a" />
+            <file name="rip.ogg" />
         </sound-folder>
         <sound-folder name="Player">
             <file name="cronch.m4a" />
             <file name="cronch.ogg" />
+            <file name="guy_moving.m4a" />
+            <file name="guy_moving.ogg" />
         </sound-folder>
         <sound-folder name="Enemies">
             <file name="oh.m4a" />

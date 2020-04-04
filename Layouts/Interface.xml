@@ -247,6 +247,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -274,6 +275,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -301,6 +303,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -328,6 +331,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -355,6 +359,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -382,6 +387,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>
@@ -409,6 +415,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <oldX>0</oldX>
                         <oldY>0</oldY>
                         <oldZ>0</oldZ>
                         <active>false</active>

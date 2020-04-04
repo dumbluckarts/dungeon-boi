@@ -229,11 +229,17 @@
                     <actions />
                     <sub-events>
                         <comment> set original position</comment>
+                        <variable constant="0" name="current" sid="141747439277462" static="1" type="number">0</variable>
+                        <variable constant="0" name="new" sid="237905945799497" static="1" type="number">0</variable>
                         <event-block sid="220172595086991">
                             <conditions>
                                 <condition id="-18" name="On created" sid="920178986577561" type="card" />
                             </conditions>
                             <actions>
+                                <action id="-10" name="Set value" sid="746759277151843" type="card">
+                                    <param id="0" name="Instance variable">oldX</param>
+                                    <param id="1" name="Value">Self.X</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="191962326500343" type="card">
                                     <param id="0" name="Instance variable">oldY</param>
                                     <param id="1" name="Value">Self.Y</param>
@@ -254,7 +260,12 @@
                                     <param id="0" name="Which">0</param>
                                 </condition>
                             </conditions>
-                            <actions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="623480306669362" type="System">
+                                    <param id="0" name="Variable">new</param>
+                                    <param id="1" name="Value">card.UID</param>
+                                </action>
+                            </actions>
                             <sub-events>
                                 <comment>move all old cards back to default</comment>
                                 <event-block sid="679317883752100">
@@ -268,9 +279,26 @@
                                             <param id="0" name="Animation">&quot;Default&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="782820367259411" type="card">
-                                            <param id="0" name="Instance variable">active</param>
-                                            <param id="1" name="Value">0</param>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="562195143172768">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="555065397975913" type="System">
+                                            <param id="0" name="Variable">new</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">current</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="240604790557585" type="Audio">
+                                            <param id="0" name="Audio file">rip</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-20</param>
+                                            <param id="1" name="Tag (optional)">&quot;rip&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set playback rate" sid="954704072281385" type="Audio">
+                                            <param id="0" name="Tag">&quot;rip&quot;</param>
+                                            <param id="1" name="Playback rate">random(0.8, 1.2)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -282,9 +310,9 @@
                                             <param id="0" name="Animation">&quot;Active&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="-13" name="Set boolean" sid="259490230438543" type="card">
-                                            <param id="0" name="Instance variable">active</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="-9" name="Set value" sid="993716905371013" type="System">
+                                            <param id="0" name="Variable">current</param>
+                                            <param id="1" name="Value">card.UID</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -302,8 +330,8 @@
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="841712241556736" type="card">
-                                    <param id="0" name="Instance variable">active</param>
+                                <action id="-9" name="Set value" sid="828601805419958" type="System">
+                                    <param id="0" name="Variable">current</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -311,8 +339,10 @@
                         <comment>fade in the overlay if mouse over card</comment>
                         <event-block sid="360210801618458">
                             <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="371952877095138" type="card">
-                                    <param id="0" name="Instance variable">active</param>
+                                <condition id="-14" name="Compare variable" sid="976232468340611" type="System">
+                                    <param id="0" name="Variable">current</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -371,8 +401,10 @@
                                 <comment>move card up</comment>
                                 <event-block sid="271659816338441">
                                     <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="169947860848777" type="card">
-                                            <param id="0" name="Instance variable">active</param>
+                                        <condition id="-14" name="Compare variable" sid="524759380545949" type="System">
+                                            <param id="0" name="Variable">current</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">card.UID</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -465,6 +497,19 @@
                                     </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="942610851605134">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="810428592816242" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">card</param>
+                                </condition>
+                                <condition id="-17" name="Pick top/bottom" sid="929141960949198" type="card">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>
