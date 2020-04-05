@@ -110,8 +110,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>335</x>
-                        <y>153</y>
+                        <x>403</x>
+                        <y>149</y>
                         <z>0</z>
                         <width>256</width>
                         <height>256</height>
@@ -211,7 +211,7 @@
                     <instance-variables>
                         <amount_max>3</amount_max>
                         <amount_min>1</amount_min>
-                        <layout>catacombs</layout>
+                        <layout>dungeon,catacombs</layout>
                         <scattered>false</scattered>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
@@ -331,6 +331,56 @@
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="mouseHelp" uid="42">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1469</x>
+                        <y>358</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>44</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="shroom" uid="45">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <amount_max>3</amount_max>
+                        <amount_min>1</amount_min>
+                        <layout>dungeon</layout>
+                        <scattered>false</scattered>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>232</x>
+                        <y>631</y>
+                        <z>0</z>
+                        <width>256</width>
+                        <height>256</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

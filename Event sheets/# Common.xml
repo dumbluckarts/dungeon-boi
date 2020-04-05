@@ -21,6 +21,10 @@
                 <action id="-36" name="Save" sid="251293215025864" type="System">
                     <param id="0" name="Slot">&quot;mysave&quot;</param>
                 </action>
+                <action id="-18" name="Set layer opacity" sid="739445016341197" type="System">
+                    <param id="0" name="Layer">&quot;Blood&quot;</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
             </actions>
         </event-block>
         <comment>play music</comment>

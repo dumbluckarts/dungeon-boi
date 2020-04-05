@@ -2,8 +2,8 @@ function Degenerate() {
 	var _data = []
 
 	var RATES = {
-		CHEST: 4,
-		ENEMY: 2
+		CHEST: 3,
+		ENEMY: 1
 	}
 
 	var Level = (name, variations) => {

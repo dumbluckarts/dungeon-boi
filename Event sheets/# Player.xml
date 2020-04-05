@@ -4,7 +4,7 @@
     <name># Player</name>
     <events>
         <variable constant="0" name="activeCard" sid="419470342453707" static="0" type="text"></variable>
-        <variable constant="0" name="health" sid="277332324089058" static="0" type="number">3</variable>
+        <variable constant="0" name="health" sid="277332324089058" static="0" type="number">4</variable>
         <event-group description="" sid="258129898009681" title="Attacc">
             <sub-events>
                 <comment>cast fireball</comment>
@@ -115,7 +115,24 @@
                             <param id="1" name="Number">0</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="210664488842934" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="896476778620986" type="System">
+                            <param id="0" name="Seconds">0.8</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="329955748673483" type="player">
+                            <param id="0" name="Instance variable">busy</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="898319543384085" type="camera">
+                            <param id="0" name="Magnitude">30</param>
+                            <param id="1" name="Duration">0.8</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="636861156326739">
                             <conditions>

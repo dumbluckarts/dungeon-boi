@@ -83,7 +83,7 @@
                     </properties>
                     <instance-variables>
                         <decal_density>4</decal_density>
-                        <door_density>2</door_density>
+                        <door_density>1</door_density>
                         <enemy_density>1</enemy_density>
                         <chest_density>1</chest_density>
                         <decal_layer>Layer 0</decal_layer>

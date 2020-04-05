@@ -131,12 +131,7 @@
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="left" x="0" y="0.546875" />
-                            <image-point name="up" x="0.46875" y="0" />
-                            <image-point name="right" x="1" y="0.5" />
-                            <image-point name="down" x="0.4375" y="1.01563" />
-                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -145,9 +140,15 @@
             <object-type name="grass_stuff" sid="257323007827666">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="661739029745038" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="661739029745038" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -223,6 +224,14 @@
                                 <point x="1" y="0" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="shroom" sid="236312316353938">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="690775608465370" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -355,6 +364,7 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="831927738255780" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Above" x="0.5" y="-0.0683761" />
                             <collision-poly>
                                 <point x="0.0227273" y="0.0128205" />
                                 <point x="0.977273" y="0.0128205" />
@@ -365,12 +375,7 @@
                     </animation>
                     <animation framecount="1" loop="0" name="Active" pingpong="0" repeatcount="1" repeatto="0" sid="724154395391405" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.0227273" y="0.0128205" />
-                                <point x="0.977273" y="0.0128205" />
-                                <point x="0.977273" y="0.987179" />
-                                <point x="0.0227273" y="0.987179" />
-                            </collision-poly>
+                            <image-point name="Above" x="0.5" y="-0.0683761" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -383,13 +388,37 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="mouseHelp" sid="267981937402668">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="746365114771734" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.996" y="0" />
+                                <point x="0.996" y="0.977273" />
+                                <point x="0" y="0.977273" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="770623251957661" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0115385" y="0.1" />
+                                <point x="0.988462" y="0.1" />
+                                <point x="0.988462" y="0.916667" />
+                                <point x="0.0115385" y="0.916667" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="game objects">
             <object-type name="spr_chest" sid="425105217154076">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807309655667024" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807309655667024" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="Hover" pingpong="0" repeatcount="1" repeatto="0" sid="939729664328991" speed="5">
@@ -492,6 +521,7 @@
                 <member>grass_stuff2</member>
                 <member>grass_stuff3</member>
                 <member>grass_stuff4</member>
+                <member>shroom</member>
             </members>
             <instance-variables>
                 <instance-variable name="amount_max" sid="837825043037438" type="number" />
@@ -520,6 +550,7 @@
         <layout-folder name="gen">
             <layout-folder name="dungeon">
                 <layout>dungeon 1.xml</layout>
+                <layout>dungeon 2.xml</layout>
             </layout-folder>
         </layout-folder>
         <layout>Interface.xml</layout>
