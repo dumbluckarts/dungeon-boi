@@ -130,6 +130,12 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.109375" y="0.179688" />
+                                <point x="0.875" y="0.0976563" />
+                                <point x="0.933594" y="0.941406" />
+                                <point x="0.0742188" y="0.921875" />
+                            </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
@@ -413,6 +419,17 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="baccPacc_spr" sid="563377336848148">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372279006055997" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Hover" pingpong="0" repeatcount="1" repeatto="0" sid="617210415574086" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="game objects">
             <object-type name="spr_chest" sid="425105217154076">
@@ -485,14 +502,6 @@
         </object-type>
         <object-type name="Touch" sid="975802774387042">
             <plugin id="Touch" />
-        </object-type>
-        <object-type name="baccPacc_spr" sid="563377336848148">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="372279006055997" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families>

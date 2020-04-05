@@ -314,7 +314,7 @@
                         <event-block sid="562100375661278">
                             <conditions>
                                 <condition id="-12" name="Repeat" sid="121502494258926" type="System">
-                                    <param id="0" name="Count">round(random(Generator.enemy_density))</param>
+                                    <param id="0" name="Count">round(random(Generator.enemy_density)) + 1</param>
                                 </condition>
                                 <condition id="-16" name="Pick random instance" sid="137574944113493" type="System">
                                     <param id="0" name="Object">spawn_enemy</param>

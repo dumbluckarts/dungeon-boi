@@ -121,7 +121,7 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-16" name="Wait" sid="896476778620986" type="System">
-                            <param id="0" name="Seconds">0.8</param>
+                            <param id="0" name="Seconds">TURN_TIME</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="329955748673483" type="player">
                             <param id="0" name="Instance variable">busy</param>

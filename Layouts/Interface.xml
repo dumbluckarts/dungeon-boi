@@ -154,72 +154,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="deck" uid="4">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>2304</x>
-                        <y>1024</y>
-                        <z>0</z>
-                        <width>384</width>
-                        <height>384</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="card_text_background" uid="7">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>2304</x>
-                        <y>1024</y>
-                        <z>0</z>
-                        <width>384</width>
-                        <height>384</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="sample_text" uid="30">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>2304</x>
-                        <y>1024</y>
-                        <z>0</z>
-                        <width>384</width>
-                        <height>384</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="baccPacc_spr" uid="47">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -230,8 +164,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2365</x>
-                        <y>196</y>
+                        <x>2304</x>
+                        <y>256</y>
                         <z>0</z>
                         <width>384</width>
                         <height>384</height>
@@ -277,7 +211,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1024</x>
+                        <x>1152</x>
                         <y>1408</y>
                         <z>0</z>
                         <width>352</width>
@@ -305,7 +239,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1152</x>
+                        <x>1280</x>
                         <y>1408</y>
                         <z>0</z>
                         <width>352</width>
@@ -333,7 +267,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1280</x>
+                        <x>1408</x>
                         <y>1408</y>
                         <z>0</z>
                         <width>352</width>
@@ -361,7 +295,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1408</x>
+                        <x>1536</x>
                         <y>1408</y>
                         <z>0</z>
                         <width>352</width>
@@ -416,7 +350,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1536</x>
+                        <x>1664</x>
                         <y>1408</y>
                         <z>0</z>
                         <width>352</width>
@@ -444,34 +378,6 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1664</x>
-                        <y>1408</y>
-                        <z>0</z>
-                        <width>352</width>
-                        <height>468</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="card" uid="38">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <oldX>0</oldX>
-                        <oldY>0</oldY>
-                        <oldZ>0</oldZ>
-                        <active>false</active>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
                         <x>1792</x>
                         <y>1408</y>
                         <z>0</z>
@@ -484,7 +390,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="card" uid="44">
+                <instance type="card" uid="38">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

@@ -231,26 +231,6 @@
                         <variable constant="0" name="hoveringCard" sid="141747439277462" static="1" type="number">0</variable>
                         <variable constant="0" name="rightClickedCard" sid="777438406499362" static="1" type="number">0</variable>
                         <variable constant="0" name="newHoveringCard" sid="237905945799497" static="1" type="number">0</variable>
-                        <comment> set original spawned position</comment>
-                        <event-block sid="220172595086991">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="920178986577561" type="card" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="746759277151843" type="card">
-                                    <param id="0" name="Instance variable">oldX</param>
-                                    <param id="1" name="Value">Self.X</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="191962326500343" type="card">
-                                    <param id="0" name="Instance variable">oldY</param>
-                                    <param id="1" name="Value">Self.Y-64</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="797073238164364" type="card">
-                                    <param id="0" name="Instance variable">oldZ</param>
-                                    <param id="1" name="Value">card.ZIndex</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-group description="" sid="491047134858221" title="Card Rotation">
                             <sub-events>
                                 <variable constant="0" name="count" sid="874818771139940" static="0" type="number">-1</variable>
@@ -381,6 +361,9 @@
                                             <param id="1" name="Image point (optional)">&quot;Above&quot;</param>
                                         </action>
                                         <action id="-24" name="Move to top" sid="579663181104081" type="mouseHelp" />
+                                        <action id="-8" name="Set angle" sid="899479982216754" type="mouseHelp">
+                                            <param id="0" name="Angle">card.Angle</param>
+                                        </action>
                                     </actions>
                                     <sub-events>
                                         <comment>move all old cards back to default</comment>
@@ -512,7 +495,7 @@
                                         </condition>
                                         <condition id="-2" name="Compare Y" sid="208226469838770" type="card">
                                             <param id="0" name="Comparison">4</param>
-                                            <param id="1" name="Y co-ordinate">card.oldY-64</param>
+                                            <param id="1" name="Y co-ordinate">card.oldY-32</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -575,6 +558,9 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action id="-24" name="Move to top" sid="672357028411058" type="card" />
+                                                <action id="-8" name="Set angle" sid="748290983018042" type="card">
+                                                    <param id="0" name="Angle">0</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
@@ -582,6 +568,82 @@
                             </sub-events>
                         </event-group>
                     </sub-events>
+                </event-block>
+                <comment> set original spawned position</comment>
+                <event-block sid="220172595086991">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="920178986577561" type="card" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="746759277151843" type="card">
+                            <param id="0" name="Instance variable">oldX</param>
+                            <param id="1" name="Value">Self.X</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="191962326500343" type="card">
+                            <param id="0" name="Instance variable">oldY</param>
+                            <param id="1" name="Value">Self.Y-64</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="797073238164364" type="card">
+                            <param id="0" name="Instance variable">oldZ</param>
+                            <param id="1" name="Value">card.ZIndex</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="849035909182995">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="547398295360894" type="PathFinding" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="873816120846718" type="System">
+                            <param id="0" name="Layer">&quot;Deck&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="207740084085861">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="417721253951376" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="944889607302427" type="System">
+                            <param id="0" name="Layer">&quot;Deck&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="405957004244762" title="Backpack">
+            <sub-events>
+                <event-block sid="604654953263457">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="399964249246861" type="Mouse">
+                            <param id="0" name="Object">baccPacc_spr</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="984671073145351" type="baccPacc_spr">
+                            <param id="0" name="Animation">&quot;Hover&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="255397595614312" type="baccPacc_spr">
+                            <param id="0" name="Scale">1.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="847376648841363">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="526492604275013" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="512507399486586" type="baccPacc_spr">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="317390786952532" type="baccPacc_spr">
+                            <param id="0" name="Scale">1.5</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

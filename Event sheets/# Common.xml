@@ -7,6 +7,7 @@
         <include># Interface</include>
         <include># Generation</include>
         <include># Real People</include>
+        <variable constant="0" name="TURN_TIME" sid="311753241124730" static="0" type="number">0.5</variable>
         <comment>setup</comment>
         <event-block sid="546688573281992">
             <conditions>
@@ -105,9 +106,9 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="896543920642775">
+                        <event-block sid="307205498081789">
                             <conditions>
-                                <condition id="7" name="Cursor is over object" sid="619089835847559" type="Mouse">
+                                <condition id="1" name="Is overlapping another object" sid="158264641327300" type="player">
                                     <param id="0" name="Object">spr_chest</param>
                                 </condition>
                             </conditions>
@@ -131,10 +132,11 @@
                         </event-block>
                         <event-block sid="416928585001142">
                             <conditions>
-                                <condition id="6" name="On object clicked" sid="695005672913024" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                    <param id="1" name="Click type">0</param>
-                                    <param id="2" name="Object clicked">spr_chest</param>
+                                <condition id="0" name="On key pressed" sid="690891807541790" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="451752273607857" type="player">
+                                    <param id="0" name="Object">spr_chest</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -401,9 +403,20 @@
                                         <condition id="-3" name="Is on-screen" sid="729917971299048" type="PathFinding" />
                                     </conditions>
                                     <actions>
+                                        <action id="-13" name="Set boolean" sid="862485810638981" type="player">
+                                            <param id="0" name="Instance variable">busy</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="700865432580173" type="System">
+                                            <param id="0" name="Seconds">TURN_TIME</param>
+                                        </action>
                                         <action id="0" name="Call function" sid="509366121502797" type="Function">
                                             <param id="0" name="Name">&quot;ai.move&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="458289111863104" type="player">
+                                            <param id="0" name="Instance variable">busy</param>
+                                            <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
