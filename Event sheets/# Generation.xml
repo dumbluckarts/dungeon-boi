@@ -783,10 +783,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="668162147329231">
-                    <conditions />
-                    <actions />
-                </event-block>
             </sub-events>
         </event-group>
     </events>

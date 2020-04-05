@@ -459,6 +459,16 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="Locked" pingpong="0" repeatcount="1" repeatto="0" sid="583907469509752" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <collision-poly>
+                                <point x="0.255859" y="0.0117188" />
+                                <point x="0.744141" y="0.0117188" />
+                                <point x="0.744141" y="0.988281" />
+                                <point x="0.255859" y="0.988281" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="spr_door2" sid="208357230807087">
@@ -642,6 +652,8 @@
             <file name="fire1.ogg" />
             <file name="door.m4a" />
             <file name="door.ogg" />
+            <file name="locked.m4a" />
+            <file name="locked.ogg" />
         </sound-folder>
     </sounds-folder>
     <music-folder>

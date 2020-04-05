@@ -230,6 +230,7 @@
                     <sub-events>
                         <variable constant="0" name="hoveringCard" sid="141747439277462" static="1" type="number">0</variable>
                         <variable constant="0" name="rightClickedCard" sid="777438406499362" static="1" type="number">0</variable>
+                        <variable constant="0" name="leftClickedCard" sid="878245727706820" static="1" type="number">0</variable>
                         <variable constant="0" name="newHoveringCard" sid="237905945799497" static="1" type="number">0</variable>
                         <event-group description="" sid="491047134858221" title="Card Rotation">
                             <sub-events>
@@ -246,9 +247,17 @@
                                             <param id="1" name="Comparison">1</param>
                                             <param id="2" name="Value">card.UID</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="281768859969480" type="System">
+                                            <param id="0" name="Variable">leftClickedCard</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">card.UID</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-25" name="Move to bottom" sid="285526523384143" type="card" />
+                                        <action id="-26" name="Move to layer" sid="223810659695630" type="card">
+                                            <param id="0" name="Layer">&quot;Deck&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="586072232763822">
@@ -274,6 +283,11 @@
                                                 </condition>
                                                 <condition id="-14" name="Compare variable" sid="496045091513773" type="System">
                                                     <param id="0" name="Variable">rightClickedCard</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Value">card.UID</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="819273195173209" type="System">
+                                                    <param id="0" name="Variable">leftClickedCard</param>
                                                     <param id="1" name="Comparison">1</param>
                                                     <param id="2" name="Value">card.UID</param>
                                                 </condition>
@@ -488,6 +502,11 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">card.UID</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="956556671975013" type="System">
+                                            <param id="0" name="Variable">leftClickedCard</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">card.UID</param>
+                                        </condition>
                                         <condition id="-10" name="For" sid="648457773287939" type="System">
                                             <param id="0" name="Name">&quot;&quot;</param>
                                             <param id="1" name="Start index">1</param>
@@ -509,6 +528,89 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
+                        <comment>left mouse</comment>
+                        <event-group description="" sid="724595955764942" title="Card Select">
+                            <sub-events>
+                                <event-block sid="587905214499004">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="166228889301188" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">card</param>
+                                        </condition>
+                                        <condition id="-17" name="Pick top/bottom" sid="742685643281072" type="card">
+                                            <param id="0" name="Which">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="107822102810897">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="549377526652050" type="System">
+                                                    <param id="0" name="Variable">leftClickedCard</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">card.UID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="947161345997265" type="System">
+                                                    <param id="0" name="Variable">leftClickedCard</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="526858917552175" type="mouseHelp">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="654128850560366">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="189461537763995" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="299098780127821" type="System">
+                                                    <param id="0" name="Variable">leftClickedCard</param>
+                                                    <param id="1" name="Value">card.UID</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="137836686620917" type="mouseHelp">
+                                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-24" name="Move to top" sid="693881513739713" type="card" />
+                                                <action id="-8" name="Set angle" sid="851670632171812" type="card">
+                                                    <param id="0" name="Angle">0</param>
+                                                </action>
+                                                <action id="-26" name="Move to layer" sid="330484898157992" type="card">
+                                                    <param id="0" name="Layer">&quot;Entities&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="124633040063069">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="412277090091456" type="System">
+                                            <param id="0" name="Object">card</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="281533685073803" type="System">
+                                            <param id="0" name="Variable">leftClickedCard</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">card.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="313104001047496" type="card">
+                                            <param id="0" name="X">Mouse.X</param>
+                                            <param id="1" name="Y">Mouse.Y</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="256410429015082" type="card">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <comment>right mouse</comment>
                         <event-group description="" sid="521813453931637" title="Card Description">
                             <sub-events>
                                 <comment>activate or deactivate card description</comment>
