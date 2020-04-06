@@ -572,16 +572,21 @@
                                                     <param id="0" name="Variable">leftClickedCard</param>
                                                     <param id="1" name="Value">card.UID</param>
                                                 </action>
-                                                <action id="4" name="Set animation" sid="137836686620917" type="mouseHelp">
-                                                    <param id="0" name="Animation">&quot;Left&quot;</param>
-                                                    <param id="1" name="From">1</param>
+                                                <action id="-9" name="Destroy" sid="149562754574373" type="mouseHelp" />
+                                                <action id="-15" name="Set visible" sid="156657313082227" type="card">
+                                                    <param id="0" name="Visibility">0</param>
                                                 </action>
-                                                <action id="-24" name="Move to top" sid="693881513739713" type="card" />
-                                                <action id="-8" name="Set angle" sid="851670632171812" type="card">
-                                                    <param id="0" name="Angle">0</param>
+                                                <action id="-3" name="Create object" sid="736331787059523" type="System">
+                                                    <param id="0" name="Object to create">cursor</param>
+                                                    <param id="1" name="Layer">&quot;Entities&quot;</param>
+                                                    <param id="2" name="X">Mouse.X</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
                                                 </action>
-                                                <action id="-26" name="Move to layer" sid="330484898157992" type="card">
-                                                    <param id="0" name="Layer">&quot;Entities&quot;</param>
+                                                <action id="-3" name="Create object" sid="796195008502533" type="System">
+                                                    <param id="0" name="Object to create">selected</param>
+                                                    <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                                                    <param id="2" name="X">Mouse.X</param>
+                                                    <param id="3" name="Y">Mouse.Y</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -589,22 +594,16 @@
                                 </event-block>
                                 <event-block sid="124633040063069">
                                     <conditions>
-                                        <condition id="-11" name="For Each" sid="412277090091456" type="System">
-                                            <param id="0" name="Object">card</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="281533685073803" type="System">
-                                            <param id="0" name="Variable">leftClickedCard</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">card.UID</param>
-                                        </condition>
+                                        <condition id="-3" name="Is on-screen" sid="116073258781892" type="cursor" />
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="313104001047496" type="card">
+                                        <action id="-3" name="Set position" sid="674241086509601" type="cursor">
                                             <param id="0" name="X">Mouse.X</param>
                                             <param id="1" name="Y">Mouse.Y</param>
                                         </action>
-                                        <action id="9" name="Set scale" sid="256410429015082" type="card">
-                                            <param id="0" name="Scale">0.5</param>
+                                        <action id="-3" name="Set position" sid="389439697462884" type="selected">
+                                            <param id="0" name="X">(Mouse.X - Mouse.X % 256) + 128</param>
+                                            <param id="1" name="Y">(Mouse.Y - Mouse.Y % 256) + 128</param>
                                         </action>
                                     </actions>
                                 </event-block>

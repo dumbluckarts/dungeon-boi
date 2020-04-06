@@ -430,6 +430,14 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="selected" sid="977666357239787">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="448189467051939" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="game objects">
             <object-type name="spr_chest" sid="425105217154076">
