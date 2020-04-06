@@ -648,6 +648,8 @@
             <file name="cronch.ogg" />
             <file name="guy_moving.m4a" />
             <file name="guy_moving.ogg" />
+            <file name="fwoosh.m4a" />
+            <file name="fwoosh.ogg" />
         </sound-folder>
         <sound-folder name="Enemies">
             <file name="oh.m4a" />
