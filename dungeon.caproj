@@ -105,8 +105,7 @@
             <object-type name="baddie" sid="505972719526172">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="3" loop="1" name="Attacking" pingpong="1" repeatcount="1" repeatto="0" sid="360295172473938" speed="5">
@@ -124,7 +123,7 @@
                     <instance-variable name="health" sid="941171492092073" type="number" />
                 </instance-variables>
                 <animation-folder>
-                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
+                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <image-point name="left" x="0" y="0.546875" />
                             <image-point name="up" x="0.46875" y="0" />
@@ -137,7 +136,6 @@
                                 <point x="0.0742188" y="0.921875" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
