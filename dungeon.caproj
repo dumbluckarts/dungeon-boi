@@ -123,7 +123,7 @@
                     <instance-variable name="health" sid="941171492092073" type="number" />
                 </instance-variables>
                 <animation-folder>
-                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
+                    <animation framecount="2" loop="1" name="Down" pingpong="0" repeatcount="0" repeatto="0" sid="352085639594818" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <image-point name="left" x="0" y="0.546875" />
                             <image-point name="up" x="0.46875" y="0" />
@@ -134,6 +134,60 @@
                                 <point x="0.875" y="0.0976563" />
                                 <point x="0.933594" y="0.941406" />
                                 <point x="0.0742188" y="0.921875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\INoahGuy\Desktop\sprite_1.png">
+                            <image-point name="left" x="0" y="0.546875" />
+                            <image-point name="up" x="0.46875" y="0" />
+                            <image-point name="right" x="1" y="0.5" />
+                            <image-point name="down" x="0.4375" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.109375" y="0.179688" />
+                                <point x="0.875" y="0.0976563" />
+                                <point x="0.933594" y="0.941406" />
+                                <point x="0.0742188" y="0.921875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="Up" pingpong="0" repeatcount="0" repeatto="0" sid="210066224898240" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="0" y="0.546875" />
+                            <image-point name="up" x="0.46875" y="0" />
+                            <image-point name="right" x="1" y="0.5" />
+                            <image-point name="down" x="0.4375" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.109375" y="0.179688" />
+                                <point x="0.875" y="0.0976563" />
+                                <point x="0.933594" y="0.941406" />
+                                <point x="0.0742188" y="0.921875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="Left" pingpong="0" repeatcount="0" repeatto="0" sid="489327768307207" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="1" y="0.546875" />
+                            <image-point name="up" x="0.53125" y="0" />
+                            <image-point name="right" x="0" y="0.5" />
+                            <image-point name="down" x="0.5625" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.925781" y="0.921875" />
+                                <point x="0.066406" y="0.941406" />
+                                <point x="0.125" y="0.0976563" />
+                                <point x="0.890625" y="0.179688" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="Right" pingpong="0" repeatcount="0" repeatto="0" sid="748298243627152" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="1" y="0.546875" />
+                            <image-point name="up" x="0.53125" y="0" />
+                            <image-point name="right" x="0" y="0.5" />
+                            <image-point name="down" x="0.5625" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.925781" y="0.921875" />
+                                <point x="0.066406" y="0.941406" />
+                                <point x="0.125" y="0.0976563" />
+                                <point x="0.890625" y="0.179688" />
                             </collision-poly>
                         </frame>
                     </animation>

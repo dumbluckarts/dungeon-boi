@@ -387,6 +387,10 @@
                                 <action id="-2" name="Set Y" sid="570440085775567" type="player">
                                     <param id="0" name="Y">player.Y-STEP</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="500304724509035" type="player">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="855321508394455">
@@ -406,6 +410,10 @@
                                 </action>
                                 <action id="-1" name="Set X" sid="985196429644199" type="player">
                                     <param id="0" name="X">player.X-STEP</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="360932275834207" type="player">
+                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -427,6 +435,10 @@
                                 <action id="-2" name="Set Y" sid="336988567379406" type="player">
                                     <param id="0" name="Y">player.Y+STEP</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="130136536676098" type="player">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="334235548478674">
@@ -446,6 +458,10 @@
                                 </action>
                                 <action id="-1" name="Set X" sid="584268014498529" type="player">
                                     <param id="0" name="X">player.X+STEP</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="143562921041744" type="player">
+                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
