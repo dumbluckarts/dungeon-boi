@@ -8,11 +8,59 @@
         <include># Generation</include>
         <include># Real People</include>
         <variable constant="0" name="TURN_TIME" sid="311753241124730" static="0" type="number">0.5</variable>
-        <comment>setup</comment>
-        <event-block sid="546688573281992">
+        <event-group description="" sid="278046626711698" title="Setup">
+            <sub-events>
+                <comment>rarity</comment>
+                <variable constant="1" name="RARITY_DEFAULT" sid="359937907075334" static="0" type="number">5</variable>
+                <variable constant="1" name="RARITY_CHEST" sid="165437344726010" static="0" type="number">2</variable>
+                <variable constant="1" name="RARITY_ENEMY" sid="843614851203848" static="0" type="number">0</variable>
+                <variable constant="1" name="RARITY_SHOP" sid="254028925427082" static="0" type="number">7</variable>
+                <variable constant="1" name="RARITY_BOSS" sid="661966669910714" static="0" type="number">10</variable>
+                <comment>priority</comment>
+                <variable constant="1" name="PRIORITY_DEFAULT" sid="685120728958899" static="0" type="number">2</variable>
+                <variable constant="1" name="PRIORITY_CHEST" sid="550856538170383" static="0" type="number">2</variable>
+                <variable constant="1" name="PRIORITY_ENEMY" sid="480851804844931" static="0" type="number">1</variable>
+                <variable constant="1" name="PRIORITY_SHOP" sid="528523216389932" static="0" type="number">3</variable>
+                <variable constant="1" name="PRIORITY_BOSS" sid="320080256858791" static="0" type="number">3</variable>
+                <event-block sid="885509684978048">
+                    <conditions>
+                        <condition id="-25" name="On loader layout complete" sid="724788694306425" type="System" />
+                        <condition id="3" name="All scripts loaded" sid="754161536600528" type="JS" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Call function" sid="594576693497684" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addCategories&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=default, rarity=&quot; &amp; RARITY_DEFAULT &amp; &quot;, priority=&quot; &amp; PRIORITY_DEFAULT</param>
+                        </action>
+                        <action id="6" name="Call function" sid="605312311147740" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addCategories&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=chest, rarity=&quot; &amp; RARITY_CHEST &amp; &quot;, priority=&quot; &amp; PRIORITY_CHEST</param>
+                        </action>
+                        <action id="6" name="Call function" sid="145181169319214" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addCategories&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=enemy, rarity=&quot; &amp; RARITY_ENEMY &amp; &quot;, priority=&quot; &amp; PRIORITY_ENEMY</param>
+                        </action>
+                        <action id="6" name="Call function" sid="573988893235727" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addCategories&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=shop, rarity=&quot; &amp; RARITY_ENEMY &amp; &quot;, priority=&quot; &amp; RARITY_ENEMY</param>
+                        </action>
+                        <action id="6" name="Call function" sid="264867900086547" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addCategories&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=boss, rarity=&quot; &amp; RARITY_BOSS &amp; &quot;, priority=&quot; &amp; PRIORITY_BOSS</param>
+                        </action>
+                        <action id="6" name="Call function" sid="870509781384327" type="JS">
+                            <param id="0" name="Expression">&quot;degenerate.addLayouts&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;name=default, amount=2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>old setup</comment>
+        <event-block sid="153755729882182">
             <conditions>
-                <condition id="3" name="All scripts loaded" sid="899972672442665" type="JS" />
-                <condition id="-4" name="Trigger once while true" sid="558339466051152" type="System" />
+                <condition id="-25" name="On loader layout complete" sid="473534351192900" type="System" />
+                <condition id="3" name="All scripts loaded" sid="249620580965593" type="JS" />
             </conditions>
             <actions>
                 <action id="6" name="Call function" sid="667982979599250" type="JS">

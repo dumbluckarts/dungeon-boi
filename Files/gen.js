@@ -1,3 +1,141 @@
+function Category(options) {
+	return {
+		name: options.name,
+		rarity: options.rarity,
+		overlap: options.overlap,
+		priority: options.priority
+	}
+}
+
+function Layout(options) {
+	return {
+		name: options.name,
+		amount: options.amount
+	}
+}
+
+function Rate(category) {
+	return {
+		category: category,
+		value: category.rarity
+	}
+}
+
+function Degen(options) {
+
+	var self = {}
+
+	var _interval = options.interval
+	var _count = options.interval
+
+	var _layouts = []
+	var _rates = []
+
+	self.addCategories = (...categories) => {
+		for (var category of categories) {
+			_rates.push(Rate(stringToObject(category)))
+		}
+	}
+	self.addLayouts = (...layouts) => {
+		for (var layout of layouts) {
+			_layouts.push(stringToObject(layout))
+		}
+	}
+
+	self.iterateRates = (rates) => {
+		var results = []
+
+		for (var rate of rates) {
+			rate.value = rate.value - 1
+
+			if (rate.value < 1) {
+				rate.value = rate.category.rarity
+				results.push(rate)
+			}
+		}
+		return results
+	}
+
+	self.sortPriority = (rates) => {
+		rates = rates.sort((a, b) => 
+			a.category.priority > b.category.priority ? 1 : -1)
+		return rates.reverse()
+	}
+
+	self.checkOverlappable = (rates) => {
+		if (rates[0].category.overlap) {
+			// remove all objects that dont overlap
+			rates = rates.filter(a =>
+				a.category.overlap)
+
+			// 50% chance to remove overlapping
+			if (getRandomInt(2) == 1) rates = [ rates[0] ]
+		}
+		else {
+			rates.length = 1
+		}
+		return rates
+	}
+
+	self.next = () => {
+
+		// generate rates
+		var rates = self.iterateRates(_rates)
+
+		self.sortPriority(rates)
+		self.checkOverlappable(rates)
+
+		// generate layouts
+
+		return results
+	}
+
+	self.print = () => {
+		console.log(_interval)
+		console.log(_count)
+		console.log(_layouts)
+		console.log(_rates)
+	}
+
+	self.test = (amount) => {
+		for (var i = 0; i < amount; i++) {
+			console.log(self.next())
+		}
+	}
+
+	return self;
+}
+
+var degenerate = Degen({
+	interval: 10
+})
+
+function stringToObject(string) {
+	var obj = {}
+	
+	string = string.split(",")
+
+	for (var s of string) {
+		var key = s.split("=")[0].trim()
+		var val = s.split("=")[1].trim()
+
+		if (!isNaN(val)) val = parseInt(val)
+
+		obj[key] = val
+	}
+	return obj
+}
+
+
+
+
+
+
+
+
+
+
+
 function Degenerate() {
 	var _data = []
 
