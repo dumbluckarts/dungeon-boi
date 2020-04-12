@@ -26,10 +26,15 @@ function Degen(options) {
 	var self = {}
 
 	var _interval = options.interval
-	var _count = options.interval
+	var _count = 1
+	var _active = {}
 
 	var _layouts = []
 	var _rates = []
+
+	self.setInterval = (interval) => {
+		_interval = interval
+	}
 
 	self.addCategories = (...categories) => {
 		for (var category of categories) {
@@ -42,10 +47,10 @@ function Degen(options) {
 		}
 	}
 
-	self.iterateRates = (rates) => {
+	function iterateRates() {
 		var results = []
 
-		for (var rate of rates) {
+		for (var rate of _rates) {
 			rate.value = rate.value - 1
 
 			if (rate.value < 1) {
@@ -56,38 +61,71 @@ function Degen(options) {
 		return results
 	}
 
-	self.sortPriority = (rates) => {
+	function sortPriority(rates) {
 		rates = rates.sort((a, b) => 
 			a.category.priority > b.category.priority ? 1 : -1)
 		return rates.reverse()
 	}
 
-	self.checkOverlappable = (rates) => {
+	function checkOverlappable(rates) {
+
+		if (rates.length <= 1) return rates
+
 		if (rates[0].category.overlap) {
-			// remove all objects that dont overlap
 			rates = rates.filter(a =>
 				a.category.overlap)
 
 			// 50% chance to remove overlapping
-			if (getRandomInt(2) == 1) rates = [ rates[0] ]
+			if (getRandomInt(2) === 1) { 
+				rates.length = 1
+			}
 		}
 		else {
 			rates.length = 1
 		}
+
 		return rates
 	}
 
+	function stringifyRates(rates) {
+		var str = ""
+
+		for (var rate of rates) {
+			if (rate.category.name === "default") continue
+			str += rate.category.name + " "
+		}
+		return str.substring(0, str.length-1)
+	}
+
+	function iterateLayout() {
+
+		_count -= 1
+
+		// new layout
+		if (_count < 1) {
+			_count = _interval
+
+			_active["layout"] = _layouts[getRandomInt(_layouts.length)]
+			_active["number"] = getRandomInt(_active.layout.amount) + 1
+		}
+		else {
+			_active["number"] = getRandomInt(_active.layout.amount) + 1
+		}
+		return _active.layout.name + " " + _active.number
+	}
+
+
 	self.next = () => {
-
 		// generate rates
-		var rates = self.iterateRates(_rates)
-
-		self.sortPriority(rates)
-		self.checkOverlappable(rates)
+		var rates = iterateRates()
+		rates = sortPriority(rates)
+		rates = checkOverlappable(rates)
+		rates = stringifyRates(rates)
 
 		// generate layouts
+		var layout = iterateLayout()
 
-		return results
+		return layout + " " + rates
 	}
 
 	self.print = () => {
@@ -106,9 +144,16 @@ function Degen(options) {
 	return self;
 }
 
-var degenerate = Degen({
-	interval: 10
-})
+var degenerate = configDegenerate;
+
+function configDegenerate(options) {
+	options = stringToObject(options)
+	degenerate = Degen(options)
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 function stringToObject(string) {
 	var obj = {}
@@ -220,6 +265,3 @@ var gen = Degenerate()
 var generate = gen
 
 // UTILS
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
