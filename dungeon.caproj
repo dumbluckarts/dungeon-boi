@@ -203,6 +203,32 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="2" loop="0" name="downStep" pingpong="0" repeatcount="1" repeatto="0" sid="862122796762374" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\walk0.png">
+                            <collision-poly>
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.121094" />
+                                <point x="0.714844" y="0.285156" />
+                                <point x="0.601563" y="0.5" />
+                                <point x="0.671875" y="0.671875" />
+                                <point x="0.5" y="0.980469" />
+                                <point x="0.214844" y="0.785156" />
+                                <point x="0.304688" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\walk1.png">
+                            <collision-poly>
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.121094" />
+                                <point x="0.714844" y="0.285156" />
+                                <point x="0.601563" y="0.5" />
+                                <point x="0.671875" y="0.671875" />
+                                <point x="0.5" y="0.980469" />
+                                <point x="0.214844" y="0.785156" />
+                                <point x="0.304688" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
         </object-folder>

@@ -429,6 +429,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="409952632897218" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="101896154069715" type="System">
                                     <param id="0" name="Variable">oldX</param>
                                     <param id="1" name="Value">player.X</param>
@@ -453,6 +456,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="818168880956238" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="996290239279165" type="System">
                                     <param id="0" name="Variable">oldX</param>
                                     <param id="1" name="Value">player.X</param>
@@ -477,6 +483,13 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="4" name="Set animation" sid="272358774793171" type="player">
+                                    <param id="0" name="Animation">&quot;downStep&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="907190515032673" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="836695164246927" type="System">
                                     <param id="0" name="Variable">oldX</param>
                                     <param id="1" name="Value">player.X</param>
@@ -488,6 +501,15 @@
                                 <action id="-2" name="Set Y" sid="336988567379406" type="player">
                                     <param id="0" name="Y">player.Y+STEP</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="208690164485207">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="682588388687479" type="player">
+                                    <param id="0" name="Animation">&quot;downStep&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
                                 <action id="4" name="Set animation" sid="130136536676098" type="player">
                                     <param id="0" name="Animation">&quot;Down&quot;</param>
                                     <param id="1" name="From">1</param>
@@ -501,6 +523,9 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-16" name="Wait" sid="603834668679089" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="736067099650424" type="System">
                                     <param id="0" name="Variable">oldX</param>
                                     <param id="1" name="Value">player.X</param>
