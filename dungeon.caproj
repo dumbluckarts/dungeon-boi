@@ -528,6 +528,21 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="fireCard" sid="341098883541415">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="812281145987225" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.0426136" y="0.0320513" />
+                                <point x="0.954545" y="0.034188" />
+                                <point x="0.946023" y="0.959402" />
+                                <point x="0.0511364" y="0.961538" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="game objects">
             <object-type name="spr_chest" sid="425105217154076">
