@@ -178,10 +178,10 @@
                             </conditions>
                             <actions>
                                 <action id="-5" name="Set width" sid="201826664706281" type="heart">
-                                    <param id="0" name="Width">128</param>
+                                    <param id="0" name="Width">256</param>
                                 </action>
                                 <action id="-6" name="Set height" sid="286801995979523" type="heart">
-                                    <param id="0" name="Height">128</param>
+                                    <param id="0" name="Height">256</param>
                                 </action>
                                 <action id="-1" name="Set X" sid="170869750984660" type="heart">
                                     <param id="0" name="X">heart.oldX</param>
@@ -195,10 +195,10 @@
                             <conditions />
                             <actions>
                                 <action id="-5" name="Set width" sid="375422684374527" type="heart">
-                                    <param id="0" name="Width">256</param>
+                                    <param id="0" name="Width">512</param>
                                 </action>
                                 <action id="-6" name="Set height" sid="731022881916194" type="heart">
-                                    <param id="0" name="Height">256</param>
+                                    <param id="0" name="Height">512</param>
                                 </action>
                                 <action id="-1" name="Set X" sid="523750284694964" type="heart">
                                     <param id="0" name="X">heart.oldX + 64</param>
@@ -728,7 +728,7 @@
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="9" name="Set scale" sid="255397595614312" type="baccPacc_spr">
-                            <param id="0" name="Scale">1.6</param>
+                            <param id="0" name="Scale">2.1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -742,7 +742,7 @@
                             <param id="1" name="From">1</param>
                         </action>
                         <action id="9" name="Set scale" sid="317390786952532" type="baccPacc_spr">
-                            <param id="0" name="Scale">1.5</param>
+                            <param id="0" name="Scale">2</param>
                         </action>
                     </actions>
                 </event-block>
