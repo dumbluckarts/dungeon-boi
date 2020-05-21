@@ -408,9 +408,73 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <comment>NEEDS REVISING FOR NORMAL MOVEMENT</comment>
         <event-group description="" sid="290257035324819" title="Movement">
             <sub-events>
                 <variable constant="1" name="STEP" sid="708237805233729" static="0" type="number">256</variable>
+                <event-block sid="867462229624705">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="373876476274345" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="520644530676812" type="player">
+                            <param id="0" name="Animation">&quot;downIdle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="529308842497278">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="918181393265357" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="116092791006655" type="player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="560640139508130">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="477105547179091" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="199977829775438" type="player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="871168835582654">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="728725420788118" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="552096931084634" type="player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="200215400559660" type="player">
+                            <param id="0" name="Animation">&quot;downStep&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="979361484607802">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="450548237335354" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="523343404010031" type="player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="363198703204125">
                     <conditions>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="619656695857457" type="player">
@@ -422,7 +486,7 @@
                         <comment>turn based wait thing for ai moving</comment>
                         <variable constant="0" name="oldX" sid="478355633447014" static="1" type="number">0</variable>
                         <variable constant="0" name="oldY" sid="168513857626284" static="1" type="number">0</variable>
-                        <event-block sid="837325001922863">
+                        <event-block disabled="1" sid="837325001922863">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="824339632121514" type="Keyboard">
                                     <param id="0" name="Key">87</param>
@@ -449,7 +513,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="855321508394455">
+                        <event-block disabled="1" sid="855321508394455">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="735446747938497" type="Keyboard">
                                     <param id="0" name="Key">65</param>
@@ -476,7 +540,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="335044519949682">
+                        <event-block disabled="1" sid="335044519949682">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="219408353105468" type="Keyboard">
                                     <param id="0" name="Key">83</param>
@@ -503,7 +567,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="208690164485207">
+                        <event-block disabled="1" sid="208690164485207">
                             <conditions>
                                 <condition id="4" name="On finished" sid="682588388687479" type="player">
                                     <param id="0" name="Animation">&quot;downStep&quot;</param>
@@ -516,7 +580,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="334235548478674">
+                        <event-block disabled="1" sid="334235548478674">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="551730744134376" type="Keyboard">
                                     <param id="0" name="Key">68</param>
@@ -543,7 +607,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block any="1" sid="997321069255321">
+                        <event-block any="1" disabled="1" sid="997321069255321">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="897826770948647" type="Keyboard">
                                     <param id="0" name="Key">87</param>
@@ -571,7 +635,7 @@
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="521908764858918">
+                                <event-block disabled="1" sid="521908764858918">
                                     <conditions>
                                         <condition id="-3" name="Is on-screen" sid="729917971299048" type="PathFinding" />
                                     </conditions>
@@ -593,7 +657,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="630056197490122">
+                                <event-block disabled="1" sid="630056197490122">
                                     <conditions>
                                         <condition id="1" name="Is overlapping another object" sid="723661938842048" type="player">
                                             <param id="0" name="Object">solid_collider</param>
