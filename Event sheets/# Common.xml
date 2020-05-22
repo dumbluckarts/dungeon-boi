@@ -422,6 +422,21 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="265141554251563">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="827801711158484" type="System" />
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="784867939404698" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="443462045586203" type="player">
+                                    <param id="0" name="Object">flame_spr</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="529308842497278">
                     <conditions>
@@ -433,7 +448,35 @@
                         <action behavior="8Direction" id="7" name="Simulate control" sid="116092791006655" type="player">
                             <param id="0" name="Control">2</param>
                         </action>
+                        <action id="4" name="Set animation" sid="358121096410572" type="player">
+                            <param id="0" name="Animation">&quot;upStep&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="517117532186269">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="105227702689724" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="558520384962118" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="320545947587993" type="player">
+                                    <param id="0" name="Object">playerSteps</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">2</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="133333348458850" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="840042819245747" type="playerSteps" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="560640139508130">
                     <conditions>
@@ -445,7 +488,35 @@
                         <action behavior="8Direction" id="7" name="Simulate control" sid="199977829775438" type="player">
                             <param id="0" name="Control">0</param>
                         </action>
+                        <action id="4" name="Set animation" sid="776141877447999" type="player">
+                            <param id="0" name="Animation">&quot;leftStep&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="913506807882744">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="599711936586334" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="661763590846438" type="player">
+                                    <param id="0" name="Object">playerSteps</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="698715938070459" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="934159309848020" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="345650219702637" type="playerSteps" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="871168835582654">
                     <conditions>
@@ -462,6 +533,30 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="701069342417546">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="547653909511625" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="233588428748291" type="player">
+                                    <param id="0" name="Object">playerSteps</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">3</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="486376785731267" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="122516827016582" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="521998905753364" type="playerSteps" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="979361484607802">
                     <conditions>
@@ -473,7 +568,35 @@
                         <action behavior="8Direction" id="7" name="Simulate control" sid="523343404010031" type="player">
                             <param id="0" name="Control">1</param>
                         </action>
+                        <action id="4" name="Set animation" sid="805567983849156" type="player">
+                            <param id="0" name="Animation">&quot;rightStep&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="954070973096288">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="279312595035206" type="System">
+                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="108657205071039" type="player">
+                                    <param id="0" name="Object">playerSteps</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">4</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="412681236196059" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="329119368023591" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="657513557810727" type="playerSteps" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="363198703204125">
                     <conditions>

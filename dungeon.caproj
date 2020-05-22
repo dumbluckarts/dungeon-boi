@@ -359,6 +359,48 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="1" name="upStep" pingpong="0" repeatcount="0" repeatto="0" sid="426661203216225" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="0" y="0.546875" />
+                            <image-point name="up" x="0.46875" y="0" />
+                            <image-point name="right" x="1" y="0.5" />
+                            <image-point name="down" x="0.4375" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.0976563" y="0" />
+                                <point x="0.789063" y="0" />
+                                <point x="0.785156" y="1" />
+                                <point x="0.0898438" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="rightStep" pingpong="0" repeatcount="0" repeatto="0" sid="561413109432098" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="1" y="0.546875" />
+                            <image-point name="up" x="0.53125" y="0" />
+                            <image-point name="right" x="0" y="0.5" />
+                            <image-point name="down" x="0.5625" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.0976563" y="0" />
+                                <point x="0.789063" y="0" />
+                                <point x="0.785156" y="1" />
+                                <point x="0.0898438" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="leftStep" pingpong="0" repeatcount="0" repeatto="0" sid="128884197411405" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="left" x="1" y="0.546875" />
+                            <image-point name="up" x="0.53125" y="0" />
+                            <image-point name="right" x="0" y="0.5" />
+                            <image-point name="down" x="0.5625" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.0976563" y="0" />
+                                <point x="0.789063" y="0" />
+                                <point x="0.785156" y="1" />
+                                <point x="0.0898438" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
         </object-folder>
@@ -458,6 +500,23 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="690775608465370" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="playerSteps" sid="257193522994377">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="5">
+                        <frame duration="1" hotspotX="0.513889" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="5">
+                        <frame duration="1" hotspotX="0.527778" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="976124212800194" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.454545" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="255117966367040" speed="5">
+                        <frame duration="1" hotspotX="1" hotspotY="0.469697" />
                     </animation>
                 </animation-folder>
             </object-type>
