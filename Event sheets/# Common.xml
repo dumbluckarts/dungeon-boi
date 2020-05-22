@@ -425,12 +425,12 @@
                     <sub-events>
                         <event-block sid="265141554251563">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="827801711158484" type="System" />
                                 <condition behavior="8Direction" id="0" name="Is moving" sid="784867939404698" type="player" />
+                                <condition id="-4" name="Trigger once while true" sid="827801711158484" type="System" />
                             </conditions>
                             <actions>
                                 <action id="0" name="Spawn another object" sid="443462045586203" type="player">
-                                    <param id="0" name="Object">flame_spr</param>
+                                    <param id="0" name="Object">baddie</param>
                                     <param id="1" name="Layer">2</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
