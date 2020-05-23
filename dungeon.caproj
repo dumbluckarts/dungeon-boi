@@ -119,7 +119,7 @@
             <object-type name="baddie" sid="505972719526172">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="12" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
+                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\sprite_0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
@@ -164,28 +164,6 @@
                                 <point x="0.212" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.5" y="0.252" />
-                                <point x="0.708" y="0.292" />
-                                <point x="0.816" y="0.5" />
-                                <point x="0.82" y="0.82" />
-                                <point x="0.5" y="1" />
-                                <point x="0.108" y="0.892" />
-                                <point x="0.212" y="0.5" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.5" y="0.252" />
-                                <point x="0.708" y="0.292" />
-                                <point x="0.816" y="0.5" />
-                                <point x="0.82" y="0.82" />
-                                <point x="0.5" y="1" />
-                                <point x="0.108" y="0.892" />
-                                <point x="0.212" y="0.5" />
-                            </collision-poly>
-                        </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\sprite_4.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
@@ -208,7 +186,9 @@
                                 <point x="0.212" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\sprite_6.png">
+                    </animation>
+                    <animation framecount="3" loop="0" name="preSlash" pingpong="0" repeatcount="1" repeatto="0" sid="403052505888895" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\baddieslash0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
                                 <point x="0.708" y="0.292" />
@@ -219,7 +199,7 @@
                                 <point x="0.212" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\baddieslash1.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
                                 <point x="0.708" y="0.292" />
@@ -230,18 +210,7 @@
                                 <point x="0.212" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.5" y="0.252" />
-                                <point x="0.708" y="0.292" />
-                                <point x="0.816" y="0.5" />
-                                <point x="0.82" y="0.82" />
-                                <point x="0.5" y="1" />
-                                <point x="0.108" y="0.892" />
-                                <point x="0.212" y="0.5" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\baddieslash2.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
                                 <point x="0.708" y="0.292" />
@@ -354,8 +323,20 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="1" loop="1" name="upStep" pingpong="0" repeatcount="0" repeatto="0" sid="426661203216225" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <animation framecount="2" loop="1" name="upStep" pingpong="0" repeatcount="0" repeatto="0" sid="426661203216225" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\New folder\sprite_1.png">
+                            <image-point name="left" x="0" y="0.546875" />
+                            <image-point name="up" x="0.46875" y="0" />
+                            <image-point name="right" x="1" y="0.5" />
+                            <image-point name="down" x="0.4375" y="1.01563" />
+                            <collision-poly>
+                                <point x="0.0976563" y="0" />
+                                <point x="0.789063" y="0" />
+                                <point x="0.785156" y="1" />
+                                <point x="0.0898438" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\New folder\sprite_2.png">
                             <image-point name="left" x="0" y="0.546875" />
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
@@ -501,10 +482,12 @@
             <object-type name="playerSteps" sid="257193522994377">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="5">
+                    <animation framecount="2" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="5">
+                        <frame duration="1" hotspotX="0.513889" hotspotY="0" />
                         <frame duration="1" hotspotX="0.513889" hotspotY="0" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="5">
+                    <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="5">
+                        <frame duration="1" hotspotX="0.527778" hotspotY="0" />
                         <frame duration="1" hotspotX="0.527778" hotspotY="0" />
                     </animation>
                     <animation framecount="1" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="976124212800194" speed="5">
@@ -512,6 +495,73 @@
                     </animation>
                     <animation framecount="1" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="255117966367040" speed="5">
                         <frame duration="1" hotspotX="1" hotspotY="0.469697" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="dust" sid="944707087164994">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_3.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_4.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -944,6 +994,12 @@
             <file name="guy_moving.ogg" />
             <file name="fwoosh.m4a" />
             <file name="fwoosh.ogg" />
+            <file name="mushStep1.m4a" />
+            <file name="mushStep1.ogg" />
+            <file name="mushStep2.m4a" />
+            <file name="mushStep2.ogg" />
+            <file name="mushstep3.m4a" />
+            <file name="mushstep3.ogg" />
         </sound-folder>
         <sound-folder name="Enemies">
             <file name="oh.m4a" />
