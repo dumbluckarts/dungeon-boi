@@ -253,11 +253,6 @@
                             </collision-poly>
                         </frame>
                     </animation>
-                    <animation framecount="3" loop="1" name="Attacking" pingpong="1" repeatcount="1" repeatto="0" sid="360295172473938" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="player" sid="823416116986559">
