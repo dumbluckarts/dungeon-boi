@@ -528,7 +528,7 @@
                         <event-block sid="517117532186269">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="105227702689724" type="System">
-                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                    <param id="0" name="Interval (seconds)">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -569,7 +569,7 @@
                         <event-block sid="913506807882744">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="599711936586334" type="System">
-                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                    <param id="0" name="Interval (seconds)">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -610,7 +610,7 @@
                         <event-block sid="701069342417546">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="547653909511625" type="System">
-                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                    <param id="0" name="Interval (seconds)">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -651,7 +651,7 @@
                         <event-block sid="954070973096288">
                             <conditions>
                                 <condition id="-6" name="Every X seconds" sid="279312595035206" type="System">
-                                    <param id="0" name="Interval (seconds)">0.5</param>
+                                    <param id="0" name="Interval (seconds)">0.25</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -888,7 +888,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Wait" sid="807762151090451" type="System">
-                                    <param id="0" name="Seconds">0.25 * loopindex</param>
+                                    <param id="0" name="Seconds">0.45 * loopindex</param>
                                 </action>
                                 <action id="-16" name="Set opacity" sid="712577169462068" type="playerSteps">
                                     <param id="0" name="Opacity">playerSteps.Opacity-2</param>
@@ -896,6 +896,15 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="789258133118997">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="996784077390052" type="playerSteps" />
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="815225897377603" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="925773240290183" type="playerSteps" />
+                    </actions>
                 </event-block>
                 <event-block sid="117277048687465">
                     <conditions>

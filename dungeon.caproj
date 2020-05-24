@@ -482,18 +482,20 @@
             <object-type name="playerSteps" sid="257193522994377">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="5">
-                        <frame duration="1" hotspotX="0.513889" hotspotY="0" />
+                    <animation framecount="2" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="6">
+                        <frame duration="1" hotspotX="0.527778" hotspotY="0" />
                         <frame duration="1" hotspotX="0.513889" hotspotY="0" />
                     </animation>
-                    <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="5">
-                        <frame duration="1" hotspotX="0.527778" hotspotY="0" />
+                    <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="6">
+                        <frame duration="1" hotspotX="0.527778" hotspotY="1.04762" />
                         <frame duration="1" hotspotX="0.527778" hotspotY="0" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="976124212800194" speed="5">
+                    <animation framecount="2" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="976124212800194" speed="6">
+                        <frame duration="1" hotspotX="0" hotspotY="0.454545" />
                         <frame duration="1" hotspotX="0" hotspotY="0.454545" />
                     </animation>
-                    <animation framecount="1" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="255117966367040" speed="5">
+                    <animation framecount="2" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="255117966367040" speed="6">
+                        <frame duration="1" hotspotX="1" hotspotY="0.469697" />
                         <frame duration="1" hotspotX="1" hotspotY="0.469697" />
                     </animation>
                 </animation-folder>
@@ -501,7 +503,7 @@
             <object-type name="dust" sid="944707087164994">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
@@ -512,27 +514,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_1.png">
-                            <collision-poly>
-                                <point x="0.5" y="0.542969" />
-                                <point x="0.480469" y="0.519531" />
-                                <point x="0.335938" y="0.5" />
-                                <point x="0.5" y="0.707031" />
-                                <point x="0.289063" y="0.710938" />
-                                <point x="0.324219" y="0.5" />
-                            </collision-poly>
-                        </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_2.png">
-                            <collision-poly>
-                                <point x="0.5" y="0.542969" />
-                                <point x="0.480469" y="0.519531" />
-                                <point x="0.335938" y="0.5" />
-                                <point x="0.5" y="0.707031" />
-                                <point x="0.289063" y="0.710938" />
-                                <point x="0.324219" y="0.5" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_3.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
