@@ -503,7 +503,7 @@
             <object-type name="dust" sid="944707087164994">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
@@ -514,7 +514,27 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_3.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
