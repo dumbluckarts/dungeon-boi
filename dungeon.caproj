@@ -243,6 +243,7 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -255,6 +256,7 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -269,6 +271,7 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -283,6 +286,7 @@
                             <image-point name="up" x="0.53125" y="0" />
                             <image-point name="right" x="0" y="0.5" />
                             <image-point name="down" x="0.5625" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -297,6 +301,7 @@
                             <image-point name="up" x="0.53125" y="0" />
                             <image-point name="right" x="0" y="0.5" />
                             <image-point name="down" x="0.5625" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -307,6 +312,7 @@
                     </animation>
                     <animation framecount="2" loop="0" name="downStep" pingpong="0" repeatcount="1" repeatto="0" sid="862122796762374" speed="6">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\walk0.png">
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -315,6 +321,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\walk1.png">
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -329,6 +336,7 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -341,6 +349,7 @@
                             <image-point name="up" x="0.46875" y="0" />
                             <image-point name="right" x="1" y="0.5" />
                             <image-point name="down" x="0.4375" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -355,6 +364,7 @@
                             <image-point name="up" x="0.53125" y="0" />
                             <image-point name="right" x="0" y="0.5" />
                             <image-point name="down" x="0.5625" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -369,6 +379,7 @@
                             <image-point name="up" x="0.53125" y="0" />
                             <image-point name="right" x="0" y="0.5" />
                             <image-point name="down" x="0.5625" y="1.01563" />
+                            <image-point name="dust" x="0.5" y="1" />
                             <collision-poly>
                                 <point x="0.0976563" y="0" />
                                 <point x="0.789063" y="0" />
@@ -503,8 +514,8 @@
             <object-type name="dust" sid="944707087164994">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="7">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_0.png">
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="960770625531968" speed="10">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
@@ -514,7 +525,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_1.png">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_1.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
@@ -524,7 +535,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_2.png">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_2.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
@@ -534,7 +545,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_3.png">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\SPRITES\smoke\sprite_3.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
@@ -544,7 +555,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_4.png">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\smoke\sprite_4.png">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />
@@ -554,7 +565,7 @@
                                 <point x="0.324219" y="0.5" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5625" hotspotY="0.707031">
                             <collision-poly>
                                 <point x="0.5" y="0.542969" />
                                 <point x="0.480469" y="0.519531" />

@@ -429,16 +429,62 @@
                         <condition id="-4" name="Trigger once while true" sid="871154035101816" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="984092863188966" type="player">
+                        <action id="0" name="Spawn another object" sid="414320499657499" type="player">
                             <param id="0" name="Object">dust</param>
                             <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
+                            <param id="2" name="Image point">5</param>
                         </action>
-                        <action id="4" name="Set animation" sid="973990862417947" type="dust">
+                        <action id="4" name="Set animation" sid="547611497565305" type="dust">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="431845012333475">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="470422875329793" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Move to bottom" sid="390733834934034" type="dust" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="683776654526473">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="833189875591652" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="550192024327269" type="dust" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="283208085575187">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="296880239623650" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="977342761909551" type="dust">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="546477428911648">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="543890250363280" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="215809846367058" type="dust">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="150521021437276">
                     <conditions>
@@ -509,6 +555,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Key Movements</comment>
                 <event-block sid="529308842497278">
                     <conditions>
                         <condition id="2" name="Key is down" sid="918181393265357" type="Keyboard">
@@ -872,6 +919,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Fade player foot steps</comment>
                 <event-block sid="700472932885442">
                     <conditions>
                         <condition id="-3" name="Is on-screen" sid="256364251138235" type="playerSteps" />
@@ -896,15 +944,6 @@
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="789258133118997">
-                    <conditions>
-                        <condition id="-3" name="Is on-screen" sid="996784077390052" type="playerSteps" />
-                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="815225897377603" type="player" />
-                    </conditions>
-                    <actions>
-                        <action id="2" name="Stop" sid="925773240290183" type="playerSteps" />
-                    </actions>
                 </event-block>
                 <event-block sid="117277048687465">
                     <conditions>
