@@ -45,7 +45,7 @@
                         <width>72</width>
                         <height>21</height>
                         <depth>0</depth>
-                        <hotspotX>0.513888896</hotspotX>
+                        <hotspotX>0.527777791</hotspotX>
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>0.5</opacity>
@@ -157,7 +157,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="flame_spr2" uid="180">
+                <instance type="attackSlash" uid="180">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -236,7 +236,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="grass_stuff2" uid="14">
+                <instance type="skull_stuff" uid="14">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -249,17 +249,24 @@
                         <layout>dungeon,catacombs</layout>
                         <scattered>false</scattered>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>581</x>
                         <y>369</y>
                         <z>0</z>
-                        <width>256</width>
-                        <height>256</height>
+                        <width>210</width>
+                        <height>142</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.509523809</hotspotX>
+                        <hotspotY>0.661971807</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -364,11 +371,11 @@
                         <x>1681</x>
                         <y>169</y>
                         <z>0</z>
-                        <width>250</width>
-                        <height>250</height>
+                        <width>116</width>
+                        <height>86</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.715517223</hotspotX>
+                        <hotspotY>0.476744175</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -408,17 +415,24 @@
                         <layout>dungeon</layout>
                         <scattered>false</scattered>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>232</x>
                         <y>631</y>
                         <z>0</z>
-                        <width>256</width>
-                        <height>256</height>
+                        <width>163</width>
+                        <height>202</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.625766873</hotspotX>
+                        <hotspotY>0.564356446</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -483,8 +497,8 @@
                         <width>256</width>
                         <height>256</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.5625</hotspotX>
+                        <hotspotY>0.70703125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

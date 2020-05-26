@@ -211,7 +211,7 @@
                                             </conditions>
                                             <actions>
                                                 <action id="0" name="Spawn another object" sid="522269034614672" type="attackDirection">
-                                                    <param id="0" name="Object">flame_spr2</param>
+                                                    <param id="0" name="Object">attackSlash</param>
                                                     <param id="1" name="Layer">&quot;Layer 0&quot;</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>

@@ -108,9 +108,9 @@
                 <event-block sid="362021747407704">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="269185460059402" type="player">
-                            <param id="0" name="Object">flame_spr2</param>
+                            <param id="0" name="Object">attackSlash</param>
                         </condition>
-                        <condition id="3" name="Compare frame" sid="702831742752999" type="flame_spr2">
+                        <condition id="3" name="Compare frame" sid="702831742752999" type="attackSlash">
                             <param id="0" name="Comparison">0</param>
                             <param id="1" name="Number">0</param>
                         </condition>

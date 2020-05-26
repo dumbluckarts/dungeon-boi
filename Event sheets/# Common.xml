@@ -344,7 +344,7 @@
                 <comment>destroy slash when finished</comment>
                 <event-block sid="281700014652823">
                     <conditions>
-                        <condition id="4" name="On finished" sid="367445655079608" type="flame_spr2">
+                        <condition id="4" name="On finished" sid="367445655079608" type="attackSlash">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                         </condition>
                     </conditions>
@@ -366,8 +366,8 @@
                                 <action id="-16" name="Wait" sid="712594908788489" type="System">
                                     <param id="0" name="Seconds">loopindex/10</param>
                                 </action>
-                                <action id="-16" name="Set opacity" sid="312823918334176" type="flame_spr2">
-                                    <param id="0" name="Opacity">flame_spr2.Opacity - 10</param>
+                                <action id="-16" name="Set opacity" sid="312823918334176" type="attackSlash">
+                                    <param id="0" name="Opacity">attackSlash.Opacity - 10</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -375,18 +375,18 @@
                 </event-block>
                 <event-block sid="990641577521697">
                     <conditions>
-                        <condition id="-10" name="Compare opacity" sid="610098767785705" type="flame_spr2">
+                        <condition id="-10" name="Compare opacity" sid="610098767785705" type="attackSlash">
                             <param id="0" name="Comparison">3</param>
                             <param id="1" name="Opacity">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="804567586248675" type="flame_spr2" />
+                        <action id="-9" name="Destroy" sid="804567586248675" type="attackSlash" />
                     </actions>
                 </event-block>
                 <event-block sid="511828772950622">
                     <conditions>
-                        <condition id="-18" name="On created" sid="906131750189514" type="flame_spr2" />
+                        <condition id="-18" name="On created" sid="906131750189514" type="attackSlash" />
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="315637256010219" type="Audio">
@@ -448,7 +448,52 @@
                             </conditions>
                             <actions>
                                 <action id="-25" name="Move to bottom" sid="390733834934034" type="dust" />
+                                <action id="4" name="Set animation" sid="320351830261050" type="dust">
+                                    <param id="0" name="Animation">&quot;Vertical&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="8" name="Set flipped" sid="819363350920861" type="dust">
+                                    <param id="0" name="State">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="127648874375417">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="850005893094746" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="874715713823872" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="614931044562349" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upright&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="464278378647337">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="575189436844775" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="521489171517519" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="306739793399262" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upleft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="683776654526473">
                             <conditions>
@@ -457,8 +502,53 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="8" name="Set flipped" sid="464318886905786" type="dust">
+                                    <param id="0" name="State">0</param>
+                                </action>
                                 <action id="-24" name="Move to top" sid="550192024327269" type="dust" />
+                                <action id="4" name="Set animation" sid="800904200315817" type="dust">
+                                    <param id="0" name="Animation">&quot;Vertical&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="321126089075776">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="171194212694636" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="208948867587171" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="382210756785295" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upright&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="195379481846973">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="579714164543648" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="659939339374046" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="606752702770160" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upleft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="283208085575187">
                             <conditions>
@@ -470,7 +560,49 @@
                                 <action id="7" name="Set mirrored" sid="977342761909551" type="dust">
                                     <param id="0" name="State">0</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="557258956822440" type="dust">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="775420173634217">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="702272139357238" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="665104511245597" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="579588595958885" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upright&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="823298230765616">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="125513048721880" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="797390292583310" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="204438777409933" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upleft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="546477428911648">
                             <conditions>
@@ -482,18 +614,105 @@
                                 <action id="7" name="Set mirrored" sid="215809846367058" type="dust">
                                     <param id="0" name="State">1</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="295743117822227" type="dust">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="664629808287300">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="364446477320674" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="691474220062718" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="233519345224762" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upright&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="714567487477745">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="826267054075855" type="player">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                        <condition id="-13" name="Pick nth instance" sid="151343712113930" type="System">
+                                            <param id="0" name="Object">playerSteps</param>
+                                            <param id="1" name="Instance">playerSteps.Count-1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="665640146069522" type="playerSteps">
+                                            <param id="0" name="Animation">&quot;Upleft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="150521021437276">
                     <conditions>
-                        <condition id="4" name="On finished" sid="359492518251101" type="dust">
-                            <param id="0" name="Animation">&quot;default&quot;</param>
-                        </condition>
+                        <condition id="5" name="On any finished" sid="359492518251101" type="dust" />
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="382139918468171" type="dust" />
+                    </actions>
+                </event-block>
+                <comment>Fade player foot steps</comment>
+                <event-block sid="700472932885442">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="256364251138235" type="playerSteps" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="854421101426451">
+                            <conditions>
+                                <condition id="-10" name="For" sid="628149679199551" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="807762151090451" type="System">
+                                    <param id="0" name="Seconds">0.45 * loopindex</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="712577169462068" type="playerSteps">
+                                    <param id="0" name="Opacity">playerSteps.Opacity-2</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="621662491307783">
+                                    <conditions>
+                                        <condition id="-10" name="Compare opacity" sid="789447864655918" type="playerSteps">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Opacity">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="899491708123645" type="playerSteps" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="478120873150990">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="777172479788412" type="playerSteps" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="545465153834435" type="playerSteps" />
                     </actions>
                 </event-block>
                 <comment>Randomize Footstep sound effects</comment>
@@ -572,27 +791,21 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="517117532186269">
+                        <event-block sid="698487550560140">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="105227702689724" type="System">
-                                    <param id="0" name="Interval (seconds)">0.25</param>
-                                </condition>
+                                <condition id="6" name="On frame changed" sid="962252258367346" type="player" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="320545947587993" type="player">
+                                <action id="0" name="Spawn another object" sid="573469080551243" type="player">
                                     <param id="0" name="Object">playerSteps</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
                                 <action id="4" name="Set animation" sid="558520384962118" type="playerSteps">
                                     <param id="0" name="Animation">&quot;Up&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
                                 <action id="-25" name="Move to bottom" sid="320500611285483" type="playerSteps" />
-                                <action id="-16" name="Wait" sid="133333348458850" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="840042819245747" type="playerSteps" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -613,27 +826,21 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="913506807882744">
+                        <event-block sid="673804180148579">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="599711936586334" type="System">
-                                    <param id="0" name="Interval (seconds)">0.25</param>
-                                </condition>
+                                <condition id="6" name="On frame changed" sid="873033621624223" type="player" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="661763590846438" type="player">
+                                <action id="0" name="Spawn another object" sid="769420112967200" type="player">
                                     <param id="0" name="Object">playerSteps</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="698715938070459" type="playerSteps">
-                                    <param id="0" name="Animation">&quot;Left&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="4" name="Set animation" sid="782501484217766" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="649268426066060" type="playerSteps" />
-                                <action id="-16" name="Wait" sid="934159309848020" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="345650219702637" type="playerSteps" />
+                                <action id="-25" name="Move to bottom" sid="692155898126694" type="playerSteps" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -654,27 +861,21 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="701069342417546">
+                        <event-block sid="719173406111829">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="547653909511625" type="System">
-                                    <param id="0" name="Interval (seconds)">0.25</param>
-                                </condition>
+                                <condition id="6" name="On frame changed" sid="572726046274324" type="player" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="233588428748291" type="player">
+                                <action id="0" name="Spawn another object" sid="864044223656610" type="player">
                                     <param id="0" name="Object">playerSteps</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="486376785731267" type="playerSteps">
-                                    <param id="0" name="Animation">&quot;Down&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="4" name="Set animation" sid="401079487459832" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="923471603534889" type="playerSteps" />
-                                <action id="-16" name="Wait" sid="122516827016582" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="521998905753364" type="playerSteps" />
+                                <action id="-25" name="Move to bottom" sid="103905572543636" type="playerSteps" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -695,27 +896,21 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="954070973096288">
+                        <event-block sid="821579968861766">
                             <conditions>
-                                <condition id="-6" name="Every X seconds" sid="279312595035206" type="System">
-                                    <param id="0" name="Interval (seconds)">0.25</param>
-                                </condition>
+                                <condition id="6" name="On frame changed" sid="353067647575781" type="player" />
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="108657205071039" type="player">
+                                <action id="0" name="Spawn another object" sid="353520572159274" type="player">
                                     <param id="0" name="Object">playerSteps</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="412681236196059" type="playerSteps">
-                                    <param id="0" name="Animation">&quot;Right&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="4" name="Set animation" sid="855570090995795" type="playerSteps">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">0</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="282700494220271" type="playerSteps" />
-                                <action id="-16" name="Wait" sid="329119368023591" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="657513557810727" type="playerSteps" />
+                                <action id="-25" name="Move to bottom" sid="609504462890627" type="playerSteps" />
                             </actions>
                         </event-block>
                     </sub-events>
@@ -916,32 +1111,6 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <comment>Fade player foot steps</comment>
-                <event-block sid="700472932885442">
-                    <conditions>
-                        <condition id="-3" name="Is on-screen" sid="256364251138235" type="playerSteps" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="854421101426451">
-                            <conditions>
-                                <condition id="-10" name="For" sid="628149679199551" type="System">
-                                    <param id="0" name="Name">&quot;&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">50</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Wait" sid="807762151090451" type="System">
-                                    <param id="0" name="Seconds">0.45 * loopindex</param>
-                                </action>
-                                <action id="-16" name="Set opacity" sid="712577169462068" type="playerSteps">
-                                    <param id="0" name="Opacity">playerSteps.Opacity-2</param>
-                                </action>
-                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

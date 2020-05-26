@@ -407,11 +407,23 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="grass_stuff2" sid="735907425142223">
+            <object-type name="skull_stuff" sid="735907425142223">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="856792479706527">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="733593364301770" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.509524" hotspotY="0.661972">
+                            <collision-poly>
+                                <point x="0.228571" y="0.253521" />
+                                <point x="0.733333" y="0.225352" />
+                                <point x="0.866667" y="0.957747" />
+                                <point x="0.047619" y="0.887324" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -451,7 +463,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="flame_spr2" sid="118131479335099">
+            <object-type name="attackSlash" sid="118131479335099">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="321123418730238" speed="10">
@@ -484,18 +496,32 @@
             </object-type>
             <object-type name="shroom" sid="236312316353938">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="468630208342095">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="690775608465370" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.625767" hotspotY="0.564356">
+                            <collision-poly>
+                                <point x="0.0674847" y="0.10396" />
+                                <point x="0.907975" y="0.123762" />
+                                <point x="0.711656" y="0.970297" />
+                                <point x="0.331288" y="1" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="playerSteps" sid="257193522994377">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="6">
+                    <animation framecount="1" loop="0" name="Upright" pingpong="0" repeatcount="1" repeatto="0" sid="969866652505741" speed="6">
                         <frame duration="1" hotspotX="0.527778" hotspotY="0" />
-                        <frame duration="1" hotspotX="0.513889" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="UpLeft" pingpong="0" repeatcount="1" repeatto="0" sid="430496166971495" speed="6">
+                        <frame duration="1" hotspotX="0.527778" hotspotY="0" />
                     </animation>
                     <animation framecount="2" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="594138081120068" speed="6">
                         <frame duration="1" hotspotX="0.527778" hotspotY="1.04762" />
@@ -573,6 +599,60 @@
                                 <point x="0.5" y="0.707031" />
                                 <point x="0.289063" y="0.710938" />
                                 <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="0" name="Vertical" pingpong="0" repeatcount="1" repeatto="0" sid="970515208326593" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\DELETHIS\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.277344" />
+                                <point x="0.492188" y="0.492188" />
+                                <point x="0.5" y="0.492188" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\DELETHIS\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.277344" />
+                                <point x="0.492188" y="0.492188" />
+                                <point x="0.5" y="0.492188" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.277344" />
+                                <point x="0.492188" y="0.492188" />
+                                <point x="0.5" y="0.492188" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\DELETHIS\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.335938" />
+                                <point x="0.585938" y="0.414063" />
+                                <point x="0.46875" y="0.5" />
+                                <point x="0.488281" y="0.488281" />
+                                <point x="0.5" y="0.59375" />
+                                <point x="0.515625" y="0.484375" />
+                                <point x="0.371094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.277344" />
+                                <point x="0.492188" y="0.492188" />
+                                <point x="0.5" y="0.492188" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.402344" y="0.402344" />
+                                <point x="0.5" y="0.277344" />
+                                <point x="0.492188" y="0.492188" />
+                                <point x="0.5" y="0.492188" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -801,7 +881,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807309655667024" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.715517" hotspotY="0.476744" />
                     </animation>
                     <animation framecount="1" loop="0" name="Hover" pingpong="0" repeatcount="1" repeatto="0" sid="939729664328991" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -910,10 +990,10 @@
         <family name="Decals" plugin-id="Sprite" sid="206000607277088">
             <members>
                 <member>grass_stuff</member>
-                <member>grass_stuff2</member>
                 <member>grass_stuff3</member>
                 <member>grass_stuff4</member>
                 <member>shroom</member>
+                <member>skull_stuff</member>
             </members>
             <instance-variables>
                 <instance-variable name="amount_max" sid="837825043037438" type="number" />
