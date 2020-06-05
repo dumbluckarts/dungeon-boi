@@ -1126,5 +1126,202 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="901247883118693">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="139434481340369" type="System">
+                    <param id="0" name="Interval (seconds)">1</param>
+                </condition>
+                <condition id="-3" name="Is on-screen" sid="817489134196182" type="PathFinding" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="361863868506034">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="658145712782957" type="System">
+                            <param id="0" name="First value">int(random(0,4))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="294265979417244" type="PathFinding">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="999545017317229">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="759059121284696" type="System">
+                            <param id="0" name="First value">int(random(0,4))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="572572278076844" type="PathFinding">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="623842234201755">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="394821961410891" type="System">
+                            <param id="0" name="First value">int(random(0,4))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="101017714974651" type="PathFinding">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="967767887124174">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="714084163946452" type="System">
+                            <param id="0" name="First value">int(random(0,4))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="383713623760381" type="PathFinding">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="428482131645877">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="733959308261353" type="System">
+                            <param id="0" name="First value">int(random(0,4))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="245815816818303" type="PathFinding">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="846745050353645">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="618255154438604" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="306985716936230">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="305329900928065" type="PathFinding">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="514480975161650" type="PathFinding">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="588617543971091" type="PathFinding">
+                    <param id="0" name="Animation">&quot;walkLeft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="517213192363909" type="PathFinding">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="845073360805210">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="822061235463025" type="PathFinding">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="281485842261209" type="PathFinding">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="925720518982666" type="PathFinding">
+                    <param id="0" name="Animation">&quot;walkLeft&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="436907086171173" type="PathFinding">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="296699858045628">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="560387890788339" type="PathFinding">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="327493116166707" type="PathFinding">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="4" name="Set animation" sid="695324779084424" type="PathFinding">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="927527592868116">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="988293803333995" type="PathFinding">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="404858683706335" type="PathFinding">
+                    <param id="0" name="Control">3</param>
+                </action>
+                <action id="4" name="Set animation" sid="335878911492584" type="PathFinding">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="162663942977764">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="948594098514182" type="PathFinding">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="0" name="Stop" sid="994233308912380" type="PathFinding" />
+                <action id="4" name="Set animation" sid="664939582575797" type="PathFinding">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="313373187643128">
+            <conditions>
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="344199176945092" type="PathFinding" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="591348930002339" type="PathFinding">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

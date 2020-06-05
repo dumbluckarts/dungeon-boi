@@ -119,7 +119,7 @@
             <object-type name="baddie" sid="505972719526172">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
+                    <animation framecount="6" loop="1" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="784226318273027" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\sprite_0.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
@@ -211,6 +211,41 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\IDLEBADDIE\baddieslash2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.252" />
+                                <point x="0.708" y="0.292" />
+                                <point x="0.816" y="0.5" />
+                                <point x="0.82" y="0.82" />
+                                <point x="0.5" y="1" />
+                                <point x="0.108" y="0.892" />
+                                <point x="0.212" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="1" name="walkLeft" pingpong="0" repeatcount="1" repeatto="0" sid="796636498620664" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\baddies\walk0.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.252" />
+                                <point x="0.708" y="0.292" />
+                                <point x="0.816" y="0.5" />
+                                <point x="0.82" y="0.82" />
+                                <point x="0.5" y="1" />
+                                <point x="0.108" y="0.892" />
+                                <point x="0.212" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\baddies\walk1.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.252" />
+                                <point x="0.708" y="0.292" />
+                                <point x="0.816" y="0.5" />
+                                <point x="0.82" y="0.82" />
+                                <point x="0.5" y="1" />
+                                <point x="0.108" y="0.892" />
+                                <point x="0.212" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\SPRITES\baddies\walk2.png">
                             <collision-poly>
                                 <point x="0.5" y="0.252" />
                                 <point x="0.708" y="0.292" />
@@ -985,7 +1020,13 @@
             </members>
             <instance-variables>
                 <instance-variable name="state" sid="562013851272167" type="string" />
+                <instance-variable name="direction" sid="531101274212188" type="number" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="346483312021837">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="Decals" plugin-id="Sprite" sid="206000607277088">
             <members>
