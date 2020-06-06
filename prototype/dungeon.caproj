@@ -916,7 +916,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="807309655667024" speed="5">
-                        <frame duration="1" hotspotX="0.715517" hotspotY="0.476744" />
+                        <frame duration="1" hotspotX="0.714286" hotspotY="0.474227" />
                     </animation>
                     <animation framecount="1" loop="0" name="Hover" pingpong="0" repeatcount="1" repeatto="0" sid="939729664328991" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
