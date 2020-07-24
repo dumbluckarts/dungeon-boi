@@ -8,7 +8,7 @@
     <author-website>https://dumbluckarts.com</author-website>
     <app-id>com.dumbluckarts.dungeon</app-id>
     <unique-id>2m2oqhlgof90t</unique-id>
-    <saved-with-version>27700</saved-with-version>
+    <saved-with-version>27800</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -608,16 +608,8 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620279337817674" speed="8">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0.367188" y="0.179688" />
-                                <point x="0.632813" y="0.179688" />
-                                <point x="0.632813" y="0.820313" />
-                                <point x="0.367188" y="0.820313" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620279337817674" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\sprite_0.png">
                             <collision-poly>
                                 <point x="0.320313" y="0.15625" />
                                 <point x="0.6875" y="0.15625" />
@@ -625,7 +617,15 @@
                                 <point x="0.320313" y="0.851563" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.367188" y="0.179688" />
+                                <point x="0.632813" y="0.179688" />
+                                <point x="0.632813" y="0.820313" />
+                                <point x="0.367188" y="0.820313" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\sprite_2.png">
                             <collision-poly>
                                 <point x="0.304688" y="0.21875" />
                                 <point x="0.695313" y="0.21875" />
@@ -633,7 +633,7 @@
                                 <point x="0.304688" y="0.789063" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\sprite_3.png">
                             <collision-poly>
                                 <point x="0.320313" y="0.265625" />
                                 <point x="0.6875" y="0.265625" />
@@ -653,11 +653,40 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="629778414364235" speed="8">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="629778414364235" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\2\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.335938" y="0.335938" />
+                                <point x="0.5" y="0.328125" />
+                                <point x="0.539063" y="0.460938" />
+                                <point x="0.5625" y="0.5" />
+                                <point x="0.507813" y="0.507813" />
+                                <point x="0.5" y="0.601563" />
+                                <point x="0.40625" y="0.59375" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\2\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.328125" y="0.328125" />
+                                <point x="0.5" y="0.164063" />
+                                <point x="0.539063" y="0.460938" />
+                                <point x="0.59375" y="0.5" />
+                                <point x="0.484375" y="0.484375" />
+                                <point x="0.5" y="0.601563" />
+                                <point x="0.4375" y="0.5625" />
+                                <point x="0.179688" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\2\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.632813" y="0.5" />
+                                <point x="0.5" y="0.414063" />
+                                <point x="0.609375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\bloods\2\sprite_3.png" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -711,6 +740,14 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="674360415532934" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="door" sid="769232175249747">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617736268880082" speed="5">
+                    <frame duration="1" hotspotX="0.501416" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -781,7 +818,59 @@
             </properties>
         </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="coinGrab1.m4a" />
+        <file name="coinGrab1.ogg" />
+        <file name="coinGrab2.m4a" />
+        <file name="coinGrab2.ogg" />
+        <file name="coinGrab3.m4a" />
+        <file name="coinGrab3.ogg" />
+        <file name="deckSound1.m4a" />
+        <file name="deckSound1.ogg" />
+        <file name="drank1.m4a" />
+        <file name="drank1.ogg" />
+        <file name="fire1.ogg" />
+        <file name="generalHurt.m4a" />
+        <file name="generalHurt.ogg" />
+        <file name="Imapct_1.m4a" />
+        <file name="Imapct_1.ogg" />
+        <file name="Impact_2.m4a" />
+        <file name="Impact_2.ogg" />
+        <file name="lootGet1.m4a" />
+        <file name="lootGet1.ogg" />
+        <file name="mushStep1.m4a" />
+        <file name="mushStep1.ogg" />
+        <file name="mushStep2.m4a" />
+        <file name="mushStep2.ogg" />
+        <file name="mushstep3.m4a" />
+        <file name="mushstep3.ogg" />
+        <file name="octoHurt.m4a" />
+        <file name="octoHurt.ogg" />
+        <file name="octoHurt2.m4a" />
+        <file name="octoHurt2.ogg" />
+        <file name="octoSeen.m4a" />
+        <file name="octoSeen.ogg" />
+        <file name="Pawnch1.m4a" />
+        <file name="Pawnch1.ogg" />
+        <file name="Pawnch2.m4a" />
+        <file name="Pawnch2.ogg" />
+        <file name="Pawnch3.m4a" />
+        <file name="Pawnch3.ogg" />
+        <file name="potionGet1.m4a" />
+        <file name="potionGet1.ogg" />
+        <file name="potionGet2.m4a" />
+        <file name="potionGet2.ogg" />
+        <file name="roccDie.m4a" />
+        <file name="roccDie.ogg" />
+        <file name="roccHurt.m4a" />
+        <file name="roccHurt.ogg" />
+        <file name="Swang1.m4a" />
+        <file name="Swang1.ogg" />
+        <file name="Swang2.m4a" />
+        <file name="Swang2.ogg" />
+        <file name="track1.m4a" />
+        <file name="track1.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

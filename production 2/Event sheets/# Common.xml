@@ -216,6 +216,10 @@
                                 <action id="1" name="Set blend mode" sid="470992442570582" type="Enemy">
                                     <param id="0" name="Blend mode">0</param>
                                 </action>
+                                <action id="0" name="Call function" sid="861479313619801" type="Function">
+                                    <param id="0" name="Name">&quot;punchSound&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -328,6 +332,79 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="364164694719970">
+            <conditions>
+                <condition id="0" name="On function" sid="604272575023322" type="Function">
+                    <param id="0" name="Name">&quot;punchSound&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="745241285452271">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="323317174466047" type="System">
+                            <param id="0" name="First value">random(3)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="676981055976167" type="Audio">
+                            <param id="0" name="Audio file">Pawnch1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="965050757946971">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="295980036891664" type="System">
+                            <param id="0" name="First value">random(3)</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="123167130021818" type="Audio">
+                            <param id="0" name="Audio file">Pawnch1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="393823137697466">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="152103643454325" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="635339857235164" type="Audio">
+                            <param id="0" name="Audio file">Pawnch3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="624413975111036">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="681329384134094" type="System" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="543894864631044" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="187835137983240" type="Audio">
+                    <param id="0" name="Audio file">track1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

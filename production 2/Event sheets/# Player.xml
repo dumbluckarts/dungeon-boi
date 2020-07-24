@@ -150,6 +150,63 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-block sid="637816127468413">
+                    <conditions>
+                        <condition id="0" name="On function" sid="968233814103295" type="Function">
+                            <param id="0" name="Name">&quot;player.walkSounds&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="663446015191472">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="609628856425900" type="System">
+                                    <param id="0" name="First value">int(random(0,2))</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="241281865137734" type="Audio">
+                                    <param id="0" name="Audio file">mushStep1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">15</param>
+                                    <param id="1" name="Tag (optional)">&quot;step1&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="793412465839680">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="844107895787706" type="System">
+                                    <param id="0" name="First value">int(random(0,3))</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="407108026075907" type="Audio">
+                                    <param id="0" name="Audio file">mushStep2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">25</param>
+                                    <param id="1" name="Tag (optional)">&quot;step2&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="835736841455227">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="299982422924178" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="574671748767769" type="Audio">
+                                    <param id="0" name="Audio file">mushstep3</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">25</param>
+                                    <param id="1" name="Tag (optional)">&quot;step3&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-group description="" sid="612794720753569" title="Player Animation">
                     <sub-events>
                         <event-block sid="121359769830341">
@@ -250,6 +307,37 @@
                                         <action id="-10" name="Set value" sid="234743991667985" type="Player">
                                             <param id="0" name="Instance variable">state</param>
                                             <param id="1" name="Value">&quot;idle&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Trigger sounds</comment>
+                                <event-block sid="991447649210184">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="635807270254145" type="System">
+                                            <param id="0" name="First value">random(2)</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="573681188440956" type="Audio">
+                                            <param id="0" name="Audio file">Swang1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">10</param>
+                                            <param id="1" name="Tag (optional)">&quot;swing&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="538678927712613">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="264296010259197" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="198691154583212" type="Audio">
+                                            <param id="0" name="Audio file">Swang2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">10</param>
+                                            <param id="1" name="Tag (optional)">&quot;swing&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
