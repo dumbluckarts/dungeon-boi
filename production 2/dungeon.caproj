@@ -414,19 +414,19 @@
                         <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Idle\0.png">
                             <image-point name="Shadow" x="0.503906" y="0.871094" />
                             <collision-poly>
-                                <point x="0.117188" y="0.117188" />
-                                <point x="0.886719" y="0.117188" />
-                                <point x="0.886719" y="0.886719" />
-                                <point x="0.117188" y="0.886719" />
+                                <point x="0.199219" y="0.351563" />
+                                <point x="0.882813" y="0.351563" />
+                                <point x="0.882813" y="0.738281" />
+                                <point x="0.203126" y="0.738281" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.503906" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Idle\1.png">
                             <image-point name="Shadow" x="0.503906" y="0.871094" />
                             <collision-poly>
-                                <point x="0.117188" y="0.117188" />
-                                <point x="0.886719" y="0.117188" />
-                                <point x="0.886719" y="0.882813" />
-                                <point x="0.117188" y="0.882813" />
+                                <point x="0.199219" y="0.351563" />
+                                <point x="0.882813" y="0.351563" />
+                                <point x="0.882813" y="0.738281" />
+                                <point x="0.203126" y="0.738281" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -458,6 +458,22 @@
                                 <point x="0.940171" y="0.961957" />
                                 <point x="0.0683761" y="0.956522" />
                                 <point x="0.042735" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cliff" sid="284091024817026">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="187673665462254" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.284" y="0.412" />
+                                <point x="0.44" y="0.312" />
+                                <point x="0.652" y="0.436" />
+                                <point x="0.612" y="0.704" />
+                                <point x="0.36" y="0.688" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -729,6 +745,7 @@
         </family>
         <family name="Hazards" plugin-id="Sprite" sid="748421637336910">
             <members>
+                <member>Cliff</member>
                 <member>Spikes</member>
             </members>
         </family>

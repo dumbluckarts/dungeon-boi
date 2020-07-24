@@ -279,7 +279,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="728920366115664" title="Screen Shake">
+        <event-group description="" sid="728920366115664" title="Hit Screen Shake">
             <sub-events>
                 <event-block sid="257945159929272">
                     <conditions>

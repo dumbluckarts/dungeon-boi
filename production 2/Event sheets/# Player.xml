@@ -124,65 +124,27 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block any="1" sid="516660736582628">
+                                <event-block sid="757847975635017">
                                     <conditions>
-                                        <condition id="2" name="Key is down" sid="957202972245156" type="Keyboard">
-                                            <param id="0" name="Key">87</param>
-                                        </condition>
-                                        <condition id="2" name="Key is down" sid="191746957081609" type="Keyboard">
-                                            <param id="0" name="Key">65</param>
-                                        </condition>
-                                        <condition id="2" name="Key is down" sid="137669297485895" type="Keyboard">
-                                            <param id="0" name="Key">83</param>
-                                        </condition>
-                                        <condition id="2" name="Key is down" sid="154615460396536" type="Keyboard">
-                                            <param id="0" name="Key">68</param>
-                                        </condition>
+                                        <condition behavior="8Direction" id="0" name="Is moving" sid="847709585061801" type="Player" />
                                     </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="757847975635017">
-                                            <conditions>
-                                                <condition behavior="8Direction" id="0" name="Is moving" sid="847709585061801" type="Player" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-10" name="Set value" sid="855458788766594" type="Player">
-                                                    <param id="0" name="Instance variable">state</param>
-                                                    <param id="1" name="Value">&quot;walk&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="855458788766594" type="Player">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;walk&quot;</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
-                                <event-block any="1" sid="268424033144500">
+                                <event-block sid="132044831045247">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Key is down" sid="678290244347075" type="Keyboard">
-                                            <param id="0" name="Key">87</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Key is down" sid="825127415263602" type="Keyboard">
-                                            <param id="0" name="Key">65</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Key is down" sid="505458496467437" type="Keyboard">
-                                            <param id="0" name="Key">83</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Key is down" sid="820135429095001" type="Keyboard">
-                                            <param id="0" name="Key">68</param>
-                                        </condition>
+                                        <condition id="-22" name="Else" sid="499963856466597" type="System" />
                                     </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="599360923123155">
-                                            <conditions>
-                                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="577405841496252" type="Player" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-10" name="Set value" sid="198701944394385" type="Player">
-                                                    <param id="0" name="Instance variable">state</param>
-                                                    <param id="1" name="Value">&quot;idle&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="198701944394385" type="Player">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -268,7 +230,7 @@
                                             <param id="0" name="Angle">Self.direction_angle</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="604696773518280" type="System">
-                                            <param id="0" name="Seconds">0.1</param>
+                                            <param id="0" name="Seconds">0.11</param>
                                         </action>
                                         <action behavior="Bullet" id="5" name="Set enabled" sid="769146665406586" type="Player">
                                             <param id="0" name="State">0</param>
