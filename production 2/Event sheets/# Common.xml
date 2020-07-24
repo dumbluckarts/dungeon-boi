@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># Common</name>
+    <events>
+        <include># Player</include>
+        <event-group description="" sid="836023867108713" title="Camera">
+            <sub-events>
+                <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">4</variable>
+                <variable constant="1" name="SHROOM_SPEED" sid="134871863920471" static="1" type="number">16</variable>
+                <event-block sid="229968416783304">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="362365621403252" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="954182939842029" type="Player">
+                            <param id="0" name="Object">ShroomLad</param>
+                            <param id="1" name="Layer">Self.LayerName</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="834417031704759" type="ShroomLad">
+                            <param id="0" name="Object">Camera</param>
+                            <param id="1" name="Layer">Self.LayerName</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="206157979455056">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="861703828888772" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="784228786047719" type="ShroomLad">
+                            <param id="0" name="X">lerp(Self.X, Player.X + Self.SineHorizontal.Value, SHROOM_SPEED * dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, Player.Y + Self.SineVertical.Value, SHROOM_SPEED * dt)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="408191814016753" type="Camera">
+                            <param id="0" name="X">lerp(Self.X, ShroomLad.X, CAM_SPEED * dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y, CAM_SPEED * dt)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="859189958883472" title="Drop Shadow">
+            <sub-events>
+                <event-block sid="606943201723784">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="727979724805246" type="System" />
+                        <condition id="-11" name="For Each" sid="209840509794973" type="System">
+                            <param id="0" name="Object">Shadowed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="359361404560942" type="Shadowed">
+                            <param id="0" name="Object">DropShadow</param>
+                            <param id="1" name="Layer">Self.LayerName</param>
+                            <param id="2" name="Image point">&quot;Shadow&quot;</param>
+                        </action>
+                        <action id="-29" name="Move to object" sid="174871715556442" type="DropShadow">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Shadowed</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="834196517974363" type="DropShadow">
+                            <param id="0" name="Instance variable">object</param>
+                            <param id="1" name="Value">Shadowed.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="999880679724396">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="858742927916887" type="System">
+                            <param id="0" name="Object">DropShadow</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="808618230330596" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="241985500498575" type="Shadowed">
+                            <param id="0" name="Unique ID">DropShadow.object</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="190445028528354" type="DropShadow">
+                            <param id="0" name="Object">Shadowed</param>
+                            <param id="1" name="Image point (optional)">&quot;Shadow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="673984412528798" title="Bloody">
+            <sub-events>
+                <event-block sid="709149947389054">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="275020689022160" type="AttackHitbox">
+                            <param id="0" name="Object">Bloody</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="599179905559314" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>spawn splotch</comment>
+                        <event-block sid="778996825410815">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="457726896494239" type="Bloody">
+                                    <param id="0" name="Object">BloodSplotch1</param>
+                                    <param id="1" name="Layer">&quot;Decals Outlined&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="354462800824047" type="BloodSplotch1">
+                                    <param id="0" name="Angle">random(360)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="519578579624416" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="367368749760890" type="BloodSplotch1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>spawn spray</comment>
+                        <event-block sid="416710674451232">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="767734320176745" type="System">
+                                    <param id="0" name="First value">round(random(2))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="974670694561647" type="Bloody">
+                                    <param id="0" name="Object">BloodSpray1</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="276068967382186" type="BloodSpray1">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="842187235311862">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="853070146041669" type="BloodSpray1">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="683984724564297" type="BloodSpray1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="876950536523964">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="153020929537951" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="185660945197157" type="BloodSpray1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="415359659909830">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="446905182568705" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="692403309897028" type="Bloody">
+                                    <param id="0" name="Object">BloodSpray2</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="504683855361787" type="BloodSpray2">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="683207681049408" title="Enemy">
+            <sub-events>
+                <event-group description="" sid="450913967915168" title="Enemy Knockback">
+                    <sub-events>
+                        <event-block sid="278315351043311">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="819764786854369" type="AttackHitbox">
+                                    <param id="0" name="Object">Enemy</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="970701807824413" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set blend mode" sid="830218508200522" type="Enemy">
+                                    <param id="0" name="Blend mode">1</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="414459289144895" type="Enemy">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="891686058688200" type="Enemy">
+                                    <param id="0" name="Speed">500</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="964493582970739" type="Enemy">
+                                    <param id="0" name="Angle">angle(Player.X, Player.Y, self.X, Self.Y)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="951510620910302" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="821592785092302" type="Enemy">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="1" name="Set blend mode" sid="470992442570582" type="Enemy">
+                                    <param id="0" name="Blend mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="423421735812197" title="Hazards">
+            <sub-events>
+                <event-block sid="104913255862719">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="125068434668769" type="Player">
+                            <param id="0" name="Object">Hazards</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="357091625474892" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="461976150242017" type="Player">
+                            <param id="0" name="Animation">&quot;death&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="309365494997800" type="Player">
+                            <param id="0" name="Instance variable">enabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="857715738599998">
+                            <conditions>
+                                <condition id="-10" name="For" sid="955512331015244" type="System">
+                                    <param id="0" name="Name">&quot;fade&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="765035825994746" type="System">
+                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="759112026188667" type="System">
+                                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) + 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="364406065695007">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="913537748528546" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="458247241791058" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-37" name="Load" sid="463343622603926" type="System">
+                            <param id="0" name="Slot">&quot;start&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="728920366115664" title="Screen Shake">
+            <sub-events>
+                <event-block sid="257945159929272">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="422590985886366" type="AttackHitbox">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="249977830494502" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="168752611863920" type="Camera">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">0.4</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>save layout state, fade in</comment>
+        <event-block sid="309413089824838">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="291166292814300" type="System" />
+            </conditions>
+            <actions>
+                <action id="-36" name="Save" sid="483442299948230" type="System">
+                    <param id="0" name="Slot">&quot;start&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="849928008016004">
+                    <conditions>
+                        <condition id="-10" name="For" sid="594818176989812" type="System">
+                            <param id="0" name="Name">&quot;fade&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="718389862838844" type="System">
+                            <param id="0" name="Seconds">loopindex * 0.01</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="515365830858505" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) - 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># Player</name>
+    <events>
+        <event-block sid="982697323060224">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="794712677940208" type="Player">
+                    <param id="0" name="Instance variable">enabled</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-group description="" sid="291314452350706" title="Player Movement">
+                    <sub-events>
+                        <event-block sid="914126736700840">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="978332810729408" type="Player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;attack&quot;</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="842476300895317" type="Player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;roll&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="206115424465918">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="185106480481090" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="520356919298835" type="Player">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="850993325951224" type="Player">
+                                            <param id="0" name="Instance variable">direction</param>
+                                            <param id="1" name="Value">&quot;up&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="575293685345158" type="Player">
+                                            <param id="0" name="Instance variable">opposite_direction</param>
+                                            <param id="1" name="Value">&quot;down&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="352365274887139" type="Player">
+                                            <param id="0" name="Instance variable">direction_angle</param>
+                                            <param id="1" name="Value">-90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="718337787650035">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="813113104856131" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="692488671316009" type="Player">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="810769267958595" type="Player">
+                                            <param id="0" name="Instance variable">direction</param>
+                                            <param id="1" name="Value">&quot;left&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="268786960505843" type="Player">
+                                            <param id="0" name="Instance variable">opposite_direction</param>
+                                            <param id="1" name="Value">&quot;right&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="861491102338719" type="Player">
+                                            <param id="0" name="Instance variable">direction_angle</param>
+                                            <param id="1" name="Value">180</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="115415593292398">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="287426347485929" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="261113835354419" type="Player">
+                                            <param id="0" name="Control">3</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="378370894153053" type="Player">
+                                            <param id="0" name="Instance variable">direction</param>
+                                            <param id="1" name="Value">&quot;down&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="942001811389074" type="Player">
+                                            <param id="0" name="Instance variable">opposite_direction</param>
+                                            <param id="1" name="Value">&quot;up&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="941323531981144" type="Player">
+                                            <param id="0" name="Instance variable">direction_angle</param>
+                                            <param id="1" name="Value">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="276014837120777">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="820769252208302" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="804912079547615" type="Player">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="972562248965592" type="Player">
+                                            <param id="0" name="Instance variable">direction</param>
+                                            <param id="1" name="Value">&quot;right&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="109810059827761" type="Player">
+                                            <param id="0" name="Instance variable">opposite_direction</param>
+                                            <param id="1" name="Value">&quot;left&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="929187515011906" type="Player">
+                                            <param id="0" name="Instance variable">direction_angle</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="516660736582628">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="957202972245156" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="191746957081609" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="137669297485895" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="154615460396536" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="757847975635017">
+                                            <conditions>
+                                                <condition behavior="8Direction" id="0" name="Is moving" sid="847709585061801" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="855458788766594" type="Player">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;walk&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="268424033144500">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Key is down" sid="678290244347075" type="Keyboard">
+                                            <param id="0" name="Key">87</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="825127415263602" type="Keyboard">
+                                            <param id="0" name="Key">65</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="505458496467437" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="820135429095001" type="Keyboard">
+                                            <param id="0" name="Key">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="599360923123155">
+                                            <conditions>
+                                                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="577405841496252" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="198701944394385" type="Player">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;idle&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="612794720753569" title="Player Animation">
+                    <sub-events>
+                        <event-block sid="121359769830341">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="134502713491667" type="Player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;attack&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="290412518532725" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="244420535414434" type="Player">
+                                    <param id="0" name="Animation">Player.state &amp; &quot;_&quot; &amp; Player.direction</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="671249462905510" type="Player">
+                                    <param id="0" name="Frame number">round(random(Player.AnimationFrameCount))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="850717690964462">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="156954143677107" type="System" />
+                                <condition id="-1" name="Every tick" sid="462510029241346" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="702194308893797" type="Player">
+                                    <param id="0" name="Animation">Player.state &amp; &quot;_&quot; &amp; Player.direction</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="704879171385066" title="Player Attack">
+                    <sub-events>
+                        <event-block sid="123727311567301">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="820207745912689" type="Keyboard">
+                                    <param id="0" name="Key">32</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="591189519890475" type="Player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;attack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="241953304619701" type="Player">
+                                    <param id="0" name="Object">AttackHitbox</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="682066908653807" type="AttackHitbox">
+                                    <param id="0" name="Angle">Player.direction_angle</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="797122517072016" type="Player">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;attack&quot;</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="513444019152488" type="Player">
+                                    <param id="0" name="Frame number">round(random(Player.AnimationFrameCount))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>launch player forward</comment>
+                                <event-block sid="148529821660148">
+                                    <conditions />
+                                    <actions>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="687650779785633" type="Player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="427650589111911" type="Player">
+                                            <param id="0" name="Speed">300</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="754680536037510" type="Player">
+                                            <param id="0" name="Angle">Self.direction_angle</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="604696773518280" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="769146665406586" type="Player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action behavior="8Direction" id="8" name="Set enabled" sid="795909836941863" type="Player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>allow player to move again</comment>
+                                <event-block sid="157018343581736">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="531819380859230" type="System">
+                                            <param id="0" name="Seconds">0.25</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="234743991667985" type="Player">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Spawn whoosh thing</comment>
+                                <event-block sid="259765029535518">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="908570159477368" type="AttackHitbox">
+                                            <param id="0" name="Object">Whoosh</param>
+                                            <param id="1" name="Layer">Self.LayerName</param>
+                                            <param id="2" name="Image point">&quot;Far_Front&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="885344259495666" type="Whoosh">
+                                            <param id="0" name="Animation">Player.direction</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="251538556812949" type="Whoosh">
+                                            <param id="0" name="Frame number">round(random(Whoosh.AnimationFrameCount))</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="311346315992392" type="Whoosh">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="691894749391532" type="Whoosh">
+                                            <param id="0" name="X">Self.X + random(64)</param>
+                                            <param id="1" name="Y">Self.Y + random(64)</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="748657752624332" type="Whoosh">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Object">Player</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="395991648139286">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="965102868392636" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="968346654202434" type="AttackHitbox">
+                                    <param id="0" name="Object">Player</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
