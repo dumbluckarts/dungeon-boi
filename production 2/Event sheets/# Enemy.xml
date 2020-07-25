@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name># Enemy</name>
+    <events>
+        <event-group description="" sid="209518928586157" title="Swarmer">
+            <sub-events>
+                <event-block sid="308393360023129">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="625146785715715" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="LineOfSight" id="2" name="Add obstacle" sid="103464093516565" type="Swarmer">
+                            <param id="0" name="Obstacle">Solid</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="584609822901829" type="Swarmer">
+                            <param id="0" name="Obstacle">Solid</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="263548698486326" type="Swarmer">
+                            <param id="0" name="Obstacle">Enemy</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="259376558061003">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="885785782310004" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="781888006275313" type="Swarmer">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="799138778072925">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="967383045655412" type="Swarmer" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="397905407883941" type="Swarmer" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="166803764339981">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="995748469882100" type="Swarmer">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="2" name="Stop" sid="607249668577020" type="Swarmer" />
+                    </actions>
+                </event-block>
+                <event-block sid="233574801208841">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="678656790116871" type="System">
+                            <param id="0" name="Object">Swarmer</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="223142583295246" type="AttackHitbox">
+                            <param id="0" name="Object">Swarmer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="3" name="Set enabled" sid="540221896486358" type="Swarmer">
+                            <param id="0" name="Set">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="569651933281963" title="Enemy Knockback">
+            <sub-events>
+                <event-block sid="366261509171093">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="100863681758212" type="AttackHitbox">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="512730189155278" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set blend mode" sid="149058687559288" type="Enemy">
+                            <param id="0" name="Blend mode">1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="648143188602230" type="Enemy">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="972561410374674" type="Enemy">
+                            <param id="0" name="Speed">500</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="830672967933465" type="Enemy">
+                            <param id="0" name="Angle">angle(Player.X, Player.Y, self.X, Self.Y)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="275421728582816" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="421052964960677" type="Enemy">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="1" name="Set blend mode" sid="386364884875822" type="Enemy">
+                            <param id="0" name="Blend mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="193410302518487" title="Enemy Damage">
+            <sub-events>
+                <event-block sid="307584951519690">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="848410036698424" type="AttackHitbox">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="808069264068131" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="717215151041333" type="Enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="234567870827040" type="Enemy">
+                            <param id="0" name="Instance variable">damage</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="305049515432975" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="736943251838488" type="Enemy">
+                            <param id="0" name="Instance variable">damage</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="309818763911435" title="Enemy Death">
+            <sub-events>
+                <event-block sid="791385736496636">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="202440193276672" type="Enemy">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-11" name="For Each" sid="461694547326412" type="System">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="135185772216734" type="Enemy" />
+                        <action behavior="Solid" id="0" name="Set enabled" sid="636879023919908" type="Enemy">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="537443871763885" type="Enemy">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="460781939626249">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="394976989643034" type="DropShadow">
+                                    <param id="0" name="Instance variable">object</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Enemy.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="394080535556674" type="DropShadow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

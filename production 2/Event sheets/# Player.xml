@@ -11,6 +11,67 @@
             </conditions>
             <actions />
             <sub-events>
+                <event-group description="" sid="348650520993063" title="Player Sounds">
+                    <sub-events>
+                        <event-block sid="637816127468413">
+                            <conditions>
+                                <condition id="0" name="On function" sid="968233814103295" type="Function">
+                                    <param id="0" name="Name">&quot;player.walkSounds&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="663446015191472">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="609628856425900" type="System">
+                                            <param id="0" name="First value">int(random(0,2))</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="241281865137734" type="Audio">
+                                            <param id="0" name="Audio file">mushStep1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">15</param>
+                                            <param id="1" name="Tag (optional)">&quot;step1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="793412465839680">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="844107895787706" type="System">
+                                            <param id="0" name="First value">int(random(0,3))</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="407108026075907" type="Audio">
+                                            <param id="0" name="Audio file">mushStep2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">25</param>
+                                            <param id="1" name="Tag (optional)">&quot;step2&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="835736841455227">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="299982422924178" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="574671748767769" type="Audio">
+                                            <param id="0" name="Audio file">mushstep3</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">25</param>
+                                            <param id="1" name="Tag (optional)">&quot;step3&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="291314452350706" title="Player Movement">
                     <sub-events>
                         <event-block sid="914126736700840">
@@ -150,63 +211,6 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="637816127468413">
-                    <conditions>
-                        <condition id="0" name="On function" sid="968233814103295" type="Function">
-                            <param id="0" name="Name">&quot;player.walkSounds&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="663446015191472">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="609628856425900" type="System">
-                                    <param id="0" name="First value">int(random(0,2))</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="241281865137734" type="Audio">
-                                    <param id="0" name="Audio file">mushStep1</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">15</param>
-                                    <param id="1" name="Tag (optional)">&quot;step1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="793412465839680">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="844107895787706" type="System">
-                                    <param id="0" name="First value">int(random(0,3))</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="407108026075907" type="Audio">
-                                    <param id="0" name="Audio file">mushStep2</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">25</param>
-                                    <param id="1" name="Tag (optional)">&quot;step2&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="835736841455227">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="299982422924178" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="574671748767769" type="Audio">
-                                    <param id="0" name="Audio file">mushstep3</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">25</param>
-                                    <param id="1" name="Tag (optional)">&quot;step3&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-group description="" sid="612794720753569" title="Player Animation">
                     <sub-events>
                         <event-block sid="121359769830341">

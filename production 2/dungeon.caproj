@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
@@ -22,6 +23,8 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -71,6 +74,9 @@
                     </behavior-type>
                     <behavior-type name="Bullet" sid="784216174898657">
                         <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Solid" sid="539293476506947">
+                        <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -429,6 +435,16 @@
                                 <point x="0.882813" y="0.738281" />
                                 <point x="0.140626" y="0.746094" />
                             </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SwarmGuy" sid="480948266762464">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594849463066291" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shadow" x="0.515625" y="0.882813" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -902,25 +918,32 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Mouse" sid="725521002477367">
+            <plugin id="Mouse" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Shadowed" plugin-id="Sprite" sid="486177015640144">
             <members>
                 <member>Octopus</member>
                 <member>Player</member>
+                <member>SwarmGuy</member>
             </members>
         </family>
         <family name="Bloody" plugin-id="Sprite" sid="845117665498554">
             <members>
                 <member>Octopus</member>
+                <member>SwarmGuy</member>
             </members>
         </family>
         <family name="Enemy" plugin-id="Sprite" sid="634873934330792">
             <members>
                 <member>Octopus</member>
+                <member>SwarmGuy</member>
             </members>
             <instance-variables>
                 <instance-variable name="health" sid="641452991970493" type="number" />
+                <instance-variable name="damage" sid="462225235019999" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="641790244822145">
@@ -929,6 +952,12 @@
                 <behavior-type name="8Direction" sid="704049087291171">
                     <behavior id="EightDir" />
                 </behavior-type>
+                <behavior-type name="Solid" sid="145897807508222">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="590923228364711">
+                    <behavior id="Fade" />
+                </behavior-type>
             </behaviors>
         </family>
         <family name="Hazards" plugin-id="Sprite" sid="748421637336910">
@@ -936,6 +965,19 @@
                 <member>Cliff</member>
                 <member>Spikes</member>
             </members>
+        </family>
+        <family name="Swarmer" plugin-id="Sprite" sid="284970614011380">
+            <members>
+                <member>SwarmGuy</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="349803451391115">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="191372709802226">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -946,6 +988,7 @@
     <event-folder>
         <event-sheet># Common.xml</event-sheet>
         <event-sheet># Player.xml</event-sheet>
+        <event-sheet># Enemy.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="17" />
@@ -969,6 +1012,7 @@
                 <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
+        <global-instance type="Mouse" uid="66" />
     </global-instances>
     <sounds-folder>
         <file name="coinGrab1.m4a" />

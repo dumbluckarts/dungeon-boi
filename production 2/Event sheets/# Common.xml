@@ -4,6 +4,41 @@
     <name># Common</name>
     <events>
         <include># Player</include>
+        <event-group description="" sid="779336441684505" title="Misc">
+            <sub-events>
+                <comment>save layout state, fade in</comment>
+                <event-block sid="309413089824838">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="291166292814300" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-36" name="Save" sid="483442299948230" type="System">
+                            <param id="0" name="Slot">&quot;start&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="849928008016004">
+                            <conditions>
+                                <condition id="-10" name="For" sid="594818176989812" type="System">
+                                    <param id="0" name="Name">&quot;fade&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="718389862838844" type="System">
+                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="515365830858505" type="System">
+                                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="836023867108713" title="Camera">
             <sub-events>
                 <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">8</variable>
@@ -86,146 +121,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="673984412528798" title="Bloody">
-            <sub-events>
-                <event-block sid="709149947389054">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="275020689022160" type="AttackHitbox">
-                            <param id="0" name="Object">Bloody</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="599179905559314" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <comment>spawn splotch</comment>
-                        <event-block sid="778996825410815">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="457726896494239" type="Bloody">
-                                    <param id="0" name="Object">BloodSplotch1</param>
-                                    <param id="1" name="Layer">&quot;Decals Outlined&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-8" name="Set angle" sid="354462800824047" type="BloodSplotch1">
-                                    <param id="0" name="Angle">random(360)</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="519578579624416" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action behavior="Sine" id="0" name="Set active" sid="367368749760890" type="BloodSplotch1">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>spawn spray</comment>
-                        <event-block sid="416710674451232">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="767734320176745" type="System">
-                                    <param id="0" name="First value">round(random(2))</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="974670694561647" type="Bloody">
-                                    <param id="0" name="Object">BloodSpray1</param>
-                                    <param id="1" name="Layer">Self.LayerName</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-29" name="Move to object" sid="276068967382186" type="BloodSpray1">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Object">Player</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <event-block sid="842187235311862">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="853070146041669" type="BloodSpray1">
-                                            <param id="0" name="Comparison">4</param>
-                                            <param id="1" name="X co-ordinate">Player.X</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="683984724564297" type="BloodSpray1">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="876950536523964">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="153020929537951" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="185660945197157" type="BloodSpray1">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="415359659909830">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="446905182568705" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="692403309897028" type="Bloody">
-                                    <param id="0" name="Object">BloodSpray2</param>
-                                    <param id="1" name="Layer">Self.LayerName</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-29" name="Move to object" sid="504683855361787" type="BloodSpray2">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Object">Player</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="683207681049408" title="Enemy">
-            <sub-events>
-                <event-group description="" sid="450913967915168" title="Enemy Knockback">
-                    <sub-events>
-                        <event-block sid="278315351043311">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="819764786854369" type="AttackHitbox">
-                                    <param id="0" name="Object">Enemy</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="970701807824413" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Set blend mode" sid="830218508200522" type="Enemy">
-                                    <param id="0" name="Blend mode">1</param>
-                                </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="414459289144895" type="Enemy">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="891686058688200" type="Enemy">
-                                    <param id="0" name="Speed">500</param>
-                                </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="964493582970739" type="Enemy">
-                                    <param id="0" name="Angle">angle(Player.X, Player.Y, self.X, Self.Y)</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="951510620910302" type="System">
-                                    <param id="0" name="Seconds">0.1</param>
-                                </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="821592785092302" type="Enemy">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                                <action id="1" name="Set blend mode" sid="470992442570582" type="Enemy">
-                                    <param id="0" name="Blend mode">0</param>
-                                </action>
-                                <action id="0" name="Call function" sid="861479313619801" type="Function">
-                                    <param id="0" name="Name">&quot;punchSound&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-            </sub-events>
-        </event-group>
         <event-group description="" sid="423421735812197" title="Hazards">
             <sub-events>
                 <event-block sid="104913255862719">
@@ -302,109 +197,194 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <comment>save layout state, fade in</comment>
-        <event-block sid="309413089824838">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="291166292814300" type="System" />
-            </conditions>
-            <actions>
-                <action id="-36" name="Save" sid="483442299948230" type="System">
-                    <param id="0" name="Slot">&quot;start&quot;</param>
-                </action>
-            </actions>
+        <event-group description="" sid="398468779535759" title="Bloody">
             <sub-events>
-                <event-block sid="849928008016004">
+                <event-block sid="948058608061789">
                     <conditions>
-                        <condition id="-10" name="For" sid="594818176989812" type="System">
-                            <param id="0" name="Name">&quot;fade&quot;</param>
-                            <param id="1" name="Start index">1</param>
-                            <param id="2" name="End index">100</param>
+                        <condition id="1" name="Is overlapping another object" sid="495068605151127" type="AttackHitbox">
+                            <param id="0" name="Object">Bloody</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="342142369651981" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>spawn splotch</comment>
+                        <event-block sid="566664936357315">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="817041410189647" type="Bloody">
+                                    <param id="0" name="Object">BloodSplotch1</param>
+                                    <param id="1" name="Layer">&quot;Decals Outlined&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="114358148556404" type="BloodSplotch1">
+                                    <param id="0" name="Angle">random(360)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="893394748319624" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="887785511586451" type="BloodSplotch1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>spawn spray</comment>
+                        <event-block sid="775525820288800">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="332881509946037" type="System">
+                                    <param id="0" name="First value">round(random(2))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="806274362749554" type="Bloody">
+                                    <param id="0" name="Object">BloodSpray1</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="919800992174924" type="BloodSpray1">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="159153914956084">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="914678220582431" type="BloodSpray1">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="915569796768936" type="BloodSpray1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="197125478717908">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="218482175648900" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="530769381598475" type="BloodSpray1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="740044871790014">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="537926751914590" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="464790142700984" type="Bloody">
+                                    <param id="0" name="Object">BloodSpray2</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="765851574928795" type="BloodSpray2">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="148728260352303" title="Sounds">
+            <sub-events>
+                <event-block sid="122343443542323">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="883667006068665" type="AttackHitbox">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="806572187778027" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="209817138745124" type="Function">
+                            <param id="0" name="Name">&quot;punchSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="364164694719970">
+                    <conditions>
+                        <condition id="0" name="On function" sid="604272575023322" type="Function">
+                            <param id="0" name="Name">&quot;punchSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="745241285452271">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="323317174466047" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="676981055976167" type="Audio">
+                                    <param id="0" name="Audio file">Pawnch1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="965050757946971">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="295980036891664" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="123167130021818" type="Audio">
+                                    <param id="0" name="Audio file">Pawnch1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="393823137697466">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="152103643454325" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="635339857235164" type="Audio">
+                                    <param id="0" name="Audio file">Pawnch3</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="624413975111036">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="681329384134094" type="System" />
+                        <condition id="5" inverted="1" name="Is tag playing" sid="543894864631044" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-16" name="Wait" sid="718389862838844" type="System">
-                            <param id="0" name="Seconds">loopindex * 0.01</param>
-                        </action>
-                        <action id="-18" name="Set layer opacity" sid="515365830858505" type="System">
-                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
-                            <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) - 1</param>
+                        <action id="0" name="Play" sid="187835137983240" type="Audio">
+                            <param id="0" name="Audio file">track1</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="364164694719970">
-            <conditions>
-                <condition id="0" name="On function" sid="604272575023322" type="Function">
-                    <param id="0" name="Name">&quot;punchSound&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="745241285452271">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="323317174466047" type="System">
-                            <param id="0" name="First value">random(3)</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Second value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="676981055976167" type="Audio">
-                            <param id="0" name="Audio file">Pawnch1</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="965050757946971">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="295980036891664" type="System">
-                            <param id="0" name="First value">random(3)</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Second value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="123167130021818" type="Audio">
-                            <param id="0" name="Audio file">Pawnch1</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="393823137697466">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="152103643454325" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="635339857235164" type="Audio">
-                            <param id="0" name="Audio file">Pawnch3</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;hit&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="624413975111036">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="681329384134094" type="System" />
-                <condition id="5" inverted="1" name="Is tag playing" sid="543894864631044" type="Audio">
-                    <param id="0" name="Tag">&quot;music&quot;</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="187835137983240" type="Audio">
-                    <param id="0" name="Audio file">track1</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-10</param>
-                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
-                </action>
-            </actions>
-        </event-block>
+        </event-group>
+        <include># Enemy</include>
     </events>
 </c2eventsheet>
