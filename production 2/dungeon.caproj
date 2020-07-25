@@ -27,6 +27,7 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="R0J0hound" id="outline">Outline</effect>
     </used-effects>
     <configurations>
@@ -414,19 +415,19 @@
                         <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Idle\0.png">
                             <image-point name="Shadow" x="0.503906" y="0.871094" />
                             <collision-poly>
-                                <point x="0.199219" y="0.351563" />
-                                <point x="0.882813" y="0.351563" />
+                                <point x="0.136719" y="0.179688" />
+                                <point x="0.875" y="0.171876" />
                                 <point x="0.882813" y="0.738281" />
-                                <point x="0.203126" y="0.738281" />
+                                <point x="0.140626" y="0.746094" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.503906" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Idle\1.png">
                             <image-point name="Shadow" x="0.503906" y="0.871094" />
                             <collision-poly>
-                                <point x="0.199219" y="0.351563" />
-                                <point x="0.882813" y="0.351563" />
+                                <point x="0.136719" y="0.179688" />
+                                <point x="0.875" y="0.171876" />
                                 <point x="0.882813" y="0.738281" />
-                                <point x="0.203126" y="0.738281" />
+                                <point x="0.140626" y="0.746094" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -718,6 +719,156 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="UI">
+            <object-type name="Heart" sid="504913524230786">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="884257165562076" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.121094" y="0.164063" />
+                                <point x="0.878906" y="0.164063" />
+                                <point x="0.878906" y="0.839844" />
+                                <point x="0.121094" y="0.839844" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Mana" sid="883031801671638">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="528881831001771" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HeartBox" sid="679360017429495">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="789884161725968" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="UIBackground" sid="570340432635486">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="HeartBox2" sid="936181348845143">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="338593420619160" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ManaLetter" sid="599446907551021">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="758296043173953" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HealthLetter" sid="898361208723543">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947242178354604" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SlotBox" sid="588900744353208">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="906076200406454" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MapBox" sid="503723197997834">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="978594880387752" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SlotALetter" sid="761731335914035">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="605767796410441" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SlotBLetter" sid="758638457797919">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="652585291139578" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SlotCLetter" sid="525262633096663">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="945561787403928" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MapTest" sid="342907089479667">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="652622959225957" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.046875" y="0.28125" />
+                                <point x="0.957031" y="0.28125" />
+                                <point x="0.957031" y="0.71875" />
+                                <point x="0.046875" y="0.71875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MapPlayerIndicator" sid="327633657523184">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="290706938816606" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="MapEnemyIndicator" sid="248181575129421">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="341772681820726" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="QuestionMark" sid="434268191670415">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670412043718182" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Keyboard" sid="599565197689398">
             <plugin id="Keyboard" />
         </object-type>
@@ -789,6 +940,7 @@
     </families>
     <layout-folder>
         <layout># Instance.xml</layout>
+        <layout># UI.xml</layout>
         <layout>Layout 1.xml</layout>
     </layout-folder>
     <event-folder>

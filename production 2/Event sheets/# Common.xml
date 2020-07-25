@@ -6,7 +6,7 @@
         <include># Player</include>
         <event-group description="" sid="836023867108713" title="Camera">
             <sub-events>
-                <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">4</variable>
+                <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">8</variable>
                 <variable constant="1" name="SHROOM_SPEED" sid="134871863920471" static="1" type="number">16</variable>
                 <event-block sid="229968416783304">
                     <conditions>
@@ -36,7 +36,7 @@
                         </action>
                         <action id="-3" name="Set position" sid="408191814016753" type="Camera">
                             <param id="0" name="X">lerp(Self.X, ShroomLad.X, CAM_SPEED * dt)</param>
-                            <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y, CAM_SPEED * dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y - 64, CAM_SPEED * dt)</param>
                         </action>
                     </actions>
                 </event-block>
