@@ -389,6 +389,143 @@
                         </event-block>
                     </sub-events>
                 </event-group>
+                <event-block sid="542374991094272">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="298431697396910" type="Player">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="953692211113141" type="Player">
+                            <param id="0" name="Instance variable">enabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="169295810114107" type="Player">
+                            <param id="0" name="Animation">&quot;death&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="126395851771543" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="928221533630788" type="Function">
+                            <param id="0" name="Name">&quot;restartLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="172288780359269">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="492640137787791" type="Player">
+                            <param id="0" name="Instance variable">damaged</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="546749737966945" type="Player">
+                            <param id="0" name="Instance variable">state</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-group description="" sid="644348445185160" title="Player Damage">
+                            <sub-events>
+                                <event-block sid="599772790202413">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="212389641823499" type="Player">
+                                            <param id="0" name="Object">Enemy</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="407357707629928" type="Function">
+                                            <param id="0" name="Name">&quot;player.damage&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="396831008063112">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="940599035600465" type="Function">
+                                            <param id="0" name="Name">&quot;player.damage&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="762498339599569" type="Audio">
+                                            <param id="0" name="Audio file">Imapct_1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="253501387590576" type="Player">
+                                            <param id="0" name="Instance variable">health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="533290579170013">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="389462080672211" type="Player">
+                                                    <param id="0" name="Instance variable">damaged</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="515582225173783" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="423656667481982" type="Player">
+                                                    <param id="0" name="Instance variable">damaged</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="401422611512932">
+                                            <conditions />
+                                            <actions>
+                                                <action id="1" name="Set blend mode" sid="667269882379830" type="Player">
+                                                    <param id="0" name="Blend mode">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="200918140176520" type="System">
+                                                    <param id="0" name="Seconds">0.15</param>
+                                                </action>
+                                                <action id="1" name="Set blend mode" sid="295100047951714" type="Player">
+                                                    <param id="0" name="Blend mode">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="537921858972761" title="Player Knockback">
+                            <sub-events>
+                                <event-block sid="238593673546495">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="186710809839882" type="Player">
+                                            <param id="0" name="Object">Enemy</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="775557173258605" type="Player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="153117544094711" type="Player">
+                                            <param id="0" name="Angle">angle(Enemy.X, Enemy.Y, Self.X, Self.Y)</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="241531428129564" type="Player">
+                                            <param id="0" name="Speed">150</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="831267142846720" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="712495790665726" type="Player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-block>
     </events>

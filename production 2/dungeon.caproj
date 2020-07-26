@@ -69,6 +69,8 @@
                     <instance-variable name="opposite_direction" sid="961675686232058" type="string" />
                     <instance-variable name="direction_angle" sid="445275323083590" type="number" />
                     <instance-variable name="enabled" sid="902835308681861" type="boolean" />
+                    <instance-variable name="damaged" sid="788659273812347" type="boolean" />
+                    <instance-variable name="health" sid="874690451153420" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="230732207759381">
@@ -461,6 +463,17 @@
                             <image-point name="Shadow" x="0.502591" y="0.871134" />
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="Damage" pingpong="0" repeatcount="1" repeatto="0" sid="982719823171537" speed="5">
+                        <frame duration="1" hotspotX="0.502538" hotspotY="0.502538">
+                            <image-point name="Shadow" x="0.502538" y="0.873096" />
+                            <collision-poly>
+                                <point x="0.136719" y="0.179688" />
+                                <point x="0.875" y="0.171876" />
+                                <point x="0.882813" y="0.738281" />
+                                <point x="0.140626" y="0.746094" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="SwarmGuy" sid="480948266762464">
@@ -468,16 +481,19 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594849463066291" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.507813" y="0.8125" />
+                            <image-point name="Shadow" x="0.492188" y="1" />
                         </frame>
                     </animation>
                     <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="727372687638052" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.507813" y="0.8125" />
+                            <image-point name="Shadow" x="0.492188" y="1" />
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.507813" y="0.8125" />
+                            <image-point name="Shadow" x="0.492188" y="1" />
                         </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Damage" pingpong="0" repeatcount="1" repeatto="0" sid="808564149636531" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -781,6 +797,9 @@
         <object-folder name="UI">
             <object-type name="Heart" sid="504913524230786">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="number" sid="709980434176713" type="number" />
+                </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="884257165562076" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -1028,6 +1047,7 @@
         <event-sheet># Common.xml</event-sheet>
         <event-sheet># Player.xml</event-sheet>
         <event-sheet># Enemy.xml</event-sheet>
+        <event-sheet># UI.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="17" />

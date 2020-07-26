@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name># Common</name>
     <events>
+        <include># UI</include>
         <include># Player</include>
         <event-group description="" sid="779336441684505" title="Misc">
             <sub-events>
@@ -213,12 +214,8 @@
                         <condition id="-4" name="Trigger once while true" sid="357091625474892" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="461976150242017" type="Player">
-                            <param id="0" name="Animation">&quot;death&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="309365494997800" type="Player">
-                            <param id="0" name="Instance variable">enabled</param>
+                        <action id="-10" name="Set value" sid="599065478250178" type="Player">
+                            <param id="0" name="Instance variable">health</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
@@ -235,10 +232,6 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">-10</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="668347059870114" type="Function">
-                                    <param id="0" name="Name">&quot;restartLayout&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>

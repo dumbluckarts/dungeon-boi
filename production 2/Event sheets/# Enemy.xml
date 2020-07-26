@@ -6,6 +6,11 @@
         <event-block sid="745135921965866">
             <conditions>
                 <condition id="-9" name="Is visible" sid="542193894492292" type="Enemy" />
+                <condition id="-7" name="Compare instance variable" sid="701374452148539" type="Player">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions />
             <sub-events>
@@ -33,6 +38,9 @@
                                     <param id="0" name="Instance variable">health</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="321574969469231" type="Enemy">
+                                    <param id="0" name="Instance variable">damage</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -242,6 +250,10 @@
                                 <condition id="-4" name="Trigger once while true" sid="808069264068131" type="System" />
                             </conditions>
                             <actions>
+                                <action id="4" name="Set animation" sid="762684471096348" type="Enemy">
+                                    <param id="0" name="Animation">&quot;Damage&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                                 <action id="-12" name="Subtract from" sid="717215151041333" type="Enemy">
                                     <param id="0" name="Instance variable">health</param>
                                     <param id="1" name="Value">1</param>
@@ -251,7 +263,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="305049515432975" type="System">
-                                    <param id="0" name="Seconds">0.1</param>
+                                    <param id="0" name="Seconds">0.15</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="736943251838488" type="Enemy">
                                     <param id="0" name="Instance variable">damage</param>
