@@ -15,7 +15,47 @@
                         <action id="-36" name="Save" sid="483442299948230" type="System">
                             <param id="0" name="Slot">&quot;start&quot;</param>
                         </action>
+                        <action id="0" name="Call function" sid="999886043661090" type="Function">
+                            <param id="0" name="Name">&quot;startLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
+                </event-block>
+                <event-block sid="167212744292249">
+                    <conditions>
+                        <condition id="0" name="On function" sid="337219778773907" type="Function">
+                            <param id="0" name="Name">&quot;restartLayout&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="919338525924171">
+                            <conditions>
+                                <condition id="-10" name="For" sid="429847292511118" type="System">
+                                    <param id="0" name="Name">&quot;fade&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="792695129253926" type="System">
+                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="870635289986776" type="System">
+                                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) + 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="274246625676509">
+                    <conditions>
+                        <condition id="0" name="On function" sid="425181080542427" type="Function">
+                            <param id="0" name="Name">&quot;startLayout&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
                     <sub-events>
                         <event-block sid="849928008016004">
                             <conditions>
@@ -36,6 +76,26 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>restart layout when fade done</comment>
+                <event-block sid="364406065695007">
+                    <conditions>
+                        <condition id="-17" name="Compare opacity" sid="913537748528546" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Opacity">100</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="458247241791058" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="682720912639706" type="LocalStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                            <param id="1" name="Value">Audio.PlaybackTime(&quot;music&quot;)</param>
+                        </action>
+                        <action id="-37" name="Load" sid="463343622603926" type="System">
+                            <param id="0" name="Slot">&quot;start&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -118,6 +178,28 @@
                             <param id="1" name="Image point (optional)">&quot;Shadow&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="180783286279695">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="754867196260874" type="Shadowed" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="270792793603764" type="DropShadow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="123961260146603">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="198335886816637" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="202306319075351" type="DropShadow">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -141,40 +223,26 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="857715738599998">
+                        <event-block sid="418166922482064">
                             <conditions>
-                                <condition id="-10" name="For" sid="955512331015244" type="System">
-                                    <param id="0" name="Name">&quot;fade&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">100</param>
+                                <condition id="1" name="Is overlapping another object" sid="135023831184859" type="Player">
+                                    <param id="0" name="Object">Spikes</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-16" name="Wait" sid="765035825994746" type="System">
-                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                <action id="0" name="Play" sid="127966783178127" type="Audio">
+                                    <param id="0" name="Audio file">ES_Machete Slice Stab - SFX Producer</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
-                                <action id="-18" name="Set layer opacity" sid="759112026188667" type="System">
-                                    <param id="0" name="Layer">&quot;Overlay&quot;</param>
-                                    <param id="1" name="Opacity">LayerOpacity(&quot;Overlay&quot;) + 1</param>
+                                <action id="0" name="Call function" sid="668347059870114" type="Function">
+                                    <param id="0" name="Name">&quot;restartLayout&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="364406065695007">
-                    <conditions>
-                        <condition id="-17" name="Compare opacity" sid="913537748528546" type="System">
-                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Opacity">100</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="458247241791058" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-37" name="Load" sid="463343622603926" type="System">
-                            <param id="0" name="Slot">&quot;start&quot;</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -367,6 +435,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>play music at start</comment>
                 <event-block sid="624413975111036">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="681329384134094" type="System" />
@@ -375,11 +444,56 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="187835137983240" type="Audio">
+                        <action id="0" name="Play" sid="913223137100072" type="Audio">
                             <param id="0" name="Audio file">track1</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">-10</param>
                             <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>load music from last position</comment>
+                <variable constant="0" name="musicLoaded" sid="224789017485870" static="1" type="number">0</variable>
+                <event-block sid="407013320372268">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="550406273890413" type="System" />
+                        <condition id="-14" name="Compare variable" sid="672721572436435" type="System">
+                            <param id="0" name="Variable">musicLoaded</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Get item" sid="102617345208851" type="LocalStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="509501736390176">
+                    <conditions>
+                        <condition id="1" name="On item get" sid="810787813758532" type="LocalStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="23" name="Seek to" sid="648382019652902" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                            <param id="1" name="Position">LocalStorage.ItemValue</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="970618860500421" type="System">
+                            <param id="0" name="Variable">musicLoaded</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384521148437597">
+                    <conditions>
+                        <condition id="-29" name="On load complete" sid="354798320490436" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="775818851291490" type="LocalStorage">
+                            <param id="0" name="Key">&quot;music&quot;</param>
+                            <param id="1" name="Value">Audio.PlaybackTime(&quot;music&quot;)</param>
                         </action>
                     </actions>
                 </event-block>

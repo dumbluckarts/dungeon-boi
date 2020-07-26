@@ -13,7 +13,9 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
@@ -91,7 +93,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\up_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\up_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -102,7 +104,7 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="0" name="idle_down" pingpong="0" repeatcount="1" repeatto="0" sid="457928398867353" speed="5">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\down_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\down_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -111,7 +113,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\down_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\down_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -131,7 +133,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\left_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\left_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -151,7 +153,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\right_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Idle\right_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -164,7 +166,7 @@
                     </animation-folder>
                     <animation-folder name="Walk">
                         <animation framecount="2" loop="0" name="walk_up" pingpong="0" repeatcount="1" repeatto="0" sid="198383969663278" speed="5">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\up_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\up_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -173,7 +175,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\up_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\up_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -184,7 +186,7 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="0" name="walk_down" pingpong="0" repeatcount="1" repeatto="0" sid="779354020603951" speed="5">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -193,7 +195,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -204,7 +206,7 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="0" name="walk_left" pingpong="0" repeatcount="1" repeatto="0" sid="705754103513741" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\left_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\left_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -213,7 +215,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\left_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\left_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -224,7 +226,7 @@
                             </frame>
                         </animation>
                         <animation framecount="2" loop="0" name="walk_right" pingpong="0" repeatcount="1" repeatto="0" sid="911923834724248" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\right_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\right_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -233,7 +235,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\right_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\right_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -246,7 +248,7 @@
                     </animation-folder>
                     <animation-folder name="Attack">
                         <animation framecount="2" loop="0" name="attack_up" pingpong="0" repeatcount="1" repeatto="0" sid="804511754636177" speed="0">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\up_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\up_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -266,7 +268,7 @@
                             </frame>
                         </animation>
                         <animation framecount="3" loop="0" name="attack_down" pingpong="0" repeatcount="1" repeatto="0" sid="673665630019183" speed="0">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -275,7 +277,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -284,7 +286,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_3.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\down_3.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -295,7 +297,7 @@
                             </frame>
                         </animation>
                         <animation framecount="3" loop="0" name="attack_left" pingpong="0" repeatcount="1" repeatto="0" sid="576205582926476" speed="0">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\left_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\left_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -304,7 +306,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\left_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\left_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -324,7 +326,7 @@
                             </frame>
                         </animation>
                         <animation framecount="3" loop="0" name="attack_right" pingpong="0" repeatcount="1" repeatto="0" sid="842709101093468" speed="0">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\right_1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\right_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -333,7 +335,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\right_2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Attack\right_2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -355,7 +357,7 @@
                     </animation-folder>
                     <animation-folder name="Misc">
                         <animation framecount="4" loop="0" name="death" pingpong="0" repeatcount="1" repeatto="0" sid="919271716725469" speed="5">
-                            <frame duration="1" hotspotX="0.503906" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\1.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -364,7 +366,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\2.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\2.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -373,7 +375,7 @@
                                     <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\3.png">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Death\3.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -437,6 +439,28 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="1" loop="0" name="Death" pingpong="0" repeatcount="1" repeatto="0" sid="693859965481289" speed="5">
+                        <frame duration="1" hotspotX="0.502538" hotspotY="0.502538" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Damage\0.png">
+                            <image-point name="Shadow" x="0.502538" y="0.873096" />
+                            <collision-poly>
+                                <point x="0.136719" y="0.179688" />
+                                <point x="0.875" y="0.171876" />
+                                <point x="0.882813" y="0.738281" />
+                                <point x="0.140626" y="0.746094" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="615248202323624" speed="5">
+                        <frame duration="1" hotspotX="0.502538" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Walk\0.png">
+                            <image-point name="Shadow" x="0.502538" y="0.872449" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.502488" hotspotY="0.502645" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Walk\1.png">
+                            <image-point name="Shadow" x="0.502488" y="0.873016" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.502591" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Octopus\Walk\3.png">
+                            <image-point name="Shadow" x="0.502591" y="0.871134" />
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="SwarmGuy" sid="480948266762464">
@@ -444,7 +468,15 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594849463066291" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.515625" y="0.882813" />
+                            <image-point name="Shadow" x="0.507813" y="0.8125" />
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="727372687638052" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shadow" x="0.507813" y="0.8125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shadow" x="0.507813" y="0.8125" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -496,17 +528,16 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="EnemySpawn" sid="422701715153792">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="125609124329309" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Collider">
-            <object-type name="Solid" sid="369518798830578">
-                <plugin id="TiledBg" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="988981439239512">
-                        <behavior id="solid" />
-                    </behavior-type>
-                </behaviors>
-                <texture />
-            </object-type>
             <object-type name="AttackHitbox" sid="442007645633735">
                 <plugin id="Sprite" />
                 <behaviors>
@@ -521,6 +552,14 @@
                             <image-point name="Front" x="1" y="0.5" />
                             <image-point name="Far_Front" x="1.2" y="0.5" />
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Solid" sid="104452000245394">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="413473091445519" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -734,6 +773,10 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Smoke" sid="978414162621795">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="UI">
             <object-type name="Heart" sid="504913524230786">
@@ -921,6 +964,9 @@
         <object-type name="Mouse" sid="725521002477367">
             <plugin id="Mouse" />
         </object-type>
+        <object-type name="LocalStorage" sid="424639275413251">
+            <plugin id="LocalStorage" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Shadowed" plugin-id="Sprite" sid="486177015640144">
@@ -946,11 +992,17 @@
                 <instance-variable name="damage" sid="462225235019999" type="boolean" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="Bullet" sid="641790244822145">
-                    <behavior id="Bullet" />
-                </behavior-type>
                 <behavior-type name="8Direction" sid="704049087291171">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="922085854327132">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="598234971999951">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="641790244822145">
+                    <behavior id="Bullet" />
                 </behavior-type>
                 <behavior-type name="Solid" sid="145897807508222">
                     <behavior id="solid" />
@@ -965,19 +1017,6 @@
                 <member>Cliff</member>
                 <member>Spikes</member>
             </members>
-        </family>
-        <family name="Swarmer" plugin-id="Sprite" sid="284970614011380">
-            <members>
-                <member>SwarmGuy</member>
-            </members>
-            <behaviors>
-                <behavior-type name="Pathfinding" sid="349803451391115">
-                    <behavior id="Pathfinding" />
-                </behavior-type>
-                <behavior-type name="LineOfSight" sid="191372709802226">
-                    <behavior id="LOS" />
-                </behavior-type>
-            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -1013,6 +1052,7 @@
             </properties>
         </global-instance>
         <global-instance type="Mouse" uid="66" />
+        <global-instance type="LocalStorage" uid="71" />
     </global-instances>
     <sounds-folder>
         <file name="coinGrab1.m4a" />
@@ -1066,6 +1106,10 @@
         <file name="Swang2.ogg" />
         <file name="track1.m4a" />
         <file name="track1.ogg" />
+        <file name="ES_Torch Pass By Whoosh 4 - SFX Producer.m4a" />
+        <file name="ES_Torch Pass By Whoosh 4 - SFX Producer.ogg" />
+        <file name="ES_Machete Slice Stab - SFX Producer.m4a" />
+        <file name="ES_Machete Slice Stab - SFX Producer.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>
