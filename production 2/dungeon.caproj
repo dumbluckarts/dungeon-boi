@@ -14,7 +14,6 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
-        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -552,6 +551,14 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="door" sid="769232175249747">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617736268880082" speed="5">
+                        <frame duration="1" hotspotX="0.501416" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Collider">
             <object-type name="AttackHitbox" sid="442007645633735">
@@ -573,6 +580,11 @@
             </object-type>
             <object-type name="Solid" sid="104452000245394">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="211078660106296">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="413473091445519" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -947,6 +959,61 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="Start Art">
+            <object-type name="StartBackground" sid="945068524440194">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="989568253738781" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="StartWalls" sid="615970505674183">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="351566987236628" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="StartShadow" sid="924225089857961">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="733583427843497" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="StartTrees" sid="156422287900787">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="393998939066231" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="StartLight" sid="799758114589100">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="156133078410332">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="588464135008000" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="StartOverlay" sid="334875569561647">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="378761340215732" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Keyboard" sid="599565197689398">
             <plugin id="Keyboard" />
         </object-type>
@@ -971,17 +1038,6 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type name="door" sid="769232175249747">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617736268880082" speed="5">
-                    <frame duration="1" hotspotX="0.501416" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Mouse" sid="725521002477367">
-            <plugin id="Mouse" />
         </object-type>
         <object-type name="LocalStorage" sid="424639275413251">
             <plugin id="LocalStorage" />
@@ -1042,6 +1098,7 @@
         <layout># Instance.xml</layout>
         <layout># UI.xml</layout>
         <layout>Layout 1.xml</layout>
+        <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet># Common.xml</event-sheet>
@@ -1071,7 +1128,6 @@
                 <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
-        <global-instance type="Mouse" uid="66" />
         <global-instance type="LocalStorage" uid="71" />
     </global-instances>
     <sounds-folder>
