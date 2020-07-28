@@ -250,6 +250,11 @@
                                 <condition id="-4" name="Trigger once while true" sid="808069264068131" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Spawn another object" sid="337349931860057" type="Enemy">
+                                    <param id="0" name="Object">BloodParticles</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
                                 <action id="4" name="Set animation" sid="762684471096348" type="Enemy">
                                     <param id="0" name="Animation">&quot;Damage&quot;</param>
                                     <param id="1" name="From">1</param>
@@ -332,6 +337,7 @@
                         <event-block sid="698415678846687">
                             <conditions>
                                 <condition id="-2" name="On start of layout" sid="309476049350187" type="System" />
+                                <condition id="-4" inverted="1" name="Is outside layout" sid="478189379704389" type="Enemy" />
                             </conditions>
                             <actions>
                                 <action id="-15" name="Set visible" sid="332625372009106" type="Enemy">

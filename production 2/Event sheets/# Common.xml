@@ -428,6 +428,63 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="868506022635746">
+                    <conditions>
+                        <condition id="0" name="On function" sid="348323639134167" type="Function">
+                            <param id="0" name="Name">&quot;stepSound&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="609562260060386">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="844593420660536" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="242873070579930" type="Audio">
+                                    <param id="0" name="Audio file">mushStep1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;step&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="286673452512097">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="184819508995573" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="497669458288410" type="Audio">
+                                    <param id="0" name="Audio file">mushStep2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;step&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="903628036454719">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="694448455196870" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="880411404036990" type="Audio">
+                                    <param id="0" name="Audio file">mushstep3</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;step&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>play music at start</comment>
                 <event-block sid="624413975111036">
                     <conditions>
@@ -440,7 +497,7 @@
                         <action id="0" name="Play" sid="913223137100072" type="Audio">
                             <param id="0" name="Audio file">track1</param>
                             <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-10</param>
+                            <param id="3" name="Volume">-12</param>
                             <param id="1" name="Tag (optional)">&quot;music&quot;</param>
                         </action>
                     </actions>
@@ -488,6 +545,138 @@
                             <param id="0" name="Key">&quot;music&quot;</param>
                             <param id="1" name="Value">Audio.PlaybackTime(&quot;music&quot;)</param>
                         </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="849965275168056" title="Doors">
+            <sub-events>
+                <event-block sid="792384701934425">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="171412204903802" type="Player">
+                            <param id="0" name="Object">DoorCollider</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="597343585820036" type="System">
+                            <param id="0" name="Layout">DoorCollider.layout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="708208012614898" title="Coins">
+            <sub-events>
+                <event-block sid="352629551995197">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="856847155381929" type="AttackHitbox">
+                            <param id="0" name="Object">Enemy</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="143485032100592" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="186520867012179">
+                            <conditions>
+                                <condition id="-10" name="For" sid="212693198186799" type="System">
+                                    <param id="0" name="Name">&quot;gems&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">random(2, 10)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="936662597224447" type="System">
+                                    <param id="0" name="Object to create">Gem</param>
+                                    <param id="1" name="Layer">&quot;Characters&quot;</param>
+                                    <param id="2" name="X">Enemy.X</param>
+                                    <param id="3" name="Y">Enemy.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="579136847193636" type="Gem">
+                                    <param id="0" name="Angle">random(0, 360)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="838280617641196" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="129988376287840" type="Gem">
+                                    <param id="0" name="Instance variable">suck</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="161564891163382">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="537719180780495" type="Gem" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="719863688088392">
+                            <conditions>
+                                <condition behavior="Bullet" id="0" name="Compare speed" sid="394075759560190" type="Gem">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Speed">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="108071671375010" type="Gem">
+                                    <param id="0" name="Instance variable">suck</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="179809713529175" type="Gem">
+                                    <param id="0" name="Speed">Self.Bullet.Speed - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="831337480945239">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="299190550827862" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="100496904674959" type="Gem">
+                                    <param id="0" name="Speed">1200</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="538614914739089" type="Gem">
+                                    <param id="0" name="Angle">angle(Self.X, Self.Y, Player.X, Player.Y)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="785685206325032">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="486497681847480" type="System">
+                                    <param id="0" name="Interval (seconds)">0.05</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="875739588003988" type="Gem">
+                                    <param id="0" name="Object">BloodSplotch1</param>
+                                    <param id="1" name="Layer">&quot;Decals Outlined&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="986276987360189" type="BloodSplotch1">
+                                    <param id="0" name="Angle">random(0, 360)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="312273268321178" type="BloodSplotch1">
+                                    <param id="0" name="Width">32</param>
+                                    <param id="1" name="Height">32</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="504824533232960" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="892597263016208" type="BloodSplotch1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="595981267481794">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="865153227516781" type="Gem">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="235643945596101" type="Gem" />
                     </actions>
                 </event-block>
             </sub-events>

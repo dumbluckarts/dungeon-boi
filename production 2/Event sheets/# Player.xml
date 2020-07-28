@@ -244,6 +244,18 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="699373997169895">
+                            <conditions>
+                                <condition id="6" name="On frame changed" sid="835174969670253" type="Player" />
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="110194959476820" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="115405584500600" type="Function">
+                                    <param id="0" name="Name">&quot;stepSound&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="704879171385066" title="Player Attack">

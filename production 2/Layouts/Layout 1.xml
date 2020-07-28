@@ -448,7 +448,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <health>5</health>
+                        <health>3</health>
                         <damage>false</damage>
                     </instance-variables>
                     <behavior-instances>

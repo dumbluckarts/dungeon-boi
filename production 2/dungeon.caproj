@@ -559,6 +559,69 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Gem" sid="103219444323807">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="suck" sid="298074833291603" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="488944542122661">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="744215570404096" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\2.png">
+                            <collision-poly>
+                                <point x="0.390625" y="0.125" />
+                                <point x="0.609375" y="0.125" />
+                                <point x="0.609375" y="0.875" />
+                                <point x="0.390625" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\0.png">
+                            <collision-poly>
+                                <point x="0.3125" y="0.125" />
+                                <point x="0.6875" y="0.125" />
+                                <point x="0.6875" y="0.875" />
+                                <point x="0.3125" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\1.png">
+                            <collision-poly>
+                                <point x="0.34375" y="0.125" />
+                                <point x="0.65625" y="0.125" />
+                                <point x="0.65625" y="0.875" />
+                                <point x="0.34375" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\3.png">
+                            <collision-poly>
+                                <point x="0.421875" y="0.125" />
+                                <point x="0.578125" y="0.125" />
+                                <point x="0.578125" y="0.875" />
+                                <point x="0.421875" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\4.png">
+                            <collision-poly>
+                                <point x="0.390625" y="0.125" />
+                                <point x="0.609375" y="0.125" />
+                                <point x="0.609375" y="0.875" />
+                                <point x="0.390625" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\Assets\Rupee\5.png">
+                            <collision-poly>
+                                <point x="0.34375" y="0.125" />
+                                <point x="0.65625" y="0.125" />
+                                <point x="0.65625" y="0.875" />
+                                <point x="0.34375" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Collider">
             <object-type name="AttackHitbox" sid="442007645633735">
@@ -570,10 +633,10 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="161094456488224" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0.512">
+                        <frame duration="1" hotspotX="-0.256" hotspotY="0.512">
                             <image-point name="Middle" x="0.5" y="0.5" />
                             <image-point name="Front" x="1" y="0.5" />
-                            <image-point name="Far_Front" x="1.2" y="0.5" />
+                            <image-point name="Far_Front" x="1.456" y="0.5" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -587,6 +650,17 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="413473091445519" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="DoorCollider" sid="984320972692972">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="layout" sid="364086870679943" type="string" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="979367706016644" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -805,6 +879,10 @@
                 <plugin id="Particles" />
                 <texture />
             </object-type>
+            <object-type name="BloodParticles" sid="118961150157474">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="UI">
             <object-type name="Heart" sid="504913524230786">
@@ -960,6 +1038,99 @@
             </object-type>
         </object-folder>
         <object-folder name="Start Art">
+            <object-folder name="Beams">
+                <object-type name="Beam1" sid="909177883809380">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="211103364547017">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="393280883939600" speed="5">
+                            <frame duration="1" hotspotX="0.545455" hotspotY="0.514583" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam2" sid="567777892557957">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="651906851268578">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="406572025822498" speed="5">
+                            <frame duration="1" hotspotX="0.637363" hotspotY="0.510393" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam3" sid="208472618419963">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="640547086613374">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="976962391694585" speed="5">
+                            <frame duration="1" hotspotX="0.668605" hotspotY="0.496881" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam4" sid="559811433137973">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="387499545618306">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="963365550365914" speed="5">
+                            <frame duration="1" hotspotX="0.533019" hotspotY="0.503953" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam5" sid="285095689371543">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="245881234937267">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="877567306456686" speed="5">
+                            <frame duration="1" hotspotX="0.816327" hotspotY="0.496203" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam6" sid="576043606578250">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="438671956971736">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="261658659436531" speed="5">
+                            <frame duration="1" hotspotX="0.533632" hotspotY="0.512411" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Beam7" sid="623977914154605">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="896880461178782">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="632327533380882" speed="5">
+                            <frame duration="1" hotspotX="0.491736" hotspotY="0.502152" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
             <object-type name="StartBackground" sid="945068524440194">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -1010,6 +1181,26 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="378761340215732" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cloud" sid="354005927911459">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="836291873174112">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="201156831727579" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0605469" y="0.191406" />
+                                <point x="0.941406" y="0.191406" />
+                                <point x="0.941406" y="0.808594" />
+                                <point x="0.0605469" y="0.808594" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
