@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>27800</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -137,10 +138,10 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\idleight2.png">
                                 <image-point name="Shadow" x="0.492188" y="0.949219" />
                                 <collision-poly>
-                                    <point x="0.664062" y="0.953125" />
-                                    <point x="0.292969" y="0.953125" />
-                                    <point x="0.292969" y="0.347656" />
-                                    <point x="0.667969" y="0.347656" />
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
                         </animation>
@@ -148,19 +149,19 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Shroom\right.png">
                                 <image-point name="Shadow" x="0.492188" y="0.949219" />
                                 <collision-poly>
-                                    <point x="0.664062" y="0.953125" />
-                                    <point x="0.292969" y="0.953125" />
-                                    <point x="0.292969" y="0.347656" />
-                                    <point x="0.667969" y="0.347656" />
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\idleight2.png">
                                 <image-point name="Shadow" x="0.492188" y="0.949219" />
                                 <collision-poly>
-                                    <point x="0.664062" y="0.953125" />
-                                    <point x="0.292969" y="0.953125" />
-                                    <point x="0.292969" y="0.347656" />
-                                    <point x="0.667969" y="0.347656" />
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
                         </animation>
@@ -219,10 +220,10 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\left_2.png">
                                 <image-point name="Shadow" x="0.492188" y="0.949219" />
                                 <collision-poly>
-                                    <point x="0.664062" y="0.953125" />
-                                    <point x="0.292969" y="0.953125" />
-                                    <point x="0.292969" y="0.347656" />
-                                    <point x="0.667969" y="0.347656" />
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
                                 </collision-poly>
                             </frame>
                         </animation>
@@ -1233,6 +1234,9 @@
         <object-type name="LocalStorage" sid="424639275413251">
             <plugin id="LocalStorage" />
         </object-type>
+        <object-type global="1" name="Layouts" sid="461067985787705">
+            <plugin id="Arr" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Shadowed" plugin-id="Sprite" sid="486177015640144">
@@ -1289,6 +1293,7 @@
         <layout># Instance.xml</layout>
         <layout># UI.xml</layout>
         <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
         <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
