@@ -486,7 +486,7 @@
                     </sub-events>
                 </event-block>
                 <comment>play music at start</comment>
-                <event-block sid="624413975111036">
+                <event-block disabled="1" sid="624413975111036">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="681329384134094" type="System" />
                         <condition id="5" inverted="1" name="Is tag playing" sid="543894864631044" type="Audio">
@@ -519,7 +519,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="509501736390176">
+                <event-block disabled="1" sid="509501736390176">
                     <conditions>
                         <condition id="1" name="On item get" sid="810787813758532" type="LocalStorage">
                             <param id="0" name="Key">&quot;music&quot;</param>
@@ -536,7 +536,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="384521148437597">
+                <event-block disabled="1" sid="384521148437597">
                     <conditions>
                         <condition id="-29" name="On load complete" sid="354798320490436" type="System" />
                     </conditions>

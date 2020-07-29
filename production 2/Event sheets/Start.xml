@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start</name>
+    <events>
+        <include># UI</include>
+        <include># Player</include>
+        <include># Common</include>
+        <comment></comment>
+        <event-block sid="619803093201927">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="719303166731111" type="System" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="367470320780860" type="Audio">
+                    <param id="0" name="Tag">&quot;ambience&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="142750399259627" type="Audio">
+                    <param id="0" name="Audio file">outside</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;ambience&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="858721676239186">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="487511391648733" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="453681258979488" type="Audio">
+                    <param id="0" name="Tag">&quot;ambience&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="353335028775062" type="Audio">
+                    <param id="0" name="Audio file">track1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-10</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

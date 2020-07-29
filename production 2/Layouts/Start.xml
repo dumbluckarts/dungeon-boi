@@ -2,7 +2,7 @@
 <c2layout>
     <name>Start</name>
     <sid>267201396961616</sid>
-    <event-sheet># Common</event-sheet>
+    <event-sheet>Start</event-sheet>
     <size>
         <width>1920</width>
         <height>1080</height>
@@ -239,8 +239,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>960</x>
-                        <y>-832</y>
+                        <x>929</x>
+                        <y>-829</y>
                         <z>0</z>
                         <width>1920</width>
                         <height>1344</height>
