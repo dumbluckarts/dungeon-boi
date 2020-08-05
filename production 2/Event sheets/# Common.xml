@@ -3,10 +3,51 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name># Common</name>
     <events>
+        <variable constant="0" name="Progression" sid="217331222741525" static="0" type="text">Intro</variable>
         <include># UI</include>
         <include># Player</include>
         <event-group description="" sid="779336441684505" title="Misc">
             <sub-events>
+                <event-block sid="719808038824290">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="205575155600064" type="bug" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="326718591585558" type="bug">
+                            <param id="0" name="Animation">&quot;Moving&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="354037642927915">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="4" inverted="1" name="Is moving along path" sid="788399709372943" type="bug" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="760363252080051" type="bug">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="346347512934137">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="105276581812290" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="910704793657648" type="bug">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="912817737440263" type="bug" />
+                        <action id="-16" name="Wait" sid="587549838261677" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action behavior="Pathfinding" id="2" name="Stop" sid="208698037539202" type="bug" />
+                    </actions>
+                </event-block>
                 <comment>save layout state, fade in</comment>
                 <event-block sid="309413089824838">
                     <conditions>
@@ -118,6 +159,10 @@
                             <param id="0" name="Object">Camera</param>
                             <param id="1" name="Layer">Self.LayerName</param>
                             <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="701218388935901" type="Function">
+                            <param id="0" name="Name">&quot;startLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -678,6 +723,55 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="235643945596101" type="Gem" />
                     </actions>
+                    <sub-events>
+                        <event-block sid="158361733470201">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="977898346963766" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="763407118821381" type="Audio">
+                                    <param id="0" name="Audio file">coinGrab1</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="225639355293793">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="162971655119173" type="System">
+                                    <param id="0" name="First value">random(3)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="618464732702284" type="Audio">
+                                    <param id="0" name="Audio file">coinGrab2</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="308561000924228">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="886758253101689" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="134234503895250" type="Audio">
+                                    <param id="0" name="Audio file">coinGrab3</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -686,6 +780,11 @@
                 <event-block sid="153561036784351">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="276307511529897" type="System" />
+                        <condition id="-14" name="Compare variable" sid="294367133818597" type="System">
+                            <param id="0" name="Variable">Progression</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Game&quot;</param>
+                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>

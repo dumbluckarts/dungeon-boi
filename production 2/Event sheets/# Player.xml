@@ -302,8 +302,16 @@
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="754680536037510" type="Player">
                                             <param id="0" name="Angle">Self.direction_angle</param>
                                         </action>
+                                        <action id="-27" name="Set effect enabled" sid="515031535713775" type="Player">
+                                            <param id="0" name="Mode">1</param>
+                                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                                        </action>
                                         <action id="-16" name="Wait" sid="604696773518280" type="System">
                                             <param id="0" name="Seconds">0.11</param>
+                                        </action>
+                                        <action id="-27" name="Set effect enabled" sid="378254401278837" type="Player">
+                                            <param id="0" name="Mode">0</param>
+                                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
                                         </action>
                                         <action behavior="Bullet" id="5" name="Set enabled" sid="769146665406586" type="Player">
                                             <param id="0" name="State">0</param>
@@ -312,6 +320,16 @@
                                             <param id="0" name="State">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="753548901277912">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                        <event-block sid="838965808622487">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <comment>allow player to move again</comment>
                                 <event-block sid="157018343581736">
@@ -538,7 +556,31 @@
                         </event-group>
                     </sub-events>
                 </event-block>
+                <event-block sid="758338564774916">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="879125465857988" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-27" name="Set effect enabled" sid="716500401601996" type="Player">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="490830610547146">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="515391602072700" type="Player">
+                    <param id="0" name="Object">bug</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="262304485842668" type="bug">
+                    <param id="0" name="Animation">&quot;Squash&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

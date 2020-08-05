@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>IntroLayout</name>
+    <events>
+        <variable constant="0" name="MusicLevel" sid="558644457475471" static="0" type="number">0</variable>
+        <include># Enemy</include>
+        <include># UI</include>
+        <include># Player</include>
+        <include># Common</include>
+        <event-block sid="850646851899873">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="767382649340922" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="825130027525304" type="Audio">
+                    <param id="0" name="Tag">&quot;ambience&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="359149953883921" type="Audio">
+                    <param id="0" name="Audio file">track1</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;song&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="985104110821009" type="System">
+                    <param id="0" name="Variable">Progression</param>
+                    <param id="1" name="Value">&quot;Game&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
