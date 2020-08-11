@@ -538,6 +538,110 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="EyeBoss" sid="935656152914588">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Open" sid="562102815788576" type="boolean" />
+                    <instance-variable name="Rushing" sid="718387469820187" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LineOfSight" sid="661504196037997">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="910879802341256" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="3" loop="1" name="Open" pingpong="0" repeatcount="0" repeatto="0" sid="828636657748757" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_3.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_4.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="1" name="Rush" pingpong="0" repeatcount="0" repeatto="0" sid="350891856513299" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_5.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\sprite_6.png">
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Tilemap">
             <object-type name="Ground" sid="572342297588137">
@@ -1470,6 +1574,7 @@
         <layout># Instance.xml</layout>
         <layout># UI.xml</layout>
         <layout>Layout 1.xml</layout>
+        <layout>Boss 1.xml</layout>
         <layout>IntroLayout.xml</layout>
         <layout>Shop.xml</layout>
         <layout>Layout 2.xml</layout>

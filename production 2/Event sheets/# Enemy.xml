@@ -375,5 +375,107 @@
                 </event-group>
             </sub-events>
         </event-block>
+        <event-group description="" sid="306185780821116" title="Eyeball Boss">
+            <sub-events>
+                <event-block sid="643747029952836">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="126836474055436" type="EyeBoss">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="820417233168621" type="EyeBoss">
+                            <param id="0" name="Instance variable">Open</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="759501700327061" type="EyeBoss">
+                            <param id="0" name="Instance variable">Rushing</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="511180190569338">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="853225237856829" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781292369452393" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="589811488472524" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="758073950032074">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="836135278126260" type="System">
+                            <param id="0" name="First value">random(3)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="403963701904853">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="724903492669400" type="System">
+                            <param id="0" name="First value">random(3)</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="199486375242064">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="128427933711988" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="708274883285602">
+            <conditions>
+                <condition id="-4" name="Trigger once while true" sid="937137847187836" type="System" />
+                <condition id="-8" name="Is boolean instance variable set" sid="914057193580860" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="919396929605489" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;Open&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="948699843256477">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="493380655915408" type="EyeBoss">
+                    <param id="0" name="Instance variable">Rushing</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="768598513881458" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;Rush&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="675622667914360" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="972177580124877" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="353986888338565" type="EyeBoss">
+                    <param id="0" name="Instance variable">Rushing</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
