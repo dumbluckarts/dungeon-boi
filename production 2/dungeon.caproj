@@ -1578,6 +1578,7 @@
         <layout>IntroLayout.xml</layout>
         <layout>Shop.xml</layout>
         <layout>Layout 2.xml</layout>
+        <layout>Layout 3.xml</layout>
         <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
