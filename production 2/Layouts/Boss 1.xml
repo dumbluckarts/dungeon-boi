@@ -892,7 +892,8 @@
                     </properties>
                     <instance-variables>
                         <Open>false</Open>
-                        <Rushing>false</Rushing>
+                        <State></State>
+                        <direction></direction>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LineOfSight">
