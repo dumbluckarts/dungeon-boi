@@ -553,6 +553,7 @@
                 <animation-folder>
                     <animation framecount="2" loop="1" name="defaultDown" pingpong="0" repeatcount="0" repeatto="0" sid="910879802341256" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye00.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -565,6 +566,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye01.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -579,6 +581,7 @@
                     </animation>
                     <animation framecount="2" loop="1" name="defaultX" pingpong="0" repeatcount="0" repeatto="0" sid="302033403616468" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye11.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -591,6 +594,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye12.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -605,6 +609,7 @@
                     </animation>
                     <animation framecount="3" loop="1" name="openDown" pingpong="0" repeatcount="0" repeatto="0" sid="828636657748757" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye02.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -617,6 +622,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye03.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -629,6 +635,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye06.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -643,6 +650,7 @@
                     </animation>
                     <animation framecount="3" loop="1" name="openX" pingpong="0" repeatcount="0" repeatto="0" sid="818088236257025" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye15.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -655,6 +663,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye16.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -667,6 +676,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye17.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -681,6 +691,7 @@
                     </animation>
                     <animation framecount="2" loop="1" name="openIdleDown" pingpong="0" repeatcount="0" repeatto="0" sid="817580310550602" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye03.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -693,6 +704,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye06.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -707,6 +719,7 @@
                     </animation>
                     <animation framecount="2" loop="1" name="rushDown" pingpong="0" repeatcount="0" repeatto="0" sid="350891856513299" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye04.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -719,6 +732,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye05.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -733,6 +747,7 @@
                     </animation>
                     <animation framecount="2" loop="1" name="rushX" pingpong="0" repeatcount="0" repeatto="0" sid="494463636661248" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye13.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -745,6 +760,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye14.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -759,6 +775,7 @@
                     </animation>
                     <animation framecount="2" loop="1" name="openIdleX" pingpong="0" repeatcount="0" repeatto="0" sid="832022889705072" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -771,6 +788,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -785,6 +803,7 @@
                     </animation>
                     <animation framecount="6" loop="0" name="smashDown" pingpong="0" repeatcount="0" repeatto="0" sid="650674696977196" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye07.png">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.300781" y="0.300781" />
                                 <point x="0.5" y="0.140625" />
@@ -796,6 +815,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye08.png">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -808,6 +828,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -820,6 +841,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -832,6 +854,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -844,6 +867,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.621094" y="0.917969" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -858,6 +882,7 @@
                     </animation>
                     <animation framecount="5" loop="1" name="smashX" pingpong="0" repeatcount="0" repeatto="0" sid="835665968446759" speed="7">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye18.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.300781" y="0.300781" />
                                 <point x="0.5" y="0.140625" />
@@ -869,6 +894,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Boss1\eye19.png">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -881,6 +907,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -893,6 +920,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -905,6 +933,7 @@
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
                             <collision-poly>
                                 <point x="0.285156" y="0.285156" />
                                 <point x="0.5" y="0.15625" />
@@ -1433,6 +1462,73 @@
             <object-type name="BloodParticles" sid="118961150157474">
                 <plugin id="Particles" />
                 <texture />
+            </object-type>
+            <object-type name="dust" sid="181452244524157">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="803612105262303" speed="7">
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\smoke\sprite_0.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\smoke\sprite_1.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\smoke\sprite_2.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\smoke\sprite_3.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\smoke\sprite_4.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.546875" hotspotY="0.707031">
+                            <collision-poly>
+                                <point x="0.5" y="0.542969" />
+                                <point x="0.480469" y="0.519531" />
+                                <point x="0.335938" y="0.5" />
+                                <point x="0.5" y="0.707031" />
+                                <point x="0.289063" y="0.710938" />
+                                <point x="0.324219" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="UI">

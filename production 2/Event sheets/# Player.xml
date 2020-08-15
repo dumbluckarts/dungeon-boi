@@ -195,6 +195,25 @@
                                             <param id="1" name="Value">&quot;walk&quot;</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="228752699796587">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="818852406135946" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="297458901822278" type="Player">
+                                                    <param id="0" name="Object">dust</param>
+                                                    <param id="1" name="Layer">3</param>
+                                                    <param id="2" name="Image point">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="447379260997415" type="dust">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-25" name="Move to bottom" sid="773612233927512" type="dust" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="132044831045247">
                                     <conditions>

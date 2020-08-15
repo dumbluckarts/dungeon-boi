@@ -406,6 +406,11 @@
                         <condition id="-4" name="Trigger once while true" sid="326761252388981" type="System" />
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="441666685759373" type="EyeBoss">
+                            <param id="0" name="Object">dust</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">&quot;dust&quot;</param>
+                        </action>
                         <action id="0" name="Play" sid="855845597815965" type="Audio">
                             <param id="0" name="Audio file">bossSmash</param>
                             <param id="2" name="Loop">0</param>
