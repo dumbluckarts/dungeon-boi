@@ -321,16 +321,8 @@
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="754680536037510" type="Player">
                                             <param id="0" name="Angle">Self.direction_angle</param>
                                         </action>
-                                        <action id="-27" name="Set effect enabled" sid="515031535713775" type="Player">
-                                            <param id="0" name="Mode">1</param>
-                                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
-                                        </action>
                                         <action id="-16" name="Wait" sid="604696773518280" type="System">
                                             <param id="0" name="Seconds">0.11</param>
-                                        </action>
-                                        <action id="-27" name="Set effect enabled" sid="378254401278837" type="Player">
-                                            <param id="0" name="Mode">0</param>
-                                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
                                         </action>
                                         <action behavior="Bullet" id="5" name="Set enabled" sid="769146665406586" type="Player">
                                             <param id="0" name="State">0</param>
@@ -579,12 +571,7 @@
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="879125465857988" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-27" name="Set effect enabled" sid="716500401601996" type="Player">
-                            <param id="0" name="Mode">0</param>
-                            <param id="1" name="Effect">&quot;BlurVertical&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-block>

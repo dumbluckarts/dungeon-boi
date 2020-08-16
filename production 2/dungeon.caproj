@@ -32,8 +32,6 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
-        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
-        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="R0J0hound" id="outline">Outline</effect>
     </used-effects>
@@ -85,14 +83,6 @@
                         <behavior id="solid" />
                     </behavior-type>
                 </behaviors>
-                <effects>
-                    <effect-type name="BlurHorizontal">
-                        <effect id="blurhorizontal" />
-                    </effect-type>
-                    <effect-type name="BlurVertical">
-                        <effect id="blurvertical" />
-                    </effect-type>
-                </effects>
                 <animation-folder>
                     <animation-folder name="Idle">
                         <animation framecount="2" loop="0" name="idle_up" pingpong="0" repeatcount="1" repeatto="0" sid="207030912177082" speed="5">
@@ -1952,6 +1942,7 @@
         <layout>Shop.xml</layout>
         <layout>Layout 2.xml</layout>
         <layout>Layout 3.xml</layout>
+        <layout>Layout 4.xml</layout>
         <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
