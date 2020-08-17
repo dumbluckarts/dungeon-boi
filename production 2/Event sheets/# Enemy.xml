@@ -379,48 +379,6 @@
         <comment>Needs revising, this is all testing animations</comment>
         <comment></comment>
         <comment>Change to smash &amp; any direction boss is facing</comment>
-        <event-block sid="871138738788817">
-            <conditions>
-                <condition id="2" name="Is playing" sid="698192818857198" type="EyeBoss">
-                    <param id="0" name="Animation">&quot;smashDown&quot;</param>
-                </condition>
-                <condition id="3" name="Compare frame" sid="228930649992710" type="EyeBoss">
-                    <param id="0" name="Comparison">0</param>
-                    <param id="1" name="Number">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="887737471063897" type="EyeBoss">
-                    <param id="0" name="Instance variable">State</param>
-                    <param id="1" name="Value">&quot;Frozen&quot;</param>
-                </action>
-                <action behavior="ScrollTo" id="0" name="Shake" sid="951962572746013" type="Camera">
-                    <param id="0" name="Magnitude">10</param>
-                    <param id="1" name="Duration">1</param>
-                    <param id="2" name="Mode">0</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="158525144544206">
-                    <conditions>
-                        <condition id="-4" name="Trigger once while true" sid="326761252388981" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="441666685759373" type="EyeBoss">
-                            <param id="0" name="Object">dust</param>
-                            <param id="1" name="Layer">3</param>
-                            <param id="2" name="Image point">&quot;dust&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="855845597815965" type="Audio">
-                            <param id="0" name="Audio file">bossSmash</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
         <comment>Change to &quot;When has line of sight to player&quot; within a certain distance</comment>
         <event-block sid="405430584780572">
             <conditions>
@@ -443,7 +401,12 @@
                     <param id="2" name="Value">&quot;Idle&quot;</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="4" name="Set animation" sid="708943280673034" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;defaultDown&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
         <event-block sid="358512287546695">
             <conditions>
@@ -461,6 +424,217 @@
                     <param id="1" name="From">1</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="684767658412956">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="848399163397696" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="883454092852778" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="286968783318018">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="560032693023312" type="System">
+                            <param id="0" name="First value">random(2)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="307787868068198" type="EyeBoss">
+                            <param id="0" name="Instance variable">Open</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="810370664825314" type="EyeBoss">
+                            <param id="0" name="Animation">&quot;openDown&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="872537081755457">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="649229720744201" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="943525235915549" type="EyeBoss">
+                            <param id="0" name="Instance variable">Open</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="472228013383377">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="877189730813160" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+                <condition behavior="LineOfSightBoss" id="0" name="Has LOS to object" sid="737620958563184" type="EyeBoss">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="662719349154227" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Value">&quot;rushing&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="666642903909712">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="322251878558689" type="EyeBoss">
+                    <param id="0" name="Instance variable">Open</param>
+                </condition>
+                <condition behavior="LineOfSightBoss" id="0" inverted="1" name="Has LOS to object" sid="313761453698491" type="EyeBoss">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="151460732677432" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-10" name="Set value" sid="680439497792337" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Value">&quot;Idle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="931082903223543">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="143679467819589" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;rushing&quot;</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="297303679471445" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;smashDown&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="427265136300802" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;RushDown&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="182042309538358">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="357973583654627" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;rushing&quot;</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="282606445114284" type="EyeBoss">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="862032285806473" type="Function">
+                    <param id="0" name="Name">&quot;bossSmash&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-10" name="Set value" sid="260200350268534" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="655550355689096">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="490440925244347" type="EyeBoss">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="958399303131553" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;smashDown&quot;</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="678870896338134" type="EyeBoss">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="910037696405854">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="663072395976928" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="213043155949494" type="Function">
+                            <param id="0" name="Name">&quot;player.damage&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="792126693363031">
+            <conditions>
+                <condition id="4" name="On finished" sid="481523003501265" type="EyeBoss">
+                    <param id="0" name="Animation">&quot;smashDown&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="498526571342564" type="EyeBoss">
+                    <param id="0" name="Instance variable">State</param>
+                    <param id="1" name="Value">&quot;Idle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="281176765676748">
+            <conditions>
+                <condition id="0" name="On function" sid="727042079342648" type="Function">
+                    <param id="0" name="Name">&quot;BossSmash&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="871138738788817">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="698192818857198" type="EyeBoss">
+                            <param id="0" name="Animation">&quot;smashDown&quot;</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="228930649992710" type="EyeBoss">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="887737471063897" type="EyeBoss">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Value">&quot;Frozen&quot;</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="951962572746013" type="Camera">
+                            <param id="0" name="Magnitude">10</param>
+                            <param id="1" name="Duration">1</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="158525144544206">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="326761252388981" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="441666685759373" type="EyeBoss">
+                                    <param id="0" name="Object">dust</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="Image point">&quot;dust&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="855845597815965" type="Audio">
+                                    <param id="0" name="Audio file">bossSmash</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

@@ -536,7 +536,7 @@
                     <instance-variable name="direction" sid="107956177059090" type="string" />
                 </instance-variables>
                 <behaviors>
-                    <behavior-type name="LineOfSight" sid="661504196037997">
+                    <behavior-type name="LineOfSightBoss" sid="661504196037997">
                         <behavior id="LOS" />
                     </behavior-type>
                 </behaviors>
@@ -1881,6 +1881,26 @@
         <object-type global="1" name="Layouts" sid="461067985787705">
             <plugin id="Arr" />
         </object-type>
+        <object-type name="fallSpikes" sid="870088400405562">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="950541111116932">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="620731448253393" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Shadowed" plugin-id="Sprite" sid="486177015640144">
@@ -1898,6 +1918,7 @@
         </family>
         <family name="Enemy" plugin-id="Sprite" sid="634873934330792">
             <members>
+                <member>EyeBoss</member>
                 <member>Octopus</member>
                 <member>SwarmGuy</member>
             </members>
