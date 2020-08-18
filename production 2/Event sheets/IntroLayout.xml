@@ -4,9 +4,6 @@
     <name>IntroLayout</name>
     <events>
         <variable constant="0" name="MusicLevel" sid="558644457475471" static="0" type="number">0</variable>
-        <include># Enemy</include>
-        <include># UI</include>
-        <include># Player</include>
         <include># Common</include>
         <event-block sid="850646851899873">
             <conditions>

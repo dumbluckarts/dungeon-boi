@@ -22,10 +22,10 @@
                             </conditions>
                             <actions>
                                 <action behavior="LineOfSight" id="2" name="Add obstacle" sid="613911621426614" type="Enemy">
-                                    <param id="0" name="Obstacle">Solid</param>
+                                    <param id="0" name="Obstacle">Wall</param>
                                 </action>
                                 <action behavior="Pathfinding" id="5" name="Add obstacle" sid="236242295779105" type="Enemy">
-                                    <param id="0" name="Obstacle">Solid</param>
+                                    <param id="0" name="Obstacle">Wall</param>
                                 </action>
                                 <action behavior="Pathfinding" id="5" name="Add obstacle" sid="909326132677035" type="Enemy">
                                     <param id="0" name="Obstacle">Enemy</param>
@@ -66,7 +66,7 @@
                                 <event-block sid="478155336963455">
                                     <conditions>
                                         <condition id="0" name="On collision with another object" sid="812194924157922" type="Enemy">
-                                            <param id="0" name="Object">Solid</param>
+                                            <param id="0" name="Object">Wall</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -167,7 +167,7 @@
                                                 <event-block sid="721507255331588">
                                                     <conditions>
                                                         <condition id="9" inverted="1" name="Is overlapping at offset" sid="972341401213970" type="Enemy">
-                                                            <param id="0" name="Object">Solid</param>
+                                                            <param id="0" name="Object">Wall</param>
                                                             <param id="1" name="Offset X">x</param>
                                                             <param id="2" name="Offset Y">y</param>
                                                         </condition>

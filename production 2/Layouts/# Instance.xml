@@ -148,7 +148,7 @@
                 </instance>
                 <instance type="AttackHitbox" uid="26">
                     <properties>
-                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -167,11 +167,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>502</x>
-                        <y>118</y>
+                        <x>499.037963867</x>
+                        <y>124.347381592</y>
                         <z>0</z>
-                        <width>80</width>
-                        <height>80</height>
+                        <width>128</width>
+                        <height>128</height>
                         <depth>0</depth>
                         <hotspotX>-0.256000012</hotspotX>
                         <hotspotY>0.512000024</hotspotY>

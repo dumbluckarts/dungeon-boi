@@ -947,8 +947,32 @@
             </object-type>
             <object-type name="Wall" sid="290426988764295">
                 <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="454871362118559">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <texture />
-                <tiles />
+                <tiles>
+                    <tile id="0">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.882813" />
+                            <point x="0.882813" y="0.882813" />
+                            <point x="0.882813" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </tile>
+                    <tile id="1">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.882813" />
+                            <point x="0" y="0.882813" />
+                        </collision-poly>
+                    </tile>
+                </tiles>
             </object-type>
         </object-folder>
         <object-folder name="Objects">
@@ -997,7 +1021,14 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617736268880082" speed="5">
-                        <frame duration="1" hotspotX="0.501416" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <collision-poly>
+                                <point x="0.15625" y="0.255859" />
+                                <point x="0.845703" y="0.255859" />
+                                <point x="0.845703" y="0.744141" />
+                                <point x="0.15625" y="0.744141" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1163,7 +1194,7 @@
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="979367706016644" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.464" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1955,16 +1986,21 @@
         </family>
     </families>
     <layout-folder>
+        <layout-folder name="Levels">
+            <layout># Template.xml</layout>
+            <layout>Start.xml</layout>
+            <layout>Intro.xml</layout>
+            <layout>Level 1.xml</layout>
+            <layout>Level 2.xml</layout>
+            <layout>Level 3.xml</layout>
+            <layout>Level 4.xml</layout>
+            <layout>Level 5.xml</layout>
+            <layout>Level 6.xml</layout>
+            <layout>Boss 1.xml</layout>
+        </layout-folder>
         <layout># Instance.xml</layout>
         <layout># UI.xml</layout>
-        <layout>Layout 1.xml</layout>
-        <layout>Boss 1.xml</layout>
-        <layout>IntroLayout.xml</layout>
         <layout>Shop.xml</layout>
-        <layout>Layout 2.xml</layout>
-        <layout>Layout 3.xml</layout>
-        <layout>Layout 4.xml</layout>
-        <layout>Start.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet># Common.xml</event-sheet>
