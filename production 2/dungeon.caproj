@@ -34,15 +34,17 @@
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+        <effect author="Scirra" id="noise">Noise</effect>
         <effect author="R0J0hound" id="outline">Outline</effect>
+        <effect author="Scirra" id="radialblur">Radial blur</effect>
         <effect author="Brad Larson" id="vignette">Vignette</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1920</width>
-        <height>1080</height>
+        <width>2048</width>
+        <height>1152</height>
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>

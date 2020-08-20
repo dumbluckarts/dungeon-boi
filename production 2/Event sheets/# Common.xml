@@ -262,6 +262,9 @@
                             <param id="0" name="Object">Enemy</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="249977830494502" type="System" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="765553828938235" type="Enemy">
+                            <param id="0" name="Instance variable">damage</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="ScrollTo" id="0" name="Shake" sid="168752611863920" type="Camera">
@@ -390,6 +393,9 @@
                             <param id="0" name="Object">Enemy</param>
                         </condition>
                         <condition id="-4" name="Trigger once while true" sid="806572187778027" type="System" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="594922137672374" type="Enemy">
+                            <param id="0" name="Instance variable">damage</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="209817138745124" type="Function">

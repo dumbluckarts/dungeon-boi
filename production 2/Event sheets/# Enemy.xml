@@ -100,12 +100,14 @@
                                 </event-block>
                                 <event-block sid="118415995386637">
                                     <conditions>
-                                        <condition id="-1" name="Every tick" sid="334747744577504" type="System" />
+                                        <condition id="-6" name="Every X seconds" sid="645273923751012" type="System">
+                                            <param id="0" name="Interval (seconds)">2</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Call function" sid="536759847365024" type="Function">
                                             <param id="0" name="Name">&quot;enemy.path&quot;</param>
-                                            <param id="1" name="Parameter {n}">random(4, 6)</param>
+                                            <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -151,51 +153,39 @@
                                         <variable constant="0" name="x" sid="793799504421931" static="1" type="number">0</variable>
                                         <variable constant="0" name="y" sid="602758478887946" static="1" type="number">0</variable>
                                         <variable constant="1" name="WANDER_RANGE" sid="667415954631466" static="1" type="number">128</variable>
-                                        <event-block sid="519258068441020">
-                                            <conditions />
+                                        <event-block sid="721507255331588">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="871098264825571" type="System">
+                                                    <param id="0" name="Object">Enemy</param>
+                                                </condition>
+                                                <condition id="9" inverted="1" name="Is overlapping at offset" sid="972341401213970" type="Enemy">
+                                                    <param id="0" name="Object">Wall</param>
+                                                    <param id="1" name="Offset X">x</param>
+                                                    <param id="2" name="Offset Y">y</param>
+                                                </condition>
+                                            </conditions>
                                             <actions>
-                                                <action id="-9" name="Set value" sid="499178401499349" type="System">
+                                                <action id="-9" name="Set value" sid="192583712770225" type="System">
                                                     <param id="0" name="Variable">x</param>
                                                     <param id="1" name="Value">choose(-WANDER_RANGE, WANDER_RANGE, -WANDER_RANGE / 2, WANDER_RANGE / 2)</param>
                                                 </action>
-                                                <action id="-9" name="Set value" sid="836300164553344" type="System">
+                                                <action id="-9" name="Set value" sid="315716117101480" type="System">
                                                     <param id="0" name="Variable">y</param>
                                                     <param id="1" name="Value">choose(-WANDER_RANGE, WANDER_RANGE, -WANDER_RANGE / 2, WANDER_RANGE / 2)</param>
                                                 </action>
+                                                <action behavior="Pathfinding" id="0" name="Find path" sid="797936214355747" type="Enemy">
+                                                    <param id="0" name="X">Self.X + x</param>
+                                                    <param id="1" name="Y">Self.Y + y</param>
+                                                </action>
                                             </actions>
                                             <sub-events>
-                                                <event-block sid="721507255331588">
+                                                <event-block sid="374292907673708">
                                                     <conditions>
-                                                        <condition id="9" inverted="1" name="Is overlapping at offset" sid="972341401213970" type="Enemy">
-                                                            <param id="0" name="Object">Wall</param>
-                                                            <param id="1" name="Offset X">x</param>
-                                                            <param id="2" name="Offset Y">y</param>
+                                                        <condition id="-6" name="Every X seconds" sid="458907254745427" type="System">
+                                                            <param id="0" name="Interval (seconds)">random(1)</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions />
-                                                    <sub-events>
-                                                        <event-block sid="374292907673708">
-                                                            <conditions>
-                                                                <condition id="-6" name="Every X seconds" sid="458907254745427" type="System">
-                                                                    <param id="0" name="Interval (seconds)">Function.Param(0)</param>
-                                                                </condition>
-                                                            </conditions>
-                                                            <actions>
-                                                                <action id="-9" name="Set value" sid="192583712770225" type="System">
-                                                                    <param id="0" name="Variable">x</param>
-                                                                    <param id="1" name="Value">choose(-WANDER_RANGE, WANDER_RANGE, -WANDER_RANGE / 2, WANDER_RANGE / 2)</param>
-                                                                </action>
-                                                                <action id="-9" name="Set value" sid="315716117101480" type="System">
-                                                                    <param id="0" name="Variable">y</param>
-                                                                    <param id="1" name="Value">choose(-WANDER_RANGE, WANDER_RANGE, -WANDER_RANGE / 2, WANDER_RANGE / 2)</param>
-                                                                </action>
-                                                                <action behavior="Pathfinding" id="0" name="Find path" sid="797936214355747" type="Enemy">
-                                                                    <param id="0" name="X">Self.X + x</param>
-                                                                    <param id="1" name="Y">Self.Y + y</param>
-                                                                </action>
-                                                            </actions>
-                                                        </event-block>
-                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>

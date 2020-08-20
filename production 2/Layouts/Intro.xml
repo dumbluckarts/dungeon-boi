@@ -1678,5 +1678,15 @@
         </layer>
     </layers>
     <nonworld-instances />
-    <effects />
+    <effects>
+        <effect-type name="Noise">
+            <effect id="noise" />
+            <effect-instance type="Noise">
+                <parameters>
+                    <color>0</color>
+                    <intensity>0.05</intensity>
+                </parameters>
+            </effect-instance>
+        </effect-type>
+    </effects>
 </c2layout>

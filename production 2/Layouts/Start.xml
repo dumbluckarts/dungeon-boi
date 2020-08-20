@@ -4,8 +4,8 @@
     <sid>267201396961616</sid>
     <event-sheet>Start</event-sheet>
     <size>
-        <width>1920</width>
-        <height>1080</height>
+        <width>2048</width>
+        <height>1152</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -42,8 +42,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1920</width>
-                        <height>1080</height>
+                        <width>2048</width>
+                        <height>1152</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -64,8 +64,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1920</width>
-                        <height>1080</height>
+                        <width>2048</width>
+                        <height>1152</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -145,8 +145,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1920</width>
-                        <height>1080</height>
+                        <width>2048</width>
+                        <height>1152</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -167,8 +167,8 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1920</width>
-                        <height>1080</height>
+                        <width>2048</width>
+                        <height>1152</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -1326,7 +1326,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1408</x>
+                        <x>1536</x>
                         <y>576</y>
                         <z>0</z>
                         <width>256</width>
@@ -1383,8 +1383,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>872</x>
-                        <y>101</y>
+                        <x>954</x>
+                        <y>156</y>
                         <z>0</z>
                         <width>320</width>
                         <height>250</height>
@@ -1412,10 +1412,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>928</x>
-                        <y>96</y>
+                        <x>992</x>
+                        <y>64</y>
                         <z>0</z>
-                        <width>704</width>
+                        <width>896</width>
                         <height>192</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -1441,10 +1441,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>960</x>
+                        <x>1056</x>
                         <y>1216</y>
                         <z>0</z>
-                        <width>960</width>
+                        <width>1152</width>
                         <height>192</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -1458,5 +1458,15 @@
         </layer>
     </layers>
     <nonworld-instances />
-    <effects />
+    <effects>
+        <effect-type name="Noise">
+            <effect id="noise" />
+            <effect-instance type="Noise">
+                <parameters>
+                    <color>0</color>
+                    <intensity>0.05</intensity>
+                </parameters>
+            </effect-instance>
+        </effect-type>
+    </effects>
 </c2layout>

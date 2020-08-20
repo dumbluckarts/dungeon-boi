@@ -522,6 +522,128 @@
                                         </action>
                                     </actions>
                                     <sub-events>
+                                        <variable constant="0" name="noise" sid="759123620425853" static="1" type="number">0</variable>
+                                        <variable constant="0" name="blur" sid="935826197317190" static="1" type="number">0</variable>
+                                        <event-block sid="685873522104521">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-31" name="Set layout effect parameter" sid="507607838578432" type="System">
+                                                    <param id="0" name="Effect">&quot;Noise&quot;</param>
+                                                    <param id="1" name="Parameter index">0</param>
+                                                    <param id="2" name="Value">25</param>
+                                                </action>
+                                                <action id="-31" name="Set layout effect parameter" sid="584731709136843" type="System">
+                                                    <param id="0" name="Effect">&quot;RadialBlur&quot;</param>
+                                                    <param id="1" name="Parameter index">0</param>
+                                                    <param id="2" name="Value">40</param>
+                                                </action>
+                                                <action id="-31" name="Set layout effect parameter" sid="225952420647975" type="System">
+                                                    <param id="0" name="Effect">&quot;RadialBlur&quot;</param>
+                                                    <param id="1" name="Parameter index">1</param>
+                                                    <param id="2" name="Value">100</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="179897496410829" type="System">
+                                                    <param id="0" name="Variable">noise</param>
+                                                    <param id="1" name="Value">25</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="149029866874028" type="System">
+                                                    <param id="0" name="Variable">blur</param>
+                                                    <param id="1" name="Value">100</param>
+                                                </action>
+                                                <action id="-24" name="Stop loop" sid="737361267035923" type="System" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="491371681935320">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="174945771616604" type="System">
+                                                    <param id="0" name="Name">&quot;noise&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">noise-5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="341972893004952" type="System">
+                                                    <param id="0" name="Seconds">loopindex * 0.03</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="402785992030959">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="654477055784709" type="System">
+                                                            <param id="0" name="Variable">noise</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Subtract from" sid="647957067305594" type="System">
+                                                            <param id="0" name="Variable">noise</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-31" name="Set layout effect parameter" sid="335363839252268" type="System">
+                                                            <param id="0" name="Effect">&quot;Noise&quot;</param>
+                                                            <param id="1" name="Parameter index">0</param>
+                                                            <param id="2" name="Value">noise</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="763750812189202">
+                                            <conditions>
+                                                <condition id="-10" name="For" sid="310851698165708" type="System">
+                                                    <param id="0" name="Name">&quot;blur&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">blur</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="381738424070524" type="System">
+                                                    <param id="0" name="Seconds">loopindex * 0.02</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="344872464407044">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="694880538425986" type="System">
+                                                            <param id="0" name="Variable">blur</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-11" name="Subtract from" sid="688042085091138" type="System">
+                                                            <param id="0" name="Variable">blur</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-31" name="Set layout effect parameter" sid="412420525299158" type="System">
+                                                            <param id="0" name="Effect">&quot;RadialBlur&quot;</param>
+                                                            <param id="1" name="Parameter index">0</param>
+                                                            <param id="2" name="Value">abs(blur)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="519030405148582">
+                                            <conditions />
+                                            <actions>
+                                                <action behavior="ScrollTo" id="0" name="Shake" sid="880504158280292" type="Camera">
+                                                    <param id="0" name="Magnitude">10</param>
+                                                    <param id="1" name="Duration">0.4</param>
+                                                    <param id="2" name="Mode">0</param>
+                                                </action>
+                                                <action id="-13" name="Set time scale" sid="586878248293586" type="System">
+                                                    <param id="0" name="Time scale">0.1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="628882262321539" type="System">
+                                                    <param id="0" name="Seconds">0.02</param>
+                                                </action>
+                                                <action id="-13" name="Set time scale" sid="172575455762635" type="System">
+                                                    <param id="0" name="Time scale">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                         <event-block sid="533290579170013">
                                             <conditions />
                                             <actions>
