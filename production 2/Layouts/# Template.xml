@@ -1124,12 +1124,30 @@
                         <height>250</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.479999989</hotspotY>
+                        <hotspotY>0.463999987</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>
+            <effects />
+        </layer>
+        <layer name="Light" sid="214336975152763">
+            <initially-visible>1</initially-visible>
+            <background-color>0,0,0</background-color>
+            <transparent>0</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>0.8</opacity>
+            <force-own-texture>1</force-own-texture>
+            <global>1</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances />
             <effects />
         </layer>
         <layer name="UI" sid="927421359889456">
@@ -1152,5 +1170,15 @@
         </layer>
     </layers>
     <nonworld-instances />
-    <effects />
+    <effects>
+        <effect-type name="Vignette">
+            <effect id="vignette" />
+            <effect-instance type="Vignette">
+                <parameters>
+                    <end-radius>0.8</end-radius>
+                    <start-radius>0.3</start-radius>
+                </parameters>
+            </effect-instance>
+        </effect-type>
+    </effects>
 </c2layout>

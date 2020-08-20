@@ -109,8 +109,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>123</x>
-                        <y>129</y>
+                        <x>128</x>
+                        <y>256</y>
                         <z>0</z>
                         <width>250</width>
                         <height>250</height>
@@ -430,18 +430,32 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="LightBloom" uid="31">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>8</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>513.669616699</x>
+                        <y>409.117553711</y>
+                        <z>0</z>
+                        <width>352</width>
+                        <height>352</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
     </layers>
-    <nonworld-instances>
-        <instance type="Layouts" uid="114">
-            <properties>
-                <width>32</width>
-                <height>1</height>
-                <depth>1</depth>
-            </properties>
-        </instance>
-    </nonworld-instances>
+    <nonworld-instances />
     <effects />
 </c2layout>

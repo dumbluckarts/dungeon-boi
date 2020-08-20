@@ -14,7 +14,7 @@
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
         <layer name="UI" sid="722113170627750">
-            <initially-visible>1</initially-visible>
+            <initially-visible>0</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>

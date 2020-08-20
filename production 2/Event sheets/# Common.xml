@@ -160,6 +160,39 @@
                             <param id="1" name="Layer">Self.LayerName</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                        <action id="0" name="Spawn another object" sid="808003258691953" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="475527151998634" type="LightBloom">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="858786259057336" type="LightBloom">
+                            <param id="0" name="Scale">0.5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="385143941094219" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="671348396030994" type="LightBloom">
+                            <param id="0" name="Opacity">60</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="411870392461111" type="LightBloom">
+                            <param id="0" name="Scale">1.4</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="461319050043647" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="639787140266825" type="LightBloom">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="899979339701929" type="LightBloom">
+                            <param id="0" name="Scale">2</param>
+                        </action>
                         <action id="0" name="Call function" sid="701218388935901" type="Function">
                             <param id="0" name="Name">&quot;startLayout&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -178,6 +211,10 @@
                         <action id="-3" name="Set position" sid="408191814016753" type="Camera">
                             <param id="0" name="X">lerp(Self.X, ShroomLad.X, CAM_SPEED * dt)</param>
                             <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y - 64, CAM_SPEED * dt)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="937840062012770" type="LightBloom">
+                            <param id="0" name="Object">ShroomLad</param>
+                            <param id="1" name="Image point (optional)">&quot;Center&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -602,11 +639,33 @@
                             <param id="0" name="Object">DoorCollider</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-25" name="Go to layout (by name)" sid="597343585820036" type="System">
-                            <param id="0" name="Layout">DoorCollider.layout</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="516501310685489">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="294367133818597" type="System">
+                                    <param id="0" name="First value">find(LayoutName, &quot;Level&quot;)</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Second value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="597343585820036" type="System">
+                                    <param id="0" name="Layout">JS.JSCodeValue(&quot;Level.pick()&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="726995253293944">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="298287174539396" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="621812789153123" type="System">
+                                    <param id="0" name="Layout">DoorCollider.layout</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -768,72 +827,6 @@
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">-5</param>
                                     <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="959488890475246" title="Layouts">
-            <sub-events>
-                <event-block sid="153561036784351">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="276307511529897" type="System" />
-                        <condition id="-14" name="Compare variable" sid="294367133818597" type="System">
-                            <param id="0" name="Variable">Progression</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;Game&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="489924301067759">
-                            <conditions />
-                            <actions>
-                                <action id="0" name="Clear" sid="809866751407869" type="Layouts" />
-                                <action id="5" name="Push" sid="727233105894883" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 1&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="834036527251266" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 2&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="275294650441410" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 3&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="224880756577414" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 4&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="708237998591385" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 5&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="693680273139477" type="Layouts">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">&quot;Level 6&quot;</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="825365917409595">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="908432298148673" type="System">
-                                    <param id="0" name="Object">DoorCollider</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="272059594936815" type="DoorCollider">
-                                    <param id="0" name="Instance variable">layout</param>
-                                    <param id="1" name="Value">Layouts.At(round(random(Layouts.Count)))</param>
                                 </action>
                             </actions>
                         </event-block>

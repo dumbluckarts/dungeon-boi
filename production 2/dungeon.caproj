@@ -10,7 +10,6 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>27900</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -19,6 +18,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Valera Popov" id="ValerypopoffJSPlugin" version="1">ValerypopoffJS</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
@@ -34,6 +34,7 @@
     <used-effects>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="R0J0hound" id="outline">Outline</effect>
+        <effect author="Brad Larson" id="vignette">Vignette</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -414,7 +415,9 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="213477822897142" speed="5">
-                        <frame duration="1" hotspotX="-2" hotspotY="2" />
+                        <frame duration="1" hotspotX="-2" hotspotY="2">
+                            <image-point name="Center" x="0.5" y="0.5" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1551,6 +1554,16 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="LightBloom" sid="914915260300125">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="714142501252363" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="UI">
             <object-type name="Heart" sid="504913524230786">
@@ -1909,9 +1922,6 @@
         <object-type name="LocalStorage" sid="424639275413251">
             <plugin id="LocalStorage" />
         </object-type>
-        <object-type global="1" name="Layouts" sid="461067985787705">
-            <plugin id="Arr" />
-        </object-type>
         <object-type name="fallSpikes" sid="870088400405562">
             <plugin id="Sprite" />
             <behaviors>
@@ -1931,6 +1941,9 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="JS" sid="273135194561817">
+            <plugin id="ValerypopoffJSPlugin" />
         </object-type>
     </object-folder>
     <families>
@@ -2033,6 +2046,11 @@
             </properties>
         </global-instance>
         <global-instance type="LocalStorage" uid="71" />
+        <global-instance type="JS" uid="32">
+            <properties>
+                <script-files>levels.js</script-files>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder>
         <file name="coinGrab1.m4a" />
@@ -2105,6 +2123,9 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="Script">
+            <file name="levels.js" />
         </file-folder>
     </files-folder>
 </c2project>
