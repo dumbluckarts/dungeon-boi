@@ -1,29 +1,45 @@
-var Level = (function() {
-    var levels = [
-        "Level 1",
-        "Level 2",
-        "Level 3",
-        "Level 4",
-        "Level 5",
-        "Level 6"
-    ]
+function Picker(list) {
+    var levels = [...list]
+    var last = ""
+    var current = ""
 
-    var last = levels[0]
+    function pick() {
+        if (levels.length <= 0) return "NONE"
 
-    var pick = function() {
-        // pick a random level
         var random = Math.floor(Math.random() * levels.length)
         var level = levels[random]
 
-        // remove the possibility of getting the same level twice
-        if (level == last) return pick()
+        current = level
 
-        return last = level
+        levels.splice(levels.indexOf(level), 1)
+
+        return level
+    }
+
+    function getLast() {
+        return last ? last : "NONE"
+    }
+
+    function setLast(name) {
+        last = name
     }
 
     return {
         levels,
         last,
-        pick
+        current,
+        pick,
+        getLast,
+        setLast,
+        print,
     }
-})();
+}
+
+var Leveler = Picker([
+    // 'Level 1',
+    'Level 2',
+    'Level 3',
+    'Level 4',
+    'Level 5',
+    'Level 6',
+])

@@ -189,7 +189,7 @@
                     <behavior-instances>
                         <behavior-instance type="Sine">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
+                                <active-on-start>No</active-on-start>
                                 <movement>Size</movement>
                                 <wave>Sine</wave>
                                 <period>5</period>
@@ -200,6 +200,7 @@
                                 <magnitude-random>0</magnitude-random>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Persist" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

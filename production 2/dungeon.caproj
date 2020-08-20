@@ -27,6 +27,7 @@
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -1040,6 +1041,11 @@
             </object-type>
             <object-type name="door" sid="769232175249747">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="106238238393646">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617736268880082" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
@@ -1213,6 +1219,11 @@
                 <instance-variables>
                     <instance-variable name="layout" sid="364086870679943" type="string" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Persist" sid="462353676625086">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="979367706016644" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.464">
@@ -1374,6 +1385,9 @@
                 <behaviors>
                     <behavior-type name="Sine" sid="941467555750168">
                         <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Persist" sid="614212708332631">
+                        <behavior id="Persist" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -2013,6 +2027,9 @@
                 </behavior-type>
                 <behavior-type name="Fade" sid="590923228364711">
                     <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Persist" sid="309234124054012">
+                    <behavior id="Persist" />
                 </behavior-type>
             </behaviors>
         </family>

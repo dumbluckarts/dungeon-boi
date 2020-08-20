@@ -269,6 +269,15 @@
                             <param id="1" name="Duration">0.4</param>
                             <param id="2" name="Mode">0</param>
                         </action>
+                        <action id="-13" name="Set time scale" sid="141962037133913" type="System">
+                            <param id="0" name="Time scale">0.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="523081950644605" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-13" name="Set time scale" sid="187863713275022" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -295,6 +304,9 @@
                                 </action>
                                 <action id="-8" name="Set angle" sid="114358148556404" type="BloodSplotch1">
                                     <param id="0" name="Angle">random(360)</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="842992484474684" type="BloodSplotch1">
+                                    <param id="0" name="State">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="893394748319624" type="System">
                                     <param id="0" name="Seconds">1</param>
@@ -566,77 +578,110 @@
         </event-group>
         <event-group description="" sid="849965275168056" title="Doors">
             <sub-events>
-                <event-block sid="774499755978241">
+                <event-block sid="404849161242168">
                     <conditions>
-                        <condition id="-2" name="On start of layout" sid="272724306063252" type="System" />
-                        <condition id="-15" name="Pick nearest/furthest" sid="497999420696095" type="DoorCollider">
-                            <param id="0" name="Which">1</param>
-                            <param id="1" name="X">sideX</param>
-                            <param id="2" name="Y">sideY</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="135341891221288" type="System">
-                            <param id="0" name="First value">LayoutName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Second value">&quot;Start&quot;</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="414215476354543" type="System">
-                            <param id="0" name="First value">LayoutName</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Second value">&quot;Intro&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="452968662283111" type="System">
-                            <param id="0" name="Object to create">Player</param>
-                            <param id="1" name="Layer">&quot;Characters&quot;</param>
-                            <param id="2" name="X">DoorCollider.ImagePointX(&quot;Spawn&quot;)</param>
-                            <param id="3" name="Y">DoorCollider.ImagePointY(&quot;Spawn&quot;)</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="484602858332466" type="DoorCollider" />
-                    </actions>
-                </event-block>
-                <event-block sid="792384701934425">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="171412204903802" type="Player">
+                        <condition id="1" name="Is overlapping another object" sid="135076887984145" type="Player">
                             <param id="0" name="Object">DoorCollider</param>
                         </condition>
+                        <condition id="-4" name="Trigger once while true" sid="438167441709710" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="376705981216084" type="System">
-                            <param id="0" name="Variable">sideX</param>
-                            <param id="1" name="Value">Player.X</param>
+                        <action id="6" name="Call function" sid="316966096772242" type="JS">
+                            <param id="0" name="Expression">&quot;Leveler.setLast&quot;</param>
+                            <param id="1" name="Parameter {n}">LayoutName</param>
                         </action>
-                        <action id="-9" name="Set value" sid="486407310963097" type="System">
+                        <action id="-9" name="Set value" sid="519094876049443" type="System">
                             <param id="0" name="Variable">sideX</param>
-                            <param id="1" name="Value">Player.Y</param>
+                            <param id="1" name="Value">DoorCollider.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="257281499887623" type="System">
+                            <param id="0" name="Variable">sideY</param>
+                            <param id="1" name="Value">DoorCollider.Y</param>
+                        </action>
+                        <action id="-25" name="Go to layout (by name)" sid="178039466794473" type="System">
+                            <param id="0" name="Layout">DoorCollider.layout</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="915823251750893">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="935349014806720" type="System" />
+                    </conditions>
+                    <actions />
                     <sub-events>
-                        <event-block sid="516501310685489">
+                        <event-block sid="556181057921371">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="191830577420243" type="DoorCollider">
+                                <condition id="-15" name="Pick nearest/furthest" sid="863334569467943" type="DoorCollider">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="X">sideX</param>
+                                    <param id="2" name="Y">sideY</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="577049864764842" type="System">
+                                    <param id="0" name="Object to create">Player</param>
+                                    <param id="1" name="Layer">&quot;Characters&quot;</param>
+                                    <param id="2" name="X">DoorCollider.ImagePointX(&quot;Spawn&quot;)</param>
+                                    <param id="3" name="Y">DoorCollider.ImagePointY(&quot;Spawn&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="601973884863641">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="191520854067016" type="DoorCollider">
+                                            <param id="0" name="Instance variable">layout</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="968310273354403" type="DoorCollider">
+                                            <param id="0" name="Instance variable">layout</param>
+                                            <param id="1" name="Value">JS.JSCodeValue(&quot;Leveler.getLast()&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="973145430824929">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="295152003593772" type="System">
+                                    <param id="0" name="Object">DoorCollider</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="127679473448978" type="DoorCollider">
                                     <param id="0" name="Instance variable">layout</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">&quot;&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-25" name="Go to layout (by name)" sid="597343585820036" type="System">
-                                    <param id="0" name="Layout">JS.JSCodeValue(&quot;Level.pick()&quot;)</param>
+                                <action id="6" name="Call function" sid="185836967662459" type="JS">
+                                    <param id="0" name="Expression">&quot;Leveler.pick&quot;</param>
+                                    <param id="1" name="Parameter {n}">Player.X{###}Player.Y</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="726995253293944">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="298287174539396" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-25" name="Go to layout (by name)" sid="621812789153123" type="System">
-                                    <param id="0" name="Layout">DoorCollider.layout</param>
+                                <action id="-10" name="Set value" sid="698110113017493" type="DoorCollider">
+                                    <param id="0" name="Instance variable">layout</param>
+                                    <param id="1" name="Value">JS.StoredReturnValue</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="499821834701181">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="242597920043032" type="DoorCollider">
+                            <param id="0" name="Instance variable">layout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;NONE&quot;</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="638258451749025" type="DoorCollider">
+                            <param id="0" name="Object">door</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="474165211990685" type="door" />
+                        <action id="-9" name="Destroy" sid="495709144340425" type="DoorCollider" />
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -791,33 +836,6 @@
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="538614914739089" type="Gem">
                                     <param id="0" name="Angle">angle(Self.X, Self.Y, Player.X, Player.Y)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="785685206325032">
-                            <conditions>
-                                <condition id="-6" name="Every X seconds" sid="486497681847480" type="System">
-                                    <param id="0" name="Interval (seconds)">0.05</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="875739588003988" type="Gem">
-                                    <param id="0" name="Object">BloodSplotch1</param>
-                                    <param id="1" name="Layer">&quot;Decals Outlined&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-8" name="Set angle" sid="986276987360189" type="BloodSplotch1">
-                                    <param id="0" name="Angle">random(0, 360)</param>
-                                </action>
-                                <action id="-7" name="Set size" sid="312273268321178" type="BloodSplotch1">
-                                    <param id="0" name="Width">32</param>
-                                    <param id="1" name="Height">32</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="504824533232960" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action behavior="Sine" id="0" name="Set active" sid="892597263016208" type="BloodSplotch1">
-                                    <param id="0" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
