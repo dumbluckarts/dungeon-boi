@@ -188,7 +188,7 @@
                                 </collision-poly>
                             </frame>
                         </animation>
-                        <animation framecount="2" loop="0" name="walk_down" pingpong="0" repeatcount="1" repeatto="0" sid="779354020603951" speed="5">
+                        <animation framecount="4" loop="0" name="walk_down" pingpong="0" repeatcount="1" repeatto="0" sid="779354020603951" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_1.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
@@ -199,6 +199,24 @@
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\nelso\Documents\GitHub\dungeon-boi\production 2\Assets\Player\Walk\down_2.png">
+                                <image-point name="Shadow" x="0.507813" y="0.949219" />
+                                <collision-poly>
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Shroom\Walks\diownwalk2.png">
+                                <image-point name="Shadow" x="0.507813" y="0.949219" />
+                                <collision-poly>
+                                    <point x="0.332031" y="0.347656" />
+                                    <point x="0.707031" y="0.347656" />
+                                    <point x="0.707031" y="0.953125" />
+                                    <point x="0.335938" y="0.953125" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\Shroom\Walks\diownwalk3.png">
                                 <image-point name="Shadow" x="0.507813" y="0.949219" />
                                 <collision-poly>
                                     <point x="0.332031" y="0.347656" />
@@ -1642,6 +1660,11 @@
             </object-type>
             <object-type name="SlotBox" sid="588900744353208">
                 <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="Outline">
+                        <effect id="outline" />
+                    </effect-type>
+                </effects>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="906076200406454" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
