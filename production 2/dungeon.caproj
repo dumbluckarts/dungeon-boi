@@ -1197,7 +1197,9 @@
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="979367706016644" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.464" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.464">
+                            <image-point name="Spawn" x="0.5" y="1.536" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1258,7 +1260,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="411128462859214" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\bug.png">
+                        <frame duration="1" hotspotX="0.512821" hotspotY="0.5" original-source="C:\Users\Nach\Desktop\Misc Game Work\SPRITES\DungeonGame\bug.png">
                             <collision-poly>
                                 <point x="0.25641" y="0.14" />
                                 <point x="0.564103" y="0.1" />
@@ -1271,7 +1273,7 @@
                         </frame>
                     </animation>
                     <animation framecount="1" loop="0" name="Squash" pingpong="0" repeatcount="1" repeatto="0" sid="334011279380097" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
                                 <point x="0.25641" y="0.14" />
                                 <point x="0.564103" y="0.1" />
@@ -1284,7 +1286,7 @@
                         </frame>
                     </animation>
                     <animation framecount="2" loop="0" name="Moving" pingpong="0" repeatcount="1" repeatto="0" sid="562416882336347" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0">
+                        <frame duration="1" hotspotX="0.512821" hotspotY="0.5">
                             <collision-poly>
                                 <point x="0.25641" y="0.14" />
                                 <point x="0.564103" y="0.1" />
@@ -1295,7 +1297,7 @@
                                 <point x="0.025641" y="0.38" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="0">
+                        <frame duration="1" hotspotX="0.512821" hotspotY="0.5">
                             <collision-poly>
                                 <point x="0.25641" y="0.14" />
                                 <point x="0.564103" y="0.1" />

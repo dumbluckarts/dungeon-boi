@@ -247,6 +247,9 @@
                                 <condition id="1" name="Is overlapping another object" sid="848410036698424" type="AttackHitbox">
                                     <param id="0" name="Object">Enemy</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="845980497275183" type="Enemy">
+                                    <param id="0" name="Instance variable">damage</param>
+                                </condition>
                                 <condition id="-4" name="Trigger once while true" sid="808069264068131" type="System" />
                             </conditions>
                             <actions>

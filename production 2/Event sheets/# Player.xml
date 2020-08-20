@@ -558,10 +558,25 @@
                         </event-group>
                         <event-group description="" sid="537921858972761" title="Player Knockback">
                             <sub-events>
+                                <event-block sid="237501437839797">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="764989590648283" type="Player">
+                                            <param id="0" name="Object">Wall</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Bullet" id="5" name="Set enabled" sid="419878791731386" type="Player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                                 <event-block sid="238593673546495">
                                     <conditions>
                                         <condition id="0" name="On collision with another object" sid="186710809839882" type="Player">
                                             <param id="0" name="Object">Enemy</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="169806164614068" type="Player">
+                                            <param id="0" name="Object">Wall</param>
                                         </condition>
                                     </conditions>
                                     <actions>

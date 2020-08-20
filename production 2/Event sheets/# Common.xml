@@ -4,6 +4,8 @@
     <name># Common</name>
     <events>
         <variable constant="0" name="Progression" sid="217331222741525" static="0" type="text">Intro</variable>
+        <variable constant="0" name="sideX" sid="963210509350704" static="0" type="number">0</variable>
+        <variable constant="0" name="sideY" sid="287108353408289" static="0" type="number">0</variable>
         <include># UI</include>
         <include># Player</include>
         <event-group description="" sid="779336441684505" title="Misc">
@@ -69,19 +71,24 @@
                             <param id="0" name="Name">&quot;restartLayout&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="956836480831023" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Opacity">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="919338525924171">
                             <conditions>
                                 <condition id="-10" name="For" sid="429847292511118" type="System">
                                     <param id="0" name="Name">&quot;fade&quot;</param>
-                                    <param id="1" name="Start index">1</param>
+                                    <param id="1" name="Start index">0</param>
                                     <param id="2" name="End index">100</param>
                                 </condition>
                             </conditions>
                             <actions>
                                 <action id="-16" name="Wait" sid="792695129253926" type="System">
-                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                    <param id="0" name="Seconds">loopindex * 0.02</param>
                                 </action>
                                 <action id="-18" name="Set layer opacity" sid="870635289986776" type="System">
                                     <param id="0" name="Layer">&quot;Overlay&quot;</param>
@@ -97,7 +104,12 @@
                             <param id="0" name="Name">&quot;startLayout&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="398540139453049" type="System">
+                            <param id="0" name="Layer">&quot;Overlay&quot;</param>
+                            <param id="1" name="Opacity">100</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="849928008016004">
                             <conditions>
@@ -109,7 +121,7 @@
                             </conditions>
                             <actions>
                                 <action id="-16" name="Wait" sid="718389862838844" type="System">
-                                    <param id="0" name="Seconds">loopindex * 0.01</param>
+                                    <param id="0" name="Seconds">loopindex * 0.04</param>
                                 </action>
                                 <action id="-18" name="Set layer opacity" sid="515365830858505" type="System">
                                     <param id="0" name="Layer">&quot;Overlay&quot;</param>
@@ -136,85 +148,6 @@
                         </action>
                         <action id="-37" name="Load" sid="463343622603926" type="System">
                             <param id="0" name="Slot">&quot;start&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="836023867108713" title="Camera">
-            <sub-events>
-                <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">8</variable>
-                <variable constant="1" name="SHROOM_SPEED" sid="134871863920471" static="1" type="number">16</variable>
-                <event-block sid="229968416783304">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="362365621403252" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="954182939842029" type="Player">
-                            <param id="0" name="Object">ShroomLad</param>
-                            <param id="1" name="Layer">Self.LayerName</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="834417031704759" type="ShroomLad">
-                            <param id="0" name="Object">Camera</param>
-                            <param id="1" name="Layer">Self.LayerName</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="808003258691953" type="ShroomLad">
-                            <param id="0" name="Object">LightBloom</param>
-                            <param id="1" name="Layer">&quot;Light&quot;</param>
-                            <param id="2" name="Image point">&quot;Center&quot;</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="475527151998634" type="LightBloom">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                        <action id="9" name="Set scale" sid="858786259057336" type="LightBloom">
-                            <param id="0" name="Scale">0.5</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="385143941094219" type="ShroomLad">
-                            <param id="0" name="Object">LightBloom</param>
-                            <param id="1" name="Layer">&quot;Light&quot;</param>
-                            <param id="2" name="Image point">&quot;Center&quot;</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="671348396030994" type="LightBloom">
-                            <param id="0" name="Opacity">60</param>
-                        </action>
-                        <action id="9" name="Set scale" sid="411870392461111" type="LightBloom">
-                            <param id="0" name="Scale">1.4</param>
-                        </action>
-                        <action id="0" name="Spawn another object" sid="461319050043647" type="ShroomLad">
-                            <param id="0" name="Object">LightBloom</param>
-                            <param id="1" name="Layer">&quot;Light&quot;</param>
-                            <param id="2" name="Image point">&quot;Center&quot;</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="639787140266825" type="LightBloom">
-                            <param id="0" name="Opacity">20</param>
-                        </action>
-                        <action id="9" name="Set scale" sid="899979339701929" type="LightBloom">
-                            <param id="0" name="Scale">2</param>
-                        </action>
-                        <action id="0" name="Call function" sid="701218388935901" type="Function">
-                            <param id="0" name="Name">&quot;startLayout&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="206157979455056">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="861703828888772" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="784228786047719" type="ShroomLad">
-                            <param id="0" name="X">lerp(Self.X, Player.X + Self.SineHorizontal.Value, SHROOM_SPEED * dt)</param>
-                            <param id="1" name="Y">lerp(Self.Y, Player.Y + Self.SineVertical.Value, SHROOM_SPEED * dt)</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="408191814016753" type="Camera">
-                            <param id="0" name="X">lerp(Self.X, ShroomLad.X, CAM_SPEED * dt)</param>
-                            <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y - 64, CAM_SPEED * dt)</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" sid="937840062012770" type="LightBloom">
-                            <param id="0" name="Object">ShroomLad</param>
-                            <param id="1" name="Image point (optional)">&quot;Center&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -633,20 +566,58 @@
         </event-group>
         <event-group description="" sid="849965275168056" title="Doors">
             <sub-events>
+                <event-block sid="774499755978241">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="272724306063252" type="System" />
+                        <condition id="-15" name="Pick nearest/furthest" sid="497999420696095" type="DoorCollider">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="X">sideX</param>
+                            <param id="2" name="Y">sideY</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="135341891221288" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;Start&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="414215476354543" type="System">
+                            <param id="0" name="First value">LayoutName</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">&quot;Intro&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="452968662283111" type="System">
+                            <param id="0" name="Object to create">Player</param>
+                            <param id="1" name="Layer">&quot;Characters&quot;</param>
+                            <param id="2" name="X">DoorCollider.ImagePointX(&quot;Spawn&quot;)</param>
+                            <param id="3" name="Y">DoorCollider.ImagePointY(&quot;Spawn&quot;)</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="484602858332466" type="DoorCollider" />
+                    </actions>
+                </event-block>
                 <event-block sid="792384701934425">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="171412204903802" type="Player">
                             <param id="0" name="Object">DoorCollider</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="376705981216084" type="System">
+                            <param id="0" name="Variable">sideX</param>
+                            <param id="1" name="Value">Player.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="486407310963097" type="System">
+                            <param id="0" name="Variable">sideX</param>
+                            <param id="1" name="Value">Player.Y</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="516501310685489">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="294367133818597" type="System">
-                                    <param id="0" name="First value">find(LayoutName, &quot;Level&quot;)</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Second value">-1</param>
+                                <condition id="-7" name="Compare instance variable" sid="191830577420243" type="DoorCollider">
+                                    <param id="0" name="Instance variable">layout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -666,6 +637,85 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="836023867108713" title="Camera">
+            <sub-events>
+                <variable constant="1" name="CAM_SPEED" sid="613065033649570" static="1" type="number">8</variable>
+                <variable constant="1" name="SHROOM_SPEED" sid="134871863920471" static="1" type="number">16</variable>
+                <event-block sid="229968416783304">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="362365621403252" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="954182939842029" type="Player">
+                            <param id="0" name="Object">ShroomLad</param>
+                            <param id="1" name="Layer">Self.LayerName</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="834417031704759" type="ShroomLad">
+                            <param id="0" name="Object">Camera</param>
+                            <param id="1" name="Layer">Self.LayerName</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="808003258691953" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="475527151998634" type="LightBloom">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="858786259057336" type="LightBloom">
+                            <param id="0" name="Scale">0.5</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="385143941094219" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="671348396030994" type="LightBloom">
+                            <param id="0" name="Opacity">60</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="411870392461111" type="LightBloom">
+                            <param id="0" name="Scale">1.4</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="461319050043647" type="ShroomLad">
+                            <param id="0" name="Object">LightBloom</param>
+                            <param id="1" name="Layer">&quot;Light&quot;</param>
+                            <param id="2" name="Image point">&quot;Center&quot;</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="639787140266825" type="LightBloom">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="899979339701929" type="LightBloom">
+                            <param id="0" name="Scale">2</param>
+                        </action>
+                        <action id="0" name="Call function" sid="701218388935901" type="Function">
+                            <param id="0" name="Name">&quot;startLayout&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="206157979455056">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="861703828888772" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="784228786047719" type="ShroomLad">
+                            <param id="0" name="X">lerp(Self.X, Player.X + Self.SineHorizontal.Value, SHROOM_SPEED * dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, Player.Y + Self.SineVertical.Value, SHROOM_SPEED * dt)</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="408191814016753" type="Camera">
+                            <param id="0" name="X">lerp(Self.X, ShroomLad.X, CAM_SPEED * dt)</param>
+                            <param id="1" name="Y">lerp(Self.Y, ShroomLad.Y - 64, CAM_SPEED * dt)</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="937840062012770" type="LightBloom">
+                            <param id="0" name="Object">ShroomLad</param>
+                            <param id="1" name="Image point (optional)">&quot;Center&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
