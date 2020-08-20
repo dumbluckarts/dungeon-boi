@@ -612,9 +612,9 @@
                         <event-block sid="556181057921371">
                             <conditions>
                                 <condition id="-15" name="Pick nearest/furthest" sid="863334569467943" type="DoorCollider">
-                                    <param id="0" name="Which">1</param>
-                                    <param id="1" name="X">sideX</param>
-                                    <param id="2" name="Y">sideY</param>
+                                    <param id="0" name="Which">0</param>
+                                    <param id="1" name="X">LayoutWidth - sideX</param>
+                                    <param id="2" name="Y">LayoutHeight - sideY</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -657,7 +657,7 @@
                             <actions>
                                 <action id="6" name="Call function" sid="185836967662459" type="JS">
                                     <param id="0" name="Expression">&quot;Leveler.pick&quot;</param>
-                                    <param id="1" name="Parameter {n}">Player.X{###}Player.Y</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="-10" name="Set value" sid="698110113017493" type="DoorCollider">
                                     <param id="0" name="Instance variable">layout</param>

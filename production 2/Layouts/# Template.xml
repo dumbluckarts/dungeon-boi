@@ -1057,7 +1057,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <layout></layout>
+                        <layout>Level 1</layout>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Persist" />
