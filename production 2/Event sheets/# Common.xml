@@ -604,6 +604,9 @@
                             <param id="0" name="Variable">sideY</param>
                             <param id="1" name="Value">DoorCollider.Y</param>
                         </action>
+                        <action id="-16" name="Wait" sid="848785610621404" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
                         <action id="-25" name="Go to layout (by name)" sid="178039466794473" type="System">
                             <param id="0" name="Layout">DoorCollider.layout</param>
                         </action>

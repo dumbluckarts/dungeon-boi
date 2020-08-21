@@ -500,27 +500,6 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="SwarmGuy" sid="480948266762464">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594849463066291" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.492188" y="1" />
-                        </frame>
-                    </animation>
-                    <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="727372687638052" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.492188" y="1" />
-                        </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shadow" x="0.492188" y="1" />
-                        </frame>
-                    </animation>
-                    <animation framecount="1" loop="0" name="Damage" pingpong="0" repeatcount="1" repeatto="0" sid="808564149636531" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
             <object-type name="shopkeeper" sid="936506155679477">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -1130,10 +1109,10 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="720499777172305" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
+                                <point x="0.695313" y="0.382813" />
+                                <point x="0.707031" y="0.640625" />
+                                <point x="0.171875" y="0.613281" />
+                                <point x="0.199219" y="0.375" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1160,10 +1139,12 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="868772773810107" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
+                                <point x="0.470588" y="0.0839161" />
+                                <point x="0.805882" y="0.27972" />
+                                <point x="0.805883" y="0.776224" />
+                                <point x="0.441176" y="0.888112" />
+                                <point x="0.129412" y="0.804196" />
+                                <point x="0.105882" y="0.391608" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1175,10 +1156,10 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="650211743482874" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
+                                <point x="0.796875" y="0.367188" />
+                                <point x="0.835938" y="0.589844" />
+                                <point x="0.0742188" y="0.625" />
+                                <point x="0.03125" y="0.394531" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1986,6 +1967,27 @@
         <object-type name="JS" sid="273135194561817">
             <plugin id="ValerypopoffJSPlugin" />
         </object-type>
+        <object-type name="SwarmGuy" sid="480948266762464">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="594849463066291" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Shadow" x="0.492188" y="1" />
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="727372687638052" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Shadow" x="0.492188" y="1" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Shadow" x="0.492188" y="1" />
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Damage" pingpong="0" repeatcount="1" repeatto="0" sid="808564149636531" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Shadowed" plugin-id="Sprite" sid="486177015640144">
@@ -2041,6 +2043,18 @@
                 <member>Spikes</member>
             </members>
         </family>
+        <family name="Obstacles" plugin-id="Sprite" sid="136899562243471">
+            <members>
+                <member>Boulder</member>
+                <member>statue</member>
+                <member>statue2</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Solid" sid="780712104188899">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder>
         <layout-folder name="Levels">
@@ -2053,6 +2067,9 @@
             <layout>Level 4.xml</layout>
             <layout>Level 5.xml</layout>
             <layout>Level 6.xml</layout>
+            <layout>Level 7.xml</layout>
+            <layout>Level 8.xml</layout>
+            <layout>Level 9.xml</layout>
             <layout>Boss 1.xml</layout>
         </layout-folder>
         <layout># Instance.xml</layout>

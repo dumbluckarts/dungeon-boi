@@ -495,6 +495,7 @@
                                         <condition id="0" name="On collision with another object" sid="212389641823499" type="Player">
                                             <param id="0" name="Object">Enemy</param>
                                         </condition>
+                                        <condition id="-9" name="Is visible" sid="647992787050155" type="Enemy" />
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Call function" sid="407357707629928" type="Function">
@@ -548,7 +549,7 @@
                                                 </action>
                                                 <action id="-9" name="Set value" sid="149029866874028" type="System">
                                                     <param id="0" name="Variable">blur</param>
-                                                    <param id="1" name="Value">100</param>
+                                                    <param id="1" name="Value">40</param>
                                                 </action>
                                                 <action id="-24" name="Stop loop" sid="737361267035923" type="System" />
                                             </actions>

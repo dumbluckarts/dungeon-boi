@@ -1468,5 +1468,14 @@
                 </parameters>
             </effect-instance>
         </effect-type>
+        <effect-type name="Vignette">
+            <effect id="vignette" />
+            <effect-instance type="Vignette">
+                <parameters>
+                    <end-radius>0.8</end-radius>
+                    <start-radius>0.3</start-radius>
+                </parameters>
+            </effect-instance>
+        </effect-type>
     </effects>
 </c2layout>
