@@ -385,7 +385,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="148728260352303" title="Sounds">
+        <event-group description="" disabled="1" sid="148728260352303" title="Sounds">
             <sub-events>
                 <event-block sid="122343443542323">
                     <conditions>
@@ -912,5 +912,136 @@
             </sub-events>
         </event-group>
         <include># Enemy</include>
+        <event-group description="" sid="958189301885779" title="Dynamic Music">
+            <sub-events>
+                <event-block sid="383261269010664">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="618946665220309" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="607292276469850" type="Audio">
+                            <param id="0" name="Audio file">slow_beat</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;slow&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="213809548190016" type="Audio">
+                            <param id="0" name="Audio file">fast_beat</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-15</param>
+                            <param id="1" name="Tag (optional)">&quot;fast&quot;</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="568214719029124" type="Audio">
+                            <param id="0" name="Tag">&quot;fast&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="2" name="Set muted" sid="427416226419627" type="Audio">
+                            <param id="0" name="Tag">&quot;slow&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="786928079288245">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="500120750310797">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="744033892205325" type="System">
+                            <param id="0" name="First value">Enemy.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="597900621738673">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Set muted" sid="698306727547322" type="Audio">
+                                    <param id="0" name="Tag">&quot;slow&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="886649611153588" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="2" name="Set muted" sid="402178842951561" type="Audio">
+                                    <param id="0" name="Tag">&quot;fast&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action disabled="1" id="23" name="Seek to" sid="390978016461930" type="Audio">
+                                    <param id="0" name="Tag">&quot;slow&quot;</param>
+                                    <param id="1" name="Position">Audio.PlaybackTime(&quot;fast&quot;)</param>
+                                </action>
+                                <action disabled="1" id="6" name="Stop" sid="364637699950152" type="Audio">
+                                    <param id="0" name="Tag">&quot;fast&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="372464612250844">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="945458183473969" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="897879335225838">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Set muted" sid="897615749828193" type="Audio">
+                                    <param id="0" name="Tag">&quot;fast&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="241916921991765" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="2" name="Set muted" sid="480784048948790" type="Audio">
+                                    <param id="0" name="Tag">&quot;slow&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action disabled="1" id="0" name="Play" sid="632996927468950" type="Audio">
+                                    <param id="0" name="Audio file">fast_beat</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;fast&quot;</param>
+                                </action>
+                                <action disabled="1" id="23" name="Seek to" sid="485071252077324" type="Audio">
+                                    <param id="0" name="Tag">&quot;fast&quot;</param>
+                                    <param id="1" name="Position">Audio.PlaybackTime(&quot;slow&quot;)</param>
+                                </action>
+                                <action disabled="1" id="6" name="Stop" sid="129133492301917" type="Audio">
+                                    <param id="0" name="Tag">&quot;slow&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="838270511892845">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="286133753912709" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="870358229975167">
+                            <conditions>
+                                <condition id="-3" inverted="1" name="Is on-screen" sid="577528902272226" type="Enemy" />
+                                <condition id="-4" name="Trigger once while true" sid="738209140321849" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block disabled="1" sid="920150187195810">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="404947804573118" type="System" />
+                                <condition id="-4" name="Trigger once while true" sid="450151078168890" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

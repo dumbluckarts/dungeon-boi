@@ -2074,6 +2074,7 @@
         </layout-folder>
         <layout># Instance.xml</layout>
         <layout># UI.xml</layout>
+        <layout>Music Test.xml</layout>
         <layout>Shop.xml</layout>
     </layout-folder>
     <event-folder>
@@ -2083,6 +2084,7 @@
         <event-sheet># UI.xml</event-sheet>
         <event-sheet>Start.xml</event-sheet>
         <event-sheet>IntroLayout.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="17" />
@@ -2175,6 +2177,10 @@
         <file name="track1.m4a" />
         <file name="outside.m4a" />
         <file name="outside.ogg" />
+        <file name="fast_beat.m4a" />
+        <file name="fast_beat.ogg" />
+        <file name="slow_beat.m4a" />
+        <file name="slow_beat.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
