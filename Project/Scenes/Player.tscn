@@ -1,0 +1,131 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Assets/Player/Idle/down_1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Player/Idle/down_2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Player/Idle/up_1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Player/Idle/up_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Player/Walk/left_2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Player/Walk/down_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Player/Walk/down_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Player/Walk/right_1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Player/Walk/right_2.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Player/Walk/up_1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Player/Walk/up_2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Player/Walk/left_1.png" type="Texture" id=17]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float radius = 5.0;
+uniform vec4 modulate: hint_color;
+
+void fragment() {
+	vec2 ps = TEXTURE_PIXEL_SIZE;
+
+	vec4 shadow = texture(TEXTURE, UV + vec2(-radius, -radius) * ps);
+
+	shadow += texture(TEXTURE, UV + vec2(-radius, 0.0) * ps);
+	shadow += texture(TEXTURE, UV + vec2(-radius, radius) * ps);
+	shadow += texture(TEXTURE, UV + vec2(0.0, -radius) * ps);
+	shadow += texture(TEXTURE, UV + vec2(0.0, radius) * ps);
+	shadow += texture(TEXTURE, UV + vec2(radius, -radius) * ps);
+	shadow += texture(TEXTURE, UV + vec2(radius, 0.0) * ps);
+	shadow += texture(TEXTURE, UV + vec2(radius, radius) * ps);
+	shadow /= 8.0;
+	shadow *= modulate;
+
+	vec4 col = texture(TEXTURE, UV);
+	COLOR = mix(shadow, col, col.a);
+} "
+custom_defines = ""
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/radius = 3.0
+shader_param/modulate = Color( 0, 0, 0, 0.388235 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/left_1.png-2bb680a4adfe2ffd7936da8ac29202b8.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+load_path = "res://.import/left_2.png-ce14d53f890453dd7fdcd7d5593b58a3.stex"
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/right_1.png-256c6f52f5577ba4b88a09b245e334bb.stex"
+
+[sub_resource type="StreamTexture" id=6]
+flags = 4
+load_path = "res://.import/right_2.png-cd0a2147c907f4b5656544c07627699c.stex"
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "walk_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 56.0
+height = 92.0
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+z_index = 5
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( 0, -1.49832 )
+frames = SubResource( 7 )
+animation = "idle_down"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 2, 2 )
+smoothing_enabled = true
+smoothing_speed = 6.0
