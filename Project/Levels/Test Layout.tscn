@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skull.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Path.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/dropshadow.material" type="Material" id=6]
 [ext_resource path="res://Assets/Rocc.png" type="Texture" id=7]
-[ext_resource path="res://Levels/Path2D.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Pot.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Rocc2.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
@@ -40,16 +40,16 @@
 1/shapes = [  ]
 1/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
+
 [sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 256, 256, 0, 256, 0, 0, 256, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=6]
 points = PoolVector2Array( 256, 256, 64, 256, 64, 0, 256, 0 )
 
-[sub_resource type="TileSet" id=2]
+[sub_resource type="TileSet" id=5]
 0/name = "Wall.png 0"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -60,14 +60,14 @@ points = PoolVector2Array( 256, 256, 64, 256, 64, 0, 256, 0 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 4 )
+0/shape = SubResource( 2 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -81,14 +81,14 @@ points = PoolVector2Array( 256, 256, 64, 256, 64, 0, 256, 0 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 7 )
+1/shape = SubResource( 3 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 7 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -102,14 +102,14 @@ points = PoolVector2Array( 256, 256, 64, 256, 64, 0, 256, 0 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 6 )
+2/shape = SubResource( 4 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -128,15 +128,10 @@ points = PoolVector2Array( 256, 256, 64, 256, 64, 0, 256, 0 )
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=6]
 radius = 64.0
 
-[sub_resource type="Curve2D" id=8]
-_data = {
-"points": PoolVector2Array( -70.5556, -56.6964, 70.5556, 56.6964, -896, 128, -65.5159, 3.77976, 65.5159, -3.77976, -704, 0, -39.0576, 185.208, 39.0576, -185.208, -640, 192, 47.877, 56.6964, -47.877, -56.6964, -768, 320, -56.6964, 27.7183, 56.6964, -27.7183, -448, 320, 0, 0, 0, 0, -384, 192, 0, 0, 0, 0, -448, 64, -2.51984, 52.9167, 2.51984, -52.9167, -512, -64, 83.1548, 105.833, -83.1548, -105.833, -256, 0, -90.7143, -7.55953, 90.7143, 7.55953, -192, 128, -15.1191, 152.45, 15.1191, -152.45, -128, 320, 94.4941, 10.0794, -94.4941, -10.0794, -256, 384, 12.5992, 57.9564, -12.5992, -57.9564, -320, 256, 66.7758, -25.1984, -66.7758, 25.1984, -512, 192, 66.7758, -35.2778, -66.7758, 35.2778, -576, 384, 61.7361, 57.9564, -61.7361, -57.9564, -768, 384, -27.7183, 84.4147, 27.7183, -84.4147, -832, 256, -17.6389, 54.1766, 17.6389, -54.1766, -576, 128, 40.3175, 45.3572, -40.3175, -45.3572, -640, -64, 39.0576, -5.03968, -39.0576, 5.03968, -832, -64, -61.7361, -50.3968, 61.7361, 50.3968, -896, 128 )
-}
-
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
@@ -153,7 +148,7 @@ format = 1
 tile_data = PoolIntArray( -262147, 1, 0, -262144, 1, 0, -131075, 0, 0, -65539, 1, 0, -131072, 0, 0, -3, 0, 0, -2, 1, 0, -65536, 0, 0, -65535, 1, 0, 65530, 1, 0, 65531, 0, 0, 65532, 0, 0, 65533, 1, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 1, 0, 131068, 1, 0, 65536, 0, 0, 65537, 1, 0, 65540, 1, 0, 131072, 0, 0, 131075, 1, 0, 196608, 0, 0, 196610, 1, 0, 196611, 0, 0, 196612, 1, 0, 196613, 1, 0, 262144, 0, 0, 262147, 1, 0, 262148, 0, 0, 327680, 1, 0, 458752, 1, 0 )
 
 [node name="WallTiles" type="TileMap" parent="."]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 5 )
 cell_size = Vector2( 256, 256 )
 collision_use_kinematic = true
 format = 1
@@ -173,7 +168,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Skull1"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -191,7 +186,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Skull2"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -209,7 +204,349 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Skull3"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot13" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, 384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot13"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot13"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot10" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, 384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot10"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot10"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot11" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, 384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot11"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot11"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot4" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, 512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot4"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot4"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot3" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, 512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot3"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot3"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot5" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, 512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot5"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot5"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot1" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, 640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot1"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot1"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot2" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, 640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot2"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot2"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot7" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, 640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot7"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot7"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot19" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, -640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot19"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot19"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot20" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, -640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot20"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot20"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot21" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, -640 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot21"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot21"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot22" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, -512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot22"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot22"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot23" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, -512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot23"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot23"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot24" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, -512 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot24"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot24"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot25" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1408, -384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot25"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot25"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot26" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1280, -384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot26"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot26"]
+visible = false
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pot27" type="StaticBody2D" parent="Decals"]
+position = Vector2( -1152, -384 )
+z_index = 1
+
+[node name="Pot" type="Sprite" parent="Decals/Pot27"]
+material = ExtResource( 6 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot27"]
+visible = false
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -242,18 +579,9 @@ centered = false
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Path2D" type="Path2D" parent="Enemies"]
-position = Vector2( -64, 128 )
-curve = SubResource( 8 )
-script = ExtResource( 8 )
-SPEED = 500
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D"]
-position = Vector2( -896, 128 )
-rotate = false
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies/Path2D/PathFollow2D"]
-frames = SubResource( 9 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemies"]
+position = Vector2( -704, 128 )
+frames = SubResource( 7 )
 animation = "walk"
 frame = 1
 playing = true
