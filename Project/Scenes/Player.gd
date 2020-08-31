@@ -1,100 +1,95 @@
-extends KinematicBody2D
+extends "res://Script/2dMovement.gd"
 
-export var VERTICAL_SPEED = 100
-export var HORIZONTAL_SPEED = 100
-export var ATTACK_MULTIPLIER = 2
+class_name Player
 
-var velocity = Vector2.ZERO
-var direction = "down"
+export var ATTACK_LENGTH = 0.1
+export var ATTACK_MULTIPLIER = 1.0
+
 var action = "idle"
 var actionFrame = 0
 
-func _ready():
-	$Timer.connect("timeout", self, "unattack", [ $RayCast2D ])
-
 func _process(_delta):
+	animate()
 	input()
 	move()
-	animate()
-	attack_direction()
 	
 func input():
-	if Input.is_action_pressed("player_up"):
-		up()
-	elif Input.is_action_pressed("player_down"):
-		down()
-	elif Input.is_action_pressed("player_left"):
-		left()
-	elif Input.is_action_pressed("player_right"):
-		right()
-	else:
-		stop()
-		
+	
 	if Input.is_action_just_pressed("player_attack"):
 		attack()
 	
+	if action == "attack": return
+	
+	if Input.is_action_pressed("player_up"):
+		action = "walk"
+		up()
+	elif Input.is_action_pressed("player_down"):
+		action = "walk"
+		down()
+	elif Input.is_action_pressed("player_left"):
+		action = "walk"
+		left()
+	elif Input.is_action_pressed("player_right"):
+		action = "walk"
+		right()
+	else:
+		action = "idle"
+		stop()
+		
 # !START Attack
 func attack_direction():
 	if direction == "up":
-		$RayCast2D.cast_to = Vector2(0, 128)
-		velocity = Vector2(0, -VERTICAL_SPEED)
+		up()
+		$RayCast2D.cast_to = velocity * 128
 	elif direction == "down":
-		$RayCast2D.cast_to = Vector2(0, -128)
-		velocity = Vector2(0, VERTICAL_SPEED)
+		down()
+		$RayCast2D.cast_to = velocity * 128
 	elif direction == "left":
-		$RayCast2D.cast_to = Vector2(-128, 0)
-		velocity = Vector2(-HORIZONTAL_SPEED, 0)
+		left()
+		$RayCast2D.cast_to = velocity * 128
 	elif direction == "right":
-		$RayCast2D.cast_to = Vector2(128, 0)
-		velocity = Vector2(HORIZONTAL_SPEED, 0)
+		right()
+		$RayCast2D.cast_to = velocity * 128
+		
+	$PunchSprite.visible = true
+	$PunchSprite.position = $RayCast2D.cast_to / 1.2 + \
+		(Vector2(velocity.y, velocity.x) * rand_range(0, 32))
+	$PunchSprite.play(direction)
+	$PunchSprite.frame = randi() % $PunchSprite.frames.get_frame_count(direction)
+	$PunchSprite.modulate.a8 = 255
+	$PunchSprite/Timer.stop()
+	$PunchSprite/Timer.start()
 
 func attack():
-	$Timer.start()
-	$RayCast2D.enabled = true
+	var timer = Timer.new()
+	
+	add_child(timer)
+	
+	timer.set_wait_time(ATTACK_LENGTH)
+	timer.set_one_shot(true)
+	timer.connect("timeout", self, "unattack", [ $RayCast2D ])
+	timer.connect("timeout", timer, "queue_free")
+	timer.start()
+	
+	speed_multiplier = ATTACK_MULTIPLIER
 	action = "attack"
-	actionFrame = randi() % 2
+	
+	attack_direction()
+	
+	$Camera2D.shake(5.0, 0.1)
+	
+	$RayCast2D.enabled = true
+	$AnimatedSprite.play(get_animation())
+	$AnimatedSprite.frame = randi() % $AnimatedSprite.frames.get_frame_count(get_animation())
 	
 func unattack(raycast):
+	speed_multiplier = 1.0
 	raycast.enabled = false
 	action = "idle"
+	
+func _on_RayCast2D_collide(body):
+	body.queue_free()
 # !END Attack
-	
-# !START Movement
-func move():
-	if action == "attack":
-		move_and_slide(velocity * ATTACK_MULTIPLIER, Vector2.UP)
-	else:
-		move_and_slide(velocity, Vector2.UP)
-
-func up():
-	if action != "attack":
-		direction = "up"
-		action = "walk"
-	velocity = Vector2(0, -VERTICAL_SPEED)
-	
-func down():
-	if action != "attack":
-		direction = "down"
-		action = "walk"
-	velocity = Vector2(0, VERTICAL_SPEED)
-	
-func left():
-	if action != "attack":
-		direction = "left"
-		action = "walk"
-	velocity = Vector2(-HORIZONTAL_SPEED, 0)
-	
-func right():
-	if action != "attack":
-		direction = "right"
-		action = "walk"
-	velocity = Vector2(HORIZONTAL_SPEED, 0)
-	
-func stop():
-	if action != "attack":
-		action = "idle"
-		velocity = Vector2.ZERO
-# !END Movement
 
 # !START Animation
 func get_animation():
@@ -102,7 +97,4 @@ func get_animation():
 	
 func animate():
 	$AnimatedSprite.play(get_animation())
-	
-	if action == "attack":
-		$AnimatedSprite.frame = actionFrame
 # !END Animation
