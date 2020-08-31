@@ -939,6 +939,138 @@
                             </collision-poly>
                         </frame>
                     </animation>
+                    <animation framecount="5" loop="1" name="rushUp" pingpong="0" repeatcount="0" repeatto="0" sid="824463267911985" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.300781" y="0.300781" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.757813" y="0.242188" />
+                                <point x="0.90625" y="0.5" />
+                                <point x="0.769531" y="0.769531" />
+                                <point x="0.238281" y="0.761719" />
+                                <point x="0.121094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="1" name="smashUp" pingpong="0" repeatcount="0" repeatto="0" sid="246472843603873" speed="7">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.300781" y="0.300781" />
+                                <point x="0.5" y="0.140625" />
+                                <point x="0.757813" y="0.242188" />
+                                <point x="0.90625" y="0.5" />
+                                <point x="0.769531" y="0.769531" />
+                                <point x="0.238281" y="0.761719" />
+                                <point x="0.121094" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="dust" x="0.765625" y="0.929688" />
+                            <collision-poly>
+                                <point x="0.285156" y="0.285156" />
+                                <point x="0.5" y="0.15625" />
+                                <point x="0.71875" y="0.28125" />
+                                <point x="0.921875" y="0.5" />
+                                <point x="0.773438" y="0.773438" />
+                                <point x="0.5" y="0.761719" />
+                                <point x="0.230469" y="0.769531" />
+                                <point x="0.0898438" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
         </object-folder>
