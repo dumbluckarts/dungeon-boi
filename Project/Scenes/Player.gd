@@ -56,7 +56,7 @@ func attack_direction():
 		(Vector2(velocity.y, velocity.x) * rand_range(0, 32))
 	$PunchSprite.play(direction)
 	$PunchSprite.frame = randi() % $PunchSprite.frames.get_frame_count(direction)
-	$PunchSprite.modulate.a8 = 255
+	$PunchSprite.modulate.a8 = 120
 	$PunchSprite/Timer.stop()
 	$PunchSprite/Timer.start()
 
@@ -88,8 +88,8 @@ func unattack(raycast):
 	action = "idle"
 	
 func _on_RayCast2D_collide(body):
-	if body.has_node("AnimationPlayer"):
-		print ("Holyyy")
+	if body.is_in_group("breakable"):
+		body.get_node("AnimatedSprite").play("break")
 	
 # !END Attack
 

@@ -70,19 +70,19 @@ shader_param/modulate = Color( 0, 0, 0, 0.388235 )
 
 [sub_resource type="StreamTexture" id=3]
 flags = 4
-load_path = "res://.import/left_1.png-2bb680a4adfe2ffd7936da8ac29202b8.stex"
+load_path = "res://.import/right_1.png-256c6f52f5577ba4b88a09b245e334bb.stex"
 
 [sub_resource type="StreamTexture" id=4]
 flags = 4
-load_path = "res://.import/left_2.png-ce14d53f890453dd7fdcd7d5593b58a3.stex"
+load_path = "res://.import/right_2.png-cd0a2147c907f4b5656544c07627699c.stex"
 
 [sub_resource type="StreamTexture" id=5]
 flags = 4
-load_path = "res://.import/right_1.png-256c6f52f5577ba4b88a09b245e334bb.stex"
+load_path = "res://.import/left_1.png-2bb680a4adfe2ffd7936da8ac29202b8.stex"
 
 [sub_resource type="StreamTexture" id=6]
 flags = 4
-load_path = "res://.import/right_2.png-cd0a2147c907f4b5656544c07627699c.stex"
+load_path = "res://.import/left_2.png-ce14d53f890453dd7fdcd7d5593b58a3.stex"
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
@@ -91,24 +91,19 @@ animations = [ {
 "name": "attack_up",
 "speed": 0.0
 }, {
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "attack_left",
+"speed": 0.0
+}, {
 "frames": [ SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
-"name": "idle_left",
+"name": "idle_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 10 ) ],
 "loop": true,
-"name": "attack_down",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "attack_right",
-"speed": 0.0
-}, {
-"frames": [ SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "idle_right",
+"name": "walk_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
@@ -121,6 +116,16 @@ animations = [ {
 "name": "idle_down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "attack_right",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "attack_down",
+"speed": 0.0
+}, {
 "frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "walk_up",
@@ -131,20 +136,15 @@ animations = [ {
 "name": "idle_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "walk_left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "walk_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "attack_left",
-"speed": 0.0
+"name": "idle_left",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=8]
@@ -153,14 +153,14 @@ height = 92.0
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "right",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 28 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "left",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "right",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 30 ), ExtResource( 29 ) ],

@@ -4,7 +4,7 @@ func _ready():
 	$Timer.connect("timeout", self, "fade")
 
 func fade():
-	for i in range(0, 255):
+	for i in range(0, modulate.a8):
 		var t = Timer.new()
 		
 		add_child(t)
