@@ -76,7 +76,7 @@ func attack():
 	
 	attack_direction()
 	
-	$Camera2D.shake(5.0, 0.1)
+	$Camera2D.shake(10.0, 0.1)
 	
 	$RayCast2D.enabled = true
 	$AnimatedSprite.play(get_animation())
@@ -95,6 +95,7 @@ func _on_RayCast2D_collide(body):
 	# break breakable shit
 	if body.is_in_group("breakable"):
 		body.get_node("AnimatedSprite").play("break")
+		body.get_node("CollisionShape2D").disabled = true
 	
 # !END Attack
 
