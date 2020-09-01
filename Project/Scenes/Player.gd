@@ -88,6 +88,11 @@ func unattack(raycast):
 	action = "idle"
 	
 func _on_RayCast2D_collide(body):
+	# hit enemies
+	if body.is_in_group("damagable"):
+		pass
+	
+	# break breakable shit
 	if body.is_in_group("breakable"):
 		body.get_node("AnimatedSprite").play("break")
 	
