@@ -67,7 +67,7 @@ func attack():
 	
 	timer.set_wait_time(ATTACK_LENGTH)
 	timer.set_one_shot(true)
-	timer.connect("timeout", self, "unattack", [ $RayCast2D ])
+	timer.connect("timeout", self, "unattack", [ $PunchSprite/Area2D/CollisionShape2D ])
 	timer.connect("timeout", timer, "queue_free")
 	timer.start()
 	
@@ -78,24 +78,21 @@ func attack():
 	
 	$Camera2D.shake(10.0, 0.1)
 	
-	$RayCast2D.enabled = true
+	$PunchSprite/Area2D/CollisionShape2D.disabled = false
 	$AnimatedSprite.play(get_animation())
 	$AnimatedSprite.frame = randi() % $AnimatedSprite.frames.get_frame_count(get_animation())
 	
-func unattack(raycast):
+func unattack(area):
 	speed_multiplier = 1.0
-	raycast.enabled = false
+	area.disabled = true
 	action = "idle"
 	
-func _on_RayCast2D_collide(body):
-	# hit enemies
-	if body.is_in_group("damagable"):
-		pass
+func _on_Area2D_body_entered(body):
 	
 	# break breakable shit
 	if body.is_in_group("breakable"):
-		body.get_node("AnimatedSprite").play("break")
 		body.get_node("CollisionShape2D").disabled = true
+		body.get_node("AnimatedSprite").play("break")
 	
 # !END Attack
 
@@ -106,3 +103,4 @@ func get_animation():
 func animate():
 	$AnimatedSprite.play(get_animation())
 # !END Animation
+

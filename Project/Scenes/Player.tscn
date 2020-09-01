@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Assets/Player/Idle/down_1.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -93,29 +93,14 @@ animations = [ {
 "name": "attack_up",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "idle_up",
+"name": "walk_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "attack_right",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "attack_down",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "attack_left",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 10 ) ],
@@ -126,6 +111,21 @@ animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "attack_down",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "attack_left",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_up",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ), SubResource( 4 ) ],
@@ -143,9 +143,9 @@ animations = [ {
 "name": "walk_down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "walk_right",
+"name": "walk_up",
 "speed": 5.0
 } ]
 
@@ -176,6 +176,13 @@ animations = [ {
 "speed": 0.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 18.2857, 18.2857 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+cull_mode = 1
+polygon = PoolVector2Array( -37.4497, -35.9413, -31.7929, -20.7385, -35.682, 36.5372, -29.6716, 92.0451, 33.2609, 89.9238, 38.5643, 62.7001, 39.6249, 7.89935, 38.9178, -15.4352, 47.0495, -39.8304, -37.4497, -36.2948 )
+
 [node name="Player" type="KinematicBody2D"]
 z_index = 5
 script = ExtResource( 2 )
@@ -194,6 +201,7 @@ material = SubResource( 2 )
 position = Vector2( 0, -1.49832 )
 frames = SubResource( 7 )
 animation = "idle_down"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -231,4 +239,16 @@ script = ExtResource( 35 )
 [node name="Timer" type="Timer" parent="PunchSprite"]
 wait_time = 0.2
 one_shot = true
-[connection signal="collide" from="RayCast2D" to="." method="_on_RayCast2D_collide"]
+
+[node name="Area2D" type="Area2D" parent="PunchSprite"]
+gravity = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchSprite/Area2D"]
+shape = SubResource( 10 )
+disabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 11 )
+[connection signal="body_entered" from="PunchSprite/Area2D" to="." method="_on_Area2D_body_entered"]

@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Moss.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Player/DropShadow.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Shrooms.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Spaceee.jpg" type="Texture" id=15]
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
@@ -445,12 +446,12 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=19]
 radius = 64.0
 
-[sub_resource type="OccluderPolygon2D" id=20]
-closed = false
-cull_mode = 1
-polygon = PoolVector2Array( -40.462, -36.4355, -33.5755, -20.0138, -35.6944, 54.1486, -30.3971, 91.7595, -11.8565, 92.2892, 18.3382, 92.2892, 34.7599, 87.5217, 39.5275, 64.2135, 40.0572, -15.2462, 45.9231, -31.8086, 49.0627, -40.6733, -40.462, -35.9058 )
-
 [node name="Test Layout" type="Node2D"]
+
+[node name="Spaceee" type="Sprite" parent="."]
+position = Vector2( -0.00012207, -6.10352e-05 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
 
 [node name="GroundTiles" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -479,6 +480,81 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="ShroomPatch" type="Node2D" parent="."]
+position = Vector2( -1216, -160 )
+
+[node name="Shrooms6" parent="ShroomPatch" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+z_as_relative = false
+
+[node name="Shrooms12" parent="ShroomPatch" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+z_as_relative = false
+
+[node name="Shrooms13" parent="ShroomPatch" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+z_as_relative = false
+
+[node name="ShroomPatch2" type="Node2D" parent="."]
+position = Vector2( -800, -544 )
+
+[node name="Shrooms6" parent="ShroomPatch2" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+z_as_relative = false
+
+[node name="Shrooms12" parent="ShroomPatch2" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+z_as_relative = false
+
+[node name="Shrooms13" parent="ShroomPatch2" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+z_as_relative = false
+
+[node name="ShroomPatch3" type="Node2D" parent="."]
+position = Vector2( 384, -320 )
+
+[node name="Shrooms6" parent="ShroomPatch3" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+z_as_relative = false
+
+[node name="Shrooms12" parent="ShroomPatch3" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+z_as_relative = false
+
+[node name="Shrooms13" parent="ShroomPatch3" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+z_as_relative = false
+
+[node name="ShroomPatch4" type="Node2D" parent="."]
+position = Vector2( 1056, -288 )
+
+[node name="Shrooms6" parent="ShroomPatch4" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+z_as_relative = false
+
+[node name="Shrooms12" parent="ShroomPatch4" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+z_as_relative = false
+
+[node name="Shrooms13" parent="ShroomPatch4" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+z_as_relative = false
+
+[node name="ShroomPatch5" type="Node2D" parent="."]
+position = Vector2( 704, 256 )
+
+[node name="Shrooms6" parent="ShroomPatch5" instance=ExtResource( 14 )]
+position = Vector2( 0, 32 )
+z_as_relative = false
+
+[node name="Shrooms12" parent="ShroomPatch5" instance=ExtResource( 14 )]
+position = Vector2( 32, 0 )
+z_as_relative = false
+
+[node name="Shrooms13" parent="ShroomPatch5" instance=ExtResource( 14 )]
+position = Vector2( -32, -32 )
+z_as_relative = false
+
 [node name="WallTiles" type="TileMap" parent="."]
 tile_set = SubResource( 11 )
 cell_size = Vector2( 256, 256 )
@@ -490,15 +566,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Breakables" type="Node2D" parent="WallTiles"]
-
-[node name="pot12" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot12" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -896, 320 )
+position = Vector2( -928, 416 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot12"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot12"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -507,14 +581,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot12"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot12"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot12"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot12"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -522,13 +596,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot4" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot4" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -896, 448 )
+position = Vector2( -928, 544 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot4"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot4"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -537,14 +611,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot4"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot4"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot4"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -552,13 +626,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot6" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot6" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -768, 448 )
+position = Vector2( -800, 544 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot6"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot6"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -567,14 +641,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot6"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot6"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot6"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -582,13 +656,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot5" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot5" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -896, 576 )
+position = Vector2( -928, 672 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot5"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot5"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -597,14 +671,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot5"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot5"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot5"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -612,13 +686,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot7" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot7" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -768, 576 )
+position = Vector2( -800, 672 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot7"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot7"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -627,14 +701,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot7"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot7"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot7"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -642,13 +716,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot8" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot8" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -1152, 256 )
+position = Vector2( -1184, 352 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot8"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot8"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -657,14 +731,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot8"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot8"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot8"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -672,13 +746,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot9" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot9" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -1024, 256 )
+position = Vector2( -1056, 352 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot9"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot9"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -687,14 +761,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot9"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot9"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot9"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -702,13 +776,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot10" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot10" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -1152, 384 )
+position = Vector2( -1184, 480 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot10"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot10"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -717,14 +791,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot10"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot10"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot10"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot10"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -732,13 +806,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="pot11" type="StaticBody2D" parent="WallTiles/Breakables" groups=[
+[node name="pot11" type="StaticBody2D" parent="WallTiles" groups=[
 "breakable",
 ]]
-position = Vector2( -1024, 384 )
+position = Vector2( -1056, 480 )
 script = ExtResource( 11 )
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Breakables/pot11"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/pot11"]
 modulate = Color( 1, 1, 1, 0.388235 )
 position = Vector2( 11, 76 )
 scale = Vector2( 0.7, 0.7 )
@@ -747,14 +821,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Breakables/pot11"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/pot11"]
 material = ExtResource( 6 )
 frames = SubResource( 16 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Breakables/pot11"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/pot11"]
 visible = false
 position = Vector2( 9, 17 )
 shape = SubResource( 17 )
@@ -769,7 +843,6 @@ visible = false
 position = Vector2( -704, 128 )
 frames = SubResource( 18 )
 animation = "walk"
-frame = 1
 playing = true
 
 [node name="Hazards" type="Node2D" parent="WallTiles"]
@@ -834,18 +907,28 @@ position = Vector2( 256, 512 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Decals" type="Node2D" parent="WallTiles"]
+[node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
+position = Vector2( -224, 32 )
+frame = 3
 
-[node name="Skull3" type="StaticBody2D" parent="WallTiles/Decals"]
+[node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
+position = Vector2( -480, 128 )
+frame = 3
+
+[node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
+position = Vector2( -448, -96 )
+frame = 2
+
+[node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )
 z_as_relative = false
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Decals/Skull3"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/Skull3"]
 modulate = Color( 0, 0, 0, 0.317647 )
 position = Vector2( -3, 48 )
 texture = ExtResource( 13 )
 
-[node name="Sprite" type="Sprite" parent="WallTiles/Decals/Skull3"]
+[node name="Sprite" type="Sprite" parent="WallTiles/Skull3"]
 position = Vector2( -128, -128 )
 texture = ExtResource( 2 )
 centered = false
@@ -853,23 +936,23 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Decals/Skull3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull3"]
 visible = false
 shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Skull4" type="StaticBody2D" parent="WallTiles/Decals"]
+[node name="Skull4" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -512, 64 )
 z_as_relative = false
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Decals/Skull4"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/Skull4"]
 modulate = Color( 0, 0, 0, 0.317647 )
 position = Vector2( -3, 48 )
 texture = ExtResource( 13 )
 
-[node name="Sprite" type="Sprite" parent="WallTiles/Decals/Skull4"]
+[node name="Sprite" type="Sprite" parent="WallTiles/Skull4"]
 position = Vector2( -128, -128 )
 texture = ExtResource( 2 )
 centered = false
@@ -877,23 +960,23 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Decals/Skull4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull4"]
 visible = false
 shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Skull5" type="StaticBody2D" parent="WallTiles/Decals"]
+[node name="Skull5" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 192 )
 z_as_relative = false
 
-[node name="DropShadow" type="Sprite" parent="WallTiles/Decals/Skull5"]
+[node name="DropShadow" type="Sprite" parent="WallTiles/Skull5"]
 modulate = Color( 0, 0, 0, 0.317647 )
 position = Vector2( -3, 48 )
 texture = ExtResource( 13 )
 
-[node name="Sprite" type="Sprite" parent="WallTiles/Decals/Skull5"]
+[node name="Sprite" type="Sprite" parent="WallTiles/Skull5"]
 position = Vector2( -128, -128 )
 texture = ExtResource( 2 )
 centered = false
@@ -901,57 +984,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Decals/Skull5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull5"]
 visible = false
 shape = SubResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Shrooms6" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( -1248, -224 )
-
-[node name="Shrooms7" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( -736, -544 )
-
-[node name="Shrooms8" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( -1248, -576 )
-
-[node name="Shrooms9" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( 384, -320 )
-
-[node name="Shrooms10" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( 448, 256 )
-
-[node name="Shrooms11" parent="WallTiles/Decals" instance=ExtResource( 14 )]
-position = Vector2( 960, -256 )
-
-[node name="Torch4" parent="WallTiles/Decals" instance=ExtResource( 16 )]
-position = Vector2( -156.439, 46.677 )
-frame = 0
-
-[node name="Torch5" parent="WallTiles/Decals" instance=ExtResource( 16 )]
-position = Vector2( -498.158, 194.844 )
-frame = 0
-
-[node name="Torch6" parent="WallTiles/Decals" instance=ExtResource( 16 )]
-position = Vector2( -448.769, -189.59 )
-frame = 5
-
-[node name="Tiles" type="Node2D" parent="WallTiles"]
-
-[node name="KinematicBody2D" parent="WallTiles" instance=ExtResource( 1 )]
+[node name="Player" parent="WallTiles" instance=ExtResource( 1 )]
 position = Vector2( -73.9163, 464.238 )
 z_index = 0
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="WallTiles/KinematicBody2D"]
-occluder = SubResource( 20 )
-[connection signal="animation_finished" from="WallTiles/Breakables/pot12/AnimatedSprite" to="WallTiles/Breakables/pot12" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot4/AnimatedSprite" to="WallTiles/Breakables/pot4" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot6/AnimatedSprite" to="WallTiles/Breakables/pot6" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot5/AnimatedSprite" to="WallTiles/Breakables/pot5" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot7/AnimatedSprite" to="WallTiles/Breakables/pot7" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot8/AnimatedSprite" to="WallTiles/Breakables/pot8" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot9/AnimatedSprite" to="WallTiles/Breakables/pot9" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot10/AnimatedSprite" to="WallTiles/Breakables/pot10" method="_on_AnimatedSprite_animation_finished"]
-[connection signal="animation_finished" from="WallTiles/Breakables/pot11/AnimatedSprite" to="WallTiles/Breakables/pot11" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot12/AnimatedSprite" to="WallTiles/pot12" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot4/AnimatedSprite" to="WallTiles/pot4" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot6/AnimatedSprite" to="WallTiles/pot6" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot5/AnimatedSprite" to="WallTiles/pot5" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot7/AnimatedSprite" to="WallTiles/pot7" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot8/AnimatedSprite" to="WallTiles/pot8" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot9/AnimatedSprite" to="WallTiles/pot9" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot10/AnimatedSprite" to="WallTiles/pot10" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="WallTiles/pot11/AnimatedSprite" to="WallTiles/pot11" method="_on_AnimatedSprite_animation_finished"]
