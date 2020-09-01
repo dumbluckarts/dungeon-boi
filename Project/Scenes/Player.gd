@@ -88,7 +88,9 @@ func unattack(raycast):
 	action = "idle"
 	
 func _on_RayCast2D_collide(body):
-	body.queue_free()
+	if body.has_node("AnimationPlayer"):
+		print ("Holyyy")
+	
 # !END Attack
 
 # !START Animation

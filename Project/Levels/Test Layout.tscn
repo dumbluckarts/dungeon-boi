@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skull.png" type="Texture" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Assets/Path.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/dropshadow.material" type="Material" id=6]
 [ext_resource path="res://Assets/Rocc.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Pot.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Rocc2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=10]
 
@@ -316,82 +315,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Pot11" type="StaticBody2D" parent="Decals"]
-position = Vector2( -1152, 384 )
-z_index = 1
-
-[node name="Pot" type="Sprite" parent="Decals/Pot11"]
-material = ExtResource( 6 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot11"]
-visible = false
-shape = SubResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pot5" type="StaticBody2D" parent="Decals"]
-position = Vector2( -1152, 512 )
-z_index = 1
-
-[node name="Pot" type="Sprite" parent="Decals/Pot5"]
-material = ExtResource( 6 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot5"]
-visible = false
-shape = SubResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pot21" type="StaticBody2D" parent="Decals"]
-position = Vector2( -1152, -640 )
-z_index = 1
-
-[node name="Pot" type="Sprite" parent="Decals/Pot21"]
-material = ExtResource( 6 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot21"]
-visible = false
-shape = SubResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Pot24" type="StaticBody2D" parent="Decals"]
-position = Vector2( -1152, -512 )
-z_index = 1
-
-[node name="Pot" type="Sprite" parent="Decals/Pot24"]
-material = ExtResource( 6 )
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Decals/Pot24"]
-visible = false
-shape = SubResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="Spikes" type="Sprite" parent="Hazards"]
@@ -424,7 +347,14 @@ centered = false
 position = Vector2( -704, 128 )
 frames = SubResource( 8 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 384 )
+
+[node name="pot" type="Area2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="pot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pot"]

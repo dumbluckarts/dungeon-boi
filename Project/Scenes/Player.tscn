@@ -96,9 +96,14 @@ animations = [ {
 "name": "idle_left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "attack_left",
+"name": "attack_down",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "attack_right",
 "speed": 0.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ) ],
@@ -106,24 +111,9 @@ animations = [ {
 "name": "idle_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk_down",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "attack_down",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "walk_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
@@ -131,10 +121,10 @@ animations = [ {
 "name": "idle_down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "attack_right",
-"speed": 0.0
+"name": "walk_up",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
@@ -145,6 +135,16 @@ animations = [ {
 "loop": true,
 "name": "walk_left",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk_right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 18 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "attack_left",
+"speed": 0.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=8]
