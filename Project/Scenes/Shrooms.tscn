@@ -1,8 +1,6 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Shrroms.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Light.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Shrooms.gd" type="Script" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -36,6 +34,13 @@ shader = SubResource( 1 )
 shader_param/radius = 2.0
 shader_param/modulate = Color( 0, 0, 0, 0.376471 )
 
+[sub_resource type="GDScript" id=7]
+script/source = "extends Node2D
+
+func _ready():
+	$AnimatedSprite.frame = randi() % $AnimatedSprite.frames.get_frame_count($AnimatedSprite.get_animation())
+"
+
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
@@ -61,7 +66,7 @@ animations = [ {
 
 [node name="Shrooms6" type="Node2D"]
 material = SubResource( 2 )
-script = ExtResource( 3 )
+script = SubResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 use_parent_material = true
@@ -69,9 +74,3 @@ position = Vector2( 0, -64 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 6 )
 frame = 2
-
-[node name="Light2D" type="Light2D" parent="."]
-texture = ExtResource( 2 )
-texture_scale = 2.0
-color = Color( 0.32549, 0.882353, 0.4, 1 )
-energy = 0.4

@@ -44,7 +44,7 @@ animations = [ {
 [node name="Torch4" type="AnimatedSprite"]
 position = Vector2( -64, -32 )
 frames = SubResource( 7 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]

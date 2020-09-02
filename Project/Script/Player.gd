@@ -91,7 +91,7 @@ func _on_Area2D_body_entered(body):
 	
 	# break breakable shit
 	if body.is_in_group("breakable"):
-		body.get_node("CollisionShape2D").disabled = true
+		body.get_node("CollisionShape2D").free()
 		body.get_node("AnimatedSprite").play("break")
 	
 # !END Attack
