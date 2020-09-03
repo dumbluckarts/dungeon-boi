@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skull.png" type="Texture" id=2]
@@ -14,9 +14,11 @@
 [ext_resource path="res://Assets/Moss.png" type="Texture" id=12]
 [ext_resource path="res://Assets/DropShadow.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Shrroms.png" type="Texture" id=14]
+[ext_resource path="res://Assets/SpikeBlock.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Torch.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Light.png" type="Texture" id=17]
 [ext_resource path="res://Script/Shroom.gd" type="Script" id=18]
+[ext_resource path="res://Script/SpikeBlock.gd" type="Script" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Ground.png 0"
@@ -469,6 +471,16 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=23]
 radius = 64.0
+
+[sub_resource type="Curve2D" id=26]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 1152, 128, 0, 0, 0, 0, 384, 128 )
+}
+
+[sub_resource type="Curve2D" id=25]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 896, 128, 0, 0, 0, 0, 384, 128 )
+}
 
 [node name="Test Layout" type="Node2D"]
 
@@ -951,6 +963,7 @@ visible = false
 position = Vector2( -704, 128 )
 frames = SubResource( 22 )
 animation = "walk"
+frame = 1
 playing = true
 
 [node name="Hazards" type="Node2D" parent="WallTiles"]
@@ -1017,15 +1030,15 @@ centered = false
 
 [node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -224, 32 )
-frame = 1
+frame = 4
 
 [node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -480, 128 )
-frame = 1
+frame = 4
 
 [node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -448, -96 )
-frame = 5
+frame = 2
 
 [node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )
@@ -1098,6 +1111,41 @@ shape = SubResource( 23 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="SpikeBlock" type="Node2D" parent="WallTiles"]
+position = Vector2( 384, 0 )
+
+[node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock"]
+position = Vector2( -384, -128 )
+curve = SubResource( 26 )
+script = ExtResource( 19 )
+SPEED = 2
+
+[node name="PathFollow2D" type="PathFollow2D" parent="WallTiles/SpikeBlock/Path2D"]
+position = Vector2( 384, 128 )
+rotate = false
+
+[node name="SpikeBlock" type="Sprite" parent="WallTiles/SpikeBlock/Path2D/PathFollow2D"]
+material = ExtResource( 6 )
+texture = ExtResource( 15 )
+
+[node name="SpikeBlock2" type="Node2D" parent="WallTiles"]
+position = Vector2( -896, -640 )
+rotation = 1.5708
+
+[node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock2"]
+position = Vector2( -384, -128 )
+curve = SubResource( 25 )
+script = ExtResource( 19 )
+SPEED = 2
+
+[node name="PathFollow2D" type="PathFollow2D" parent="WallTiles/SpikeBlock2/Path2D"]
+position = Vector2( 384, 128 )
+rotate = false
+
+[node name="SpikeBlock" type="Sprite" parent="WallTiles/SpikeBlock2/Path2D/PathFollow2D"]
+material = ExtResource( 6 )
+texture = ExtResource( 15 )
 [connection signal="animation_finished" from="WallTiles/pot4/AnimatedSprite" to="WallTiles/pot4" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="WallTiles/pot12/AnimatedSprite" to="WallTiles/pot12" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="WallTiles/pot6/AnimatedSprite" to="WallTiles/pot6" method="_on_AnimatedSprite_animation_finished"]
