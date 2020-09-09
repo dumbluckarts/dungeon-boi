@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skull.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Light.png" type="Texture" id=17]
 [ext_resource path="res://Script/Shroom.gd" type="Script" id=18]
 [ext_resource path="res://Script/SpikeBlock.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Door.png" type="Texture" id=20]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Ground.png 0"
@@ -472,7 +473,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=23]
 radius = 64.0
 
-[sub_resource type="Curve2D" id=26]
+[sub_resource type="Curve2D" id=24]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 1152, 128, 0, 0, 0, 0, 384, 128 )
 }
@@ -1117,7 +1118,7 @@ position = Vector2( 384, 0 )
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock"]
 position = Vector2( -384, -128 )
-curve = SubResource( 26 )
+curve = SubResource( 24 )
 script = ExtResource( 19 )
 SPEED = 2
 
@@ -1128,6 +1129,11 @@ rotate = false
 [node name="SpikeBlock" type="Sprite" parent="WallTiles/SpikeBlock/Path2D/PathFollow2D"]
 material = ExtResource( 6 )
 texture = ExtResource( 15 )
+
+[node name="Door" type="Sprite" parent="WallTiles"]
+material = ExtResource( 6 )
+position = Vector2( -224, -640 )
+texture = ExtResource( 20 )
 
 [node name="SpikeBlock2" type="Node2D" parent="WallTiles"]
 position = Vector2( -896, -640 )
