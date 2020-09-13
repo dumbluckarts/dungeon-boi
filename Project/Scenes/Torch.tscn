@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Torch.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Light.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Particles/idk.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -41,10 +42,34 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Curve" id=8]
+min_value = -1.0
+_data = [ Vector2( 0.0189873, -0.636364 ), 0.0, 0.0, 0, 0, Vector2( 0.398734, -0.781818 ), -0.280266, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0.0379747, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.411364 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 1
+emission_sphere_radius = 12.77
+flag_disable_z = true
+spread = 92.59
+gravity = Vector3( 0, -80, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 11 )
+hue_variation_curve = SubResource( 9 )
+
 [node name="Torch4" type="AnimatedSprite"]
 position = Vector2( -64, -32 )
 frames = SubResource( 7 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -58,3 +83,9 @@ shadow_buffer_size = 4096
 shadow_gradient_length = 1000.0
 shadow_filter = 4
 shadow_filter_smooth = 64.0
+
+[node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.109804 )
+position = Vector2( -8, -72 )
+process_material = SubResource( 12 )
+texture = ExtResource( 3 )

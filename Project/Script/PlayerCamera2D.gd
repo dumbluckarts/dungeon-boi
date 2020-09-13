@@ -25,5 +25,13 @@ func shake(strength, length):
 	timer.start()
 	
 func stop_shake():
-	is_shake = false
-	offset = Vector2(0, 0)
+	for i in range(ceil(shake_strength)):
+		yield(get_tree().create_timer(i * 0.01), "timeout")
+		lerp_shake()
+
+func lerp_shake():
+	shake_strength -= 1
+	
+	if shake_strength <= 0:
+		is_shake = false
+		shake_strength = 0.0

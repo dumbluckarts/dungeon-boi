@@ -41,15 +41,23 @@ func attack_direction():
 	if direction == "up":
 		up()
 		$RayCast2D.cast_to = velocity * 128
+		$Particles2D.set_emitting(true)
+		$Particles2D.rotation_degrees = 180
 	elif direction == "down":
 		down()
 		$RayCast2D.cast_to = velocity * 128
+		$Particles2D.set_emitting(true)
+		$Particles2D.rotation_degrees = 90
 	elif direction == "left":
 		left()
 		$RayCast2D.cast_to = velocity * 128
+		$Particles2D.set_emitting(true)
+		$Particles2D.rotation_degrees = -180
 	elif direction == "right":
 		right()
 		$RayCast2D.cast_to = velocity * 128
+		$Particles2D.set_emitting(true)
+		$Particles2D.rotation_degrees = 0
 		
 	$PunchSprite.visible = true
 	$PunchSprite.position = $RayCast2D.cast_to / 1.2 + \

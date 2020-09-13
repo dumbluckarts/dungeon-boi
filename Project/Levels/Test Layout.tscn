@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skull.png" type="Texture" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://Assets/Wall.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Path.png" type="Texture" id=5]
 [ext_resource path="res://Shaders/dropshadow.material" type="Material" id=6]
-[ext_resource path="res://Assets/Rocc.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/RockGuy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/urn.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Rocc2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Ground.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Vignette.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Moss.png" type="Texture" id=12]
@@ -465,28 +464,21 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=21]
 radius = 64.0
 
-[sub_resource type="SpriteFrames" id=22]
-animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-} ]
-
-[sub_resource type="CircleShape2D" id=23]
+[sub_resource type="CircleShape2D" id=28]
 radius = 64.0
 
-[sub_resource type="Curve2D" id=24]
+[sub_resource type="Curve2D" id=29]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 1152, 128, 0, 0, 0, 0, 384, 128 )
 }
 
-[sub_resource type="Curve2D" id=25]
+[sub_resource type="Curve2D" id=30]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 896, 128, 0, 0, 0, 0, 384, 128 )
 }
 
 [node name="Test Layout" type="Node2D"]
+position = Vector2( 0, 44 )
 
 [node name="Control" type="CanvasLayer" parent="."]
 
@@ -541,6 +533,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 22 )
 
 [node name="pause" type="Sprite" parent="Control"]
+visible = false
 position = Vector2( 640, 352 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 23 )
@@ -1009,15 +1002,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Enemies" type="Node2D" parent="WallTiles"]
-visible = false
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="WallTiles/Enemies"]
-position = Vector2( -704, 128 )
-frames = SubResource( 22 )
-animation = "walk"
-playing = true
-
 [node name="Hazards" type="Node2D" parent="WallTiles"]
 
 [node name="Spikes10" type="Sprite" parent="WallTiles/Hazards"]
@@ -1082,13 +1066,14 @@ centered = false
 
 [node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -224, 32 )
+frame = 3
 
 [node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -480, 128 )
+frame = 3
 
 [node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -448, -96 )
-frame = 1
 
 [node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )
@@ -1109,7 +1094,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull3"]
 visible = false
-shape = SubResource( 23 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1133,7 +1118,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull4"]
 visible = false
-shape = SubResource( 23 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1157,7 +1142,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull5"]
 visible = false
-shape = SubResource( 23 )
+shape = SubResource( 28 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1167,7 +1152,7 @@ position = Vector2( 384, 0 )
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock"]
 position = Vector2( -384, -128 )
-curve = SubResource( 24 )
+curve = SubResource( 29 )
 script = ExtResource( 19 )
 SPEED = 2
 
@@ -1190,7 +1175,7 @@ rotation = 1.5708
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock2"]
 position = Vector2( -384, -128 )
-curve = SubResource( 25 )
+curve = SubResource( 30 )
 script = ExtResource( 19 )
 SPEED = 2
 
@@ -1201,6 +1186,14 @@ rotate = false
 [node name="SpikeBlock" type="Sprite" parent="WallTiles/SpikeBlock2/Path2D/PathFollow2D"]
 material = ExtResource( 6 )
 texture = ExtResource( 15 )
+
+[node name="RockGuy" parent="." instance=ExtResource( 7 )]
+
+[node name="RockGuy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -597.092, 392.457 )
+
+[node name="RockGuy3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 438.697, 301.534 )
 [connection signal="animation_finished" from="WallTiles/pot4/AnimatedSprite" to="WallTiles/pot4" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="WallTiles/pot12/AnimatedSprite" to="WallTiles/pot12" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="WallTiles/pot6/AnimatedSprite" to="WallTiles/pot6" method="_on_AnimatedSprite_animation_finished"]
