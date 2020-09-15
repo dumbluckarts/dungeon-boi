@@ -464,15 +464,15 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=21]
 radius = 64.0
 
-[sub_resource type="CircleShape2D" id=28]
+[sub_resource type="CircleShape2D" id=22]
 radius = 64.0
 
-[sub_resource type="Curve2D" id=29]
+[sub_resource type="Curve2D" id=23]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 1152, 128, 0, 0, 0, 0, 384, 128 )
 }
 
-[sub_resource type="Curve2D" id=30]
+[sub_resource type="Curve2D" id=24]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 384, 128, 0, 0, 0, 0, 896, 128, 0, 0, 0, 0, 384, 128 )
 }
@@ -1066,14 +1066,13 @@ centered = false
 
 [node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -224, 32 )
-frame = 3
 
 [node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -480, 128 )
-frame = 3
 
 [node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -448, -96 )
+frame = 5
 
 [node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )
@@ -1094,7 +1093,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull3"]
 visible = false
-shape = SubResource( 28 )
+shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1118,7 +1117,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull4"]
 visible = false
-shape = SubResource( 28 )
+shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1142,7 +1141,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallTiles/Skull5"]
 visible = false
-shape = SubResource( 28 )
+shape = SubResource( 22 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1152,7 +1151,7 @@ position = Vector2( 384, 0 )
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock"]
 position = Vector2( -384, -128 )
-curve = SubResource( 29 )
+curve = SubResource( 23 )
 script = ExtResource( 19 )
 SPEED = 2
 
@@ -1175,7 +1174,7 @@ rotation = 1.5708
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock2"]
 position = Vector2( -384, -128 )
-curve = SubResource( 30 )
+curve = SubResource( 24 )
 script = ExtResource( 19 )
 SPEED = 2
 
