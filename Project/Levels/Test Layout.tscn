@@ -572,6 +572,9 @@ __meta__ = {
 
 [node name="Patch" type="Node2D" parent="Shrooms"]
 position = Vector2( -1216, -160 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch"]
 position = Vector2( 32, -64 )
@@ -598,6 +601,9 @@ energy = 0.7
 
 [node name="Patch1" type="Node2D" parent="Shrooms"]
 position = Vector2( -672, -544 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch1"]
 position = Vector2( 32, -64 )
@@ -624,6 +630,9 @@ energy = 0.7
 
 [node name="Patch2" type="Node2D" parent="Shrooms"]
 position = Vector2( -1088, -576 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch2"]
 position = Vector2( 32, -64 )
@@ -650,6 +659,9 @@ energy = 0.7
 
 [node name="Patch3" type="Node2D" parent="Shrooms"]
 position = Vector2( 416, -288 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch3"]
 position = Vector2( 32, -64 )
@@ -676,6 +688,9 @@ energy = 0.7
 
 [node name="Patch4" type="Node2D" parent="Shrooms"]
 position = Vector2( 992, -320 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch4"]
 position = Vector2( 32, -64 )
@@ -702,6 +717,9 @@ energy = 0.7
 
 [node name="Patch5" type="Node2D" parent="Shrooms"]
 position = Vector2( 640, 160 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Shroom1" type="AnimatedSprite" parent="Shrooms/Patch5"]
 position = Vector2( 32, -64 )
@@ -745,6 +763,9 @@ z_index = 0
 "breakable",
 ]]
 position = Vector2( -928, 544 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot4"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -774,6 +795,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -928, 416 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot12"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -803,6 +827,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -800, 544 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot6"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -832,6 +859,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -800, 672 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot7"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -861,6 +891,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -928, 672 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot5"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -890,6 +923,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -1184, 352 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot8"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -919,6 +955,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -1056, 352 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot9"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -948,6 +987,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -1184, 480 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot10"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -977,6 +1019,9 @@ __meta__ = {
 "breakable",
 ]]
 position = Vector2( -1056, 480 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/pot11"]
 modulate = Color( 1, 1, 1, 0.388235 )
@@ -1066,17 +1111,22 @@ centered = false
 
 [node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -224, 32 )
+frame = 2
 
 [node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -480, 128 )
+frame = 2
 
 [node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -448, -96 )
-frame = 5
+frame = 0
 
 [node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )
 z_as_relative = false
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/Skull3"]
 modulate = Color( 0, 0, 0, 0.317647 )
@@ -1101,6 +1151,9 @@ __meta__ = {
 [node name="Skull4" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -512, 64 )
 z_as_relative = false
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/Skull4"]
 modulate = Color( 0, 0, 0, 0.317647 )
@@ -1125,6 +1178,9 @@ __meta__ = {
 [node name="Skull5" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 192 )
 z_as_relative = false
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="DropShadow" type="Sprite" parent="WallTiles/Skull5"]
 modulate = Color( 0, 0, 0, 0.317647 )
@@ -1148,6 +1204,9 @@ __meta__ = {
 
 [node name="SpikeBlock" type="Node2D" parent="WallTiles"]
 position = Vector2( 384, 0 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock"]
 position = Vector2( -384, -128 )
@@ -1163,14 +1222,12 @@ rotate = false
 material = ExtResource( 6 )
 texture = ExtResource( 15 )
 
-[node name="Door" type="Sprite" parent="WallTiles"]
-material = ExtResource( 6 )
-position = Vector2( -224, -640 )
-texture = ExtResource( 20 )
-
 [node name="SpikeBlock2" type="Node2D" parent="WallTiles"]
 position = Vector2( -896, -640 )
 rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Path2D" type="Path2D" parent="WallTiles/SpikeBlock2"]
 position = Vector2( -384, -128 )
@@ -1185,6 +1242,11 @@ rotate = false
 [node name="SpikeBlock" type="Sprite" parent="WallTiles/SpikeBlock2/Path2D/PathFollow2D"]
 material = ExtResource( 6 )
 texture = ExtResource( 15 )
+
+[node name="Door" type="Sprite" parent="WallTiles"]
+material = ExtResource( 6 )
+position = Vector2( -224, -640 )
+texture = ExtResource( 20 )
 
 [node name="RockGuy" parent="." instance=ExtResource( 7 )]
 
