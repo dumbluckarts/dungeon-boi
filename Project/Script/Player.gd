@@ -9,26 +9,25 @@ func _process(_delta):
 	
 func input():
 	
+	var input = Vector2.ZERO
+	
 	if Input.is_action_just_pressed("player_attack"):
 		$Attack.start(self, $Movement)
 	
 	if action == "attack": return
 	
 	if Input.is_action_pressed("player_up"):
-		$Movement.move(self, "up")
-	elif Input.is_action_pressed("player_down"):
-		$Movement.move(self, "down")
-	elif Input.is_action_pressed("player_left"):
-		$Movement.move(self, "left")
-	elif Input.is_action_pressed("player_right"):
-		$Movement.move(self, "right")
-	else:
-		$Movement.move(self, "stop")
+		input.y += -1
+	if Input.is_action_pressed("player_down"):
+		input.y += 1
+	if Input.is_action_pressed("player_left"):
+		input.x += -1
+	if Input.is_action_pressed("player_right"):
+		input.x += 1
 		
-	if $Movement.is_moving():
-		action = "walk"
-	else:
-		action = "idle"
+	$Movement.move(self, input)
+	
+	action = "walk" if $Movement.is_moving() else "idle"
 
 # !START Attack
 func _on_Attack_start():
