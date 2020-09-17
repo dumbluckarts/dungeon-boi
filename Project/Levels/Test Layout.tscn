@@ -1114,15 +1114,15 @@ centered = false
 
 [node name="Torch4" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -224, 32 )
-frame = 4
+frame = 2
 
 [node name="Torch5" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -480, 128 )
-frame = 4
+frame = 2
 
 [node name="Torch6" parent="WallTiles" instance=ExtResource( 16 )]
 position = Vector2( -443.243, -96 )
-frame = 2
+frame = 0
 
 [node name="Skull3" type="StaticBody2D" parent="WallTiles"]
 position = Vector2( -320, 0 )

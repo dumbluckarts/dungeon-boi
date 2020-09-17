@@ -22,6 +22,9 @@ SPEED = 200
 
 [node name="AI" type="Node2D" parent="."]
 script = ExtResource( 5 )
+FINISH_STOP_DISTANCE = 600
+SOLIDS_STOP_DISTANCE = 60
+ATTACK_RANGE = Vector2( 500, 600 )
 
 [node name="Area2D" type="Area2D" parent="AI"]
 
@@ -59,5 +62,8 @@ scale = Vector2( 0.875, 0.875 )
 z_index = -1
 texture = ExtResource( 3 )
 [connection signal="move" from="AI" to="." method="_on_AI_move"]
+[connection signal="post_process" from="AI" to="." method="_on_AI_post_process"]
+[connection signal="start_attack" from="AI" to="." method="_on_AI_start_attack"]
+[connection signal="stop_attack" from="AI" to="." method="_on_AI_stop_attack"]
 [connection signal="timeout" from="AI/ClearHistoryTimer" to="AI" method="_on_ClearHistoryTimer_timeout"]
 [connection signal="timeout" from="AI/ClearStuckTimer" to="AI" method="_on_ClearStuckTimer_timeout"]
