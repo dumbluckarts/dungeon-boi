@@ -69,7 +69,7 @@ hue_variation_curve = SubResource( 9 )
 [node name="Torch4" type="AnimatedSprite"]
 position = Vector2( -64, -32 )
 frames = SubResource( 7 )
-frame = 1
+frame = 5
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
