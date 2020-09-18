@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 export var BEHAVIORS = [
 	"attack",
+	"follow_finish",
 	"avoid_solids",
 	"avoid_stuck",
-	"avoid_finish",
 ]
 
 func _process(delta):

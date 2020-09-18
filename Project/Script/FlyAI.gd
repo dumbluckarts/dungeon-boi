@@ -57,17 +57,23 @@ func process(start: KinematicBody2D, finish: KinematicBody2D, behaviors: Array =
 	emit_signal("pre_process", start, finish)
 
 	for behavior in behaviors:
-		if state == "idle": direction = call(behavior, start, finish)
+		direction = call(behavior, start, finish)
+		
+	history.append(direction)
 		
 	emit_signal("post_process", start, finish)
 	emit_signal("move", direction)
 
 # Behaviors
 func follow_finish(start, finish):
+	if state == "attack": return direction
+	
 	return get_direction_to(start, finish) 
 
 func avoid_finish(start, finish):
-	var result = distance
+	var result = direction
+
+	if state == "attack": return direction
 
 	if result > FINISH_STOP_DISTANCE: return follow_finish(start, finish)
 			
@@ -78,6 +84,8 @@ func avoid_finish(start, finish):
 func avoid_solids(start, finish):
 	var result = direction
 	
+	if state == "attack": return direction
+	
 	# Be wary of close objects
 	for key in objects:
 		var object_direction = objects[key]["direction"]
@@ -86,13 +94,13 @@ func avoid_solids(start, finish):
 		if object_distance < SOLIDS_STOP_DISTANCE: continue
 		
 		result -= object_direction * 0.5
-
-	history.append(result)
-
+		
 	return result
 	
 func avoid_stuck(start, finish):
 	var result = direction
+	
+	if state == "attack": return direction
 	
 	# Detect being stuck
 	var negatives = 0
@@ -111,11 +119,13 @@ func avoid_stuck(start, finish):
 	# Try and move away from stuck spot
 	if state == "stuck":
 		result = get_direction_to(start, finish)
-		result = result.rotated(-43)
+		result = result.rotated(-45)
 		
 	return result
 	
 func attack(start, finish):
+	if state == "attack": return direction
+	
 	if distance < ATTACK_RANGE.x or distance > ATTACK_RANGE.y: return direction
 	state = "attack"
 	emit_signal("start_attack", direction)

@@ -22,11 +22,12 @@ SPEED = 200
 
 [node name="AI" type="Node2D" parent="."]
 script = ExtResource( 5 )
-FINISH_STOP_DISTANCE = 600
-SOLIDS_STOP_DISTANCE = 60
-ATTACK_RANGE = Vector2( 500, 600 )
+FINISH_STOP_DISTANCE = 100
+SOLIDS_STOP_DISTANCE = 200
+ATTACK_RANGE = Vector2( 200, 250 )
 
 [node name="Area2D" type="Area2D" parent="AI"]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/Area2D"]
 shape = SubResource( 1 )
