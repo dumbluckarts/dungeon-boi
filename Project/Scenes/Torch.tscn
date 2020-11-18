@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Torch.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Light.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Particles/idk.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Particles/star.png" type="Texture" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -44,13 +45,13 @@ animations = [ {
 
 [sub_resource type="Curve" id=8]
 min_value = -1.0
-_data = [ Vector2( 0.0189873, -0.636364 ), 0.0, 0.0, 0, 0, Vector2( 0.398734, -0.781818 ), -0.280266, 0.0, 0, 0 ]
+_data = [ Vector2( 0, -0.686364 ), 0.0, 0.0, 0, 0, Vector2( 1, -0.868182 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=9]
 curve = SubResource( 8 )
 
 [sub_resource type="Curve" id=10]
-_data = [ Vector2( 0.0379747, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.411364 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.877273 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0863637 ), 0.0, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=11]
 curve = SubResource( 10 )
@@ -63,13 +64,48 @@ spread = 92.59
 gravity = Vector3( 0, -80, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
+angle = 100.0
+angle_random = 1.0
 scale_curve = SubResource( 11 )
 hue_variation_curve = SubResource( 9 )
 
-[node name="Torch4" type="AnimatedSprite"]
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=14]
+gradient = SubResource( 13 )
+
+[sub_resource type="Curve" id=15]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+curve = SubResource( 15 )
+
+[sub_resource type="Curve" id=17]
+_data = [ Vector2( 0, 0.411364 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=18]
+curve = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=19]
+emission_shape = 1
+emission_sphere_radius = 12.17
+flag_disable_z = true
+gravity = Vector3( 0, -100, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.15
+scale_curve = SubResource( 18 )
+color_ramp = SubResource( 14 )
+hue_variation_curve = SubResource( 16 )
+
+[node name="Torch4" type="AnimatedSprite" groups=[
+"ysort",
+]]
 position = Vector2( -64, -32 )
 frames = SubResource( 7 )
-frame = 5
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -85,7 +121,15 @@ shadow_filter = 4
 shadow_filter_smooth = 64.0
 
 [node name="Particles2D" type="Particles2D" parent="."]
-modulate = Color( 1, 1, 1, 0.109804 )
+modulate = Color( 1, 1, 1, 0.121569 )
 position = Vector2( -8, -72 )
+lifetime = 1.2
 process_material = SubResource( 12 )
 texture = ExtResource( 3 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.113725 )
+position = Vector2( -8, -72 )
+lifetime = 1.4
+process_material = SubResource( 19 )
+texture = ExtResource( 4 )
