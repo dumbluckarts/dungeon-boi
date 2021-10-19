@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
+export var ANIM_WALK_FPS = 10
+export var ANIM_RUN_FPS = 15
+
 var input = Vector2.ZERO
 var direction = "down"
 var velocity = Vector2.ZERO
 var animation = ""
+
 
 func _physics_process(delta):
 	input = _get_input()
@@ -47,15 +51,16 @@ func _animate_player() -> String:
 		$Particles2D_Footsteps2.emitting = false
 		$Particles2D_Footsteps3.emitting = false
 		$Particles2D_Footsteps4.emitting = false
-	$AnimatedSprite.play(result + "_" + direction)
+		
+	$AnimationPlayer_Sprite.play(result + "_" + direction)
 	
 	if Input.is_action_pressed("player1_action2"):
 		$AnimationPlayer_Steps.playback_speed = 1.5
-		$AnimatedSprite.speed_scale = 1.5
+		$AnimationPlayer_Sprite.playback_speed = ANIM_RUN_FPS
 		$Particles2D.emitting = true
 	else:
 		$AnimationPlayer_Steps.playback_speed = 1
-		$AnimatedSprite.speed_scale = 1
+		$AnimationPlayer_Sprite.playback_speed = ANIM_WALK_FPS
 		$Particles2D.emitting = false
 	
 	return result

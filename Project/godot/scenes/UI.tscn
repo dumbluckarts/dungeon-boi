@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://godot/scripts/Marker.gd" type="Script" id=1]
+[ext_resource path="res://assets/Players/player1_marker.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI/transparent.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/vignette.png" type="Texture" id=4]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D vignette;
+
+void fragment() {
+	vec3 vignette_color = texture(vignette, UV).rgb;
+	// Screen texture stores gaussian blurred copies on mipmaps.
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, (1.0 - vignette_color.r) * 4.0).rgb;
+	COLOR.rgb *= texture(vignette, UV).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/vignette = ExtResource( 4 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform float u_amount = 0.1;
+
+float get_noise(vec2 uv) {
+    return fract(sin(dot(uv ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+void fragment() {
+    float n = 2.0 * get_noise(UV + vec2(TIME, 0.0)) - 1.0;
+    COLOR = texture(TEXTURE, UV) + n * u_amount;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/u_amount = 0.1
+
+[sub_resource type="Animation" id=5]
+resource_name = "Squash"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Vignette" type="TextureRect" parent="."]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.439941
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Noise" type="TextureRect" parent="."]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.439941
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1_Marker" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 128, 128 )
+texture = ExtResource( 2 )
+offset = Vector2( -64, 0 )
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player1_Marker"]
+autoplay = "Squash"
+anims/Squash = SubResource( 5 )
