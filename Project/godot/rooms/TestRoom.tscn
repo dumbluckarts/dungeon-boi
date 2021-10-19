@@ -1,0 +1,582 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://assets/Environment/Grass.png" type="Texture" id=1]
+[ext_resource path="res://assets/Environment/GrassTiles.png" type="Texture" id=2]
+[ext_resource path="res://godot/scenes/Player1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://godot/scripts/Room.gd" type="Script" id=4]
+[ext_resource path="res://godot/scripts/Camera.gd" type="Script" id=5]
+[ext_resource path="res://assets/Decals/Cave.png" type="Texture" id=6]
+[ext_resource path="res://assets/Environment/Light.png" type="Texture" id=7]
+[ext_resource path="res://assets/Decals/lilshrooms.png" type="Texture" id=8]
+[ext_resource path="res://assets/Decals/Shrroms.png" type="Texture" id=9]
+[ext_resource path="res://assets/Decals/stumped3.png" type="Texture" id=10]
+[ext_resource path="res://assets/Decals/Skull.png" type="Texture" id=11]
+[ext_resource path="res://assets/Decals/stumped2.png" type="Texture" id=12]
+[ext_resource path="res://godot/scripts/Marker.gd" type="Script" id=13]
+[ext_resource path="res://assets/UI/vignette.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/transparent.png" type="Texture" id=15]
+[ext_resource path="res://assets/Players/player1_marker.png" type="Texture" id=16]
+[ext_resource path="res://godot/scripts/Ladybug.gd" type="Script" id=17]
+[ext_resource path="res://assets/Decals/Ladybug.png" type="Texture" id=18]
+[ext_resource path="res://assets/Decals/dot.png" type="Texture" id=19]
+[ext_resource path="res://assets/Tilesets/walls.png" type="Texture" id=20]
+[ext_resource path="res://assets/Tilesets/leaves.png" type="Texture" id=21]
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+background_energy = 1.67
+glow_enabled = true
+glow_intensity = 8.0
+glow_strength = 0.72
+glow_blend_mode = 0
+adjustment_brightness = 2.41
+
+[sub_resource type="Shader" id=2]
+code = "shader_type canvas_item;
+
+uniform sampler2D vignette;
+
+void fragment() {
+	vec3 vignette_color = texture(vignette, UV).rgb;
+	// Screen texture stores gaussian blurred copies on mipmaps.
+	COLOR.rgb = textureLod(SCREEN_TEXTURE, SCREEN_UV, (1.0 - vignette_color.r) * 4.0).rgb;
+	COLOR.rgb *= texture(vignette, UV).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 2 )
+shader_param/vignette = ExtResource( 14 )
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform float u_amount = 0.1;
+
+float get_noise(vec2 uv) {
+    return fract(sin(dot(uv ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+void fragment() {
+    float n = 2.0 * get_noise(UV + vec2(TIME, 0.0)) - 1.0;
+    COLOR = texture(TEXTURE, UV) + n * u_amount;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 4 )
+shader_param/u_amount = 0.1
+
+[sub_resource type="Animation" id=15]
+resource_name = "Squash"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
+}
+
+[sub_resource type="TileSet" id=1]
+0/name = "Grass.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 1024, 1280, 256, 256 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Grass.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 256, 0, 256, 256 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Grass.png 2"
+2/texture = ExtResource( 1 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 512, 0, 256, 256 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Grass.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 256, 256 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "Grass.png 4"
+4/texture = ExtResource( 1 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 256, 256, 256 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "Grass.png 5"
+5/texture = ExtResource( 1 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 256, 256, 256, 256 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "Grass.png 6"
+6/texture = ExtResource( 1 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 512, 256, 256, 256 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "Grass.png 7"
+7/texture = ExtResource( 1 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 768, 256, 256, 256 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+8/name = "Grass.png 8"
+8/texture = ExtResource( 1 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 768, 512, 256, 256 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape_one_way = false
+8/shape_one_way_margin = 0.0
+8/shapes = [  ]
+8/z_index = 0
+9/name = "Grass.png 9"
+9/texture = ExtResource( 1 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 512, 512, 256, 256 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
+
+[sub_resource type="TileSet" id=16]
+0/name = "walls.png 0"
+0/texture = ExtResource( 20 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 512 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="TileSet" id=17]
+0/name = "leaves.png 0"
+0/texture = ExtResource( 21 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 512, 512 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "leaves.png 1"
+1/texture = ExtResource( 21 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 512, 0, 512, 1024 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="TileSet" id=7]
+0/name = "GrassTiles.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 2304, 1536 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 50, Vector2( 0, 2 ), 255, Vector2( 0, 3 ), 507, Vector2( 0, 4 ), 442, Vector2( 0, 5 ), 190, Vector2( 1, 0 ), 152, Vector2( 1, 1 ), 26, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 510, Vector2( 1, 4 ), 250, Vector2( 1, 5 ), 187, Vector2( 2, 0 ), 56, Vector2( 2, 1 ), 146, Vector2( 2, 2 ), 191, Vector2( 2, 3 ), 251, Vector2( 2, 4 ), 434, Vector2( 2, 5 ), 182, Vector2( 3, 0 ), 184, Vector2( 3, 1 ), 178, Vector2( 3, 2 ), 506, Vector2( 3, 3 ), 446, Vector2( 3, 4 ), 218, Vector2( 3, 5 ), 155, Vector2( 4, 0 ), 58, Vector2( 4, 1 ), 154, Vector2( 4, 2 ), 438, Vector2( 4, 3 ), 63, Vector2( 4, 4 ), 440, Vector2( 4, 5 ), 62, Vector2( 5, 0 ), 24, Vector2( 5, 1 ), 144, Vector2( 5, 2 ), 219, Vector2( 5, 3 ), 504, Vector2( 5, 4 ), 248, Vector2( 5, 5 ), 59, Vector2( 6, 0 ), 18, Vector2( 6, 1 ), 48, Vector2( 6, 2 ), 186, Vector2( 6, 3 ), 16, Vector2( 6, 4 ), 443, Vector2( 6, 5 ), 254, Vector2( 7, 0 ), 432, Vector2( 7, 1 ), 54, Vector2( 7, 2 ), 511, Vector2( 8, 0 ), 216, Vector2( 8, 1 ), 27, Vector2( 8, 2 ), 511 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 256, 256 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 18 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=14]
+blend_mode = 4
+
+[sub_resource type="Curve" id=11]
+_data = [ Vector2( 0, 0.0602273 ), 0.0, 0.0, 0, 0, Vector2( 0.197368, 0.896591 ), 0.0, 0.0, 0, 0, Vector2( 0.828947, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=12]
+curve = SubResource( 11 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 1024, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 5.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+scale_curve = SubResource( 12 )
+hue_variation_random = 1.0
+
+[node name="Mycelia" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="TextureRect" parent="UI"]
+material = SubResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.439941
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Noise" type="TextureRect" parent="UI"]
+material = SubResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.007
+margin_bottom = 0.439941
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1_Marker" type="Sprite" parent="UI"]
+visible = false
+show_behind_parent = true
+position = Vector2( 128, 128 )
+scale = Vector2( 1.05, 1 )
+texture = ExtResource( 16 )
+offset = Vector2( -64, 0 )
+script = ExtResource( 13 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Player1_Marker"]
+autoplay = "Squash"
+anims/Squash = SubResource( 15 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.05, 1.05 )
+
+[node name="Solid" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 256, 256 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 3, 0, -262144, 7, 0, -262143, 3, 0, -262142, 0, 0, -262141, 3, 0, -131076, 0, 0, -131075, 8, 0, -131074, 8, 0, -131073, 3, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -65540, 0, 0, -65539, 9, 0, -65538, 9, 0, -65537, 3, 0, -131072, 4, 0, -131071, 3, 0, -131070, 3, 0, -131069, 0, 0, -4, 0, 0, -3, 3, 0, -2, 3, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, 65532, 0, 0, 65533, 3, 0, 65534, 0, 0, 65535, 3, 0, 0, 3, 0, 1, 3, 0, 2, 6, 0, 3, 3, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 8, 0, 65538, 8, 0, 65539, 0, 0, 196604, 3, 0, 196605, 6, 0, 196606, 3, 0, 196607, 3, 0, 131072, 3, 0, 131073, 9, 0, 131074, 9, 0, 131075, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 327676, 8, 0, 327677, 8, 0, 327678, 8, 0, 327679, 8, 0, 262144, 8, 0, 262145, 8, 0, 262146, 8, 0, 262147, 8, 0 )
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = SubResource( 16 )
+cell_size = Vector2( 256, 256 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -262148, 0, 0, -262146, 0, 0, -327680, 0, 0, -327678, 0, 0 )
+
+[node name="Leaves" type="TileMap" parent="."]
+tile_set = SubResource( 17 )
+cell_size = Vector2( 256, 256 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -524292, 1, 0, -524290, 1, 0, -589824, 1, 0, -589822, 1, 0, -262148, 0, 0, -262146, 0, 0, -327680, 0, 0, -327678, 0, 0 )
+
+[node name="Decals_Under" type="YSort" parent="."]
+
+[node name="Cave" type="Sprite" parent="Decals_Under"]
+position = Vector2( 659.401, 681.075 )
+texture = ExtResource( 6 )
+
+[node name="Cave2" type="Sprite" parent="Decals_Under"]
+position = Vector2( 403.401, 681.075 )
+texture = ExtResource( 6 )
+
+[node name="Cave3" type="Sprite" parent="Decals_Under"]
+position = Vector2( -676.144, -391.697 )
+texture = ExtResource( 6 )
+
+[node name="Cave4" type="Sprite" parent="Decals_Under"]
+position = Vector2( -406.69, -386.651 )
+texture = ExtResource( 6 )
+
+[node name="Cave5" type="Sprite" parent="Decals_Under"]
+position = Vector2( 677.04, 522.325 )
+texture = ExtResource( 6 )
+
+[node name="Cave6" type="Sprite" parent="Decals_Under"]
+position = Vector2( 421.04, 522.325 )
+texture = ExtResource( 6 )
+
+[node name="Cave7" type="Sprite" parent="Decals_Under"]
+position = Vector2( -634.96, -501.675 )
+texture = ExtResource( 6 )
+
+[node name="Cave8" type="Sprite" parent="Decals_Under"]
+position = Vector2( -378.96, -501.675 )
+texture = ExtResource( 6 )
+
+[node name="Transition" type="TileMap" parent="."]
+tile_set = SubResource( 7 )
+cell_size = Vector2( 256, 256 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -131076, 0, 65541, -131075, 0, 7, -131074, 0, 8, -196608, 0, 65542, -196607, 0, 2, -196606, 0, 2, -196605, 0, 1, -65540, 0, 65538, -65539, 0, 65543, -65538, 0, 65544, -131069, 0, 65538, -4, 0, 65538, -1, 0, 65542, -65536, 0, 2, -65535, 0, 2, -65534, 0, 2, -65533, 0, 65537, 65532, 0, 65538, 65534, 0, 65541, 131068, 0, 65536, 131069, 0, 2, 131070, 0, 4, 131071, 0, 2, 65536, 0, 5, 65537, 0, 7, 65538, 0, 8, 65539, 0, 65541, 131073, 0, 65543, 131074, 0, 65544, 131075, 0, 65538, 262140, 0, 65542, 262141, 0, 2, 262142, 0, 2, 262143, 0, 2, 196608, 0, 2, 196609, 0, 2, 196610, 0, 2, 196611, 0, 65537, 327676, 0, 196613, 327677, 0, 196613, 327678, 0, 196613, 327679, 0, 196613, 262144, 0, 196613, 262145, 0, 196613, 262146, 0, 196613, 262147, 0, 196613 )
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Decals" type="YSort" parent="."]
+
+[node name="Mushroom2" type="Sprite" parent="Decals"]
+position = Vector2( -576, 64 )
+texture = ExtResource( 8 )
+
+[node name="Light2D" type="Light2D" parent="Decals/Mushroom2"]
+position = Vector2( -32, 32 )
+texture = ExtResource( 7 )
+texture_scale = 3.0
+color = Color( 0.0784314, 0.717647, 0.254902, 1 )
+energy = 0.8
+shadow_enabled = true
+shadow_filter = 5
+shadow_filter_smooth = 5.0
+
+[node name="Mushroom3" type="Sprite" parent="Decals"]
+position = Vector2( 864, 192 )
+texture = ExtResource( 8 )
+
+[node name="Light2D" type="Light2D" parent="Decals/Mushroom3"]
+texture = ExtResource( 7 )
+texture_scale = 3.0
+color = Color( 0.0784314, 0.717647, 0.254902, 1 )
+energy = 0.8
+shadow_enabled = true
+shadow_filter = 5
+shadow_filter_smooth = 5.0
+
+[node name="Mushroom4" type="Sprite" parent="Decals"]
+position = Vector2( 640, -320 )
+texture = ExtResource( 8 )
+
+[node name="Light2D" type="Light2D" parent="Decals/Mushroom4"]
+texture = ExtResource( 7 )
+texture_scale = 3.0
+color = Color( 0.0784314, 0.717647, 0.254902, 1 )
+energy = 0.8
+shadow_enabled = true
+shadow_filter = 5
+shadow_filter_smooth = 5.0
+
+[node name="Mushroom6" type="Sprite" parent="Decals"]
+position = Vector2( -672, 128 )
+texture = ExtResource( 8 )
+
+[node name="stumped2" type="Sprite" parent="Decals"]
+position = Vector2( 384, -544 )
+texture = ExtResource( 12 )
+
+[node name="stumped3" type="Sprite" parent="Decals"]
+position = Vector2( 608, -384 )
+texture = ExtResource( 10 )
+offset = Vector2( 0, -128 )
+
+[node name="Shrroms2" type="Sprite" parent="Decals"]
+position = Vector2( 672, -320 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+vframes = 3
+frame = 1
+
+[node name="Shrroms" type="Sprite" parent="Decals"]
+position = Vector2( 512, -384 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+vframes = 3
+frame = 1
+
+[node name="lilshrooms" type="Sprite" parent="Decals"]
+position = Vector2( -375, 551 )
+texture = ExtResource( 8 )
+
+[node name="Skull" type="Sprite" parent="Decals"]
+position = Vector2( -439, 519 )
+texture = ExtResource( 11 )
+
+[node name="Ladybug" type="AnimatedSprite" parent="Decals"]
+position = Vector2( -351.687, -161.272 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+script = ExtResource( 17 )
+
+[node name="Ladybug2" type="AnimatedSprite" parent="Decals"]
+position = Vector2( -26.1985, -337.278 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+script = ExtResource( 17 )
+
+[node name="Ladybug3" type="AnimatedSprite" parent="Decals"]
+position = Vector2( 179.476, -649.366 )
+frames = SubResource( 10 )
+frame = 1
+playing = true
+script = ExtResource( 17 )
+
+[node name="Ladybug4" type="AnimatedSprite" parent="Decals"]
+position = Vector2( 340.824, -12.7233 )
+frames = SubResource( 10 )
+playing = true
+script = ExtResource( 17 )
+
+[node name="Particles2D" type="Particles2D" parent="Decals"]
+modulate = Color( 1, 1, 1, 0.0431373 )
+material = SubResource( 14 )
+amount = 50
+lifetime = 10.0
+preprocess = 5.0
+process_material = SubResource( 13 )
+texture = ExtResource( 19 )
+
+[node name="Player1" parent="." instance=ExtResource( 3 )]
+position = Vector2( -32, 0 )
+
+[node name="Camera" type="Camera2D" parent="."]
+rotating = true
+current = true
+zoom = Vector2( 1.8, 1.8 )
+process_mode = 0
+smoothing_enabled = true
+smoothing_speed = 1.5
+script = ExtResource( 5 )
