@@ -69,7 +69,7 @@ func _attack():
 	elif result == "base":
 		_add_hitbox(Vector2(88, 88), .1, .0, true, true)
 		Game.get_camera().shake(5, 0.1)
-		velocity_scale = 2.5
+		velocity_scale = -2.5
 	elif result == "lunge":
 		_add_hitbox(Vector2(128, 64), 0.8)
 		Game.get_camera().shake(10, 0.1)
