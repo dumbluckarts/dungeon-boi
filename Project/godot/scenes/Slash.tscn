@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="Polygon2D" type="Polygon2D"]
+position = Vector2( -448, -320 )
+offset = Vector2( 288, 416 )
+polygon = PoolVector2Array( 160, -128, 96, -192, 224, -160, 288, -64, 224, 32, 96, 0, 160, -64 )

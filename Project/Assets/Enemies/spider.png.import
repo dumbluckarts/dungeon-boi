@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player1_walk_right_n.png-d7f3596e37b896c918e7710964342bc9.stex"
+path="res://.import/spider.png-ed9d5202f4b757941954b5db85e590e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Players/player1_walk_right_n.png"
-dest_files=[ "res://.import/player1_walk_right_n.png-d7f3596e37b896c918e7710964342bc9.stex" ]
+source_file="res://assets/Enemies/spider.png"
+dest_files=[ "res://.import/spider.png-ed9d5202f4b757941954b5db85e590e8.stex" ]
 
 [params]
 

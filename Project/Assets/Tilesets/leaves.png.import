@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stonetest.png-665b9b8f8125196bb57e03718bea26f4.stex"
+path="res://.import/leaves.png-c57b25db694b210e2ca70e9eaf5729c7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stonetest.png"
-dest_files=[ "res://.import/stonetest.png-665b9b8f8125196bb57e03718bea26f4.stex" ]
+source_file="res://assets/Tilesets/leaves.png"
+dest_files=[ "res://.import/leaves.png-c57b25db694b210e2ca70e9eaf5729c7.stex" ]
 
 [params]
 

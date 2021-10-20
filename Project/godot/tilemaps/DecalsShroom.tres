@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=6 format=2]
+[gd_resource type="TileSet" load_steps=9 format=2]
 
 [ext_resource path="res://assets/Decals/Level1.png" type="Texture" id=1]
 [ext_resource path="res://assets/Decals/Level1_n.png" type="Texture" id=2]
@@ -7,13 +7,22 @@
 cull_mode = 1
 polygon = PoolVector2Array( 160, 192, 256, 160, 352, 192, 384, 256, 416, 352, 320, 384, 192, 384, 128, 352, 96, 288 )
 
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 137, 203, 275, 172, 377, 208, 393, 326, 260, 373, 129, 333 )
+
 [sub_resource type="OccluderPolygon2D" id=2]
 cull_mode = 1
 polygon = PoolVector2Array( 96, 32, 192, 32, 192, 160, 224, 192, 64, 224, 64, 128 )
 
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 51, 99, 75, 50, 156, 48, 202, 113, 197, 198, 127, 204, 51, 183 )
+
 [sub_resource type="OccluderPolygon2D" id=3]
 cull_mode = 1
 polygon = PoolVector2Array( 64, 32, 192, 32, 224, 64, 256, 192, 128, 224, 32, 192, 32, 96 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 15, 75, 82, 23, 169, 23, 231, 51, 245, 117, 231, 216, 26, 200 )
 
 [resource]
 0/name = "Level1.png 0"
@@ -28,9 +37,16 @@ polygon = PoolVector2Array( 64, 32, 192, 32, 224, 64, 256, 192, 128, 224, 32, 19
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 4 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
 1/name = "Level1.png 1"
 1/texture = ExtResource( 1 )
@@ -44,9 +60,16 @@ polygon = PoolVector2Array( 64, 32, 192, 32, 224, 64, 256, 192, 128, 224, 32, 19
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 5 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "Level1.png 2"
 2/texture = ExtResource( 1 )
@@ -60,9 +83,16 @@ polygon = PoolVector2Array( 64, 32, 192, 32, 224, 64, 256, 192, 128, 224, 32, 19
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 6 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "Level1.png 3"
 3/texture = ExtResource( 1 )

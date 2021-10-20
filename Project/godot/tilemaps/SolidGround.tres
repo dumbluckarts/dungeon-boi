@@ -1,12 +1,10 @@
-[gd_resource type="TileSet" load_steps=3 format=2]
+[gd_resource type="TileSet" load_steps=2 format=2]
 
 [ext_resource path="res://assets/Environment/Grass.png" type="Texture" id=1]
-[ext_resource path="res://assets/Environment/Grass_n.png" type="Texture" id=2]
 
 [resource]
 0/name = "Grass.png 0"
 0/texture = ExtResource( 1 )
-0/normal_map = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 1024, 1280, 256, 256 )
